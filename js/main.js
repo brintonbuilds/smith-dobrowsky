@@ -41,38 +41,6 @@
   }
 }());
 
-/* ── Mobile nav toggle ── */
-(function () {
-  const toggle = document.getElementById('nav-toggle');
-  const menu   = document.getElementById('nav-mobile-menu');
-  if (!toggle || !menu) return;
-
-  toggle.addEventListener('click', () => {
-    const open = menu.classList.toggle('is-open');
-    toggle.classList.toggle('is-open', open);
-    toggle.setAttribute('aria-expanded', open);
-  });
-
-  /* Close on outside click */
-  document.addEventListener('click', (e) => {
-    if (!toggle.contains(e.target) && !menu.contains(e.target)) {
-      menu.classList.remove('is-open');
-      toggle.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', false);
-    }
-  });
-})();
-
-/* ── Active nav link ── */
-(function () {
-  const current = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav__link').forEach((link) => {
-    const href = link.getAttribute('href') || '';
-    if (href === current || (current === '' && href === 'index.html')) {
-      link.classList.add('is-active');
-    }
-  });
-})();
 
 /* ── Listings filter ── */
 (function () {
