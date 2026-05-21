@@ -99,7 +99,7 @@
       color: rgba(250,246,237,0.52) !important;
       line-height: 1.78 !important;
       margin-bottom: 0 !important;
-      max-width: 480px !important;
+      max-width: 420px !important;
     }
 
     /* Stats row */
@@ -109,7 +109,8 @@
       border-top: 0 !important;
       border-bottom: none !important;
       padding: 0 !important;
-      margin-bottom: 30px !important;
+      margin-top: 18px !important;
+      margin-bottom: 0 !important;
       max-width: 460px !important;
       gap: clamp(22px, 2.8vw, 42px) !important;
     }
@@ -139,31 +140,93 @@
       line-height: 1.45 !important;
     }
 
-    /* CTAs */
-    body.home-page .hero__primary-cta {
-      min-height: 46px !important;
-      padding: 0 28px !important;
+    /* Editorial CTA links */
+    body.home-page .hero__ctas {
+      margin-top: 40px !important;
+      gap: 32px !important;
+      align-items: baseline !important;
+    }
+    body.home-page .hero__cta-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 9px !important;
+      font-family: var(--font-sans) !important;
       font-size: 10.5px !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.13em !important;
-      background: #f4f1ea !important;
-      color: #0c0e10 !important;
-      border-color: transparent !important;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.24) !important;
-      transition: background 0.22s ease, transform 0.18s ease, box-shadow 0.22s ease !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.16em !important;
+      text-transform: uppercase !important;
+      text-decoration: none !important;
+      position: relative !important;
+      padding-bottom: 3px !important;
+      transition: color 0.24s ease !important;
     }
-    body.home-page .hero__primary-cta:hover {
-      background: rgba(255,253,248,1) !important;
-      transform: translateY(-2px) !important;
-      box-shadow: 0 6px 28px rgba(0,0,0,0.30) !important;
+    body.home-page .hero__cta-link::after {
+      content: '' !important;
+      position: absolute !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 1px !important;
+      background: currentColor !important;
+      transform: scaleX(0) !important;
+      transform-origin: left !important;
+      transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
-    body.home-page .hero .btn-text-link {
-      font-size: 11px !important;
-      color: rgba(244,241,234,0.34) !important;
-      letter-spacing: 0.05em !important;
+    body.home-page .hero__cta-link:hover::after {
+      transform: scaleX(1) !important;
     }
-    body.home-page .hero .btn-text-link:hover {
-      color: rgba(244,241,234,0.72) !important;
+    body.home-page .hero__cta-arrow {
+      display: inline-block !important;
+      transition: transform 0.24s ease !important;
+    }
+    body.home-page .hero__cta-link:hover .hero__cta-arrow {
+      transform: translateX(5px) !important;
+    }
+    body.home-page .hero__cta-link--primary {
+      color: rgba(250,246,237,0.88) !important;
+    }
+    body.home-page .hero__cta-link--primary:hover {
+      color: rgba(255,252,244,1) !important;
+    }
+    body.home-page .hero__cta-link--secondary {
+      color: rgba(218,207,187,0.46) !important;
+    }
+    body.home-page .hero__cta-link--secondary:hover {
+      color: rgba(218,207,187,0.80) !important;
+    }
+
+    /* Slideshow progress indicator */
+    body.home-page .hero__progress {
+      position: absolute !important;
+      bottom: clamp(26px, 3.8vw, 46px) !important;
+      right: clamp(26px, 3.8vw, 52px) !important;
+      display: flex !important;
+      gap: 5px !important;
+      z-index: 10 !important;
+      align-items: center !important;
+    }
+    body.home-page .hero__progress-track {
+      display: block !important;
+      width: 26px !important;
+      height: 1.5px !important;
+      background: rgba(255,255,255,0.14) !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    body.home-page .hero__progress-fill {
+      display: block !important;
+      position: absolute !important;
+      inset: 0 !important;
+      background: rgba(250,246,237,0.68) !important;
+      transform: scaleX(0) !important;
+      transform-origin: left !important;
+    }
+
+    /* Desktop: raise content group by ~48px */
+    @media (min-width: 901px) {
+      body.home-page .hero__left {
+        padding-top: clamp(60px, 7.5vh, 96px) !important;
+      }
     }
 
     /* Reassurance */
@@ -230,8 +293,9 @@
         letter-spacing: -0.01em !important;
         white-space: normal !important;
       }
-      body.home-page .hero__primary-cta { width: 100% !important; justify-content: center !important; }
-      body.home-page .hero .btn-text-link { width: 100% !important; justify-content: center !important; }
+      body.home-page .hero__ctas { gap: 20px !important; flex-direction: column !important; align-items: flex-start !important; }
+      body.home-page .hero__cta-link { font-size: 10px !important; }
+      body.home-page .hero__progress { display: none !important; }
       body.home-page .hero__trust {
         display: grid !important;
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -286,7 +350,7 @@
         <div class="hero__left">
 
           <div class="hero__h1-location">
-            Burlington · Hamilton · Waterdown
+            Burlington · Hamilton · Surrounding Communities
           </div>
 
           <h1 class="hero__h1" id="hero-heading">
@@ -295,9 +359,9 @@
           </h1>
 
           <p class="hero__sub">
-            Calm strategy, deep local knowledge, and a considered plan
-            for every move — so whatever you're doing next,
-            you do it with clarity.
+            Calm strategy, deep regional knowledge, and a considered plan
+            for every move — so wherever you're headed next,
+            across any of our communities, you move with clarity.
           </p>
 
           <div class="hero__trust" aria-label="Smith Dobrowsky Team highlights">
@@ -310,16 +374,14 @@
               <span class="hero__trust-label">Years rooted</span>
             </div>
             <div class="hero__trust-item">
-              <span class="hero__trust-value">6</span>
+              <span class="hero__trust-value">9</span>
               <span class="hero__trust-label">Communities</span>
             </div>
           </div>
 
           <div class="hero__ctas">
-            <a href="contact.html" class="btn-ghost hero__primary-cta">Start a conversation</a>
-            <a href="listings.html" class="btn-text-link">
-              Browse listings <span aria-hidden="true">→</span>
-            </a>
+            <a href="contact.html" class="hero__cta-link hero__cta-link--primary">Plan Your Move <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
+            <a href="listings.html" class="hero__cta-link hero__cta-link--secondary">Browse Listings <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
           </div>
 
           <p class="hero__reassurance">Unhurried. Considered. Always local.</p>
@@ -336,6 +398,14 @@
             <div class="hero__location-label" aria-live="polite">
               <span class="hero__location-kicker">Local Lens</span>
               <span class="hero__location-name">Burlington &amp; Hamilton</span>
+            </div>
+            <div class="hero__progress" aria-hidden="true">
+              <span class="hero__progress-track"><span class="hero__progress-fill"></span></span>
+              <span class="hero__progress-track"><span class="hero__progress-fill"></span></span>
+              <span class="hero__progress-track"><span class="hero__progress-fill"></span></span>
+              <span class="hero__progress-track"><span class="hero__progress-fill"></span></span>
+              <span class="hero__progress-track"><span class="hero__progress-fill"></span></span>
+              <span class="hero__progress-track"><span class="hero__progress-fill"></span></span>
             </div>
           </div>
           <div class="hero__caption">
@@ -383,66 +453,88 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         FEATURED LISTINGS
+         SELECTED PROPERTIES
     ══════════════════════════════════════ -->
-    <section class="section section--white featured-listings">
-      <div class="featured-listings__header featured-listings__header--editorial reveal">
-        <div class="featured-listings__title-block">
-          <div class="section-eyebrow">Current Properties</div>
-          <h2 class="section-heading">
-            <span class="section-heading-line">Featured</span><br>
-            <em>Listings</em>
-          </h2>
-        </div>
-      </div>
-      <div class="listings-grid">
+    <section class="sp-section">
 
-        <a href="55-chesley.html" class="listing-card listing-card--feature reveal" aria-label="View listing details for 55 Chesley Street">
-          <div class="listing-card__img">
-            <div class="listing-card__badge listing-card__badge--dark">For Sale</div>
+      <div class="sp-header reveal">
+        <div class="section-eyebrow">Current Properties</div>
+        <h2 class="sp-heading">Selected<br><em>Properties</em></h2>
+      </div>
+
+      <div class="sp-grid">
+
+        <!-- Primary feature: 55 Chesley Street, Hamilton -->
+        <a href="55-chesley.html" class="sp-card sp-card--feature reveal" aria-label="View full listing for 55 Chesley Street, Hamilton">
+          <div class="sp-card__media">
+            <img
+              src="assets/listings/55-chelsea/002_o3d_55_chesley_street-odyssey3d-hdr-001_81.jpg"
+              alt="55 Chesley Street, Hamilton — front exterior, all-brick bungalow"
+              loading="eager"
+            >
+            <div class="sp-card__status">For Sale</div>
           </div>
-          <div class="listing-card__body">
-            <div class="listing-card__price">$939,900</div>
-            <div class="listing-card__address">55 Chesley Street</div>
-            <div class="listing-card__city">Hamilton, ON L9C 3V9</div>
-            <div class="listing-card__divider"></div>
-            <div class="listing-card__details"><span>3 Bed</span><span>3 Bath</span><span>1,474 sq ft</span></div>
-            <div class="listing-card__mls">MLS® 40823990</div>
+          <div class="sp-card__body">
+            <div class="sp-card__address">55 Chesley Street</div>
+            <div class="sp-card__location">Hamilton, ON L9C&nbsp;3V9 &nbsp;&middot;&nbsp; MLS&reg;&nbsp;40823990</div>
+            <p class="sp-card__teaser">Meticulously maintained all-brick bungalow with 10&rsquo; ceilings, a fully finished entertainment basement, and a double garage &mdash; directly across from a school and park.</p>
+            <div class="sp-card__footer">
+              <span class="sp-card__price">$939,900</span>
+              <span class="sp-card__specs">3 Bed &nbsp;&middot;&nbsp; 3 Bath &nbsp;&middot;&nbsp; 1,474 sq&nbsp;ft</span>
+              <span class="sp-card__cta">View Property <span class="sp-card__arrow" aria-hidden="true">&#8594;</span></span>
+            </div>
           </div>
         </a>
 
-        <div class="listing-card reveal reveal-delay-1">
-          <div class="listing-card__img">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6L4 22v22h14V32h12v12h14V22L24 6z" fill="#9a9080" opacity="0.4"/><path d="M24 6L4 22v22h14V32h12v12h14V22L24 6z" stroke="#9a9080" stroke-width="1.5"/></svg>
-            <div class="listing-card__badge listing-card__badge--dark">New Listing</div>
-          </div>
-          <div class="listing-card__body">
-            <div class="listing-card__price">$899,000</div>
-            <div class="listing-card__address">18 Lakeview Drive</div>
-            <div class="listing-card__city">Burlington, ON</div>
-            <div class="listing-card__divider"></div>
-            <div class="listing-card__details"><span>3 Bed</span><span>2 Bath</span><span>1,820 sq ft</span></div>
-          </div>
-        </div>
+        <!-- Secondary listings stack -->
+        <div class="sp-secondary">
 
-        <div class="listing-card reveal reveal-delay-2">
-          <div class="listing-card__img">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6L4 22v22h14V32h12v12h14V22L24 6z" fill="#9a9080" opacity="0.4"/><path d="M24 6L4 22v22h14V32h12v12h14V22L24 6z" stroke="#9a9080" stroke-width="1.5"/></svg>
-            <div class="listing-card__badge listing-card__badge--light">Open House</div>
+          <div class="sp-card sp-card--secondary reveal reveal-delay-1">
+            <div class="sp-card__media">
+              <img
+                src="assets/GettyImages-2231150857.jpg"
+                alt="18 Lakeview Drive, Burlington"
+                loading="lazy"
+              >
+              <div class="sp-card__status">New Listing</div>
+            </div>
+            <div class="sp-card__body">
+              <div class="sp-card__address">18 Lakeview Drive</div>
+              <div class="sp-card__location">Burlington, ON</div>
+              <div class="sp-card__footer">
+                <span class="sp-card__price">$899,000</span>
+                <span class="sp-card__specs">3 Bed &nbsp;&middot;&nbsp; 2 Bath &nbsp;&middot;&nbsp; 1,820 sq&nbsp;ft</span>
+              </div>
+            </div>
           </div>
-          <div class="listing-card__body">
-            <div class="listing-card__price">$1,575,000</div>
-            <div class="listing-card__address">7 Heritage Lane</div>
-            <div class="listing-card__city">Flamborough, ON</div>
-            <div class="listing-card__divider"></div>
-            <div class="listing-card__details"><span>5 Bed</span><span>4 Bath</span><span>3,200 sq ft</span></div>
-          </div>
-        </div>
 
+          <div class="sp-card sp-card--secondary reveal reveal-delay-2">
+            <div class="sp-card__media">
+              <img
+                src="assets/GettyImages-1388101414.jpg"
+                alt="7 Heritage Lane, Flamborough"
+                loading="lazy"
+              >
+              <div class="sp-card__status">Open House</div>
+            </div>
+            <div class="sp-card__body">
+              <div class="sp-card__address">7 Heritage Lane</div>
+              <div class="sp-card__location">Flamborough, ON</div>
+              <div class="sp-card__footer">
+                <span class="sp-card__price">$1,575,000</span>
+                <span class="sp-card__specs">5 Bed &nbsp;&middot;&nbsp; 4 Bath &nbsp;&middot;&nbsp; 3,200 sq&nbsp;ft</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /sp-secondary -->
+
+      </div><!-- /sp-grid -->
+
+      <div class="sp-footer">
+        <a href="listings.html" class="sp-all-link">View All Properties <span aria-hidden="true">&#8594;</span></a>
       </div>
-      <div class="featured-listings__footer">
-        <a href="listings.html" class="btn-navy">View All Listings</a>
-      </div>
+
     </section>
 
     <!-- ══════════════════════════════════════
@@ -833,10 +925,32 @@
         window.setTimeout(() => slides[0]?.classList.remove('hero__media-slide--first-frame'), 1500);
       }
 
+      // Progress indicator
+      const progressTracks = Array.from(document.querySelectorAll('.hero__progress-track'));
+      const slideDuration = 6500;
+
+      function activateProgress(index) {
+        progressTracks.forEach((track, i) => {
+          const fill = track.querySelector('.hero__progress-fill');
+          if (!fill) return;
+          if (i === index) {
+            fill.style.transition = 'none';
+            fill.style.transform = 'scaleX(0)';
+            fill.offsetWidth; // force reflow so reset lands before animation
+            fill.style.transition = `transform ${slideDuration}ms linear`;
+            fill.style.transform = 'scaleX(1)';
+          } else {
+            fill.style.transition = 'none';
+            fill.style.transform = 'scaleX(0)';
+          }
+        });
+      }
+
+      if (!prefersReducedMotion) activateProgress(0);
+
       if (prefersReducedMotion || slides.length < 2) return;
 
       let activeIndex = 0;
-      const slideDuration = 6500; // shorter than before — stays calm but doesn't feel static
 
       window.setInterval(() => {
         const prev = slides[activeIndex];
@@ -846,6 +960,7 @@
         prev.classList.remove('is-active');
         next.classList.add('is-active');
         updateLocationLabel(activeIndex);
+        activateProgress(activeIndex);
       }, slideDuration);
     })();
   </script>
