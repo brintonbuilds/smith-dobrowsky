@@ -2350,6 +2350,12 @@
     body.home-page #cm-mapbox {
       position: absolute !important;
       inset: 0 !important;
+      opacity: 0 !important;
+      transition: opacity 220ms ease !important;
+    }
+
+    body.home-page .cm-map-panel.is-mapbox-ready #cm-mapbox {
+      opacity: 1 !important;
     }
 
     /* Left editorial fade — map tiles bleed into the content column */
@@ -3278,11 +3284,23 @@
         version: 8,
         glyphs: 'mapbox://fonts/mapbox/{fontstack}/{range}',
         sources: {
+          atlas: {
+            type: 'image',
+            url: 'assets/halton-hamilton-map.jpg',
+            coordinates: [
+              [-80.12, 43.62],
+              [-79.48, 43.62],
+              [-79.48, 43.16],
+              [-80.12, 43.16]
+            ]
+          },
           s: { type: 'vector', url: 'mapbox://mapbox.mapbox-streets-v8' }
         },
         layers: [
           /* Land */
           { id: 'bg',       type: 'background', paint: { 'background-color': C.land } },
+          { id: 'atlas',    type: 'raster', source: 'atlas',
+            paint: { 'raster-opacity': 0.98, 'raster-contrast': 0.04, 'raster-saturation': -0.05 } },
           /* Landuse tones */
           { id: 'lu-res',   type: 'fill', source: 's', 'source-layer': 'landuse',
             filter: ['==', ['get','class'], 'residential'],
@@ -3446,6 +3464,7 @@
 
     /* ── Boot sequence ── */
     map.on('load', function () {
+      if (mapPanel) mapPanel.classList.add('is-mapbox-ready');
       buildMarkers();
       placeMarkers();
       activate('burlington');
