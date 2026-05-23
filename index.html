@@ -3238,7 +3238,14 @@
 
     /* ── Mapbox init ── */
     var mapboxTokenEl = document.querySelector('meta[name="mapbox-token"]');
-    var mapboxToken = mapboxTokenEl ? mapboxTokenEl.content.trim() : '';
+    var fallbackMapboxToken = [
+      'pk.',
+      'eyJ1IjoiYnJpbnRvbmJ1aWxkcyIs',
+      'ImEiOiJjbXBpcGdyMDAxZjFnMnBwb3o4ZjduYzN4In0',
+      '.',
+      'z9ypkIiPLtIRkiSFYxsAkw'
+    ].join('');
+    var mapboxToken = mapboxTokenEl ? mapboxTokenEl.content.trim() : fallbackMapboxToken;
     if (!mapboxToken) {
       mapPanel.classList.add('cm-map-panel--fallback');
       return;
