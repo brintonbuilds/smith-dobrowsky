@@ -60,8 +60,8 @@
 .nav__logo-img {
   display: block !important;
   width: auto !important;
-  height: 40px !important;
-  max-width: 200px !important;
+  height: 49px !important;
+  max-width: 244px !important;
   object-fit: contain !important;
   object-position: left center !important;
   opacity: 0.95 !important;
@@ -74,8 +74,8 @@
 }
 
 .nav.nav--scrolled .nav__logo-img {
-  height: 34px !important;
-  max-width: 170px !important;
+  height: 41px !important;
+  max-width: 204px !important;
 }
 
 /* ── Desktop links ───────────────────────────────────────────── */
@@ -84,7 +84,7 @@
   align-items: center !important;
   justify-content: center !important;
   justify-self: center !important;
-  gap: clamp(28px, 3.5vw, 52px) !important;
+  gap: clamp(26px, 3.1vw, 48px) !important;
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -94,11 +94,12 @@
   position: relative !important;
   display: inline-block !important;
   padding: 5px 0 !important;
-  font-size: var(--eyebrow-size, 10.5px) !important;
-  font-weight: var(--eyebrow-weight, 600) !important;
-  letter-spacing: var(--eyebrow-tracking, 0.24em) !important;
+  font-size: var(--type-meta, var(--eyebrow-size, 10.5px)) !important;
+  font-weight: var(--weight-eyebrow, var(--eyebrow-weight, 600)) !important;
+  letter-spacing: var(--tracking-eyebrow, var(--eyebrow-tracking, 0.24em)) !important;
+  line-height: var(--leading-meta, 1.45) !important;
   text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.58) !important;
+  color: var(--text-inverse-muted, rgba(255, 255, 255, 0.58)) !important;
   text-decoration: none !important;
   border-bottom: none !important;
   transition: color 0.22s ease !important;
@@ -135,10 +136,11 @@
 /* Override the styles.css inverse / scrolled variants */
 .nav--inverse .nav__link,
 .nav.nav--scrolled .nav__link {
-  color: rgba(255, 255, 255, 0.58) !important;
-  font-size: var(--eyebrow-size, 10.5px) !important;
-  font-weight: var(--eyebrow-weight, 600) !important;
-  letter-spacing: var(--eyebrow-tracking, 0.24em) !important;
+  color: var(--text-inverse-muted, rgba(255, 255, 255, 0.58)) !important;
+  font-size: var(--type-meta, var(--eyebrow-size, 10.5px)) !important;
+  font-weight: var(--weight-eyebrow, var(--eyebrow-weight, 600)) !important;
+  letter-spacing: var(--tracking-eyebrow, var(--eyebrow-tracking, 0.24em)) !important;
+  line-height: var(--leading-meta, 1.45) !important;
   text-transform: uppercase !important;
   border-bottom: none !important;
   padding: 5px 0 !important;
@@ -161,16 +163,16 @@
   justify-content: center !important;
   justify-self: end !important;
   height: 34px !important;
-  padding: 0 18px !important;
-  font-size: var(--cta-size, 10.8px) !important;
-  font-weight: 600 !important;
-  letter-spacing: var(--cta-tracking, 0.14em) !important;
+  padding: 0 16px !important;
+  font-size: var(--type-cta, var(--cta-size, 10.8px)) !important;
+  font-weight: var(--weight-cta, 600) !important;
+  letter-spacing: var(--tracking-cta, var(--cta-tracking, 0.14em)) !important;
   text-transform: uppercase !important;
   line-height: 1 !important;
   white-space: nowrap !important;
-  color: rgba(255, 255, 255, 0.76) !important;
+  color: rgba(255, 255, 255, 0.68) !important;
   background: transparent !important;
-  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+  border: 1px solid rgba(255, 255, 255, 0.17) !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   text-decoration: none !important;
@@ -320,9 +322,10 @@
   display: block !important;
   width: 100% !important;
   padding: 17px clamp(20px, 5.5vw, 40px) !important;
-  font-size: var(--eyebrow-size, 10.5px) !important;
-  font-weight: var(--eyebrow-weight, 600) !important;
-  letter-spacing: var(--eyebrow-tracking, 0.24em) !important;
+  font-size: var(--type-meta, var(--eyebrow-size, 10.5px)) !important;
+  font-weight: var(--weight-eyebrow, var(--eyebrow-weight, 600)) !important;
+  letter-spacing: var(--tracking-eyebrow, var(--eyebrow-tracking, 0.24em)) !important;
+  line-height: var(--leading-meta, 1.45) !important;
   text-transform: uppercase !important;
   color: rgba(255, 255, 255, 0.62) !important;
   text-decoration: none !important;
@@ -387,16 +390,16 @@
 
   .nav__logo-img,
   .nav.nav--scrolled .nav__logo-img {
-    height: 36px !important;
-    max-width: 182px !important;
+    height: 40px !important;
+    max-width: 202px !important;
   }
 
   .nav__cta--phone,
   .nav.nav--scrolled .nav__cta--phone {
     height: 32px !important;
     padding: 0 14px !important;
-    font-size: var(--cta-size, 10.8px) !important;
-    letter-spacing: var(--cta-tracking, 0.14em) !important;
+    font-size: var(--type-cta, var(--cta-size, 10.8px)) !important;
+    letter-spacing: var(--tracking-cta, var(--cta-tracking, 0.14em)) !important;
   }
 
   /* Show toggle — kill ALL positioning overrides from styles.css */
@@ -440,8 +443,8 @@
 
   .nav__logo-img,
   .nav.nav--scrolled .nav__logo-img {
-    height: 30px !important;
-    max-width: 152px !important;
+    height: 33px !important;
+    max-width: 166px !important;
   }
 
   .nav .nav__toggle,
@@ -470,7 +473,7 @@
 
   .nav__logo-img,
   .nav.nav--scrolled .nav__logo-img {
-    height: 26px !important;
-    max-width: 132px !important;
+    height: 29px !important;
+    max-width: 146px !important;
   }
 }
