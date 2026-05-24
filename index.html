@@ -2821,6 +2821,160 @@
         margin-bottom: 20px !important;
       }
     }
+
+    /* Client Stories: compact editorial spread */
+    body.home-page .cs-section {
+      padding-top: clamp(72px, 7.4vw, 108px) !important;
+      padding-bottom: clamp(76px, 7.8vw, 116px) !important;
+    }
+
+    body.home-page .cs-inner {
+      max-width: 1160px !important;
+    }
+
+    body.home-page .cs-header {
+      margin-bottom: clamp(38px, 4.4vw, 58px) !important;
+    }
+
+    body.home-page .cs-section-title {
+      font-size: clamp(2.5rem, 3.7vw, 4.25rem) !important;
+      line-height: 0.98 !important;
+    }
+
+    body.home-page .cs-story {
+      display: grid !important;
+      align-items: center !important;
+      gap: clamp(34px, 5vw, 76px) !important;
+    }
+
+    body.home-page .cs-story--a {
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 38%) !important;
+    }
+
+    body.home-page .cs-story--b {
+      grid-template-columns: minmax(300px, 38%) minmax(0, 1fr) !important;
+    }
+
+    body.home-page .cs-story + .cs-story {
+      margin-top: clamp(34px, 4.6vw, 58px) !important;
+      padding-top: clamp(34px, 4.6vw, 58px) !important;
+      border-top-color: rgba(247,245,240,0.095) !important;
+    }
+
+    body.home-page .cs-story__content,
+    body.home-page .cs-story--a .cs-story__content,
+    body.home-page .cs-story--b .cs-story__content {
+      max-width: 520px !important;
+      padding-top: 0 !important;
+    }
+
+    body.home-page .cs-story--b .cs-story__content {
+      justify-self: end !important;
+    }
+
+    body.home-page .cs-story__label {
+      margin-bottom: clamp(13px, 1.4vw, 18px) !important;
+    }
+
+    body.home-page .cs-story__pull {
+      max-width: 15em !important;
+      margin-bottom: clamp(14px, 1.7vw, 20px) !important;
+      font-size: clamp(1.54rem, 2vw, 2.18rem) !important;
+      line-height: 1.14 !important;
+    }
+
+    body.home-page .cs-story__body {
+      max-width: 42ch !important;
+      color: rgba(240,236,228,0.66) !important;
+      font-size: clamp(0.92rem, 0.94vw, 1rem) !important;
+      line-height: 1.7 !important;
+    }
+
+    body.home-page .cs-story__attr {
+      width: min(270px, 100%) !important;
+      margin-top: clamp(18px, 2vw, 24px) !important;
+      padding-top: clamp(13px, 1.4vw, 17px) !important;
+    }
+
+    body.home-page .cs-story__fig,
+    body.home-page .cs-story--a .cs-story__fig,
+    body.home-page .cs-story--b .cs-story__fig {
+      height: clamp(320px, 28vw, 380px) !important;
+      aspect-ratio: 4 / 3 !important;
+      transform: none !important;
+      box-shadow: 0 18px 48px rgba(0,0,0,0.30), 0 3px 12px rgba(0,0,0,0.18) !important;
+    }
+
+    body.home-page .cs-story__fig img {
+      transition-duration: 220ms !important;
+    }
+
+    body.home-page .cs-story__fig:hover img {
+      transform: scale(1.025) !important;
+    }
+
+    body.home-page .cs-more {
+      margin-top: clamp(34px, 4.6vw, 58px) !important;
+      padding-top: clamp(22px, 2.6vw, 32px) !important;
+      border-top: 1px solid rgba(247,245,240,0.095) !important;
+    }
+
+    body.home-page .cs-more__link {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 16px !important;
+      color: rgba(247,245,240,0.78) !important;
+      font-size: var(--type-cta) !important;
+      font-weight: 600 !important;
+      letter-spacing: var(--tracking-action) !important;
+      text-decoration: none !important;
+      text-transform: none !important;
+    }
+
+    body.home-page .cs-more__link:hover,
+    body.home-page .cs-more__link:focus-visible {
+      color: rgba(247,245,240,0.96) !important;
+      text-decoration: underline !important;
+      text-underline-offset: 0.38em !important;
+      text-decoration-thickness: 1px !important;
+    }
+
+    @media (max-width: 820px) {
+      body.home-page .cs-section {
+        padding-top: clamp(60px, 12vw, 82px) !important;
+        padding-bottom: clamp(64px, 12vw, 88px) !important;
+      }
+
+      body.home-page .cs-header {
+        margin-bottom: 34px !important;
+      }
+
+      body.home-page .cs-story,
+      body.home-page .cs-story--a,
+      body.home-page .cs-story--b {
+        grid-template-columns: 1fr !important;
+        gap: 22px !important;
+      }
+
+      body.home-page .cs-story--b .cs-story__content {
+        justify-self: start !important;
+      }
+
+      body.home-page .cs-story__fig,
+      body.home-page .cs-story--a .cs-story__fig,
+      body.home-page .cs-story--b .cs-story__fig {
+        height: clamp(250px, 58vw, 340px) !important;
+      }
+
+      body.home-page .cs-story__pull {
+        font-size: clamp(1.42rem, 6vw, 1.88rem) !important;
+      }
+
+      body.home-page .cs-story + .cs-story {
+        margin-top: 34px !important;
+        padding-top: 34px !important;
+      }
+    }
   </style>
 </head>
 <body class="home-page">
@@ -3216,40 +3370,14 @@
           </figure>
         </article>
 
-        <!-- Story 02 — Derek Moorse & Alicia Dusil — FEATURED -->
-        <article class="cs-story cs-story--feat reveal">
-          <div class="cs-story__feat-cap">
-            <div class="cs-story__label">
-              <span class="cs-story__num">02</span>
-              <span class="cs-story__sep">—</span>
-              <span class="cs-story__tag">Burlington · Dream Home</span>
-            </div>
-            <span class="cs-feat-wm" aria-hidden="true">"</span>
-            <h3 class="cs-feat-headline">What Feels Right.</h3>
-          </div>
-          <div class="cs-story__feat-grid">
-            <div class="cs-story__feat-text">
-              <p class="cs-story__body">Going into the situation I honestly questioned the necessity and value of a real estate agent — with online resources and public access to information, we considered tackling the task on our own. That would have been a mistake. You both helped us clarify our wants, needs and wishes, formulated a plan that made sense with our lifestyle, and took care of the endless details that make or break a deal.</p>
-              <p class="cs-story__body">At a point where I expected us to collectively throw in the towel, you asked us if we really wanted this house. When we said yes, you showed resolve and determination that surpassed even our own — and it was our vision. Thanks to your ability and persistence, we are now raising our family in our dream home and thankful every day for your help.</p>
-              <footer class="cs-story__attr">
-                <div class="cs-story__name">Derek Moorse &amp; Alicia Dusil</div>
-                <div class="cs-story__role">Buyers · Burlington</div>
-              </footer>
-            </div>
-            <figure class="cs-story__fig cs-story__fig--feat" aria-hidden="true">
-              <img src="assets/Derek-Moorse-Alicia-Dusil.webp" alt="" loading="lazy">
-            </figure>
-          </div>
-        </article>
-
-        <!-- Story 03 — George Arrendondo & Nancy Santana -->
+        <!-- Story 02 — George Arrendondo & Nancy Santana -->
         <article class="cs-story cs-story--b reveal">
           <figure class="cs-story__fig" aria-hidden="true">
             <img src="assets/George-Arrendondo-Nancy-Santana.webp" alt="" loading="lazy">
           </figure>
           <div class="cs-story__content">
             <div class="cs-story__label">
-              <span class="cs-story__num">03</span>
+              <span class="cs-story__num">02</span>
               <span class="cs-story__sep">—</span>
               <span class="cs-story__tag">Hamilton · New Beginnings</span>
             </div>
@@ -3262,8 +3390,9 @@
           </div>
         </article>
 
-        <!-- Trust tagline -->
-        <p class="cs-trust">Trusted by buyers, sellers and families across Hamilton, Burlington, Waterdown and beyond.</p>
+        <div class="cs-more reveal">
+          <a href="contact.html" class="cs-more__link editorial-cta">Read more client stories <span aria-hidden="true">→</span></a>
+        </div>
 
       </div><!-- /cs-inner -->
     </section>
