@@ -2497,6 +2497,179 @@
         display: none !important;
       }
     }
+
+    /* ─── Single-column editorial: mobile + tablet (≤1200px) ─── */
+    @media (max-width: 1200px) {
+
+      /* Section: reset desktop flex/height centering, let content stack naturally */
+      body.home-page .cm-section {
+        display: block !important;      /* was display:flex on desktop */
+        height: auto !important;        /* was fixed height (e.g. 100vh) on desktop */
+        padding: 40px 0 0 !important;
+        overflow: hidden !important;
+      }
+
+      /* Inner: single column, no gaps, full width */
+      body.home-page .cm-inner {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        position: static !important;
+        height: auto !important;
+        max-width: 100% !important;
+      }
+
+      /* Left column: comfortable reading width, left-aligned */
+      body.home-page .cm-left {
+        padding: 0 24px !important;
+        max-width: 640px !important;
+        z-index: 1 !important;
+        isolation: auto !important;
+        order: 1 !important; /* text before map */
+        justify-content: flex-start !important;
+      }
+
+      /* Disable all overlays */
+      body.home-page .cm-section::before,
+      body.home-page .cm-section::after,
+      body.home-page .cm-left::after {
+        display: none !important;
+      }
+
+      /* Heading: larger, tighter leading */
+      body.home-page .cm-heading {
+        font-size: clamp(2.6rem, 9.5vw, 3.4rem) !important;
+        margin: 10px 0 14px !important;
+        line-height: 0.95 !important;
+        max-width: none !important;
+      }
+
+      /* Body copy */
+      body.home-page .cm-copy {
+        font-size: 0.95rem !important;
+        line-height: 1.58 !important;
+        max-width: none !important;
+        margin-bottom: 14px !important;
+      }
+
+      /* Reorder flex children: header → CTA → Current Focus */
+      body.home-page .cm-header {
+        order: 1 !important;
+      }
+      body.home-page .cm-cta {
+        order: 2 !important;
+      }
+
+      /* Current Focus: compact editorial block — tighter spacing than desktop */
+      body.home-page .cm-insight {
+        order: 3 !important;
+        width: 100% !important;
+        margin-top: 16px !important;
+        margin-bottom: 20px !important;
+        padding: 14px 0 0 !important;
+      }
+
+      /* Map panel: true full-bleed, breaks out of any padded ancestor */
+      body.home-page .cm-map-panel {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 100vw !important;
+        max-width: none !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+        height: clamp(560px, 62vh, 760px) !important;
+        overflow: hidden !important;
+        display: block !important;
+        z-index: auto !important;
+        order: 2 !important;
+      }
+
+      /* Map frame: fill the panel exactly, no mask, no left-edge fade */
+      body.home-page .cm-map-frame {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        transform: none !important;
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+      }
+
+      /* Map stage: centered, 108% tall to clip bottom lake, guaranteed full-bleed.
+         aspect-ratio drives width when it resolves correctly (≈1295px at min height).
+         min-width: 100vw is a safety net — if aspect-ratio fails in any browser,
+         the stage still covers the full viewport width with zero cream gap. */
+      body.home-page .cm-map-stage {
+        position: absolute !important;
+        top: 0 !important;
+        left: 50% !important;
+        height: 108% !important;
+        width: auto !important;
+        min-width: 100vw !important;
+        aspect-ratio: 1537 / 664 !important;
+        transform: translateX(-50%) !important;
+      }
+
+      /* Map image: height-driven scaling fills the stage exactly */
+      body.home-page .cm-map-image {
+        height: 100% !important;
+        width: auto !important;
+        object-fit: fill !important;
+      }
+
+      /* SVG connector lines: hidden at this size */
+      body.home-page .cm-svg {
+        display: none !important;
+      }
+
+      /* Show all marker labels */
+      body.home-page .cm-map-marker:not(.is-active) .cm-map-marker__label {
+        display: block !important;
+      }
+
+      /* All markers fully visible */
+      body.home-page .cm-map-marker {
+        opacity: 1 !important;
+      }
+      body.home-page .cm-section.has-active .cm-map-marker:not(.is-active) {
+        opacity: 1 !important;
+      }
+
+      /* Burlington label: push higher to clear "Lake Ontario" map-image text */
+      body.home-page .cm-map-marker[data-community="burlington"] {
+        --label-y: -28px !important;
+      }
+    }
+
+    /* ─── Mid-tablet map nudge (481px–850px): shift east to keep Oakville visible ─── */
+    /* left:40% centers on x≈0.59 (between FL and OAK) — all 6 cities fit at 768px+  */
+    /* min-width:120vw = safety net: for left:40%, stage must be ≥120% wide to reach  */
+    /* the right panel edge (20% overhang required on the right side).                 */
+    @media (min-width: 481px) and (max-width: 850px) {
+      body.home-page .cm-map-stage {
+        left: 40% !important;
+        min-width: 120vw !important;
+        transform: translateX(-50%) !important;
+      }
+    }
+
+    /* ─── Narrow phone refinement (≤480px) ─────────────────────────── */
+    /* left:47% keeps FL/WD/HAM/BUR in frame. min-width:106vw is the safety net:     */
+    /* for left:47%, stage must be ≥106% wide to reach the right panel edge.          */
+    @media (max-width: 480px) {
+      body.home-page .cm-map-stage {
+        left: 47% !important;
+        min-width: 106vw !important;
+        transform: translateX(-50%) !important;
+      }
+      body.home-page .cm-left {
+        max-width: 100% !important;
+        padding: 0 20px !important;
+      }
+    }
   </style>
 </head>
 <body class="home-page">
