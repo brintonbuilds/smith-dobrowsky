@@ -2703,7 +2703,6 @@
       line-height: 1.72 !important;
     }
 
-    body.home-page .cm-cta,
     body.home-page .cm-insight__link {
       width: fit-content !important;
       padding-bottom: 0 !important;
@@ -2717,12 +2716,6 @@
       transition: color 180ms ease, text-decoration-color 180ms ease !important;
     }
 
-    body.home-page .cm-cta {
-      margin-top: clamp(26px, 3vw, 40px) !important;
-    }
-
-    body.home-page .cm-cta:hover,
-    body.home-page .cm-cta:focus-visible,
     body.home-page .cm-insight__link:hover,
     body.home-page .cm-insight__link:focus-visible {
       color: #08182e !important;
@@ -2733,7 +2726,7 @@
 
     body.home-page .cm-insight {
       width: min(280px, 100%) !important;
-      margin-top: clamp(20px, 2.2vw, 30px) !important;
+      margin-top: clamp(26px, 3vw, 42px) !important;
       margin-bottom: 0 !important;
       padding: 0 !important;
       border: 0 !important;
@@ -2749,7 +2742,7 @@
     }
 
     body.home-page .cm-insight__prompt {
-      margin-bottom: 10px !important;
+      margin-bottom: 9px !important;
       color: rgba(31, 42, 62, 0.48) !important;
       font-size: clamp(0.55rem, 0.56vw, 0.61rem) !important;
       font-weight: 600 !important;
@@ -2759,7 +2752,7 @@
     }
 
     body.home-page .cm-insight__name {
-      margin-bottom: 10px !important;
+      margin-bottom: 9px !important;
       color: #111d33 !important;
       font-size: clamp(1.28rem, 1.38vw, 1.56rem) !important;
       font-weight: 500 !important;
@@ -2775,7 +2768,7 @@
 
     body.home-page .cm-insight__link {
       gap: 16px !important;
-      margin-top: 14px !important;
+      margin-top: 18px !important;
     }
 
     @media (max-width: 1200px) {
@@ -2800,13 +2793,9 @@
         line-height: 1.7 !important;
       }
 
-      body.home-page .cm-cta {
-        margin-top: 24px !important;
-      }
-
       body.home-page .cm-insight {
         width: min(310px, 100%) !important;
-        margin-top: 20px !important;
+        margin-top: 26px !important;
         margin-bottom: 18px !important;
         padding: 0 !important;
       }
@@ -2822,7 +2811,7 @@
       }
 
       body.home-page .cm-insight {
-        margin-top: 18px !important;
+        margin-top: 24px !important;
         margin-bottom: 20px !important;
       }
     }
@@ -3025,13 +3014,11 @@
             <p class="cm-copy editorial-body">Every community has its own rhythm—streets that move quickly, pockets buyers wait for, and details that change value.<br><br>Geoff helps clients read those signals before they make a move.</p>
           </header>
 
-          <a class="cm-cta editorial-cta" href="communities.html">Explore communities <span aria-hidden="true">&#8594;</span></a>
-
           <aside class="cm-insight" aria-live="polite" aria-atomic="true">
             <p class="cm-insight__prompt meta-label">Current focus</p>
             <h3 class="cm-insight__name">Burlington</h3>
             <p class="cm-insight__line">Lakefront neighbourhoods, family streets, commuter access, and pricing nuance that changes block by block.</p>
-            <a class="cm-insight__link editorial-cta" href="communities.html#burlington">Explore <span aria-hidden="true">&#8594;</span></a>
+            <a class="cm-insight__link editorial-cta" href="communities.html#burlington">Explore Burlington <span aria-hidden="true">&#8594;</span></a>
           </aside>
         </div>
 
@@ -3629,7 +3616,7 @@
         if (lineEl) lineEl.textContent = data[name].line;
         if (linkEl) {
           linkEl.href = data[name].href;
-          linkEl.innerHTML = 'Explore <span aria-hidden="true">&#8594;</span>';
+          linkEl.innerHTML = 'Explore ' + data[name].name + ' <span aria-hidden="true">&#8594;</span>';
         }
         insightEl.classList.remove('is-updating');
       }, FADE_MS);
