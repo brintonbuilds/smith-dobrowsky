@@ -3133,12 +3133,12 @@
         <div class="meet-team__content meet-editorial__content">
           <span class="meet-team__eyebrow editorial-eyebrow">Burlington &amp; Hamilton Realtors® · Since 2006</span>
           <h2 class="meet-team__heading editorial-heading">
-            <span class="meet-heading-line">Real estate</span><span class="meet-heading-line"> is personal.</span><br>
+            <span class="meet-heading-line">Real estate</span><span class="meet-heading-line">is personal.</span><br>
             <em>So is our approach.</em>
           </h2>
-          <p class="meet-team__body editorial-body">Buying or selling is rarely just about the property.</p>
-          <p class="meet-team__body editorial-body">It comes with timing, pressure, family decisions, and a lot of uncertainty. Geoff and Katrinna help clients slow things down, understand their options, and move forward with confidence.</p>
-          <a href="hero.html" class="meet-team__cta editorial-cta">How we work</a>
+          <p class="meet-team__body editorial-body">Buying or selling is rarely just about the property.
+          It comes with timing, pressure, family decisions, and a lot of uncertainty. Geoff and Katrinna help clients slow things down, understand their options, and <strong>move forward with confidence.</strong></p>
+          <a href="hero.html" class="meet-team__cta editorial-cta">How We Work</a>
         </div>
 
       </div>
@@ -3237,8 +3237,8 @@
         <div class="cm-left reveal">
           <header class="cm-header">
             <div class="cm-eyebrow editorial-eyebrow">Neighbourhood Expertise</div>
-            <h2 class="cm-heading editorial-heading" id="cm-heading">Local insight,<br><em>street by street.</em></h2>
-            <p class="cm-copy editorial-body">Every community has its own rhythm—streets that move quickly, pockets buyers wait for, and details that change value. Geoff helps clients read those signals before they make a move.</p>
+            <h2 class="cm-heading editorial-heading" id="cm-heading">Local insight.<br><em>Street by street.</em></h2>
+            <p class="cm-copy editorial-body">Every community has its own rhythm. Streets that move quickly, pockets buyers wait for, and details that change value. Geoff helps clients read those signals before they make a move.</p>
           </header>
 
           <aside class="cm-insight" aria-live="polite" aria-atomic="true">
@@ -3475,54 +3475,64 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         CTA BAND
+         CLOSING CTA
     ══════════════════════════════════════ -->
-    <section class="cta-band reveal">
-      <h2 class="cta-band__heading editorial-heading">Ready to Find Your Next Home?</h2>
-      <p class="cta-band__sub editorial-body">Let's start a conversation about what matters most to you.</p>
-      <a href="contact.html" class="btn-navy btn-inline editorial-cta">Free home evaluation</a>
+    <section class="closing-cta reveal" aria-label="A thoughtful next step">
+      <div class="closing-cta__inner">
+
+        <div class="closing-cta__left">
+          <p class="closing-cta__eyebrow editorial-eyebrow">A Thoughtful Next Step</p>
+          <h2 class="closing-cta__heading editorial-heading">The right move starts<br>with a conversation.</h2>
+        </div>
+
+        <div class="closing-cta__right">
+          <p class="closing-cta__body editorial-body">You don't need to have everything figured out. Whether you're buying, selling, relocating, or simply exploring what comes next, Geoff and Katrinna will help you understand your options and move with confidence.</p>
+          <a href="contact.html" class="closing-cta__link">Start the conversation <span aria-hidden="true">→</span></a>
+          <p class="closing-cta__trust">Helping people move with confidence since 2006.</p>
+          <p class="closing-cta__signature">— Geoff &amp; Katrinna<span>The Smith Dobrowsky Team</span></p>
+        </div>
+
+      </div>
     </section>
 
   </main>
 
   <!-- ── Footer ── -->
   <footer class="footer">
-    <div class="footer__top">
-      <div>
-        <div class="footer__brand">
-          <div class="footer__logo-mark"><span>SD</span></div>
-          <div>
-            <div class="footer__wordmark-the">The</div>
-            <div class="footer__wordmark-name">Smith Dobrowsky</div>
-            <div class="footer__wordmark-team">Team</div>
-          </div>
-        </div>
-        <p class="footer__tagline">Premium real estate services for Waterdown, Burlington, Flamborough, Hamilton, Milton &amp; Oakville.</p>
-      </div>
-      <div class="footer__cols">
+
+    <!-- Main bar: brand · nav · contact -->
+    <div class="footer__bar">
+
+      <div class="footer__brand">
+        <div class="footer__logo-mark"><span>SD</span></div>
         <div>
-          <div class="footer__col-title">Quick Links</div>
-          <a href="listings.html" class="footer__col-link">Listings</a>
-          <a href="about.html"    class="footer__col-link">About Us</a>
-          <a href="communities.html" class="footer__col-link">Communities</a>
-          <a href="contact.html"     class="footer__col-link">Testimonials</a>
-          <a href="contact.html"     class="footer__col-link">Contact</a>
-        </div>
-        <div>
-          <div class="footer__col-title">Communities</div>
-          <a href="communities.html#waterdown"   class="footer__col-link">Waterdown</a>
-          <a href="communities.html#burlington"  class="footer__col-link">Burlington</a>
-          <a href="communities.html#hamilton"    class="footer__col-link">Hamilton</a>
-          <a href="communities.html#flamborough" class="footer__col-link">Flamborough</a>
-          <a href="communities.html#milton"      class="footer__col-link">Milton</a>
-          <a href="communities.html#oakville"    class="footer__col-link">Oakville</a>
+          <div class="footer__wordmark-the">The</div>
+          <div class="footer__wordmark-name">Smith Dobrowsky</div>
+          <div class="footer__wordmark-team">Team</div>
         </div>
       </div>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="listings.html"    class="footer__nav-link">Listings</a>
+        <a href="about.html"       class="footer__nav-link">About</a>
+        <a href="communities.html" class="footer__nav-link">Communities</a>
+        <a href="contact.html"     class="footer__nav-link">Testimonials</a>
+        <a href="contact.html"     class="footer__nav-link">Contact</a>
+      </nav>
+
+      <div class="footer__contact">
+        <span class="footer__contact-label">Call or text</span>
+        <a href="tel:9056393355" class="footer__contact-phone">905.639.3355</a>
+      </div>
+
     </div>
-    <div class="footer__bottom">
-      <span class="footer__legal">© 2026 The Smith Dobrowsky Team. All rights reserved. Real estate services in Ontario.</span>
+
+    <!-- Legal bar -->
+    <div class="footer__legal-bar">
+      <span class="footer__legal">© 2026 · Ontario, Canada · Premium real estate services</span>
       <span class="footer__legal">MLS® · REALTORS® · <a href="#" class="footer__legal-link">Privacy Policy</a></span>
     </div>
+
   </footer>
 
   <script src="js/main.js"></script>
