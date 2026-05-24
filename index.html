@@ -2263,7 +2263,7 @@
       width: auto !important;
       min-width: 100% !important;
       height: 100% !important;
-      aspect-ratio: 1537 / 664 !important;
+      aspect-ratio: 1682 / 935 !important;
       transform: translateX(-60%) !important;
       transform-origin: center center !important;
     }
@@ -2598,25 +2598,25 @@
         mask-image: none !important;
       }
 
-      /* Map stage: centered, 108% tall to clip bottom lake, guaranteed full-bleed.
-         aspect-ratio drives width when it resolves correctly (≈1295px at min height).
-         min-width: 100vw is a safety net — if aspect-ratio fails in any browser,
-         the stage still covers the full viewport width with zero cream gap. */
+      /* Map stage: the image and marker layer share the PNG's native coordinate system.
+         All cropping happens by moving this single layer, so markers stay attached. */
       body.home-page .cm-map-stage {
         position: absolute !important;
         top: 0 !important;
         left: 50% !important;
-        height: 108% !important;
+        height: 100% !important;
         width: auto !important;
         min-width: 100vw !important;
-        aspect-ratio: 1537 / 664 !important;
+        aspect-ratio: 1682 / 935 !important;
         transform: translateX(-50%) !important;
       }
 
-      /* Map image: height-driven scaling fills the stage exactly */
+      /* Map image: fill the exact same stage the markers use */
       body.home-page .cm-map-image {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
         height: 100% !important;
-        width: auto !important;
         object-fit: fill !important;
       }
 
@@ -2644,25 +2644,20 @@
       }
     }
 
-    /* ─── Mid-tablet map nudge (481px–850px): shift east to keep Oakville visible ─── */
-    /* left:40% centers on x≈0.59 (between FL and OAK) — all 6 cities fit at 768px+  */
-    /* min-width:120vw = safety net: for left:40%, stage must be ≥120% wide to reach  */
-    /* the right panel edge (20% overhang required on the right side).                 */
+    /* ─── Mid-tablet map nudge (481px–850px): shift east while moving the whole layer ─── */
     @media (min-width: 481px) and (max-width: 850px) {
       body.home-page .cm-map-stage {
-        left: 40% !important;
-        min-width: 120vw !important;
+        left: 45% !important;
+        min-width: 122vw !important;
         transform: translateX(-50%) !important;
       }
     }
 
     /* ─── Narrow phone refinement (≤480px) ─────────────────────────── */
-    /* left:47% keeps FL/WD/HAM/BUR in frame. min-width:106vw is the safety net:     */
-    /* for left:47%, stage must be ≥106% wide to reach the right panel edge.          */
     @media (max-width: 480px) {
       body.home-page .cm-map-stage {
-        left: 47% !important;
-        min-width: 106vw !important;
+        left: 46% !important;
+        min-width: 122vw !important;
         transform: translateX(-50%) !important;
       }
       body.home-page .cm-left {
