@@ -8,8 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet" />
-  <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js" defer></script>
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="stylesheet" href="css/styles.css?v=20260523-mobile" />
   <link rel="stylesheet" href="css/nav.css?v=20260523-mobile" />
@@ -2334,153 +2332,15 @@
       }
     }
 
-    /* ── Mapbox GL editorial map ──────────────────────────────────── */
-
-    /* Strip all default Mapbox chrome */
-    .mapboxgl-ctrl-logo            { display: none !important; }
-    .mapboxgl-ctrl-attrib-inner    { display: none !important; }
-    .mapboxgl-ctrl-attrib          { background: transparent !important; box-shadow: none !important; }
-    .mapboxgl-ctrl-attrib-button   { display: none !important; }
-    .mapboxgl-ctrl-bottom-right    { bottom: 6px !important; right: 8px !important; opacity: 0.28 !important; }
-    .mapboxgl-canvas               { cursor: default !important; }
-    .mapboxgl-canvas-container,
-    .mapboxgl-canvas               { width: 100% !important; height: 100% !important; }
-
-    /* Map div fills the panel */
-    body.home-page #cm-mapbox {
+    body.home-page .cm-map-marker-layer {
       position: absolute !important;
       inset: 0 !important;
-      opacity: 0 !important;
-      transition: opacity 220ms ease !important;
-    }
-
-    body.home-page .cm-map-panel.is-mapbox-ready #cm-mapbox {
-      opacity: 1 !important;
-    }
-
-    /* Left editorial fade — map tiles bleed into the content column */
-    body.home-page .cm-map-fade {
-      position: absolute !important;
-      inset: 0 !important;
-      z-index: 2 !important;
-      pointer-events: none !important;
-      background: linear-gradient(
-        to right,
-        rgba(238,233,225,1.00)  0%,
-        rgba(238,233,225,0.90)  5%,
-        rgba(238,233,225,0.52) 14%,
-        rgba(238,233,225,0.16) 22%,
-        transparent            30%
-      ) !important;
-    }
-
-    /* Marker layer sits above the fade */
-    body.home-page .cm-mbox-markers {
-      position: absolute !important;
-      inset: 0 !important;
-      z-index: 4 !important;
+      z-index: 3 !important;
       pointer-events: none !important;
     }
 
-    /* Individual markers */
-    body.home-page .cm-mbox-marker {
-      position: absolute !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 8px !important;
-      padding: 0 !important;
-      border: 0 !important;
-      background: transparent !important;
-      color: rgba(17,29,51,0.50) !important;
-      font-family: var(--font-sans) !important;
-      font-size: clamp(0.54rem, 0.60vw, 0.64rem) !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.18em !important;
-      line-height: 1 !important;
-      text-transform: uppercase !important;
-      white-space: nowrap !important;
-      cursor: pointer !important;
-      opacity: 0.72 !important;
+    body.home-page .cm-map-marker-layer .cm-map-marker {
       pointer-events: auto !important;
-      transform: translate(-50%, -50%) !important;
-      transition: opacity 180ms ease, color 180ms ease !important;
-      z-index: 1 !important;
-    }
-
-    body.home-page .cm-mbox-dot {
-      display: block !important;
-      flex: 0 0 8px !important;
-      width: 8px !important;
-      height: 8px !important;
-      border-radius: 999px !important;
-      background: #9e9a94 !important;
-      border: 1.5px solid rgba(248,245,239,0.92) !important;
-      box-shadow: 0 2px 7px rgba(17,29,51,0.10) !important;
-      transition:
-        width 180ms ease,
-        height 180ms ease,
-        flex-basis 180ms ease,
-        background 180ms ease,
-        border-color 180ms ease,
-        box-shadow 180ms ease !important;
-    }
-
-    body.home-page .cm-mbox-label {
-      text-shadow:
-        0 1px 10px rgba(238,233,225,0.98),
-        0 0   6px rgba(238,233,225,0.88) !important;
-    }
-
-    /* Flipped label — near right edge */
-    body.home-page .cm-mbox-marker--flip {
-      flex-direction: row-reverse !important;
-    }
-
-    /* Active community — dim all others */
-    body.home-page .cm-section.has-active .cm-mbox-marker:not(.is-active) {
-      opacity: 0.42 !important;
-      color: rgba(17,29,51,0.38) !important;
-    }
-
-    /* Active / hover / focus */
-    body.home-page .cm-mbox-marker:hover,
-    body.home-page .cm-mbox-marker:focus-visible,
-    body.home-page .cm-mbox-marker.is-active {
-      opacity: 1 !important;
-      color: #07172d !important;
-      z-index: 5 !important;
-    }
-
-    body.home-page .cm-mbox-marker:hover .cm-mbox-dot,
-    body.home-page .cm-mbox-marker:focus-visible .cm-mbox-dot,
-    body.home-page .cm-mbox-marker.is-active .cm-mbox-dot {
-      flex-basis: 11px !important;
-      width: 11px !important;
-      height: 11px !important;
-      background: #07172d !important;
-      border-color: rgba(248,245,239,0.98) !important;
-      box-shadow: 0 3px 12px rgba(7,23,45,0.22) !important;
-    }
-
-    body.home-page .cm-mbox-marker.is-active .cm-mbox-label {
-      font-weight: 800 !important;
-    }
-
-    /* Mobile — no left fade, simpler labels */
-    @media (max-width: 1100px) {
-      body.home-page .cm-map-fade {
-        background: none !important;
-      }
-      body.home-page .cm-mbox-marker {
-        font-size: 0.55rem !important;
-        letter-spacing: 0.13em !important;
-      }
-    }
-
-    @media (max-width: 620px) {
-      body.home-page .cm-mbox-marker:not(.is-active) .cm-mbox-label {
-        display: none !important;
-      }
     }
   </style>
 </head>
@@ -2692,9 +2552,12 @@
         </div>
 
         <div class="cm-map-panel reveal" aria-label="Interactive map of Burlington, Hamilton, Oakville, Milton, Waterdown and Flamborough">
-          <div id="cm-mapbox"></div>
-          <div class="cm-map-fade" aria-hidden="true"></div>
-          <div class="cm-mbox-markers" role="group" aria-label="Community markers"></div>
+          <div class="cm-map-frame">
+            <div class="cm-map-stage">
+              <img class="cm-map-image" src="assets/halton-hamilton-map.png" alt="" loading="lazy" decoding="async" />
+              <div class="cm-map-marker-layer" role="group" aria-label="Community markers"></div>
+            </div>
+          </div>
           <svg class="cm-svg" viewBox="0 0 680 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Editorial map of Burlington, Hamilton, Waterdown, Flamborough, Oakville and Milton" aria-hidden="true">
             <desc>Lake Ontario, quiet route lines and relative community positions for Burlington, Hamilton, Waterdown, Flamborough, Oakville and Milton.</desc>
             <defs>
@@ -3196,194 +3059,62 @@
 </script>
 
 <script>
-/* ── Communities — Mapbox GL editorial map ────────────────────────── */
+/* Communities — image atlas map */
 (function () {
   'use strict';
 
-  /* Wait for Mapbox GL JS to be ready (loaded with defer) */
   function init() {
     var section = document.querySelector('.cm-section');
     if (!section) return;
 
-    if (typeof mapboxgl === 'undefined' || !mapboxgl.supported()) {
-      /* WebGL unavailable — section still shows with insight card */
-      return;
-    }
-
-    /* ── Community narrative data ── */
     var data = {
-      burlington:  { name: 'Burlington',  line: 'Lakefront neighbourhoods, family streets, commuter access, and pricing nuance that changes block by block.',  href: 'communities.html#burlington'  },
-      hamilton:    { name: 'Hamilton',    line: 'A street-by-street market where character, condition, and pricing strategy can change the outcome quickly.',   href: 'communities.html#hamilton'    },
-      waterdown:   { name: 'Waterdown',   line: 'Village pace, escarpment access, and small shifts in lot, street, and timing.',                                href: 'communities.html#waterdown'   },
-      flamborough: { name: 'Flamborough', line: 'Larger lots, rural calm, and lifestyle buyers who compare differently.',                                       href: 'communities.html#flamborough' },
-      oakville:    { name: 'Oakville',    line: 'School demand, strong presentation standards, and little room for average.',                                   href: 'communities.html#oakville'    },
-      milton:      { name: 'Milton',      line: 'Family demand, commuter appeal, and newer pockets where timing matters.',                                      href: 'communities.html#milton'      }
+      burlington:  { name: 'Burlington',  line: 'Lakefront neighbourhoods, family streets, commuter access, and pricing nuance that changes block by block.', href: 'communities.html#burlington' },
+      hamilton:    { name: 'Hamilton',    line: 'A street-by-street market where character, condition, and pricing strategy can change the outcome quickly.', href: 'communities.html#hamilton' },
+      waterdown:   { name: 'Waterdown',   line: 'Village pace, escarpment access, and small shifts in lot, street, and timing.', href: 'communities.html#waterdown' },
+      flamborough: { name: 'Flamborough', line: 'Larger lots, rural calm, and lifestyle buyers who compare differently.', href: 'communities.html#flamborough' },
+      oakville:    { name: 'Oakville',    line: 'School demand, strong presentation standards, and little room for average.', href: 'communities.html#oakville' },
+      milton:      { name: 'Milton',      line: 'Family demand, commuter appeal, and newer pockets where timing matters.', href: 'communities.html#milton' }
     };
 
-    /* ── City coordinates ── */
     var cities = {
-      burlington:  { lng: -79.7990, lat: 43.3255 },
-      hamilton:    { lng: -79.8711, lat: 43.2557 },
-      oakville:    { lng: -79.6877, lat: 43.4675 },
-      milton:      { lng: -79.8774, lat: 43.5183 },
-      waterdown:   { lng: -79.8910, lat: 43.3339 },
-      flamborough: { lng: -80.0265, lat: 43.3896 }
+      flamborough: { x: 0.395, y: 0.385, labelX: 14, labelY: -12 },
+      waterdown:   { x: 0.545, y: 0.438, labelX: 14, labelY: -12 },
+      milton:      { x: 0.720, y: 0.165, labelX: 14, labelY: -12 },
+      hamilton:    { x: 0.505, y: 0.835, labelX: -96, labelY: -12 },
+      burlington:  { x: 0.635, y: 0.575, labelX: 16, labelY: -12 },
+      oakville:    { x: 0.790, y: 0.315, labelX: -92, labelY: -12 }
     };
 
-    /* ── DOM refs ── */
-    var mapPanel    = section.querySelector('.cm-map-panel');
-    var markerLayer = section.querySelector('.cm-mbox-markers');
-    var insightEl   = section.querySelector('.cm-insight');
-    var nameEl      = section.querySelector('.cm-insight__name');
-    var lineEl      = section.querySelector('.cm-insight__line');
-    var linkEl      = section.querySelector('.cm-insight__link');
-    var current     = null;
-    var FADE_MS     = 190;
-    var markerEls   = {};
-    var raf         = null;
+    var markerLayer = section.querySelector('.cm-map-marker-layer');
+    var insightEl = section.querySelector('.cm-insight');
+    var nameEl = section.querySelector('.cm-insight__name');
+    var lineEl = section.querySelector('.cm-insight__line');
+    var linkEl = section.querySelector('.cm-insight__link');
+    var current = null;
+    var tourInterval = null;
+    var tourOrder = ['burlington', 'hamilton', 'waterdown', 'flamborough', 'milton', 'oakville'];
+    var FADE_MS = 190;
+    var markerEls = {};
 
-    /* ── Mapbox init ── */
-    var mapboxTokenEl = document.querySelector('meta[name="mapbox-token"]');
-    var fallbackMapboxToken = [
-      'pk.',
-      'eyJ1IjoiYnJpbnRvbmJ1aWxkcyIs',
-      'ImEiOiJjbXBpcGdyMDAxZjFnMnBwb3o4ZjduYzN4In0',
-      '.',
-      'z9ypkIiPLtIRkiSFYxsAkw'
-    ].join('');
-    var mapboxToken = mapboxTokenEl ? mapboxTokenEl.content.trim() : fallbackMapboxToken;
-    if (!mapboxToken) {
-      mapPanel.classList.add('cm-map-panel--fallback');
-      return;
-    }
-    mapboxgl.accessToken = mapboxToken;
-
-    var MAP_CENTER  = [-79.83, 43.39];
-    var MAP_ZOOM    = 10.2;
-
-    /* Editorial colour palette */
-    var C = {
-      land:      '#f0ebe0',
-      landAlt:   '#ece7dc',
-      park:      '#e6e1d6',
-      water:     '#c4d4dc',
-      waterEdge: '#a8bec8',
-      riverLine: '#b4c8d0',
-      rdMin:     '#e2ddd4',
-      rdStr:     '#dad5cb',
-      rdTer:     '#d0cbbf',
-      rdSec:     '#c6c1b4',
-      rdPri:     '#bab5a8',
-      rdMwy:     '#aeaaa0',
-      building:  '#e6e1d6'
-    };
-
-    var map = new mapboxgl.Map({
-      container: 'cm-mapbox',
-      style: {
-        version: 8,
-        glyphs: 'mapbox://fonts/mapbox/{fontstack}/{range}',
-        sources: {
-          atlas: {
-            type: 'image',
-            url: 'assets/halton-hamilton-map.jpg',
-            coordinates: [
-              [-80.12, 43.62],
-              [-79.48, 43.62],
-              [-79.48, 43.16],
-              [-80.12, 43.16]
-            ]
-          },
-          s: { type: 'vector', url: 'mapbox://mapbox.mapbox-streets-v8' }
-        },
-        layers: [
-          /* Land */
-          { id: 'bg',       type: 'background', paint: { 'background-color': C.land } },
-          { id: 'atlas',    type: 'raster', source: 'atlas',
-            paint: { 'raster-opacity': 0.98, 'raster-contrast': 0.04, 'raster-saturation': -0.05 } },
-          /* Landuse tones */
-          { id: 'lu-res',   type: 'fill', source: 's', 'source-layer': 'landuse',
-            filter: ['==', ['get','class'], 'residential'],
-            paint: { 'fill-color': C.landAlt, 'fill-opacity': 0.55 } },
-          { id: 'lu-park',  type: 'fill', source: 's', 'source-layer': 'landuse',
-            filter: ['in', ['get','class'], ['literal', ['park','pitch','golf_course','cemetery','agriculture','wood','scrub']]],
-            paint: { 'fill-color': C.park, 'fill-opacity': 0.65 } },
-          /* Water */
-          { id: 'water',    type: 'fill', source: 's', 'source-layer': 'water',
-            paint: { 'fill-color': C.water, 'fill-antialias': true } },
-          { id: 'waterway', type: 'line', source: 's', 'source-layer': 'waterway',
-            paint: { 'line-color': C.riverLine,
-                     'line-width': ['interpolate',['linear'],['zoom'],8,0.4,13,2.0] } },
-          { id: 'watedge',  type: 'line', source: 's', 'source-layer': 'water',
-            paint: { 'line-color': C.waterEdge, 'line-width': 0.5, 'line-opacity': 0.5 } },
-          /* Roads — painted lightest to heaviest */
-          { id: 'rd-min',   type: 'line', source: 's', 'source-layer': 'road',
-            filter: ['in', ['get','class'], ['literal', ['path','track','pedestrian','service','street_limited']]],
-            layout: { 'line-cap': 'round', 'line-join': 'round' },
-            paint: { 'line-color': C.rdMin, 'line-width': ['interpolate',['linear'],['zoom'],9,0.2,13,0.9] } },
-          { id: 'rd-str',   type: 'line', source: 's', 'source-layer': 'road',
-            filter: ['==', ['get','class'], 'street'],
-            layout: { 'line-cap': 'round', 'line-join': 'round' },
-            paint: { 'line-color': C.rdStr, 'line-width': ['interpolate',['linear'],['zoom'],9,0.4,13,1.4] } },
-          { id: 'rd-ter',   type: 'line', source: 's', 'source-layer': 'road',
-            filter: ['in', ['get','class'], ['literal', ['tertiary','tertiary_link']]],
-            layout: { 'line-cap': 'round', 'line-join': 'round' },
-            paint: { 'line-color': C.rdTer, 'line-width': ['interpolate',['linear'],['zoom'],9,0.5,13,1.8] } },
-          { id: 'rd-sec',   type: 'line', source: 's', 'source-layer': 'road',
-            filter: ['in', ['get','class'], ['literal', ['secondary','secondary_link']]],
-            layout: { 'line-cap': 'round', 'line-join': 'round' },
-            paint: { 'line-color': C.rdSec, 'line-width': ['interpolate',['linear'],['zoom'],9,0.7,13,2.2] } },
-          { id: 'rd-pri',   type: 'line', source: 's', 'source-layer': 'road',
-            filter: ['in', ['get','class'], ['literal', ['primary','primary_link','trunk','trunk_link']]],
-            layout: { 'line-cap': 'round', 'line-join': 'round' },
-            paint: { 'line-color': C.rdPri, 'line-width': ['interpolate',['linear'],['zoom'],9,1.0,13,3.0] } },
-          { id: 'rd-mwy',   type: 'line', source: 's', 'source-layer': 'road',
-            filter: ['in', ['get','class'], ['literal', ['motorway','motorway_link']]],
-            layout: { 'line-cap': 'round', 'line-join': 'round' },
-            paint: { 'line-color': C.rdMwy, 'line-width': ['interpolate',['linear'],['zoom'],9,1.4,13,4.0] } },
-          /* Buildings — only at close zoom */
-          { id: 'bldg',     type: 'fill', source: 's', 'source-layer': 'building', minzoom: 13,
-            paint: { 'fill-color': C.building, 'fill-opacity': 0.4 } }
-          /* No labels, no POIs, no symbols — editorial silence */
-        ]
-      },
-      center:      MAP_CENTER,
-      zoom:        MAP_ZOOM,
-      minZoom:     MAP_ZOOM,
-      maxZoom:     MAP_ZOOM,
-      bearing:     0,
-      pitch:       0,
-      interactive: false,          /* locks all viewport interactions */
-      attributionControl: false,
-      fadeDuration: 0              /* instant tile appearance */
-    });
-
-    /* Minimal required attribution */
-    map.addControl(new mapboxgl.AttributionControl({ compact: true }), 'bottom-right');
-
-    /* Prevent scroll hijacking on touch */
-    map.scrollZoom.disable();
-    map.boxZoom.disable();
-    map.dragRotate.disable();
-    map.dragPan.disable();
-    map.keyboard.disable();
-    map.doubleClickZoom.disable();
-    map.touchZoomRotate.disable();
-
-    /* ── Build marker elements ── */
     function buildMarkers() {
+      if (!markerLayer) return;
+      markerLayer.innerHTML = '';
+
       Object.keys(cities).forEach(function (name) {
         var info = data[name];
-        if (!info || !markerLayer) return;
+        var pos = cities[name];
+        if (!info || !pos) return;
 
         var el = document.createElement('button');
         el.type = 'button';
-        el.className = 'cm-mbox-marker';
+        el.className = 'cm-map-marker';
         el.setAttribute('data-community', name);
         el.setAttribute('aria-label', info.name);
-        el.innerHTML =
-          '<span class="cm-mbox-dot" aria-hidden="true"></span>' +
-          '<span class="cm-mbox-label">' + info.name + '</span>';
+        el.style.setProperty('--marker-x', (pos.x * 100).toFixed(2) + '%');
+        el.style.setProperty('--marker-y', (pos.y * 100).toFixed(2) + '%');
+        el.style.setProperty('--label-x', pos.labelX + 'px');
+        el.style.setProperty('--label-y', pos.labelY + 'px');
+        el.innerHTML = '<span class="cm-map-marker__dot" aria-hidden="true"></span><span class="cm-map-marker__label">' + info.name + '</span>';
 
         markerEls[name] = el;
         markerLayer.appendChild(el);
@@ -3391,54 +3122,34 @@
         function handle() { stopTour(); activate(name); }
         el.addEventListener('click', handle);
         el.addEventListener('mouseenter', handle);
+        el.addEventListener('focus', handle);
         el.addEventListener('keydown', function (e) {
           if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handle(); }
         });
       });
     }
 
-    /* ── Project lat/lng → pixel position inside the panel ── */
-    function placeMarkers() {
-      if (!map.isStyleLoaded()) return;
-      var panelW = (markerLayer && markerLayer.offsetWidth) || 800;
-      Object.keys(cities).forEach(function (name) {
-        var el = markerEls[name];
-        if (!el) return;
-        var pt = map.project([cities[name].lng, cities[name].lat]);
-        el.style.left = pt.x.toFixed(1) + 'px';
-        el.style.top  = pt.y.toFixed(1) + 'px';
-        el.classList.toggle('cm-mbox-marker--flip', pt.x > panelW * 0.80);
-      });
-    }
-
-    /* ── Activate a community ── */
     function activate(name) {
-      if (name === current) return;
-      if (!data[name]) return;
+      if (name === current || !data[name]) return;
       current = name;
-
       section.classList.add('has-active');
-      Object.keys(markerEls).forEach(function (k) {
-        markerEls[k].classList.toggle('is-active', k === name);
+
+      Object.keys(markerEls).forEach(function (key) {
+        markerEls[key].classList.toggle('is-active', key === name);
       });
 
-      if (insightEl) {
-        insightEl.classList.add('is-updating');
-        setTimeout(function () {
-          if (nameEl) nameEl.textContent = data[name].name;
-          if (lineEl) lineEl.textContent = data[name].line;
-          if (linkEl) {
-            linkEl.href = data[name].href;
-            linkEl.innerHTML = 'Explore ' + data[name].name + ' <span aria-hidden="true">&#8594;</span>';
-          }
-          insightEl.classList.remove('is-updating');
-        }, FADE_MS);
-      }
+      if (!insightEl) return;
+      insightEl.classList.add('is-updating');
+      setTimeout(function () {
+        if (nameEl) nameEl.textContent = data[name].name;
+        if (lineEl) lineEl.textContent = data[name].line;
+        if (linkEl) {
+          linkEl.href = data[name].href;
+          linkEl.innerHTML = 'Explore ' + data[name].name + ' <span aria-hidden="true">&#8594;</span>';
+        }
+        insightEl.classList.remove('is-updating');
+      }, FADE_MS);
     }
-
-    /* ── Auto-tour ── */
-    var tourInterval = null;
-    var tourOrder = ['burlington', 'hamilton', 'waterdown', 'flamborough', 'milton', 'oakville'];
 
     function startTour() {
       if (tourInterval) return;
@@ -3453,41 +3164,19 @@
       tourInterval = null;
     }
 
-    /* ── Resize ── */
-    function onResize() {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(function () {
-        map.resize();
-        placeMarkers();
-      });
-    }
+    buildMarkers();
+    activate('burlington');
+    setTimeout(startTour, 3000);
 
-    /* ── Boot sequence ── */
-    map.on('load', function () {
-      if (mapPanel) mapPanel.classList.add('is-mapbox-ready');
-      buildMarkers();
-      placeMarkers();
-      activate('burlington');
-      setTimeout(startTour, 3000);
-    });
-
-    map.on('idle', placeMarkers); /* accurate final placement after tiles settle */
-
-    window.addEventListener('resize', onResize);
-
-    if (mapPanel) {
-      mapPanel.addEventListener('mouseenter', stopTour);
-    }
+    var mapPanel = section.querySelector('.cm-map-panel');
+    if (mapPanel) mapPanel.addEventListener('mouseenter', stopTour);
   }
 
-  /* Mapbox GL JS loads with defer — run after DOM + scripts ready */
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
-    /* DOMContentLoaded already fired; wait one tick for deferred scripts */
-    setTimeout(init, 0);
+    init();
   }
-
 }());
 </script>
 </body>
