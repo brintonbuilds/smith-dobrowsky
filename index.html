@@ -1794,13 +1794,14 @@
       z-index: 6 !important;
       width: min(320px, 100%) !important;
       margin-top: clamp(30px, 4vw, 54px) !important;
-      padding: clamp(20px, 2vw, 28px) !important;
-      border: 1px solid rgba(132,113,88,0.18) !important;
-      border-radius: 15px !important;
-      background: rgba(249,246,240,0.84) !important;
-      box-shadow: 0 24px 58px rgba(44,34,22,0.14), 0 1px 0 rgba(255,255,255,0.68) inset !important;
-      backdrop-filter: blur(8px) saturate(1.02) !important;
-      -webkit-backdrop-filter: blur(8px) saturate(1.02) !important;
+      padding: clamp(18px, 1.8vw, 24px) 0 0 !important;
+      border: none !important;
+      border-top: 1px solid rgba(17, 29, 51, 0.14) !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
       transition: opacity 190ms ease !important;
     }
 
@@ -1849,7 +1850,7 @@
     body.home-page .cm-insight {
       width: min(320px, 100%) !important;
       margin-top: clamp(26px, 3vw, 38px) !important;
-      padding: clamp(18px, 1.7vw, 22px) !important;
+      padding: clamp(16px, 1.6vw, 22px) 0 0 !important;
     }
 
     body.home-page .cm-insight__prompt {
@@ -1879,11 +1880,9 @@
       display: block !important;
     }
 
-    /* Communities: illustrated image map, neutral architectural palette */
+    /* Communities: clean flat warm cream — no horizontal gradient drift */
     body.home-page .cm-section {
-      background:
-        radial-gradient(ellipse at 50% 52%, transparent 58%, rgba(15, 22, 32, 0.03) 100%),
-        linear-gradient(90deg, #eee9e1 0%, #f5f1ea 38%, #ede8df 100%) !important;
+      background: #ede8df !important;
     }
 
     body.home-page .cm-section::before {
@@ -2016,9 +2015,8 @@
     }
 
     body.home-page .cm-insight {
-      border-color: rgba(95, 101, 110, 0.18) !important;
-      background: rgba(248, 245, 239, 0.88) !important;
-      box-shadow: 0 18px 44px rgba(15, 23, 34, 0.1), 0 1px 0 rgba(255, 255, 255, 0.62) inset !important;
+      background: none !important;
+      box-shadow: none !important;
     }
 
     body.home-page .cm-insight__prompt {
@@ -2145,7 +2143,7 @@
     }
 
     body.home-page .cm-section.has-active .cm-map-marker:not(.is-active) {
-      opacity: 0.64 !important;
+      opacity: 1 !important;
     }
 
     body.home-page .cm-map-marker:hover,
@@ -2277,13 +2275,12 @@
     }
 
     body.home-page .cm-map-frame::after {
-      background:
-        linear-gradient(90deg, rgba(245,241,234,0.72) 0%, rgba(245,241,234,0.22) 6%, transparent 14%, transparent 100%) !important;
+      background: none !important;
     }
 
     body.home-page .cm-map-marker {
-      color: rgba(17, 29, 51, 0.52) !important;
-      opacity: 0.74 !important;
+      color: rgba(17, 29, 51, 0.72) !important;
+      opacity: 0.92 !important;
     }
 
     body.home-page .cm-map-marker.is-active {
@@ -2341,6 +2338,164 @@
 
     body.home-page .cm-map-marker-layer .cm-map-marker {
       pointer-events: auto !important;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       LUXURY ATLAS REFINEMENT — Editorial typographic hierarchy,
+       cinematic depth, atmospheric fade, and paper grain.
+       ═══════════════════════════════════════════════════════════════ */
+
+    /* ── 1. Burlington: primary label — anchored, darker, most intentional ── */
+    body.home-page .cm-map-marker[data-community="burlington"] {
+      font-size: clamp(0.65rem, 0.76vw, 0.82rem) !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.24em !important;
+      color: rgba(10, 19, 37, 0.90) !important;
+      opacity: 0.98 !important;
+    }
+    body.home-page .cm-map-marker[data-community="burlington"] .cm-map-marker__dot {
+      width: 10px !important;
+      height: 10px !important;
+      flex-basis: 10px !important;
+      background: rgba(10, 19, 37, 0.72) !important;
+      border-color: rgba(248, 245, 240, 0.96) !important;
+      box-shadow: 0 3px 12px rgba(10, 19, 37, 0.22) !important;
+    }
+
+    /* ── 1. Hamilton + Oakville: secondary ── */
+    body.home-page .cm-map-marker[data-community="hamilton"],
+    body.home-page .cm-map-marker[data-community="oakville"] {
+      font-size: clamp(0.58rem, 0.66vw, 0.72rem) !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.20em !important;
+      color: rgba(17, 29, 51, 0.80) !important;
+      opacity: 0.95 !important;
+    }
+
+    /* ── 1. Waterdown + Flamborough: tertiary — annotation-weight ── */
+    body.home-page .cm-map-marker[data-community="waterdown"],
+    body.home-page .cm-map-marker[data-community="flamborough"] {
+      font-size: clamp(0.52rem, 0.58vw, 0.62rem) !important;
+      font-weight: 400 !important;
+      letter-spacing: 0.15em !important;
+      color: rgba(17, 29, 51, 0.58) !important;
+      opacity: 0.86 !important;
+    }
+    body.home-page .cm-map-marker[data-community="waterdown"] .cm-map-marker__dot,
+    body.home-page .cm-map-marker[data-community="flamborough"] .cm-map-marker__dot {
+      width: 7px !important;
+      height: 7px !important;
+      flex-basis: 7px !important;
+      background: rgba(17, 29, 51, 0.52) !important;
+    }
+
+    /* Milton — supporting presence */
+    body.home-page .cm-map-marker[data-community="milton"] {
+      color: rgba(17, 29, 51, 0.64) !important;
+      opacity: 0.88 !important;
+    }
+
+    /* Active state: full intensity regardless of tier */
+    body.home-page .cm-map-marker.is-active {
+      color: rgba(8, 18, 38, 0.94) !important;
+      opacity: 1 !important;
+    }
+    body.home-page .cm-map-marker.is-active .cm-map-marker__dot {
+      background: #08182e !important;
+      box-shadow: 0 4px 14px rgba(8, 24, 46, 0.24) !important;
+    }
+
+    /* ── 2. Lake Ontario: reduce contour/wave line visibility ~12% ── */
+    body.home-page .cm-map-image {
+      filter: contrast(0.99) brightness(1.022) saturate(0.92) !important;
+    }
+
+    /* ── 3. Map frame overlay disabled — section bg handles the transition ── */
+    /* body.home-page .cm-map-frame::after — see rule above */
+
+    /* ── 4. Cinematic vignette: shadow falloff at map edges ── */
+    body.home-page .cm-map-panel::after {
+      background:
+        radial-gradient(
+          ellipse at 62% 52%,
+          transparent 42%,
+          rgba(12, 18, 30, 0.044) 66%,
+          rgba(8, 13, 22, 0.09) 100%
+        ) !important;
+      mix-blend-mode: multiply !important;
+      opacity: 1 !important;
+    }
+
+    /* ── 4. Paper grain: extremely subtle texture across the map ── */
+    body.home-page .cm-map-stage::before {
+      content: '' !important;
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 1 !important;
+      pointer-events: none !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.76' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E") !important;
+      background-size: 160px 160px !important;
+      background-repeat: repeat !important;
+      opacity: 0.036 !important;
+      mix-blend-mode: soft-light !important;
+    }
+
+    /* ── 5. Section tonal depth: subtle edge vignette only —
+            left-side cream is now handled by cm-left::after ── */
+    body.home-page .cm-section::before {
+      background:
+        radial-gradient(
+          ellipse at 54% 54%,
+          transparent 54%,
+          rgba(14, 22, 34, 0.04) 100%
+        ) !important;
+      opacity: 1 !important;
+    }
+
+    /* ── 6. Seam + text legibility fix ──
+       Section-level overlay removed — it was visually dominating the text column.
+       Seam gradient moved inside cm-left::after (z-index -1 within cm-left's
+       stacking context) so it sits behind text but above the map at section level. ── */
+
+    /* Disable the old section-level cream overlay entirely */
+    body.home-page .cm-section::after {
+      display: none !important;
+    }
+
+    /* Elevate cm-left well above the map panel (z-index 1) */
+    body.home-page .cm-left {
+      z-index: 10 !important;
+      isolation: isolate !important;
+    }
+
+    /* Seam gradient removed — section background (#ede8df) provides the
+       warm cream behind the text column cleanly with no overlay needed. */
+    body.home-page .cm-left::after {
+      display: none !important;
+    }
+
+    /* Restore text legibility — explicit, fully-opaque colour values */
+    body.home-page .cm-heading {
+      color: #0f1b30 !important;
+      opacity: 1 !important;
+    }
+    body.home-page .cm-heading em {
+      color: rgba(40, 56, 84, 0.72) !important;
+      opacity: 1 !important;
+    }
+    body.home-page .cm-copy {
+      color: rgba(28, 40, 62, 0.82) !important;
+      opacity: 1 !important;
+    }
+    body.home-page .cm-eyebrow {
+      opacity: 1 !important;
+    }
+
+    /* No seam to bridge on stacked layout — hide the pseudo-element */
+    @media (max-width: 1100px) {
+      body.home-page .cm-left::after {
+        display: none !important;
+      }
     }
   </style>
 </head>
@@ -3081,7 +3236,7 @@
       waterdown:   { x: 0.545, y: 0.438, labelX: 14, labelY: -12 },
       milton:      { x: 0.720, y: 0.165, labelX: 14, labelY: -12 },
       hamilton:    { x: 0.505, y: 0.835, labelX: -96, labelY: -12 },
-      burlington:  { x: 0.635, y: 0.575, labelX: 16, labelY: -12 },
+      burlington:  { x: 0.635, y: 0.638, labelX: 16, labelY: -12 },
       oakville:    { x: 0.790, y: 0.315, labelX: -92, labelY: -12 }
     };
 
