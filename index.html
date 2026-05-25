@@ -79,27 +79,29 @@
     /* Headline */
     body.home-page .hero__h1-line,
     body.home-page .hero__h1-em {
+      display: block !important;
       font-size: clamp(3.3rem, 4.0vw, 4.75rem) !important;
-      line-height: 0.92 !important;
+      line-height: 1.0 !important;
     }
     body.home-page .hero__h1-line {
       letter-spacing: -0.022em !important;
-      color: rgba(250,246,237,0.94) !important;
+      color: rgba(250,246,237,0.92) !important;
     }
     body.home-page .hero__h1-em {
-      letter-spacing: -0.015em !important;
-      color: rgba(218,207,187,0.64) !important;
-      margin-top: -0.04em !important;
+      letter-spacing: -0.018em !important;
+      color: rgba(218,207,187,0.78) !important;
+      margin-top: 0.06em !important;
     }
 
     /* Body copy — advisory, not biographical */
     body.home-page .hero__sub {
       font-size: clamp(0.93rem, 0.88vw, 1.04rem) !important;
       font-weight: 300 !important;
-      color: rgba(250,246,237,0.52) !important;
+      color: rgba(250,246,237,0.62) !important;
       line-height: 1.78 !important;
+      margin-top: clamp(20px, 2.4vh, 28px) !important;
       margin-bottom: 0 !important;
-      max-width: 420px !important;
+      max-width: 460px !important;
     }
 
     /* Trust row */
@@ -147,8 +149,8 @@
 
     /* Editorial CTA links */
     body.home-page .hero__ctas {
-      margin-top: clamp(40px, 4.3vh, 48px) !important;
-      gap: 32px !important;
+      margin-top: clamp(38px, 4.3vh, 52px) !important;
+      gap: 44px !important;
       align-items: baseline !important;
     }
     body.home-page .hero__cta-link {
@@ -162,7 +164,7 @@
       text-transform: none !important;
       text-decoration: none !important;
       position: relative !important;
-      padding-bottom: 3px !important;
+      padding-bottom: 4px !important;
       transition: color 0.24s ease !important;
     }
     body.home-page .hero__cta-link::after {
@@ -185,39 +187,23 @@
       transition: transform 0.24s ease !important;
     }
     body.home-page .hero__cta-link:hover .hero__cta-arrow {
-      transform: translateX(5px) !important;
+      transform: translateX(6px) !important;
     }
     body.home-page .hero__cta-link--primary {
-      color: rgba(250,246,237,0.96) !important;
+      color: rgba(250,246,237,0.97) !important;
+      font-size: clamp(12px, 1.05vw, 13px) !important;
       font-weight: 600 !important;
-      padding: 12px 16px 12px !important;
-      border: 1px solid rgba(250,246,237,0.34) !important;
-      border-radius: 3px !important;
-      background: rgba(250,246,237,0.075) !important;
-      backdrop-filter: blur(10px) !important;
-      -webkit-backdrop-filter: blur(10px) !important;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.10) !important;
-      transition:
-        color 0.24s ease,
-        border-color 0.24s ease,
-        background-color 0.24s ease,
-        box-shadow 0.24s ease !important;
-    }
-    body.home-page .hero__cta-link--primary::after {
-      display: none !important;
+      letter-spacing: 0.10em !important;
     }
     body.home-page .hero__cta-link--primary:hover {
       color: rgba(255,252,244,1) !important;
-      border-color: rgba(250,246,237,0.52) !important;
-      background: rgba(250,246,237,0.11) !important;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.14) !important;
     }
     body.home-page .hero__cta-link--secondary {
-      color: rgba(238,235,228,0.74) !important;
+      color: rgba(238,235,228,0.66) !important;
       font-weight: 500 !important;
     }
     body.home-page .hero__cta-link--secondary:hover {
-      color: rgba(250,246,237,0.92) !important;
+      color: rgba(250,246,237,0.88) !important;
     }
 
     /* Slideshow progress indicator */
@@ -286,7 +272,7 @@
     /* Mobile */
     @media (max-width: 900px) {
       body.home-page .hero__h1-line,
-      body.home-page .hero__h1-em { font-size: clamp(2.6rem, 8vw, 3.6rem) !important; }
+      body.home-page .hero__h1-em { font-size: clamp(2.8rem, 8vw, 3.6rem) !important; }
       body.home-page .hero__sub { max-width: none !important; }
       body.home-page .hero__trust {
         max-width: none !important;
@@ -313,13 +299,28 @@
     @media (max-width: 600px) {
       body.home-page .hero__h1-line,
       body.home-page .hero__h1-em {
-        font-size: clamp(1.62rem, 6.75vw, 2rem) !important;
-        line-height: 0.98 !important;
-        letter-spacing: -0.01em !important;
+        font-size: clamp(2.4rem, 9.5vw, 3.0rem) !important;
+        line-height: 1.04 !important;
+        letter-spacing: -0.018em !important;
         white-space: normal !important;
       }
-      body.home-page .hero__ctas { gap: 20px !important; flex-direction: column !important; align-items: flex-start !important; }
-      body.home-page .hero__cta-link { font-size: 10px !important; }
+      body.home-page .hero__sub {
+        font-size: clamp(0.93rem, 3.8vw, 1.05rem) !important;
+        color: rgba(250,246,237,0.68) !important;
+      }
+      body.home-page .hero__ctas {
+        gap: 32px !important;
+        flex-direction: row !important;
+        align-items: baseline !important;
+        flex-wrap: wrap !important;
+      }
+      body.home-page .hero__cta-link {
+        font-size: 12px !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        min-height: 44px !important;
+        align-items: center !important;
+      }
       body.home-page .hero__progress { display: none !important; }
       body.home-page .hero__trust {
         display: grid !important;
@@ -3111,6 +3112,46 @@
     body.home-page .hero__location-name {
       color: rgba(250,246,237,0.80) !important;
     }
+
+    /* ── Communities seam fix ──────────────────────────────────────
+       Problem:  cm-map-panel (z-index: 1) is absolutely positioned
+                 on the right; cm-map-frame's mask fades the image
+                 but only over 10% (~100px) — not enough to hide the
+                 boundary between the cream left panel and the map.
+       Solution: cm-left::after extends rightward past cm-left's
+                 right edge into the gap + left map edge, carrying a
+                 warm cream-to-transparent gradient.
+                 z-index: -1 within cm-left's isolated stacking
+                 context (z-index: 10) keeps it behind the text but
+                 visually above cm-map-panel.
+       Off:      ≤1100px the panel stacks — no seam, overlay hidden.
+    ── */
+    body.home-page .cm-left::after {
+      content: '' !important;
+      display: block !important;
+      position: absolute !important;
+      top: -400px !important;
+      bottom: -400px !important;
+      left: 100% !important;
+      width: clamp(140px, 17vw, 230px) !important;
+      background: linear-gradient(
+        to right,
+        #eee9e1 0%,
+        rgba(238,233,225,0.86) 20%,
+        rgba(238,233,225,0.60) 46%,
+        rgba(238,233,225,0.26) 72%,
+        transparent 100%
+      ) !important;
+      pointer-events: none !important;
+      z-index: -1 !important;
+    }
+
+    /* Stacked layout: no horizontal seam — disable the overlay */
+    @media (max-width: 1200px) {
+      body.home-page .cm-left::after {
+        display: none !important;
+      }
+    }
   </style>
 
   <!-- ── Preloader styles: hoisted above everything so they render immediately ── -->
@@ -3285,19 +3326,19 @@
         <div class="hero__left">
 
           <div class="hero__h1-location editorial-eyebrow">
-            Local perspective across<br>
-            Burlington · Hamilton
+            Burlington · Hamilton<br>
+            and surrounding communities
           </div>
 
           <h1 class="hero__h1 editorial-heading" id="hero-heading">
-            <span class="hero__h1-line">Know the area.</span>
+            <span class="hero__h1-line">Local guidance.</span>
             <em class="hero__h1-em">Move with confidence.</em>
           </h1>
 
           <p class="hero__sub editorial-body">
             The right move starts with understanding where you are.
             <br>
-            Local insight that helps people move with clarity.
+            Local perspective that helps people move with clarity.
           </p>
 
           <div class="hero__ctas">
