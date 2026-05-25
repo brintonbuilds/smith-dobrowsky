@@ -11,7 +11,7 @@
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="stylesheet" href="css/styles.css?v=20260523-mobile" />
   <link rel="stylesheet" href="css/nav.css?v=20260523-mobile" />
-  <link rel="preload" as="image" href="assets/Halton-Escarpment-Real-Estate.png" />
+  <link rel="preload" as="image" href="assets/geoff-smith-burlington-hamilton-local-neighbourhood-expert-hero.webp" />
   <style>
     /* ── Hero cinematic blur pass ── */
 
@@ -28,10 +28,10 @@
          visible through the dark gradient, not completely masked */
       background: linear-gradient(
         108deg,
-        rgba(5,9,15,0.64) 0%,
-        rgba(5,9,15,0.54) 28%,
-        rgba(5,9,15,0.28) 58%,
-        rgba(5,9,15,0.04) 80%,
+        rgba(5,9,15,0.56) 0%,
+        rgba(5,9,15,0.44) 28%,
+        rgba(5,9,15,0.20) 58%,
+        rgba(5,9,15,0.03) 80%,
         transparent 100%
       ) !important;
     }
@@ -52,15 +52,15 @@
       mask-image: linear-gradient(
         to right,
         black 0%,
-        black 44%,
-        rgba(0,0,0,0.52) 64%,
+        black 40%,
+        rgba(0,0,0,0.42) 62%,
         transparent 88%
       ) !important;
       -webkit-mask-image: linear-gradient(
         to right,
         black 0%,
-        black 44%,
-        rgba(0,0,0,0.52) 64%,
+        black 40%,
+        rgba(0,0,0,0.42) 62%,
         transparent 88%
       ) !important;
       pointer-events: none !important;
@@ -84,11 +84,11 @@
     }
     body.home-page .hero__h1-line {
       letter-spacing: -0.022em !important;
-      color: rgba(250,246,237,0.98) !important;
+      color: rgba(250,246,237,0.94) !important;
     }
     body.home-page .hero__h1-em {
       letter-spacing: -0.015em !important;
-      color: rgba(218,207,187,0.78) !important;
+      color: rgba(218,207,187,0.64) !important;
       margin-top: -0.04em !important;
     }
 
@@ -147,7 +147,7 @@
 
     /* Editorial CTA links */
     body.home-page .hero__ctas {
-      margin-top: 40px !important;
+      margin-top: clamp(40px, 4.3vh, 48px) !important;
       gap: 32px !important;
       align-items: baseline !important;
     }
@@ -3042,9 +3042,214 @@
         text-align: left !important;
       }
     }
+
+    /* Hero slideshow narrative refinement */
+    body.home-page .hero__media-slide {
+      filter: saturate(0.92) contrast(1.02) brightness(0.86) !important;
+      transition:
+        opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 7600ms cubic-bezier(0.16, 0.72, 0.24, 1) !important;
+    }
+
+    body.home-page .hero__media-slide--first-frame {
+      transition:
+        opacity 900ms cubic-bezier(0.2, 0, 0.36, 1),
+        transform 7600ms cubic-bezier(0.16, 0.72, 0.24, 1) !important;
+    }
+
+    body.home-page .hero__h1-location {
+      max-width: 21rem !important;
+      margin-bottom: clamp(26px, 3.2vh, 34px) !important;
+      color: rgba(238,235,228,0.56) !important;
+      font-style: normal !important;
+      letter-spacing: 0.22em !important;
+      line-height: 1.5 !important;
+      text-shadow: 0 1px 14px rgba(0,0,0,0.30) !important;
+    }
+
+    body.home-page .hero__h1-line {
+      color: rgba(250,246,237,0.93) !important;
+    }
+
+    body.home-page .hero__h1-em {
+      color: rgba(218,207,187,0.62) !important;
+    }
+
+    body.home-page .hero__sub {
+      margin-top: clamp(32px, 3.8vh, 40px) !important;
+      color: rgba(250,246,237,0.56) !important;
+    }
+
+    body.home-page .hero__location-kicker {
+      font-family: var(--font-sans) !important;
+      font-style: normal !important;
+      font-size: 9.5px !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.18em !important;
+      text-transform: uppercase !important;
+      color: rgba(218,207,187,0.48) !important;
+    }
+
+    body.home-page .hero__location-name {
+      color: rgba(250,246,237,0.80) !important;
+    }
+  </style>
+
+  <!-- ── Preloader styles: hoisted above everything so they render immediately ── -->
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       PRELOADER — Smith Dobrowsky editorial brand reveal
+       Total runtime: ~1.55s
+       0.10s  monogram fades + scales in
+       0.48s  wordmark begins left-to-right reveal
+       1.10s  full composition holds
+       1.35s  fade-out begins → done at 1.55s
+       ═══════════════════════════════════════════════════════════ */
+
+    /* Full-screen backdrop */
+    #sd-preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0c1220;         /* very dark navy — harmonises with SD.png mark */
+      pointer-events: none;        /* never intercept clicks/taps */
+      /* Exit: opacity 1 → 0 starting at 1.35s, lasting 200ms */
+      animation: sd-exit 0.2s ease-in 1.35s both;
+    }
+
+    @keyframes sd-exit {
+      to { opacity: 0; }
+    }
+
+    /* ── Stage: vertical centered composition ── */
+    .sd-preloader__stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+    }
+
+    /* ── Monogram: soft fade + gentle scale-up ── */
+    .sd-preloader__mark {
+      margin: 0;
+      opacity: 0;
+      /* delay: 100ms — let the backdrop settle first */
+      animation: sd-mark-in 0.36s cubic-bezier(0.22, 1, 0.36, 1) 0.10s both;
+    }
+
+    .sd-preloader__mark img {
+      display: block;
+      width: 80px;
+      height: 80px;
+      border-radius: 3px;           /* softens the PNG's square corners */
+    }
+
+    @keyframes sd-mark-in {
+      from { opacity: 0; transform: scale(0.91); }
+      to   { opacity: 1; transform: scale(1);    }
+    }
+
+    /* ── Wordmark: left-to-right clip reveal ── */
+    .sd-preloader__wordmark {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* delay: 480ms — monogram is settled before wordmark begins */
+      animation: sd-wordmark-in 0.62s cubic-bezier(0.22, 1, 0.36, 1) 0.48s both;
+    }
+
+    @keyframes sd-wordmark-in {
+      from { clip-path: inset(0 100% 0 0); opacity: 0.6; }
+      to   { clip-path: inset(0 0%   0 0); opacity: 1;   }
+    }
+
+    .sd-preloader__wm-the {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(182, 170, 152, 0.68);
+      align-self: flex-start;
+      padding-left: 1px;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .sd-preloader__wm-name {
+      display: block;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #f4f1ea;
+      font-style: normal;
+      line-height: 1;
+    }
+
+    .sd-preloader__wm-team {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(182, 170, 152, 0.68);
+      align-self: flex-end;
+      padding-right: 1px;
+      line-height: 1;
+      margin-top: 5px;
+    }
+
+    /* ── prefers-reduced-motion: collapse to a very brief flash ── */
+    @media (prefers-reduced-motion: reduce) {
+      #sd-preloader {
+        animation: sd-exit 0.01ms linear 0.6s both;
+      }
+      .sd-preloader__mark,
+      .sd-preloader__wordmark {
+        animation: none;
+        opacity: 1;
+        clip-path: none;
+      }
+    }
   </style>
 </head>
 <body class="home-page">
+
+  <!-- ══════════════════════════════════════
+       PRELOADER — editorial brand reveal
+       CSS-animated, ~1.55s, no spinner
+  ══════════════════════════════════════ -->
+  <div id="sd-preloader" role="presentation" aria-hidden="true">
+    <div class="sd-preloader__stage">
+
+      <!-- SD monogram mark: fades in first -->
+      <figure class="sd-preloader__mark">
+        <img
+          src="assets/SD.png"
+          alt=""
+          width="80"
+          height="80"
+          loading="eager"
+          decoding="sync"
+          fetchpriority="high"
+        >
+      </figure>
+
+      <!-- Wordmark: CSS-matched to site brand system, left-to-right reveal -->
+      <div class="sd-preloader__wordmark" aria-label="The Smith Dobrowsky Team">
+        <span class="sd-preloader__wm-the">The</span>
+        <strong class="sd-preloader__wm-name">Smith Dobrowsky</strong>
+        <span class="sd-preloader__wm-team">Team</span>
+      </div>
+
+    </div>
+  </div>
+  <!-- ── End preloader ── -->
 
   <script src="js/nav.js"></script>
 
@@ -3062,7 +3267,8 @@
         <div class="hero__left">
 
           <div class="hero__h1-location editorial-eyebrow">
-            Burlington · Hamilton · Surrounding Communities
+            Local perspective across<br>
+            Burlington · Hamilton
           </div>
 
           <h1 class="hero__h1 editorial-heading" id="hero-heading">
@@ -3077,8 +3283,8 @@
           </p>
 
           <div class="hero__ctas">
-            <a href="contact.html" class="hero__cta-link hero__cta-link--primary editorial-cta">Plan your move <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
-            <a href="listings.html" class="hero__cta-link hero__cta-link--secondary editorial-cta">Browse listings <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
+            <a href="communities.html" class="hero__cta-link hero__cta-link--primary editorial-cta">Explore communities <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
+            <a href="listings.html" class="hero__cta-link hero__cta-link--secondary editorial-cta">View listings <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
           </div>
 
           <p class="hero__reassurance">Unhurried. Considered. Always local.</p>
@@ -3093,8 +3299,8 @@
               <source src="assets/hero-loop.mp4" type="video/mp4">
             </video>
             <div class="hero__location-label" aria-live="polite">
-              <span class="hero__location-kicker">Local Lens</span>
-              <span class="hero__location-name">Escarpment Views</span>
+              <span class="hero__location-kicker">Established Roots</span>
+              <span class="hero__location-name">Burlington · Hamilton Region</span>
             </div>
             <div class="hero__progress" aria-hidden="true">
               <span class="hero__progress-track"><span class="hero__progress-fill"></span></span>
@@ -3543,55 +3749,55 @@
 
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      // ── Slide sequence: Escarpment first for warm, aspirational opening
+      // ── Slide sequence: region → perspective → community → property → neighbourhood → timing
       const heroMedia = [
-        {
-          src: 'assets/Halton-Escarpment-Real-Estate.png',
-          alt: 'Golden hour light over the Niagara Escarpment, trails and open sky above Burlington',
-          position: '50% 36%',
-          kicker: 'Local Lens',
-          caption: 'Escarpment Views',
-          kb: { fromScale: 1.03, fromX: '0.3%', fromY: '0.7%', toScale: 1.09, toX: '-0.2%', toY: '-0.3%' }
-        },
         {
           src: 'assets/geoff-smith-burlington-hamilton-local-neighbourhood-expert-hero.webp',
           alt: 'Morning light over the Burlington and Hamilton waterfront',
           position: '62% 38%',
           kicker: 'Established Roots',
-          caption: 'Burlington • Hamilton Region',
-          kb: { fromScale: 1.02, fromX: '-0.8%', fromY: '0.3%', toScale: 1.08, toX: '0.5%', toY: '-0.4%' }
+          caption: 'Burlington · Hamilton Region',
+          kb: { fromScale: 1.03, fromX: '-0.4%', fromY: '0.2%', toScale: 1.065, toX: '0.3%', toY: '-0.2%' }
+        },
+        {
+          src: 'assets/Halton-Escarpment-Real-Estate.png',
+          alt: 'Golden hour light over the Niagara Escarpment, trails and open sky above Burlington',
+          position: '50% 36%',
+          kicker: 'Regional Perspective',
+          caption: 'Escarpment views. Local context.',
+          kb: { fromScale: 1.03, fromX: '0.2%', fromY: '0.4%', toScale: 1.07, toX: '-0.2%', toY: '-0.2%' }
         },
         {
           src: 'assets/GettyImages-2248448116.jpg',
           alt: 'Downtown café and tree-lined street at golden hour',
           position: '56% 44%',
           kicker: 'Community Rhythm',
-          caption: 'Every place moves differently.',
-          kb: { fromScale: 1.10, fromX: '0.5%', fromY: '0.2%', toScale: 1.04, toX: '-0.4%', toY: '-0.2%' }
+          caption: 'Where daily life happens.',
+          kb: { fromScale: 1.03, fromX: '0.3%', fromY: '0.1%', toScale: 1.065, toX: '-0.2%', toY: '-0.1%' }
         },
         {
           src: 'assets/GettyImages-1388101414.jpg',
           alt: 'Refined home interior with natural light and architectural detail',
           position: '54% 46%',
-          kicker: 'Street Reading',
+          kicker: 'Property Detail',
           caption: 'Small signals shape value.',
-          kb: { fromScale: 1.02, fromX: '-0.5%', fromY: '0.4%', toScale: 1.08, toX: '0.3%', toY: '-0.5%' }
+          kb: { fromScale: 1.03, fromX: '-0.2%', fromY: '0.2%', toScale: 1.06, toX: '0.2%', toY: '-0.2%' }
         },
         {
           src: 'assets/GettyImages-2162730763.jpg',
           alt: 'Quiet established neighbourhood street beneath mature trees',
           position: '52% 46%',
-          kicker: 'Perspective',
-          caption: 'Move with confidence.',
-          kb: { fromScale: 1.03, fromX: '0.9%', fromY: '0.1%', toScale: 1.09, toX: '-0.5%', toY: '-0.3%' }
+          kicker: 'Neighbourhood Feel',
+          caption: 'The streets tell the story.',
+          kb: { fromScale: 1.03, fromX: '0.4%', fromY: '0.1%', toScale: 1.065, toX: '-0.3%', toY: '-0.1%' }
         },
         {
           src: 'assets/GettyImages-2161701333.jpg',
           alt: 'Warm evening glow across a neighbourhood street at sunset',
           position: '50% 42%',
-          kicker: 'Local Detail',
+          kicker: 'Local Timing',
           caption: 'Observed over time.',
-          kb: { fromScale: 1.02, fromX: '0.2%', fromY: '0.7%', toScale: 1.08, toX: '-0.2%', toY: '-0.4%' }
+          kb: { fromScale: 1.03, fromX: '0.2%', fromY: '0.3%', toScale: 1.065, toX: '-0.2%', toY: '-0.2%' }
         }
       ];
 
@@ -3635,26 +3841,13 @@
         el.loading = index === 0 ? 'eager' : 'lazy';
         el.fetchPriority = index === 0 ? 'high' : 'auto';
 
-        if (index === 0) {
-          el.classList.add('is-active');
-          // First frame enters quickly, then transition normalises
-          if (!prefersReducedMotion) el.classList.add('hero__media-slide--first-frame');
-        }
-
-        mediaWrap.prepend(el);
+        mediaWrap.insertBefore(el, locationLabel || mediaWrap.firstChild);
         return el;
       });
 
-      updateLocationLabel(0);
-
-      // Lift the fast-entry class once the initial fade-in is done
-      if (!prefersReducedMotion) {
-        window.setTimeout(() => slides[0]?.classList.remove('hero__media-slide--first-frame'), 1500);
-      }
-
       // Progress indicator
       const progressTracks = Array.from(document.querySelectorAll('.hero__progress-track'));
-      const slideDuration = 6500;
+      const slideDuration = 7200;
 
       function activateProgress(index) {
         progressTracks.forEach((track, i) => {
@@ -3673,21 +3866,30 @@
         });
       }
 
-      if (!prefersReducedMotion) activateProgress(0);
+      let activeIndex = 0;
+
+      function showSlide(index, firstFrame) {
+        activeIndex = index;
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('is-active', i === index);
+          slide.classList.toggle('hero__media-slide--first-frame', !!firstFrame && i === index);
+        });
+        updateLocationLabel(index);
+        if (!prefersReducedMotion) activateProgress(index);
+      }
+
+      showSlide(0, true);
+
+      // Lift the fast-entry class once the initial fade-in is done
+      if (!prefersReducedMotion) {
+        window.setTimeout(() => slides[0]?.classList.remove('hero__media-slide--first-frame'), 1500);
+      }
 
       if (prefersReducedMotion || slides.length < 2) return;
 
-      let activeIndex = 0;
-
       window.setInterval(() => {
-        const prev = slides[activeIndex];
         activeIndex = (activeIndex + 1) % slides.length;
-        const next = slides[activeIndex];
-
-        prev.classList.remove('is-active');
-        next.classList.add('is-active');
-        updateLocationLabel(activeIndex);
-        activateProgress(activeIndex);
+        showSlide(activeIndex, false);
       }, slideDuration);
     })();
   </script>
@@ -3870,6 +4072,35 @@
   } else {
     init();
   }
+}());
+</script>
+
+<script>
+/* ── Preloader cleanup ────────────────────────────────────────
+   Remove the preloader from the render tree once the CSS exit
+   animation finishes (1.35s delay + 0.2s duration = 1.55s).
+   pointer-events:none on #sd-preloader already blocks zero
+   interaction, but display:none ensures it is fully gone.
+   A fallback timeout guards against animationend not firing
+   (e.g. tab hidden, some mobile browsers).
+──────────────────────────────────────────────────────────────── */
+(function () {
+  'use strict';
+  var el = document.getElementById('sd-preloader');
+  if (!el) return;
+
+  function hide() { el.style.display = 'none'; }
+
+  /* Primary: listen for the named exit animation */
+  el.addEventListener('animationend', function handler(e) {
+    if (e.animationName === 'sd-exit') {
+      hide();
+      el.removeEventListener('animationend', handler);
+    }
+  });
+
+  /* Fallback: force-hide 400ms after the animation should be done */
+  setTimeout(hide, 1950);
 }());
 </script>
 </body>
