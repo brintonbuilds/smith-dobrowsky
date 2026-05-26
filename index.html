@@ -2841,6 +2841,213 @@
       }
     }
 
+    /* ─── Communities: insight tab selectors ─────────────────────── */
+
+    body.home-page .cm-tabs {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 0 !important;
+      margin: clamp(14px, 1.8vw, 20px) 0 clamp(12px, 1.4vw, 16px) !important;
+      padding: 0 !important;
+    }
+
+    body.home-page .cm-tab {
+      padding: 4px 20px 4px 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+      color: rgba(17, 29, 51, 0.30) !important;
+      font-family: var(--font-sans) !important;
+      font-size: clamp(0.59rem, 0.62vw, 0.66rem) !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.16em !important;
+      line-height: 1.4 !important;
+      text-transform: uppercase !important;
+      cursor: pointer !important;
+      white-space: nowrap !important;
+      transition: color 160ms ease !important;
+    }
+
+    body.home-page .cm-tab.is-active {
+      color: rgba(17, 29, 51, 0.82) !important;
+    }
+
+    body.home-page .cm-tab:hover {
+      color: rgba(17, 29, 51, 0.54) !important;
+    }
+
+    body.home-page .cm-tab:focus-visible {
+      outline: 1px solid rgba(17, 29, 51, 0.20) !important;
+      outline-offset: 3px !important;
+      border-radius: 2px !important;
+    }
+
+    body.home-page .cm-insight__panel {
+      transition: opacity 160ms ease !important;
+    }
+
+    body.home-page .cm-insight__panel.is-updating {
+      opacity: 0 !important;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       COMMUNITIES RESPONSIVE POLISH — v2
+       Covers full stacked range: ≤1100px (where map position:relative kicks in)
+       Breakpoints: ≤1100px · 481–850px mid-tablet · ≤480px mobile
+       ═══════════════════════════════════════════════════════════════ */
+
+    /* ── Stacked layout: ≤1100px ─────────────────────────────────── */
+    @media (max-width: 1100px) {
+
+      body.home-page .cm-section {
+        padding-top: clamp(64px, 8vw, 88px) !important;
+        padding-bottom: 0 !important;
+      }
+
+      body.home-page .cm-left {
+        padding: 0 clamp(28px, 4vw, 52px) !important;
+        max-width: min(680px, 100%) !important;
+        margin-bottom: 0 !important;
+      }
+
+      body.home-page .cm-heading {
+        font-size: clamp(2.6rem, 6vw, 3.4rem) !important;
+        margin-top: 10px !important;
+        margin-bottom: 18px !important;
+      }
+
+      body.home-page .cm-copy {
+        max-width: 38rem !important;
+        line-height: 1.72 !important;
+      }
+
+      /* Insight: premium editorial card feel, not leftover content */
+      body.home-page .cm-insight {
+        width: min(380px, 100%) !important;
+        margin-top: clamp(28px, 3.5vw, 40px) !important;
+        margin-bottom: 0 !important;
+        padding-top: 18px !important;
+        border-top: 1px solid rgba(17, 29, 51, 0.10) !important;
+      }
+
+      /* Map: full-bleed cinematic panel beneath the copy */
+      body.home-page .cm-map-panel {
+        margin-top: clamp(36px, 5vw, 52px) !important;
+        height: clamp(460px, 54vh, 540px) !important;
+      }
+
+      /* Seam: cream gradient bridges copy area to map cleanly */
+      body.home-page .cm-map-panel::before {
+        content: '' !important;
+        display: block !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 56px !important;
+        background: linear-gradient(to bottom, #ede8df 0%, transparent 100%) !important;
+        z-index: 5 !important;
+        pointer-events: none !important;
+      }
+
+      /* Crop: eastern bias keeps Burlington + Lake Ontario in frame */
+      body.home-page .cm-map-stage {
+        left: 47% !important;
+        min-width: 108vw !important;
+        transform: translateX(-50%) !important;
+      }
+    }
+
+    /* ── iPad portrait + mid-tablet crop refinement: 481–850px ──── */
+    @media (min-width: 481px) and (max-width: 850px) {
+      body.home-page .cm-section {
+        padding-top: clamp(56px, 8vw, 76px) !important;
+      }
+
+      body.home-page .cm-left {
+        padding: 0 clamp(24px, 4vw, 42px) !important;
+      }
+
+      body.home-page .cm-map-panel {
+        height: clamp(440px, 54vh, 520px) !important;
+      }
+
+      body.home-page .cm-map-stage {
+        left: 44% !important;
+        min-width: 118vw !important;
+        transform: translateX(-50%) !important;
+      }
+    }
+
+    /* ── Mobile: ≤480px ──────────────────────────────────────────── */
+    @media (max-width: 480px) {
+
+      body.home-page .cm-section {
+        padding-top: clamp(48px, 12vw, 60px) !important;
+      }
+
+      body.home-page .cm-left {
+        padding: 0 20px !important;
+        max-width: 100% !important;
+      }
+
+      body.home-page .cm-heading {
+        font-size: clamp(2.28rem, 11vw, 2.78rem) !important;
+        margin-top: 8px !important;
+        margin-bottom: 14px !important;
+      }
+
+      body.home-page .cm-copy {
+        font-size: 0.94rem !important;
+        line-height: 1.68 !important;
+        max-width: 100% !important;
+      }
+
+      /* Insight: compact and intentional on mobile */
+      body.home-page .cm-insight {
+        width: 100% !important;
+        margin-top: clamp(22px, 5.5vw, 30px) !important;
+        margin-bottom: 0 !important;
+        padding-top: 14px !important;
+        border-top: 1px solid rgba(17, 29, 51, 0.1) !important;
+      }
+
+      /* CTA: comfortable tap target */
+      body.home-page .cm-insight__link {
+        padding: 8px 0 !important;
+        margin-top: 14px !important;
+      }
+
+      /* Tabs: tighter to reduce vertical height */
+      body.home-page .cm-tabs {
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+      }
+
+      /* Map: cinematic panel — worth scrolling to */
+      body.home-page .cm-map-panel {
+        margin-top: clamp(26px, 6.5vw, 36px) !important;
+        height: clamp(340px, 44vh, 420px) !important;
+      }
+
+      body.home-page .cm-map-panel::before {
+        height: 44px !important;
+      }
+
+      /* Tighter eastern crop: Burlington + Lake Ontario fills the frame */
+      body.home-page .cm-map-stage {
+        left: 44% !important;
+        min-width: 132vw !important;
+        transform: translateX(-50%) !important;
+      }
+
+      /* Hide tertiary labels on mobile — reduces clutter */
+      body.home-page .cm-map-marker[data-community="flamborough"]:not(.is-active) .cm-map-marker__label,
+      body.home-page .cm-map-marker[data-community="waterdown"]:not(.is-active) .cm-map-marker__label,
+      body.home-page .cm-map-marker[data-community="milton"]:not(.is-active) .cm-map-marker__label {
+        display: none !important;
+      }
+    }
+
     /* Client Stories: compact editorial spread */
     body.home-page .cs-section {
       padding-top: clamp(72px, 7.4vw, 108px) !important;
@@ -3150,6 +3357,353 @@
     @media (max-width: 1200px) {
       body.home-page .cm-left::after {
         display: none !important;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       EDITORIAL FLOW — Trust Divider · Buyers · Sellers · Testimonial
+       ═══════════════════════════════════════════════════════════ */
+
+    /* ── Trust Divider ─────────────────────────────────────────── */
+    body.home-page .td-section {
+      background: #F6F2EB !important;
+      padding: clamp(22px, 2vw, 28px) clamp(24px, 6vw, 80px) clamp(28px, 2.6vw, 36px) !important;
+      text-align: center !important;
+    }
+    body.home-page .td-rule {
+      width: 60px !important;
+      height: 1px !important;
+      background: rgba(15, 18, 20, 0.10) !important;
+      border: none !important;
+      margin: 0 auto 24px !important;
+      display: block !important;
+    }
+    body.home-page .td-label {
+      display: block !important;
+      font-family: var(--font-sans) !important;
+      font-size: clamp(0.60rem, 0.62vw, 0.68rem) !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.22em !important;
+      line-height: 1.4 !important;
+      text-transform: uppercase !important;
+      color: rgba(15, 18, 20, 0.35) !important;
+      margin-bottom: 30px !important;
+    }
+    body.home-page .td-heading {
+      font-family: var(--font-serif) !important;
+      font-size: clamp(1.8rem, 2.4vw, 2.8rem) !important;
+      font-weight: 400 !important;
+      line-height: 1.12 !important;
+      letter-spacing: -0.01em !important;
+      color: #1A1D21 !important;
+      max-width: 620px !important;
+      margin: 0 auto 24px !important;
+    }
+    body.home-page .td-support {
+      font-family: var(--font-sans) !important;
+      font-size: clamp(0.80rem, 0.86vw, 0.92rem) !important;
+      font-weight: 400 !important;
+      line-height: 1.65 !important;
+      color: rgba(15, 18, 20, 0.55) !important;
+      max-width: 420px !important;
+      margin: 0 auto !important;
+    }
+
+    /* ── Buyers Feature (dark) ─────────────────────────────────── */
+    body.home-page .bf-section {
+      position: relative !important;
+      display: grid !important;
+      grid-template-columns: 38% 62% !important;
+      min-height: clamp(480px, 46vw, 560px) !important;
+      overflow: hidden !important;
+      background: linear-gradient(180deg, #040608 0%, #05070A 100%) !important;
+    }
+    body.home-page .bf-text {
+      position: relative !important;
+      z-index: 2 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      padding: clamp(64px, 8vw, 108px) clamp(40px, 5.2vw, 80px) !important;
+      border-right: 1px solid rgba(15, 18, 20, 0.08) !important;
+      box-shadow: inset -80px 0 120px rgba(255, 255, 255, 0.018) !important;
+    }
+    body.home-page .bf-eyebrow {
+      color: rgba(214, 196, 160, 0.44) !important;
+      margin-bottom: clamp(14px, 1.6vw, 20px) !important;
+    }
+    body.home-page .bf-heading {
+      color: rgba(245, 242, 236, 0.90) !important;
+      font-size: clamp(2.0rem, 3.0vw, 3.4rem) !important;
+      line-height: 1.04 !important;
+      margin-bottom: clamp(28px, 3.2vw, 44px) !important;
+      max-width: 9.5em !important;
+    }
+    body.home-page .bf-heading em {
+      color: rgba(245, 242, 236, 0.60) !important;
+    }
+    body.home-page .bf-cta {
+      color: rgba(214, 196, 160, 0.54) !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      text-decoration: none !important;
+    }
+    body.home-page .bf-cta:hover,
+    body.home-page .bf-cta:focus-visible {
+      color: rgba(245, 242, 236, 0.88) !important;
+    }
+    body.home-page .bf-image {
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    body.home-page .bf-image img {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: 62% 58% !important;
+      filter: brightness(0.90) saturate(0.96) !important;
+    }
+
+    /* ── Whitespace gap ────────────────────────────────────────── */
+    body.home-page .ef-gap {
+      background: #F6F2EB !important;
+      height: clamp(80px, 9vw, 100px) !important;
+    }
+
+    /* ── Sellers Feature (light) ───────────────────────────────── */
+    body.home-page .sf-section {
+      position: relative !important;
+      display: grid !important;
+      grid-template-columns: 58% 42% !important;
+      min-height: clamp(480px, 46vw, 560px) !important;
+      overflow: hidden !important;
+      background: #F6F2EB !important;
+    }
+    body.home-page .sf-image {
+      position: relative !important;
+      overflow: hidden !important;
+      order: -1 !important;
+      border-right: 1px solid rgba(15, 18, 20, 0.08) !important;
+    }
+    body.home-page .sf-image img {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      filter: brightness(0.97) saturate(0.94) !important;
+    }
+    body.home-page .sf-text {
+      position: relative !important;
+      z-index: 2 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      padding: clamp(56px, 7vw, 96px) clamp(40px, 5.2vw, 72px) !important;
+      order: 1 !important;
+    }
+    body.home-page .sf-eyebrow {
+      color: rgba(15, 18, 20, 0.38) !important;
+      margin-bottom: clamp(14px, 1.6vw, 20px) !important;
+    }
+    body.home-page .sf-heading {
+      color: rgba(15, 18, 20, 0.88) !important;
+      font-size: clamp(2.0rem, 3.0vw, 3.4rem) !important;
+      line-height: 1.04 !important;
+      margin-bottom: clamp(24px, 2.8vw, 38px) !important;
+      max-width: 11em !important;
+    }
+    body.home-page .sf-heading em {
+      color: rgba(15, 18, 20, 0.56) !important;
+    }
+    body.home-page .sf-cta {
+      color: rgba(15, 18, 20, 0.46) !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      text-decoration: none !important;
+    }
+    body.home-page .sf-cta:hover,
+    body.home-page .sf-cta:focus-visible {
+      color: rgba(15, 18, 20, 0.82) !important;
+    }
+
+    /* ── Testimonial Teaser ─────────────────────────────────────── */
+    body.home-page .ct-section {
+      background: #0D1116 !important;
+      padding: clamp(56px, 6.5vw, 86px) clamp(24px, 6vw, 80px) !important;
+    }
+    body.home-page .ct-inner {
+      max-width: 640px !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+    }
+    body.home-page .ct-eyebrow {
+      color: rgba(214, 196, 160, 0.36) !important;
+      margin-bottom: clamp(12px, 1.4vw, 18px) !important;
+      display: block !important;
+    }
+    body.home-page .ct-heading {
+      color: rgba(245, 242, 236, 0.86) !important;
+      font-size: clamp(2.6rem, 3.9vw, 4.5rem) !important;
+      line-height: 0.97 !important;
+      margin-bottom: clamp(30px, 4vw, 48px) !important;
+    }
+    body.home-page .ct-quote {
+      margin: 0 0 clamp(18px, 2.2vw, 28px) !important;
+      padding: 0 !important;
+      border: 0 !important;
+    }
+    body.home-page .ct-quote__text {
+      display: block !important;
+      font-family: var(--font-serif) !important;
+      font-size: clamp(1.18rem, 1.52vw, 1.72rem) !important;
+      font-weight: 400 !important;
+      font-style: italic !important;
+      line-height: 1.48 !important;
+      color: rgba(245, 242, 236, 0.68) !important;
+      max-width: 18em !important;
+      margin: 0 auto clamp(14px, 1.6vw, 20px) !important;
+    }
+    body.home-page .ct-quote__footer {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+      gap: 6px 10px !important;
+      font-family: var(--font-sans) !important;
+      font-size: clamp(0.64rem, 0.70vw, 0.74rem) !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.16em !important;
+      text-transform: uppercase !important;
+      color: rgba(214, 196, 160, 0.32) !important;
+    }
+    body.home-page .ct-quote__name {
+      color: rgba(214, 196, 160, 0.52) !important;
+    }
+    body.home-page .ct-more {
+      margin-top: clamp(24px, 3vw, 38px) !important;
+      padding-top: clamp(16px, 1.8vw, 22px) !important;
+      border-top: 1px solid rgba(245, 242, 236, 0.06) !important;
+    }
+    body.home-page .ct-more__link {
+      color: rgba(214, 196, 160, 0.50) !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      text-decoration: none !important;
+    }
+    body.home-page .ct-more__link:hover,
+    body.home-page .ct-more__link:focus-visible {
+      color: rgba(245, 242, 236, 0.84) !important;
+    }
+
+    /* ── Editorial Flow: Responsive ─────────────────────────────── */
+    @media (max-width: 820px) {
+      body.home-page .td-section {
+        padding: clamp(20px, 3.2vw, 28px) clamp(20px, 5vw, 40px) clamp(24px, 4vw, 32px) !important;
+      }
+
+      /* Buyers */
+      body.home-page .bf-section {
+        grid-template-columns: 1fr !important;
+        min-height: unset !important;
+      }
+      body.home-page .bf-text {
+        padding: clamp(44px, 8vw, 64px) clamp(24px, 5vw, 40px) clamp(36px, 5vw, 48px) !important;
+        border-right: 0 !important;
+        border-bottom: 1px solid rgba(245, 242, 236, 0.06) !important;
+        box-shadow: none !important;
+      }
+      body.home-page .bf-heading {
+        font-size: clamp(2.0rem, 8vw, 2.9rem) !important;
+        margin-bottom: clamp(22px, 4vw, 32px) !important;
+      }
+      body.home-page .bf-image {
+        height: clamp(300px, 48vw, 420px) !important;
+      }
+
+      /* Gap */
+      body.home-page .ef-gap {
+        height: clamp(56px, 8vw, 72px) !important;
+      }
+
+      /* Sellers */
+      body.home-page .sf-section {
+        grid-template-columns: 1fr !important;
+        min-height: unset !important;
+      }
+      body.home-page .sf-image {
+        order: 2 !important;
+        height: clamp(300px, 48vw, 420px) !important;
+        border-right: 0 !important;
+        border-top: 1px solid rgba(15, 18, 20, 0.07) !important;
+      }
+      body.home-page .sf-text {
+        order: 1 !important;
+        padding: clamp(44px, 8vw, 64px) clamp(24px, 5vw, 40px) clamp(36px, 5vw, 48px) !important;
+      }
+      body.home-page .sf-heading {
+        font-size: clamp(2.0rem, 8vw, 2.9rem) !important;
+        margin-bottom: clamp(20px, 4vw, 30px) !important;
+      }
+
+      /* Testimonial */
+      body.home-page .ct-heading {
+        font-size: clamp(2.4rem, 9vw, 3.3rem) !important;
+        margin-bottom: clamp(28px, 6vw, 42px) !important;
+      }
+      body.home-page .ct-quote__text {
+        font-size: clamp(1.10rem, 4.8vw, 1.44rem) !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body.home-page .td-section {
+        padding: 18px 20px 22px !important;
+      }
+      body.home-page .td-rule { margin-bottom: 16px !important; }
+      body.home-page .td-label { margin-bottom: 18px !important; }
+      body.home-page .td-heading {
+        font-size: clamp(1.5rem, 8vw, 1.85rem) !important;
+        margin-bottom: 14px !important;
+      }
+
+      body.home-page .bf-text {
+        padding: 44px 20px 32px !important;
+      }
+      body.home-page .bf-heading {
+        font-size: clamp(1.9rem, 10vw, 2.5rem) !important;
+        margin-bottom: 20px !important;
+      }
+      body.home-page .bf-image {
+        height: clamp(260px, 60vw, 340px) !important;
+      }
+
+      body.home-page .sf-text {
+        padding: 44px 20px 32px !important;
+      }
+      body.home-page .sf-heading {
+        font-size: clamp(1.9rem, 10vw, 2.5rem) !important;
+        margin-bottom: 20px !important;
+      }
+      body.home-page .sf-image {
+        height: clamp(260px, 60vw, 340px) !important;
+      }
+
+      body.home-page .ct-section {
+        padding: clamp(48px, 11vw, 64px) 20px !important;
+      }
+      body.home-page .ct-heading {
+        font-size: clamp(2.2rem, 11vw, 2.9rem) !important;
+        margin-bottom: clamp(22px, 6vw, 34px) !important;
+      }
+      body.home-page .ct-quote__text {
+        font-size: clamp(1.02rem, 5.2vw, 1.28rem) !important;
       }
     }
   </style>
@@ -3501,16 +4055,24 @@
 
         <div class="cm-left reveal">
           <header class="cm-header">
-            <div class="cm-eyebrow editorial-eyebrow">Neighbourhood Expertise</div>
+            <div class="cm-eyebrow editorial-eyebrow">Local Expertise</div>
             <h2 class="cm-heading editorial-heading" id="cm-heading">Local insight.<br><em>Street by street.</em></h2>
-            <p class="cm-copy editorial-body">Every community has its own rhythm. Streets that move quickly, pockets buyers wait for, and details that change value. Geoff helps clients read those signals before they make a move.</p>
+            <p class="cm-copy editorial-body">Most people compare neighbourhoods. Geoff looks closer — at the streets, routines, timing, and small shifts that shape a better move.</p>
           </header>
 
-          <aside class="cm-insight" aria-live="polite" aria-atomic="true">
-            <p class="cm-insight__prompt meta-label">Current focus</p>
-            <h3 class="cm-insight__name">Burlington</h3>
-            <p class="cm-insight__line">Lakefront neighbourhoods, family streets, commuter access, and pricing nuance that changes block by block.</p>
-            <a class="cm-insight__link editorial-cta" href="communities.html#burlington">Explore Burlington <span aria-hidden="true">&#8594;</span></a>
+          <aside class="cm-insight" aria-label="Geoff's local perspective">
+            <p class="cm-insight__prompt meta-label">Geoff's Local Perspective</p>
+            <div class="cm-tabs" role="group" aria-label="Insight themes">
+              <button class="cm-tab is-active" data-insight="0" type="button" aria-pressed="true">Street level</button>
+              <button class="cm-tab" data-insight="1" type="button" aria-pressed="false">Buyer demand</button>
+              <button class="cm-tab" data-insight="2" type="button" aria-pressed="false">Hidden value</button>
+              <button class="cm-tab" data-insight="3" type="button" aria-pressed="false">Timing</button>
+            </div>
+            <div class="cm-insight__panel" aria-live="polite" aria-atomic="true">
+              <h3 class="cm-insight__name">Street-by-street matters.</h3>
+              <p class="cm-insight__line">In Burlington, Waterdown, Oakville, and Hamilton, value can shift quickly from one pocket to the next. Geoff helps clients read the details that broad averages miss.</p>
+            </div>
+            <a class="cm-insight__link editorial-cta" href="communities.html">Explore Local Expertise <span aria-hidden="true">&#8594;</span></a>
           </aside>
         </div>
 
@@ -3671,72 +4233,72 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         CLIENT STORIES
+         TRUST DIVIDER
     ══════════════════════════════════════ -->
-    <section class="cs-section" aria-labelledby="cs-heading">
-      <div class="cs-inner">
+    <div class="td-section reveal">
+      <hr class="td-rule" aria-hidden="true">
+      <span class="td-label">Local Perspective</span>
+      <p class="td-heading">Some moves are obvious.<br>Others reveal themselves.</p>
+      <p class="td-support">Serving Burlington, Hamilton, Oakville,<br>and the communities in between.</p>
+    </div>
 
-        <!-- Section header -->
-        <header class="cs-header reveal">
-          <div class="cs-eyebrow editorial-eyebrow">Client Stories</div>
-          <h2 class="cs-section-title editorial-heading" id="cs-heading">In their words.</h2>
+    <!-- ══════════════════════════════════════
+         BUYERS FEATURE
+    ══════════════════════════════════════ -->
+    <section class="bf-section reveal" aria-label="Buying with Geoff">
+      <div class="bf-text">
+        <p class="bf-eyebrow editorial-eyebrow">For Buyers</p>
+        <h2 class="bf-heading editorial-heading">Find the right street<br><em>before the right house.</em></h2>
+        <a class="bf-cta editorial-cta" href="contact.html">Explore Buying <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="bf-image" aria-hidden="true">
+        <img src="assets/buyers-smith-dobrowsky.webp" alt="" loading="lazy">
+      </div>
+    </section>
+
+    <div class="ef-gap" aria-hidden="true"></div>
+
+    <!-- ══════════════════════════════════════
+         SELLERS FEATURE
+    ══════════════════════════════════════ -->
+    <section class="sf-section reveal" aria-label="Selling with Geoff">
+      <div class="sf-text">
+        <p class="sf-eyebrow editorial-eyebrow">For Sellers</p>
+        <h2 class="sf-heading editorial-heading">Position your home<br><em>to earn attention.</em></h2>
+        <a class="sf-cta editorial-cta" href="contact.html">Explore Selling <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="sf-image" aria-hidden="true">
+        <img src="assets/GettyImages-1388101414.jpg" alt="" loading="lazy">
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         TESTIMONIAL TEASER
+    ══════════════════════════════════════ -->
+    <section class="ct-section" aria-labelledby="ct-heading">
+      <div class="ct-inner">
+
+        <header class="ct-header reveal">
+          <p class="ct-eyebrow editorial-eyebrow">Client Stories</p>
+          <h2 class="ct-heading editorial-heading" id="ct-heading">In their words.</h2>
         </header>
 
-        <!-- Story 01 — Nathan Small -->
-        <article class="cs-story cs-story--a reveal">
-          <div class="cs-story__content">
-            <div class="cs-story__proof">
-              <div class="cs-story__proof-line">
-                <span class="cs-story__num">01</span>
-                <span class="cs-story__sep">—</span>
-                <span class="cs-story__tag">First Home · Burlington</span>
-              </div>
-              <div class="cs-story__type">Home purchase</div>
-            </div>
-            <blockquote class="cs-story__pull">"They found the home I hadn't thought to look for."</blockquote>
-            <p class="cs-story__highlight">He showed me a house in Aldershot that wasn't on any of my searches.</p>
-            <p class="cs-story__body">I had a list. Square footage, school zone, commute distance — I thought I knew what I wanted. Geoff listened, asked the right questions, and helped me see the right home sooner. Two weeks later, I made an offer.</p>
-            <footer class="cs-story__attr">
-              <div class="cs-story__name">Nathan Small</div>
-              <div class="cs-story__role">First-time buyer</div>
-            </footer>
-          </div>
-          <figure class="cs-story__fig" aria-hidden="true">
-            <img src="assets/NathanSmall.webp" alt="" loading="lazy">
-          </figure>
-        </article>
+        <blockquote class="ct-quote reveal">
+          <p class="ct-quote__text">"Geoff showed us a home we wouldn't have considered — and it ended up being the one."</p>
+          <footer class="ct-quote__footer">
+            <span class="ct-quote__name">Nathan Small</span>
+            <span aria-hidden="true">·</span>
+            <span>First-Time Buyer</span>
+            <span aria-hidden="true">·</span>
+            <span>Burlington</span>
+          </footer>
+        </blockquote>
 
-        <!-- Story 02 — George Arrendondo & Nancy Santana -->
-        <article class="cs-story cs-story--b reveal">
-          <figure class="cs-story__fig" aria-hidden="true">
-            <img src="assets/George-Arrendondo-Nancy-Santana.webp" alt="" loading="lazy">
-          </figure>
-          <div class="cs-story__content">
-            <div class="cs-story__proof">
-              <div class="cs-story__proof-line">
-                <span class="cs-story__num">02</span>
-                <span class="cs-story__sep">—</span>
-                <span class="cs-story__tag">New Beginnings · Hamilton</span>
-              </div>
-              <div class="cs-story__type">Buyer story</div>
-            </div>
-            <blockquote class="cs-story__pull">"You made the process seem very easy."</blockquote>
-            <p class="cs-story__highlight">Your daily communication led us to just the right house for our family.</p>
-            <p class="cs-story__body">Being relatively new to the country, we felt overwhelmed at times. Your professionalism, knowledge, and patience helped us understand the details of buying and made each step feel easier.</p>
-            <footer class="cs-story__attr">
-              <div class="cs-story__name">George Arrendondo &amp; Nancy Santana</div>
-              <div class="cs-story__role">Buyers · Hamilton</div>
-            </footer>
-          </div>
-        </article>
-
-        <p class="cs-proof-note">Trusted by buyers and sellers across Hamilton, Burlington, Oakville, Waterdown, and beyond.</p>
-
-        <div class="cs-more reveal">
-          <a href="contact.html" class="cs-more__link editorial-cta">Read more client stories <span aria-hidden="true">→</span></a>
+        <div class="ct-more reveal">
+          <a class="ct-more__link editorial-cta" href="contact.html">Read more client stories <span aria-hidden="true">→</span></a>
         </div>
 
-      </div><!-- /cs-inner -->
+      </div>
     </section>
 
     <!-- ══════════════════════════════════════
@@ -4013,7 +4575,7 @@
 </script>
 
 <script>
-/* Communities — image atlas map */
+/* Communities — evergreen insight themes + atmospheric map */
 (function () {
   'use strict';
 
@@ -4021,109 +4583,107 @@
     var section = document.querySelector('.cm-section');
     if (!section) return;
 
-    var data = {
-      burlington:  { name: 'Burlington',  line: 'Lakefront neighbourhoods, family streets, commuter access, and pricing nuance that changes block by block.', href: 'communities.html#burlington' },
-      hamilton:    { name: 'Hamilton',    line: 'A street-by-street market where character, condition, and pricing strategy can change outcomes.', href: 'communities.html#hamilton' },
-      waterdown:   { name: 'Waterdown',   line: 'Village pace, escarpment access, and small shifts in lot, street, and timing.', href: 'communities.html#waterdown' },
-      flamborough: { name: 'Flamborough', line: 'Larger lots, rural calm, and lifestyle buyers who compare differently.', href: 'communities.html#flamborough' },
-      oakville:    { name: 'Oakville',    line: 'School demand, strong presentation standards, and little room for average.', href: 'communities.html#oakville' },
-      milton:      { name: 'Milton',      line: 'Family demand, commuter appeal, and newer pockets where timing matters.', href: 'communities.html#milton' }
-    };
+    /* ── Evergreen insight themes ──────────────────────────────── */
+    var insights = [
+      {
+        name: 'Street-by-street matters.',
+        line: 'In Burlington, Waterdown, Oakville, and Hamilton, value can shift quickly from one pocket to the next. Geoff helps clients read the details that broad averages miss.'
+      },
+      {
+        name: 'Where motivated buyers move.',
+        line: 'Some streets consistently attract buyers who are ready to act. Knowing which neighbourhoods carry that energy — and when — changes how you position an offer.'
+      },
+      {
+        name: 'What people tend to overlook.',
+        line: 'A few pockets in this region are consistently underestimated. Buyers who look past the obvious often find stronger fundamentals, better value, and less competition.'
+      },
+      {
+        name: 'Timing matters more than averages.',
+        line: 'When to list, when to offer, when to wait — these are local judgement calls, not universal rules. Geoff reads conditions at the street level to help clients move well.'
+      }
+    ];
 
-    var cities = {
-      flamborough: { x: 0.395, y: 0.385, labelX: 14, labelY: -12 },
-      waterdown:   { x: 0.545, y: 0.438, labelX: 14, labelY: -12 },
-      milton:      { x: 0.720, y: 0.165, labelX: 14, labelY: -12 },
-      hamilton:    { x: 0.505, y: 0.835, labelX: -96, labelY: -12 },
-      burlington:  { x: 0.635, y: 0.638, labelX: 16, labelY: -12 },
-      oakville:    { x: 0.790, y: 0.315, labelX: -92, labelY: -12 }
-    };
+    var tabs     = section.querySelectorAll('.cm-tab');
+    var panel    = section.querySelector('.cm-insight__panel');
+    var nameEl   = section.querySelector('.cm-insight__name');
+    var lineEl   = section.querySelector('.cm-insight__line');
+    var FADE_MS  = 160;
 
-    var markerLayer = section.querySelector('.cm-map-marker-layer');
-    var insightEl = section.querySelector('.cm-insight');
-    var nameEl = section.querySelector('.cm-insight__name');
-    var lineEl = section.querySelector('.cm-insight__line');
-    var linkEl = section.querySelector('.cm-insight__link');
-    var current = null;
-    var tourInterval = null;
-    var tourOrder = ['burlington', 'hamilton', 'waterdown', 'flamborough', 'milton', 'oakville'];
-    var FADE_MS = 190;
-    var markerEls = {};
-
-    function buildMarkers() {
-      if (!markerLayer) return;
-      markerLayer.innerHTML = '';
-
-      Object.keys(cities).forEach(function (name) {
-        var info = data[name];
-        var pos = cities[name];
-        if (!info || !pos) return;
-
-        var el = document.createElement('button');
-        el.type = 'button';
-        el.className = 'cm-map-marker';
-        el.setAttribute('data-community', name);
-        el.setAttribute('aria-label', info.name);
-        el.style.setProperty('--marker-x', (pos.x * 100).toFixed(2) + '%');
-        el.style.setProperty('--marker-y', (pos.y * 100).toFixed(2) + '%');
-        el.style.setProperty('--label-x', pos.labelX + 'px');
-        el.style.setProperty('--label-y', pos.labelY + 'px');
-        el.innerHTML = '<span class="cm-map-marker__dot" aria-hidden="true"></span><span class="cm-map-marker__label">' + info.name + '</span>';
-
-        markerEls[name] = el;
-        markerLayer.appendChild(el);
-
-        function handle() { stopTour(); activate(name); }
-        el.addEventListener('click', handle);
-        el.addEventListener('mouseenter', handle);
-        el.addEventListener('focus', handle);
-        el.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handle(); }
-        });
+    function activateInsight(idx) {
+      tabs.forEach(function (t) {
+        var active = +t.dataset.insight === idx;
+        t.classList.toggle('is-active', active);
+        t.setAttribute('aria-pressed', active ? 'true' : 'false');
       });
-    }
-
-    function activate(name) {
-      if (name === current || !data[name]) return;
-      current = name;
-      section.classList.add('has-active');
-
-      Object.keys(markerEls).forEach(function (key) {
-        markerEls[key].classList.toggle('is-active', key === name);
-      });
-
-      if (!insightEl) return;
-      insightEl.classList.add('is-updating');
+      if (!panel) return;
+      panel.classList.add('is-updating');
       setTimeout(function () {
-        if (nameEl) nameEl.textContent = data[name].name;
-        if (lineEl) lineEl.textContent = data[name].line;
-        if (linkEl) {
-          linkEl.href = data[name].href;
-          linkEl.innerHTML = 'Explore ' + data[name].name + ' <span aria-hidden="true">&#8594;</span>';
-        }
-        insightEl.classList.remove('is-updating');
+        if (nameEl) nameEl.textContent = insights[idx].name;
+        if (lineEl) lineEl.textContent = insights[idx].line;
+        panel.classList.remove('is-updating');
       }, FADE_MS);
     }
 
-    function startTour() {
-      if (tourInterval) return;
-      tourInterval = setInterval(function () {
-        var idx = tourOrder.indexOf(current);
-        activate(tourOrder[(idx + 1) % tourOrder.length]);
-      }, 8000);
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        activateInsight(+tab.dataset.insight);
+      });
+    });
+
+    /* ── Atmospheric map markers — hover highlights, click navigates ── */
+    var communities = {
+      flamborough: { x: 0.395, y: 0.385, labelX: 14,  labelY: -12, name: 'Flamborough', href: 'communities.html#flamborough' },
+      waterdown:   { x: 0.545, y: 0.438, labelX: 14,  labelY: -12, name: 'Waterdown',   href: 'communities.html#waterdown'   },
+      milton:      { x: 0.720, y: 0.165, labelX: 14,  labelY: -12, name: 'Milton',       href: 'communities.html#milton'      },
+      hamilton:    { x: 0.505, y: 0.835, labelX: -96, labelY: -12, name: 'Hamilton',     href: 'communities.html#hamilton'    },
+      burlington:  { x: 0.635, y: 0.638, labelX: 16,  labelY: -12, name: 'Burlington',   href: 'communities.html#burlington'  },
+      oakville:    { x: 0.790, y: 0.315, labelX: -92, labelY: -12, name: 'Oakville',     href: 'communities.html#oakville'    }
+    };
+
+    var markerLayer = section.querySelector('.cm-map-marker-layer');
+    var markerEls   = {};
+
+    if (markerLayer) {
+      markerLayer.innerHTML = '';
+      Object.keys(communities).forEach(function (key) {
+        var c  = communities[key];
+        var el = document.createElement('button');
+        el.type = 'button';
+        el.className = 'cm-map-marker';
+        el.setAttribute('data-community', key);
+        el.setAttribute('aria-label', 'Learn about ' + c.name);
+        el.style.setProperty('--marker-x', (c.x * 100).toFixed(2) + '%');
+        el.style.setProperty('--marker-y', (c.y * 100).toFixed(2) + '%');
+        el.style.setProperty('--label-x',  c.labelX + 'px');
+        el.style.setProperty('--label-y',  c.labelY + 'px');
+        el.innerHTML = '<span class="cm-map-marker__dot" aria-hidden="true"></span>'
+                     + '<span class="cm-map-marker__label">' + c.name + '</span>';
+
+        markerEls[key] = el;
+        markerLayer.appendChild(el);
+
+        function clearActive() {
+          Object.values(markerEls).forEach(function (m) { m.classList.remove('is-active'); });
+          section.classList.remove('has-active');
+        }
+
+        el.addEventListener('click', function () {
+          window.location.href = c.href;
+        });
+        el.addEventListener('mouseenter', function () {
+          clearActive();
+          el.classList.add('is-active');
+          section.classList.add('has-active');
+        });
+        el.addEventListener('mouseleave', clearActive);
+        el.addEventListener('focus', function () {
+          clearActive();
+          el.classList.add('is-active');
+          section.classList.add('has-active');
+        });
+        el.addEventListener('blur', clearActive);
+      });
     }
-
-    function stopTour() {
-      clearInterval(tourInterval);
-      tourInterval = null;
-    }
-
-    buildMarkers();
-    activate('burlington');
-    setTimeout(startTour, 3000);
-
-    var mapPanel = section.querySelector('.cm-map-panel');
-    if (mapPanel) mapPanel.addEventListener('mouseenter', stopTour);
   }
 
   if (document.readyState === 'loading') {
