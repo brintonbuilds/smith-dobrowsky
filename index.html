@@ -3967,6 +3967,108 @@
       }
     }
 
+    /* ── Local Perspective: restraint pass ── */
+    body.home-page .cm-insight::before,
+    body.home-page .cm-insight__panel::before,
+    body.home-page .cm-tab::after {
+      display: none !important;
+    }
+
+    body.home-page .cm-insight__prompt {
+      margin: 0 0 clamp(14px, 1.8vh, 20px) !important;
+      color: rgba(17, 29, 51, 0.66) !important;
+      font-size: clamp(0.65rem, 0.64vw, 0.74rem) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.15em !important;
+    }
+
+    body.home-page .cm-tabs {
+      width: min(390px, 100%) !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: clamp(11px, 1.35vh, 15px) clamp(30px, 3vw, 48px) !important;
+      margin: 0 0 clamp(24px, 3vh, 34px) !important;
+      padding: 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+    }
+
+    body.home-page .cm-tab {
+      min-height: 30px !important;
+      padding: 0 !important;
+      align-items: flex-start !important;
+      background: transparent !important;
+      color: rgba(17, 29, 51, 0.52) !important;
+      font-size: clamp(0.66rem, 0.66vw, 0.76rem) !important;
+      font-weight: 650 !important;
+      letter-spacing: 0.105em !important;
+      transition: color 180ms ease, opacity 180ms ease !important;
+    }
+
+    body.home-page .cm-tab.is-active {
+      color: rgba(17, 29, 51, 0.9) !important;
+      font-weight: 750 !important;
+      background: transparent !important;
+    }
+
+    body.home-page .cm-tab:hover {
+      color: rgba(17, 29, 51, 0.72) !important;
+      background: transparent !important;
+    }
+
+    body.home-page .cm-insight__panel {
+      padding-top: 0 !important;
+    }
+
+    body.home-page .cm-insight__name {
+      margin-bottom: 9px !important;
+      font-size: clamp(1.34rem, 1.42vw, 1.66rem) !important;
+      line-height: 1.08 !important;
+    }
+
+    body.home-page .cm-insight__line {
+      max-width: 35ch !important;
+      line-height: 1.58 !important;
+    }
+
+    body.home-page .cm-insight__link {
+      margin-top: clamp(18px, 2.2vh, 24px) !important;
+    }
+
+    @media (min-width: 1101px) and (max-height: 780px) {
+      body.home-page .cm-insight__prompt {
+        margin-bottom: 11px !important;
+      }
+
+      body.home-page .cm-tabs {
+        gap: 8px 30px !important;
+        margin-bottom: 17px !important;
+      }
+
+      body.home-page .cm-tab {
+        min-height: 26px !important;
+      }
+
+      body.home-page .cm-insight__line {
+        line-height: 1.48 !important;
+      }
+
+      body.home-page .cm-insight__link {
+        margin-top: 13px !important;
+      }
+    }
+
+    @media (max-width: 620px) {
+      body.home-page .cm-tabs {
+        gap: 10px 22px !important;
+        margin-bottom: 24px !important;
+      }
+
+      body.home-page .cm-tab {
+        min-height: 32px !important;
+        font-size: 0.63rem !important;
+      }
+    }
+
     /* ═══════════════════════════════════════════════════════════
        EDITORIAL FLOW — Trust Divider · Buyers · Sellers · Testimonial
        ═══════════════════════════════════════════════════════════ */
