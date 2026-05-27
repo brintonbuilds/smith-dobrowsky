@@ -3829,6 +3829,112 @@
         clip-path: none;
       }
     }
+
+    /* Buyer/Seller editorial stack: tablet + mobile only */
+    @media (max-width: 900px) {
+      body.home-page .bf-section,
+      body.home-page .sf-section {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+      }
+
+      body.home-page .bf-text,
+      body.home-page .sf-text {
+        display: contents !important;
+        padding: 0 !important;
+        border: 0 !important;
+        box-shadow: none !important;
+      }
+
+      body.home-page .bf-eyebrow,
+      body.home-page .sf-eyebrow {
+        order: 1 !important;
+        width: 100% !important;
+        margin: 0 0 clamp(14px, 2.2vw, 20px) !important;
+        padding: clamp(44px, 7vw, 64px) clamp(32px, 7vw, 48px) 0 !important;
+      }
+
+      body.home-page .bf-heading,
+      body.home-page .sf-heading {
+        order: 2 !important;
+        width: 100% !important;
+        max-width: 11.25em !important;
+        margin: 0 !important;
+        padding: 0 clamp(32px, 7vw, 48px) clamp(28px, 5vw, 42px) !important;
+        font-size: clamp(2.2rem, 7.2vw, 3.35rem) !important;
+        line-height: 1.04 !important;
+      }
+
+      body.home-page .bf-image,
+      body.home-page .sf-image {
+        order: 3 !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 3 / 2 !important;
+        border: 0 !important;
+        overflow: hidden !important;
+      }
+
+      body.home-page .bf-image img,
+      body.home-page .sf-image img {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+      }
+
+      body.home-page .bf-image img {
+        object-position: 58% 56% !important;
+      }
+
+      body.home-page .sf-image img {
+        object-position: 50% 42% !important;
+      }
+
+      body.home-page .bf-cta,
+      body.home-page .sf-cta {
+        order: 4 !important;
+        justify-self: start !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: clamp(28px, 5vw, 40px) clamp(32px, 7vw, 48px) clamp(48px, 8vw, 72px) !important;
+      }
+
+      body.home-page .ef-gap {
+        height: clamp(44px, 8vw, 64px) !important;
+      }
+    }
+
+    @media (max-width: 520px) {
+      body.home-page .bf-eyebrow,
+      body.home-page .sf-eyebrow {
+        padding: 40px 32px 0 !important;
+      }
+
+      body.home-page .bf-heading,
+      body.home-page .sf-heading {
+        max-width: 10.8em !important;
+        padding: 0 32px 30px !important;
+        font-size: clamp(2.05rem, 10vw, 2.75rem) !important;
+      }
+
+      body.home-page .bf-image,
+      body.home-page .sf-image {
+        aspect-ratio: 4 / 3 !important;
+      }
+
+      body.home-page .bf-cta,
+      body.home-page .sf-cta {
+        padding: 30px 32px 52px !important;
+      }
+
+      body.home-page .ef-gap {
+        height: 48px !important;
+      }
+    }
   </style>
 </head>
 <body class="home-page">
