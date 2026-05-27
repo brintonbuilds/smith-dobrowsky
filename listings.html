@@ -9,6 +9,48 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css?v=20260523-mobile" />
+  <style>
+    /* Editorial type colour system: final colour-only hierarchy layer */
+    :root {
+      --text-primary: #0b1626;
+      --text-secondary: rgba(11,22,38,0.66);
+      --text-tertiary: rgba(11,22,38,0.46);
+      --text-quaternary: rgba(11,22,38,0.32);
+      --text-inverse: rgba(250,248,244,0.94);
+      --text-inverse-muted: rgba(250,248,244,0.62);
+      --eyebrow-dark: rgba(11,22,38,0.48);
+      --cta-primary: var(--text-primary);
+      --cta-secondary: rgba(11,22,38,0.68);
+    }
+
+    .page-header__h1,
+    .listing-card__price,
+    .listing-card__address {
+      color: var(--text-primary);
+    }
+
+    .page-header__h1 em,
+    .listing-card__city,
+    .listing-card__details {
+      color: var(--text-secondary);
+    }
+
+    .page-header__eyebrow,
+    .filter-bar__count {
+      color: var(--eyebrow-dark);
+    }
+
+    .filter-btn {
+      color: var(--text-tertiary);
+    }
+
+    .filter-btn:hover,
+    .filter-btn:focus-visible,
+    .filter-btn.is-active {
+      color: var(--cta-primary);
+      border-color: var(--text-quaternary);
+    }
+  </style>
 </head>
 <body>
 
