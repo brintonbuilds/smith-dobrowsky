@@ -5172,11 +5172,10 @@ body.home-page .footer__contact-phone:focus-visible {
 
 body.home-page .footer__legal-bar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  padding: 14px clamp(24px, 5vw, 72px);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  gap: 16px;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 /* Higher specificity (0-3-1) beats inline <style> (0-2-1) for .footer__legal overrides */
@@ -5220,10 +5219,121 @@ body.home-page .footer__legal-bar .footer__legal-link:hover {
   }
 
   body.home-page .footer__legal-bar {
-    flex-direction: column;
     align-items: flex-start;
     gap: 8px;
-    padding: 16px clamp(20px, 5vw, 40px);
+    justify-content: flex-start;
+  }
+}
+
+/* ── Homepage: footer logo image ────────────────────────────── */
+body.home-page .footer__logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
+  opacity: 0.88;
+}
+
+/* ── Homepage: footer Instagram ─────────────────────────────── */
+body.home-page .footer__instagram {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(244, 241, 234, 0.28);
+  text-decoration: none;
+  margin-top: 10px;
+  transition: color 0.2s ease;
+}
+
+body.home-page .footer__instagram:hover,
+body.home-page .footer__instagram:focus-visible {
+  color: rgba(244, 241, 234, 0.72);
+}
+
+body.home-page .footer__instagram-icon {
+  flex-shrink: 0;
+}
+
+body.home-page .footer__instagram:focus-visible {
+  outline: 1px solid rgba(244, 241, 234, 0.5);
+  outline-offset: 4px;
+  border-radius: 1px;
+}
+
+/* ── Homepage: brokerage affiliation + legal strip ───────────── */
+body.home-page .footer__brokerage-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 17px clamp(24px, 5vw, 72px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.home-page .footer__brokerage-affiliation {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+body.home-page .footer__cb-logo {
+  width: clamp(132px, 13vw, 154px);
+  height: clamp(11.5px, 1.14vw, 13.5px);
+  object-fit: contain;
+  opacity: 0.34;
+  flex-shrink: 0;
+  display: block;
+}
+
+body.home-page .footer__brokerage-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: var(--font-sans);
+  line-height: 1.35;
+  color: rgba(244, 241, 234, 0.32);
+  min-width: 0;
+}
+
+body.home-page .footer__brokerage-name {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(244, 241, 234, 0.42);
+}
+
+body.home-page .footer__brokerage-address {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(244, 241, 234, 0.28);
+}
+
+@media (max-width: 768px) {
+  body.home-page .footer__brokerage-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 17px clamp(20px, 5vw, 40px);
+  }
+
+  body.home-page .footer__cb-logo {
+    width: 142px;
+    height: 12.5px;
+  }
+
+  body.home-page .footer__brokerage-affiliation {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+  }
+
+  body.home-page .footer__brokerage-copy {
+    gap: 4px;
   }
 }
 

@@ -84,7 +84,7 @@
   align-items: center !important;
   justify-content: center !important;
   justify-self: center !important;
-  gap: clamp(26px, 3.1vw, 48px) !important;
+  gap: clamp(18px, 2.2vw, 36px) !important;
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;

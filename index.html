@@ -3706,6 +3706,122 @@
         font-size: clamp(1.02rem, 5.2vw, 1.28rem) !important;
       }
     }
+
+    /* ── Closing CTA: single-column refinement ── */
+    body.home-page .closing-cta__inner {
+      display: block !important;
+    }
+    body.home-page .closing-cta__left {
+      max-width: min(580px, 100%) !important;
+    }
+    body.home-page .closing-cta__eyebrow {
+      margin: 0 0 14px !important;
+    }
+    body.home-page .closing-cta__heading {
+      margin: 0 0 36px !important;
+      max-width: none !important;
+    }
+    body.home-page .closing-cta__link {
+      color: rgba(11, 22, 38, 0.68) !important;
+    }
+    body.home-page .closing-cta__link:hover,
+    body.home-page .closing-cta__link:focus-visible {
+      color: rgb(11, 22, 38) !important;
+      border-color: rgba(11, 22, 38, 0.32) !important;
+    }
+    body.home-page .closing-cta__trust {
+      margin-top: 24px !important;
+      color: rgba(11, 22, 38, 0.40) !important;
+      max-width: none !important;
+    }
+    @media (max-width: 900px) {
+      body.home-page .closing-cta__left {
+        max-width: 100% !important;
+      }
+    }
+
+    /* Hero CTA editorial refinement: text-only, clearer hierarchy */
+    body.home-page .hero__ctas {
+      margin-top: clamp(46px, 5.2vh, 64px) !important;
+      column-gap: clamp(46px, 5vw, 72px) !important;
+      row-gap: 12px !important;
+      align-items: baseline !important;
+    }
+
+    body.home-page .hero__cta-link {
+      min-height: 44px !important;
+      padding: 11px 2px 10px !important;
+      gap: 10px !important;
+      font-size: clamp(13px, 0.88vw, 15px) !important;
+      line-height: 1.15 !important;
+      letter-spacing: 0.045em !important;
+      text-transform: none !important;
+    }
+
+    body.home-page .hero__cta-link::after {
+      bottom: 6px !important;
+      opacity: 0.52 !important;
+      transform-origin: left center !important;
+      transition-duration: 0.22s !important;
+    }
+
+    body.home-page .hero__cta-link:hover::after,
+    body.home-page .hero__cta-link:focus-visible::after {
+      transform: scaleX(1) !important;
+    }
+
+    body.home-page .hero__cta-arrow {
+      font-size: 0.96em !important;
+      transform: translateY(-0.02em) !important;
+      transition-duration: 0.18s !important;
+    }
+
+    body.home-page .hero__cta-link:hover .hero__cta-arrow,
+    body.home-page .hero__cta-link:focus-visible .hero__cta-arrow {
+      transform: translate(3px, -0.02em) !important;
+    }
+
+    body.home-page .hero__cta-link--primary {
+      color: rgba(250,246,237,0.98) !important;
+      font-size: clamp(14px, 0.96vw, 16px) !important;
+      font-weight: 620 !important;
+      letter-spacing: 0.05em !important;
+    }
+
+    body.home-page .hero__cta-link--secondary {
+      color: rgba(238,235,228,0.74) !important;
+      font-weight: 520 !important;
+      letter-spacing: 0.04em !important;
+    }
+
+    body.home-page .hero__cta-link--primary:hover,
+    body.home-page .hero__cta-link--primary:focus-visible {
+      color: rgba(255,252,244,1) !important;
+    }
+
+    body.home-page .hero__cta-link--secondary:hover,
+    body.home-page .hero__cta-link--secondary:focus-visible {
+      color: rgba(250,246,237,0.88) !important;
+    }
+
+    @media (max-width: 600px) {
+      body.home-page .hero__ctas {
+        margin-top: 36px !important;
+        column-gap: 30px !important;
+        row-gap: 6px !important;
+      }
+
+      body.home-page .hero__cta-link {
+        font-size: 13px !important;
+        min-height: 44px !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+      }
+
+      body.home-page .hero__cta-link--primary {
+        font-size: 14px !important;
+      }
+    }
   </style>
 
   <!-- ── Preloader styles: hoisted above everything so they render immediately ── -->
@@ -4351,7 +4467,7 @@
     <!-- ══════════════════════════════════════
          BUYERS FEATURE
     ══════════════════════════════════════ -->
-    <section class="bf-section reveal" aria-label="Buying with Geoff">
+    <section class="bf-section reveal" id="buyers" aria-label="Buying with Geoff">
       <div class="bf-text">
         <p class="bf-eyebrow editorial-eyebrow">For Buyers</p>
         <h2 class="bf-heading editorial-heading">Find the right street<br><em>before the right house.</em></h2>
@@ -4367,7 +4483,7 @@
     <!-- ══════════════════════════════════════
          SELLERS FEATURE
     ══════════════════════════════════════ -->
-    <section class="sf-section reveal" aria-label="Selling with Geoff">
+    <section class="sf-section reveal" id="sellers" aria-label="Selling with Geoff">
       <div class="sf-text">
         <p class="sf-eyebrow editorial-eyebrow">For Sellers</p>
         <h2 class="sf-heading editorial-heading">Position your home<br><em>to earn attention.</em></h2>
@@ -4410,11 +4526,16 @@
     <!-- ══════════════════════════════════════
          CLOSING CTA
     ══════════════════════════════════════ -->
-    <section class="closing-cta reveal" aria-label="Start a conversation">
-      <div class="closing-cta__inner closing-cta__inner--minimal">
-        <h2 class="closing-cta__heading editorial-heading">
-          <a href="contact.html" class="closing-cta__minimal-link">Start a conversation.</a>
-        </h2>
+    <section class="closing-cta reveal" aria-label="Start with a conversation">
+      <div class="closing-cta__inner">
+
+        <div class="closing-cta__left">
+          <p class="closing-cta__eyebrow editorial-eyebrow">When The Time Feels Right</p>
+          <h2 class="closing-cta__heading editorial-heading">Start with a<br><em>conversation.</em></h2>
+          <a href="contact.html" class="closing-cta__link">Talk With Geoff <span aria-hidden="true">→</span></a>
+          <p class="closing-cta__trust">Helping people understand their options before making a move.</p>
+        </div>
+
       </div>
     </section>
 
@@ -4427,33 +4548,55 @@
     <div class="footer__bar">
 
       <div class="footer__brand">
-        <div class="footer__logo-mark"><span>SD</span></div>
-        <div>
-          <div class="footer__wordmark-the">The</div>
-          <div class="footer__wordmark-name">Smith Dobrowsky</div>
-          <div class="footer__wordmark-team">Team</div>
-        </div>
+        <img src="assets/logo-transparent-header.png"
+             alt="The Smith Dobrowsky Team"
+             class="footer__logo-img"
+             loading="lazy">
       </div>
 
       <nav class="footer__nav" aria-label="Footer navigation">
         <a href="listings.html"    class="footer__nav-link">Listings</a>
-        <a href="about.html"       class="footer__nav-link">About</a>
+        <a href="index.html#buyers"  class="footer__nav-link">Buyers</a>
+        <a href="index.html#sellers" class="footer__nav-link">Sellers</a>
         <a href="communities.html" class="footer__nav-link">Communities</a>
-        <a href="contact.html"     class="footer__nav-link">Testimonials</a>
+        <a href="about.html"       class="footer__nav-link">About</a>
         <a href="contact.html"     class="footer__nav-link">Contact</a>
       </nav>
 
       <div class="footer__contact">
         <span class="footer__contact-label">Call or text</span>
         <a href="tel:9056393355" class="footer__contact-phone">905.639.3355</a>
+        <a href="https://www.instagram.com/smith_dobrowsky_team/"
+           class="footer__instagram"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Smith Dobrowsky Team on Instagram">
+          <svg class="footer__instagram-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          @smith_dobrowsky_team
+        </a>
       </div>
 
     </div>
 
-    <!-- Legal bar -->
-    <div class="footer__legal-bar">
-      <span class="footer__legal">© 2026 · Ontario, Canada · Premium real estate services</span>
-      <span class="footer__legal">MLS® · REALTORS® · <a href="#" class="footer__legal-link">Privacy Policy</a></span>
+    <!-- Brokerage affiliation + legal -->
+    <div class="footer__brokerage-bar">
+      <div class="footer__brokerage-affiliation">
+        <img src="assets/coldwell-banker-burnhill-realty-brokerage.png"
+             alt="Coldwell Banker Burnhill Realty, Brokerage"
+             class="footer__cb-logo">
+        <div class="footer__brokerage-copy">
+          <span class="footer__brokerage-name">Coldwell Banker Burnhill Realty, Brokerage</span>
+          <span class="footer__brokerage-address">514 Guelph Line · Burlington, ON L7R 3M4</span>
+        </div>
+      </div>
+      <div class="footer__legal-bar">
+        <span class="footer__legal">© 2026 · Ontario, Canada</span>
+        <span class="footer__legal">MLS® · REALTORS® · <a href="#" class="footer__legal-link">Privacy Policy</a></span>
+      </div>
     </div>
 
   </footer>
