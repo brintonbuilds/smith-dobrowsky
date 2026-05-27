@@ -4117,6 +4117,7 @@
     /* ── Buyers Feature (dark) ─────────────────────────────────── */
     body.home-page .bf-section {
       position: relative !important;
+      z-index: 1 !important;
       display: grid !important;
       grid-template-columns: 38% 62% !important;
       min-height: clamp(480px, 46vw, 560px) !important;
@@ -4175,17 +4176,20 @@
     /* ── Whitespace gap ────────────────────────────────────────── */
     body.home-page .ef-gap {
       background: #F6F2EB !important;
-      height: clamp(28px, 3.2vw, 44px) !important;
+      height: 0 !important;
     }
 
     /* ── Sellers Feature (light) ───────────────────────────────── */
     body.home-page .sf-section {
       position: relative !important;
+      z-index: 2 !important;
       display: grid !important;
       grid-template-columns: 58% 42% !important;
       min-height: clamp(480px, 46vw, 560px) !important;
+      margin-top: clamp(-44px, -3vw, -30px) !important;
       overflow: hidden !important;
       background: #F6F2EB !important;
+      box-shadow: 0 -20px 60px -50px rgba(4, 6, 8, 0.70) !important;
     }
     body.home-page .sf-image {
       position: relative !important;
@@ -4339,13 +4343,14 @@
 
       /* Gap */
       body.home-page .ef-gap {
-        height: clamp(34px, 5vw, 44px) !important;
+        height: 0 !important;
       }
 
       /* Sellers */
       body.home-page .sf-section {
         grid-template-columns: 1fr !important;
         min-height: unset !important;
+        margin-top: -24px !important;
       }
       body.home-page .sf-image {
         order: 2 !important;
@@ -4728,7 +4733,12 @@
       }
 
       body.home-page .ef-gap {
-        height: clamp(30px, 5vw, 42px) !important;
+        height: 0 !important;
+      }
+
+      body.home-page .sf-section {
+        margin-top: -22px !important;
+        box-shadow: 0 -14px 42px -36px rgba(4, 6, 8, 0.58) !important;
       }
     }
 
@@ -4756,7 +4766,11 @@
       }
 
       body.home-page .ef-gap {
-        height: 32px !important;
+        height: 0 !important;
+      }
+
+      body.home-page .sf-section {
+        margin-top: -16px !important;
       }
     }
   </style>
