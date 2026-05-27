@@ -3814,6 +3814,159 @@
       }
     }
 
+    /* ── Local Perspective: elite editorial navigation treatment ── */
+    body.home-page .cm-insight {
+      position: relative !important;
+    }
+
+    body.home-page .cm-insight::before {
+      content: '' !important;
+      display: block !important;
+      width: 54px !important;
+      height: 1px !important;
+      margin: 0 0 clamp(16px, 2vh, 22px) !important;
+      background: rgba(125, 112, 88, 0.34) !important;
+    }
+
+    body.home-page .cm-insight__prompt {
+      margin: 0 0 clamp(15px, 2vh, 22px) !important;
+      color: rgba(17, 29, 51, 0.72) !important;
+      font-size: clamp(0.66rem, 0.66vw, 0.76rem) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.165em !important;
+    }
+
+    body.home-page .cm-tabs {
+      width: min(420px, 100%) !important;
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: clamp(12px, 1.45vh, 16px) clamp(26px, 2.6vw, 42px) !important;
+      margin: 0 0 clamp(22px, 2.8vh, 32px) !important;
+      padding: 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+    }
+
+    body.home-page .cm-tab {
+      min-height: 38px !important;
+      padding: 0 0 9px !important;
+      display: inline-flex !important;
+      align-items: flex-end !important;
+      justify-content: flex-start !important;
+      background: transparent !important;
+      color: rgba(17, 29, 51, 0.56) !important;
+      font-size: clamp(0.68rem, 0.68vw, 0.78rem) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.115em !important;
+      line-height: 1.15 !important;
+    }
+
+    body.home-page .cm-tab::after {
+      left: 0 !important;
+      right: auto !important;
+      bottom: 0 !important;
+      width: min(100%, 128px) !important;
+      height: 1px !important;
+      background: rgba(125, 112, 88, 0.54) !important;
+      transform: scaleX(0) !important;
+    }
+
+    body.home-page .cm-tab.is-active {
+      background: transparent !important;
+      color: rgba(17, 29, 51, 0.95) !important;
+    }
+
+    body.home-page .cm-tab.is-active::after {
+      transform: scaleX(1) !important;
+      background: rgba(125, 112, 88, 0.64) !important;
+    }
+
+    body.home-page .cm-tab:hover {
+      background: transparent !important;
+      color: rgba(17, 29, 51, 0.82) !important;
+    }
+
+    body.home-page .cm-insight__panel {
+      position: relative !important;
+      padding-top: clamp(20px, 2.6vh, 30px) !important;
+    }
+
+    body.home-page .cm-insight__panel::before {
+      content: '' !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: min(100%, 340px) !important;
+      height: 1px !important;
+      background: linear-gradient(90deg, rgba(125,112,88,0.28), rgba(125,112,88,0.08) 72%, transparent) !important;
+    }
+
+    body.home-page .cm-insight__name {
+      margin-bottom: 10px !important;
+      font-size: clamp(1.32rem, 1.46vw, 1.72rem) !important;
+      line-height: 1.06 !important;
+    }
+
+    body.home-page .cm-insight__line {
+      max-width: 36ch !important;
+      color: rgba(40, 50, 67, 0.74) !important;
+      line-height: 1.6 !important;
+    }
+
+    body.home-page .cm-insight__link {
+      margin-top: clamp(18px, 2.4vh, 26px) !important;
+    }
+
+    @media (min-width: 1101px) and (max-height: 780px) {
+      body.home-page .cm-insight::before {
+        margin-bottom: 13px !important;
+      }
+
+      body.home-page .cm-insight__prompt {
+        margin-bottom: 12px !important;
+      }
+
+      body.home-page .cm-tabs {
+        gap: 9px 28px !important;
+        margin-bottom: 18px !important;
+      }
+
+      body.home-page .cm-tab {
+        min-height: 32px !important;
+        padding-bottom: 7px !important;
+      }
+
+      body.home-page .cm-insight__panel {
+        padding-top: 17px !important;
+      }
+
+      body.home-page .cm-insight__line {
+        line-height: 1.48 !important;
+      }
+
+      body.home-page .cm-insight__link {
+        margin-top: 14px !important;
+      }
+    }
+
+    @media (max-width: 620px) {
+      body.home-page .cm-insight::before {
+        margin-bottom: 14px !important;
+      }
+
+      body.home-page .cm-tabs {
+        gap: 10px 20px !important;
+        margin-bottom: 22px !important;
+      }
+
+      body.home-page .cm-tab {
+        min-height: 38px !important;
+        padding: 0 0 9px !important;
+        font-size: 0.64rem !important;
+        letter-spacing: 0.105em !important;
+      }
+    }
+
     /* ═══════════════════════════════════════════════════════════
        EDITORIAL FLOW — Trust Divider · Buyers · Sellers · Testimonial
        ═══════════════════════════════════════════════════════════ */
