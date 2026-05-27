@@ -1297,6 +1297,10 @@ p {
   align-items: start;
 }
 
+.closing-cta__inner--minimal {
+  display: block;
+}
+
 .closing-cta__eyebrow {
   color: var(--text-muted);
   margin: 0 0 clamp(32px, 3vw, 40px);
@@ -1318,6 +1322,21 @@ p {
   margin: 0;
   letter-spacing: -0.015em;
   max-width: 720px;
+}
+
+.closing-cta__minimal-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.closing-cta__minimal-link:hover,
+.closing-cta__minimal-link:focus-visible {
+  color: inherit;
+}
+
+.closing-cta__minimal-link:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 8px;
 }
 
 .closing-cta__body {
