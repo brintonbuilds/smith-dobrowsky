@@ -4123,6 +4123,9 @@
       min-height: clamp(480px, 46vw, 560px) !important;
       overflow: hidden !important;
       background: linear-gradient(180deg, #040608 0%, #05070A 100%) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.045),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.055) !important;
     }
     body.home-page .bf-text {
       position: relative !important;
@@ -4131,8 +4134,10 @@
       flex-direction: column !important;
       justify-content: center !important;
       padding: clamp(64px, 8vw, 108px) clamp(40px, 5.2vw, 80px) !important;
-      border-right: 1px solid rgba(15, 18, 20, 0.08) !important;
-      box-shadow: inset -80px 0 120px rgba(255, 255, 255, 0.018) !important;
+      border-right: 1px solid rgba(255, 255, 255, 0.065) !important;
+      box-shadow:
+        inset -80px 0 120px rgba(255, 255, 255, 0.018),
+        inset 1px 0 0 rgba(255, 255, 255, 0.035) !important;
     }
     body.home-page .bf-eyebrow {
       color: rgba(214, 196, 160, 0.44) !important;
@@ -4163,6 +4168,16 @@
       position: relative !important;
       overflow: hidden !important;
     }
+    body.home-page .bf-image::before {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 1 !important;
+      pointer-events: none !important;
+      background:
+        linear-gradient(90deg, rgba(4, 6, 8, 0.20) 0%, rgba(4, 6, 8, 0.08) 6%, transparent 18%),
+        linear-gradient(180deg, transparent 74%, rgba(4, 6, 8, 0.18) 100%) !important;
+    }
     body.home-page .bf-image img {
       position: absolute !important;
       inset: 0 !important;
@@ -4189,13 +4204,28 @@
       margin-top: clamp(-44px, -3vw, -30px) !important;
       overflow: hidden !important;
       background: #F6F2EB !important;
-      box-shadow: 0 -20px 60px -50px rgba(4, 6, 8, 0.70) !important;
+      border-top: 1px solid rgba(15, 18, 20, 0.065) !important;
+      box-shadow:
+        0 -20px 60px -50px rgba(4, 6, 8, 0.70),
+        inset 0 1px 0 rgba(255, 255, 255, 0.42),
+        inset 0 -1px 0 rgba(15, 18, 20, 0.045) !important;
     }
     body.home-page .sf-image {
       position: relative !important;
       overflow: hidden !important;
       order: -1 !important;
-      border-right: 1px solid rgba(15, 18, 20, 0.08) !important;
+      border-right: 1px solid rgba(15, 18, 20, 0.07) !important;
+      box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.34) !important;
+    }
+    body.home-page .sf-image::before {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 1 !important;
+      pointer-events: none !important;
+      background:
+        linear-gradient(90deg, transparent 78%, rgba(246, 242, 235, 0.16) 100%),
+        linear-gradient(180deg, rgba(15, 18, 20, 0.045) 0%, transparent 16%) !important;
     }
     body.home-page .sf-image img {
       position: absolute !important;
@@ -4214,6 +4244,7 @@
       justify-content: center !important;
       padding: clamp(56px, 7vw, 96px) clamp(40px, 5.2vw, 72px) !important;
       order: 1 !important;
+      box-shadow: inset 1px 0 0 rgba(15, 18, 20, 0.045) !important;
     }
     body.home-page .sf-eyebrow {
       color: rgba(15, 18, 20, 0.38) !important;
@@ -4331,7 +4362,7 @@
         padding: clamp(44px, 8vw, 64px) clamp(24px, 5vw, 40px) clamp(36px, 5vw, 48px) !important;
         border-right: 0 !important;
         border-bottom: 1px solid rgba(245, 242, 236, 0.06) !important;
-        box-shadow: none !important;
+        box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.04) !important;
       }
       body.home-page .bf-heading {
         font-size: clamp(2.0rem, 8vw, 2.9rem) !important;
@@ -4357,6 +4388,7 @@
         height: clamp(300px, 48vw, 420px) !important;
         border-right: 0 !important;
         border-top: 1px solid rgba(15, 18, 20, 0.07) !important;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34) !important;
       }
       body.home-page .sf-text {
         order: 1 !important;
@@ -4702,8 +4734,15 @@
         width: 100% !important;
         height: auto !important;
         aspect-ratio: 3 / 2 !important;
-        border: 0 !important;
         overflow: hidden !important;
+      }
+
+      body.home-page .bf-image {
+        border-top: 1px solid rgba(255, 255, 255, 0.065) !important;
+      }
+
+      body.home-page .sf-image {
+        border-top: 1px solid rgba(15, 18, 20, 0.065) !important;
       }
 
       body.home-page .bf-image img,
