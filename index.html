@@ -3683,6 +3683,137 @@
       }
     }
 
+    /* ── Local Expertise perspective nav refinement ── */
+    body.home-page .cm-insight__prompt {
+      margin: 0 0 clamp(12px, 1.7vh, 18px) !important;
+      color: rgba(17, 29, 51, 0.62) !important;
+      font-size: clamp(0.62rem, 0.62vw, 0.72rem) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.19em !important;
+      line-height: 1.25 !important;
+      text-transform: uppercase !important;
+    }
+
+    body.home-page .cm-tabs {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 8px 10px !important;
+      width: min(390px, 100%) !important;
+      margin: 0 0 clamp(18px, 2.3vh, 24px) !important;
+      padding: 6px !important;
+      border: 1px solid rgba(17, 29, 51, 0.075) !important;
+      background: rgba(255, 252, 246, 0.28) !important;
+    }
+
+    body.home-page .cm-tab {
+      position: relative !important;
+      min-height: 34px !important;
+      padding: 9px 12px 8px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      border: 0 !important;
+      background: transparent !important;
+      color: rgba(17, 29, 51, 0.52) !important;
+      font-family: var(--font-sans) !important;
+      font-size: clamp(0.62rem, 0.62vw, 0.7rem) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.14em !important;
+      line-height: 1.15 !important;
+      text-align: left !important;
+      text-transform: uppercase !important;
+      cursor: pointer !important;
+      white-space: nowrap !important;
+      transition: background-color 180ms ease, color 180ms ease, opacity 180ms ease !important;
+    }
+
+    body.home-page .cm-tab::after {
+      content: '' !important;
+      position: absolute !important;
+      left: 12px !important;
+      right: 12px !important;
+      bottom: 5px !important;
+      height: 1px !important;
+      background: rgba(17, 29, 51, 0.28) !important;
+      transform: scaleX(0) !important;
+      transform-origin: left center !important;
+      transition: transform 180ms ease, background-color 180ms ease !important;
+    }
+
+    body.home-page .cm-tab.is-active {
+      background: rgba(17, 29, 51, 0.055) !important;
+      color: rgba(17, 29, 51, 0.9) !important;
+    }
+
+    body.home-page .cm-tab.is-active::after {
+      transform: scaleX(1) !important;
+      background: rgba(17, 29, 51, 0.42) !important;
+    }
+
+    body.home-page .cm-tab:hover {
+      background: rgba(17, 29, 51, 0.035) !important;
+      color: rgba(17, 29, 51, 0.76) !important;
+    }
+
+    body.home-page .cm-tab:focus-visible {
+      outline: 1px solid rgba(17, 29, 51, 0.22) !important;
+      outline-offset: 2px !important;
+      border-radius: 2px !important;
+    }
+
+    body.home-page .cm-insight__panel {
+      padding-top: clamp(2px, 0.45vh, 6px) !important;
+    }
+
+    body.home-page .cm-insight__name {
+      margin-bottom: 10px !important;
+    }
+
+    body.home-page .cm-insight__line {
+      max-width: 34ch !important;
+      line-height: 1.56 !important;
+    }
+
+    body.home-page .cm-insight__link {
+      margin-top: clamp(16px, 2vh, 22px) !important;
+    }
+
+    @media (min-width: 1101px) and (max-height: 780px) {
+      body.home-page .cm-insight__prompt {
+        margin-bottom: 10px !important;
+      }
+
+      body.home-page .cm-tabs {
+        gap: 6px 8px !important;
+        margin-bottom: 14px !important;
+        padding: 5px !important;
+      }
+
+      body.home-page .cm-tab {
+        min-height: 31px !important;
+        padding-top: 8px !important;
+        padding-bottom: 7px !important;
+      }
+
+      body.home-page .cm-insight__link {
+        margin-top: 12px !important;
+      }
+    }
+
+    @media (max-width: 620px) {
+      body.home-page .cm-tabs {
+        gap: 7px !important;
+        padding: 5px !important;
+      }
+
+      body.home-page .cm-tab {
+        min-height: 36px !important;
+        padding: 9px 8px 8px !important;
+        font-size: 0.58rem !important;
+        letter-spacing: 0.12em !important;
+      }
+    }
+
     /* ═══════════════════════════════════════════════════════════
        EDITORIAL FLOW — Trust Divider · Buyers · Sellers · Testimonial
        ═══════════════════════════════════════════════════════════ */
