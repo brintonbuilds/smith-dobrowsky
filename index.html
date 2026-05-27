@@ -3604,10 +3604,11 @@
         position: relative !important;
         inset: auto !important;
         grid-column: 2 !important;
-        width: 100% !important;
+        --cm-map-bleed: clamp(96px, 7vw, 220px);
+        width: calc(100% + var(--cm-map-bleed)) !important;
         height: 100% !important;
         min-height: 0 !important;
-        margin: 0 !important;
+        margin: 0 calc(-1 * var(--cm-map-bleed)) 0 0 !important;
         overflow: hidden !important;
         align-self: stretch !important;
       }
@@ -3618,17 +3619,18 @@
         width: 100% !important;
         height: 100% !important;
         transform: none !important;
-        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 56px, #000 100%) !important;
-        mask-image: linear-gradient(90deg, transparent 0, #000 56px, #000 100%) !important;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 48px, #000 100%) !important;
+        mask-image: linear-gradient(90deg, transparent 0, #000 48px, #000 100%) !important;
       }
 
       body.home-page .cm-map-frame::after {
-        background: linear-gradient(90deg, rgba(237,232,223,0.18) 0, rgba(237,232,223,0.06) 48px, transparent 80px, transparent 100%) !important;
+        background: linear-gradient(90deg, rgba(237,232,223,0.14) 0, rgba(237,232,223,0.04) 40px, transparent 72px, transparent 100%) !important;
       }
 
       body.home-page .cm-map-image {
-        object-position: 63% center !important;
-        transform: scale(1.02) !important;
+        object-fit: cover !important;
+        object-position: 61% center !important;
+        transform: none !important;
         transform-origin: center center !important;
       }
     }
