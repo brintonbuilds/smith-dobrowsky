@@ -1355,7 +1355,7 @@
 
     body.home-page .cm-section {
       min-height: 0 !important;
-      height: calc(100svh - var(--nav-height, 74px)) !important;
+      height: calc(100svh - var(--nav-height, 88px)) !important;
       padding-top: clamp(28px, 3.8vw, 48px) !important;
       padding-bottom: clamp(28px, 3.8vw, 48px) !important;
       display: flex !important;
@@ -1397,7 +1397,7 @@
       --focus-x: 55%;
       --focus-y: 58%;
       width: 100% !important;
-      height: clamp(500px, calc(100svh - var(--nav-height, 74px) - 112px), 640px) !important;
+      height: clamp(500px, calc(100svh - var(--nav-height, 88px) - 112px), 640px) !important;
       min-height: 0 !important;
       justify-self: stretch !important;
       overflow: hidden !important;
@@ -1623,7 +1623,7 @@
     /* Communities reference rebuild: editorial luxury atlas */
     body.home-page .cm-section {
       min-height: 0 !important;
-      height: calc(100svh - var(--nav-height, 74px)) !important;
+      height: calc(100svh - var(--nav-height, 88px)) !important;
       padding: clamp(42px, 5vw, 72px) clamp(48px, 5vw, 86px) !important;
       display: flex !important;
       align-items: center !important;
@@ -1650,7 +1650,7 @@
       z-index: 1 !important;
       width: 100% !important;
       max-width: 1540px !important;
-      height: min(720px, calc(100svh - var(--nav-height, 74px) - 84px)) !important;
+      height: min(720px, calc(100svh - var(--nav-height, 88px) - 84px)) !important;
       margin: 0 auto !important;
       display: grid !important;
       grid-template-columns: minmax(330px, 0.32fr) minmax(0, 0.68fr) !important;
@@ -3364,7 +3364,7 @@
     @media (min-width: 1101px) {
       body.home-page .cm-section {
         display: flex !important;
-        height: calc(100svh - var(--nav-height, 74px)) !important;
+        height: calc(100svh - var(--nav-height, 88px)) !important;
         min-height: 620px !important;
         padding-top: clamp(20px, 3svh, 38px) !important;
         padding-bottom: clamp(20px, 3svh, 38px) !important;
@@ -3497,7 +3497,7 @@
     @media (min-width: 1101px) {
       body.home-page .cm-section {
         display: block !important;
-        height: calc(100vh - var(--nav-height, 74px)) !important;
+        height: calc(100vh - var(--nav-height, 88px)) !important;
         min-height: 660px !important;
         padding: 0 !important;
         overflow: visible !important;
@@ -4034,6 +4034,49 @@
       margin-top: clamp(18px, 2.2vh, 24px) !important;
     }
 
+    /* ── Static editorial insight — remove old card/tab chrome ───── */
+    body.home-page .cm-insight::before {
+      display: none !important;
+    }
+
+    body.home-page .cm-insight {
+      border-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    body.home-page .cm-bridge {
+      font-family: var(--font-sans) !important;
+      font-size: clamp(0.62rem, 0.66vw, 0.70rem) !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.20em !important;
+      text-transform: uppercase !important;
+      line-height: 1.5 !important;
+      color: rgba(17, 29, 51, 0.38) !important;
+      margin: 0 0 clamp(10px, 1.1vw, 14px) !important;
+    }
+
+    body.home-page .cm-insight__name {
+      font-family: var(--font-sans) !important;
+      font-size: clamp(0.82rem, 0.90vw, 0.96rem) !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.01em !important;
+      line-height: 1.35 !important;
+      color: rgba(17, 29, 51, 0.72) !important;
+      margin: 0 0 clamp(9px, 1vw, 13px) !important;
+    }
+
+    body.home-page .cm-service-area {
+      order: 4 !important;
+      font-family: var(--font-sans) !important;
+      font-size: clamp(10px, 0.76vw, 11px) !important;
+      font-weight: 400 !important;
+      line-height: 1.65 !important;
+      letter-spacing: 0.01em !important;
+      color: rgba(17, 29, 51, 0.34) !important;
+      margin: clamp(22px, 2.6vw, 36px) 0 0 !important;
+      max-width: 38ch !important;
+    }
+
     @media (min-width: 1101px) and (max-height: 780px) {
       body.home-page .cm-insight__prompt {
         margin-bottom: 11px !important;
@@ -4269,11 +4312,20 @@
       color: rgba(15, 18, 20, 0.88) !important;
       font-size: clamp(2.0rem, 3.0vw, 3.4rem) !important;
       line-height: 1.04 !important;
-      margin-bottom: clamp(24px, 2.8vw, 38px) !important;
+      margin-bottom: clamp(18px, 2.0vw, 26px) !important;
       max-width: 11em !important;
     }
     body.home-page .sf-heading em {
       color: rgba(15, 18, 20, 0.56) !important;
+    }
+    body.home-page .sf-copy {
+      font-family: var(--font-sans) !important;
+      font-size: clamp(0.88rem, 0.94vw, 0.98rem) !important;
+      font-weight: 300 !important;
+      line-height: 1.72 !important;
+      color: rgba(15, 18, 20, 0.58) !important;
+      max-width: 36ch !important;
+      margin: 0 0 clamp(22px, 2.4vw, 32px) !important;
     }
     body.home-page .sf-cta {
       color: rgba(15, 18, 20, 0.46) !important;
@@ -5220,20 +5272,14 @@
             <p class="cm-copy editorial-body">Most people compare neighbourhoods. Geoff looks closer — at the streets, routines, timing, and small shifts that shape a better move.</p>
           </header>
 
-          <aside class="cm-insight" aria-label="Geoff's local perspective">
-            <p class="cm-insight__prompt meta-label">Geoff's Local Perspective</p>
-            <div class="cm-tabs" role="group" aria-label="Insight themes">
-              <button class="cm-tab is-active" data-insight="0" type="button" aria-pressed="true">Street level</button>
-              <button class="cm-tab" data-insight="1" type="button" aria-pressed="false">Buyer demand</button>
-              <button class="cm-tab" data-insight="2" type="button" aria-pressed="false">Hidden value</button>
-              <button class="cm-tab" data-insight="3" type="button" aria-pressed="false">Timing</button>
-            </div>
-            <div class="cm-insight__panel" aria-live="polite" aria-atomic="true">
-              <h3 class="cm-insight__name">Street-by-street matters.</h3>
-              <p class="cm-insight__line">In Burlington, Waterdown, Oakville, and Hamilton, value can shift quickly from one pocket to the next. Geoff helps clients read the details that broad averages miss.</p>
-            </div>
+          <div class="cm-insight">
+            <p class="cm-bridge">The details broad averages miss.</p>
+            <h3 class="cm-insight__name">What people tend to overlook.</h3>
+            <p class="cm-insight__line">A few pockets in this region are consistently underestimated. Buyers who look past the obvious often find stronger fundamentals, better value, and less competition.</p>
             <a class="cm-insight__link editorial-cta" href="#">Explore Local Expertise <span aria-hidden="true">&#8594;</span></a>
-          </aside>
+          </div>
+
+          <p class="cm-service-area">Serving Burlington, Oakville, Hamilton, Milton, Waterdown, Grimsby, Stoney Creek, Cambridge &amp; Flamborough.</p>
         </div>
 
         <div class="cm-map-panel reveal" aria-label="Interactive map of Burlington, Hamilton, Oakville, Milton, Waterdown and Flamborough">
@@ -5421,7 +5467,8 @@
     <section class="sf-section reveal" id="sellers" aria-label="Selling with Geoff">
       <div class="sf-text">
         <p class="sf-eyebrow editorial-eyebrow">For Sellers</p>
-        <h2 class="sf-heading editorial-heading">Position your home<br><em>to earn attention.</em></h2>
+        <h2 class="sf-heading editorial-heading">Protect your value<br><em>before you go to market.</em></h2>
+        <p class="sf-copy">Selling a home involves more than putting it on the market. Geoff provides thoughtful guidance on pricing, preparation, marketing, and negotiation so you can move forward with confidence.</p>
         <a class="sf-cta editorial-cta" href="#">Explore Selling <span aria-hidden="true">→</span></a>
       </div>
       <div class="sf-image" aria-hidden="true">
@@ -5842,61 +5889,12 @@
     var section = document.querySelector('.cm-section');
     if (!section) return;
 
-    /* ── Evergreen insight themes ──────────────────────────────── */
-    var insights = [
-      {
-        name: 'Street-by-street matters.',
-        line: 'In Burlington, Waterdown, Oakville, and Hamilton, value can shift quickly from one pocket to the next. Geoff helps clients read the details that broad averages miss.'
-      },
-      {
-        name: 'Where motivated buyers move.',
-        line: 'Some streets consistently attract buyers who are ready to act. Knowing which neighbourhoods carry that energy — and when — changes how you position an offer.'
-      },
-      {
-        name: 'What people tend to overlook.',
-        line: 'A few pockets in this region are consistently underestimated. Buyers who look past the obvious often find stronger fundamentals, better value, and less competition.'
-      },
-      {
-        name: 'Timing matters more than averages.',
-        line: 'When to list, when to offer, when to wait — these are local judgement calls, not universal rules. Geoff reads conditions at the street level to help clients move well.'
-      }
-    ];
-
-    var tabs     = section.querySelectorAll('.cm-tab');
-    var panel    = section.querySelector('.cm-insight__panel');
-    var nameEl   = section.querySelector('.cm-insight__name');
-    var lineEl   = section.querySelector('.cm-insight__line');
-    var FADE_MS  = 160;
-
-    function activateInsight(idx) {
-      tabs.forEach(function (t) {
-        var active = +t.dataset.insight === idx;
-        t.classList.toggle('is-active', active);
-        t.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
-      if (!panel) return;
-      panel.classList.add('is-updating');
-      setTimeout(function () {
-        if (nameEl) nameEl.textContent = insights[idx].name;
-        if (lineEl) lineEl.textContent = insights[idx].line;
-        panel.classList.remove('is-updating');
-      }, FADE_MS);
-    }
-
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        activateInsight(+tab.dataset.insight);
-      });
-    });
-
     /* ── Atmospheric map markers — hover highlights, click navigates ── */
     var communities = {
-      flamborough: { x: 0.395, y: 0.385, labelX: 14,  labelY: -12, name: 'Flamborough', href: '#' },
-      waterdown:   { x: 0.545, y: 0.438, labelX: 14,  labelY: -12, name: 'Waterdown',   href: '#' },
-      milton:      { x: 0.720, y: 0.165, labelX: 14,  labelY: -12, name: 'Milton',       href: '#' },
-      hamilton:    { x: 0.505, y: 0.835, labelX: -96, labelY: -12, name: 'Hamilton',     href: '#' },
-      burlington:  { x: 0.635, y: 0.638, labelX: 16,  labelY: -12, name: 'Burlington',   href: '#' },
-      oakville:    { x: 0.790, y: 0.315, labelX: -92, labelY: -12, name: 'Oakville',     href: '#' }
+      milton:     { x: 0.720, y: 0.165, labelX: 14,  labelY: -12, name: 'Milton',     href: '#' },
+      hamilton:   { x: 0.505, y: 0.835, labelX: -96, labelY: -12, name: 'Hamilton',   href: '#' },
+      burlington: { x: 0.635, y: 0.638, labelX: 16,  labelY: -12, name: 'Burlington', href: '#' },
+      oakville:   { x: 0.790, y: 0.315, labelX: -92, labelY: -12, name: 'Oakville',   href: '#' }
     };
 
     var markerLayer = section.querySelector('.cm-map-marker-layer');
