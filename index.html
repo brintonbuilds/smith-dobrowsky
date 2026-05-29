@@ -4539,19 +4539,37 @@
       }
     }
 
-    /* ── Closing CTA: single-column refinement ── */
+    /* ── Closing CTA: editorial two-column magazine layout ── */
+    body.home-page .closing-cta {
+      padding: clamp(52px, 5vw, 80px) 0 0 !important;
+    }
     body.home-page .closing-cta__inner {
-      display: block !important;
+      display: grid !important;
+      grid-template-columns: 1.3fr 1fr !important;
+      align-items: stretch !important;
+      gap: 0 !important;
+      max-width: 1280px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
     }
     body.home-page .closing-cta__left {
-      max-width: min(580px, 100%) !important;
+      padding: 0 clamp(44px, 5vw, 80px) !important;
+      max-width: none !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
     }
     body.home-page .closing-cta__eyebrow {
-      margin: 0 0 14px !important;
+      margin: 0 0 16px !important;
     }
     body.home-page .closing-cta__heading {
-      margin: 0 0 36px !important;
+      margin: 0 0 clamp(20px, 2.2vw, 30px) !important;
       max-width: none !important;
+    }
+    body.home-page .closing-cta__trust {
+      margin: 0 0 clamp(28px, 3vw, 40px) !important;
+      color: rgba(11, 22, 38, 0.42) !important;
+      max-width: 36ch !important;
     }
     body.home-page .closing-cta__link {
       color: rgba(11, 22, 38, 0.68) !important;
@@ -4561,14 +4579,38 @@
       color: rgb(11, 22, 38) !important;
       border-color: rgba(11, 22, 38, 0.32) !important;
     }
-    body.home-page .closing-cta__trust {
-      margin-top: 24px !important;
-      color: rgba(11, 22, 38, 0.40) !important;
-      max-width: none !important;
+    body.home-page .closing-cta__media {
+      padding-top: clamp(28px, 2.8vw, 42px) !important;
+      padding-right: clamp(36px, 3.6vw, 52px) !important;
     }
-    @media (max-width: 900px) {
+    body.home-page .closing-cta__photo {
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
+      min-height: clamp(320px, 34vw, 460px) !important;
+      object-fit: cover !important;
+      object-position: center 35% !important;
+    }
+    @media (max-width: 860px) {
+      body.home-page .closing-cta {
+        padding: clamp(64px, 9vw, 88px) 0 clamp(56px, 8vw, 72px) !important;
+      }
+      body.home-page .closing-cta__inner {
+        grid-template-columns: 1fr !important;
+        align-items: start !important;
+      }
       body.home-page .closing-cta__left {
-        max-width: 100% !important;
+        padding: 0 clamp(24px, 5vw, 40px) clamp(36px, 6vw, 48px) !important;
+        justify-content: flex-start !important;
+      }
+      body.home-page .closing-cta__media {
+        padding: 0 clamp(24px, 5vw, 40px) !important;
+      }
+      body.home-page .closing-cta__photo {
+        height: auto !important;
+        min-height: 0 !important;
+        aspect-ratio: 4 / 3 !important;
+        object-position: center 40% !important;
       }
     }
 
@@ -5412,8 +5454,16 @@
         <div class="closing-cta__left">
           <p class="closing-cta__eyebrow editorial-eyebrow">When The Time Feels Right</p>
           <h2 class="closing-cta__heading editorial-heading">Start with a<br><em>conversation.</em></h2>
-          <a href="#" class="closing-cta__link">Talk With Geoff <span aria-hidden="true">→</span></a>
           <p class="closing-cta__trust">Helping people understand their options before making a move.</p>
+          <a href="#" class="closing-cta__link">Talk With Geoff <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="closing-cta__media" aria-hidden="true">
+          <img class="closing-cta__photo"
+               src="assets/Burlington-Pier-Real-Estate.webp"
+               alt=""
+               loading="lazy"
+               decoding="async">
         </div>
 
       </div>
