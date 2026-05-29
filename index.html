@@ -4291,54 +4291,141 @@
     body.home-page .ct-section {
       background: #0D1116 !important;
       padding: clamp(56px, 6.5vw, 86px) clamp(24px, 6vw, 80px) !important;
+      position: relative !important;
+      overflow: hidden !important;
+      isolation: isolate !important;
+    }
+    body.home-page .ct-section::before {
+      content: "CLIENT STORIES" !important;
+      position: absolute !important;
+      left: 50% !important;
+      top: 48% !important;
+      z-index: 0 !important;
+      transform: translate(-50%, -50%) !important;
+      font-family: var(--font-serif) !important;
+      font-size: clamp(4.8rem, 12vw, 13.5rem) !important;
+      font-weight: 400 !important;
+      line-height: 0.82 !important;
+      letter-spacing: 0.02em !important;
+      white-space: nowrap !important;
+      color: rgba(245, 242, 236, 0.04) !important;
+      pointer-events: none !important;
     }
     body.home-page .ct-inner {
-      max-width: 640px !important;
+      max-width: 760px !important;
       margin: 0 auto !important;
       text-align: center !important;
+      position: relative !important;
+      z-index: 1 !important;
     }
     body.home-page .ct-eyebrow {
-      color: rgba(214, 196, 160, 0.36) !important;
-      margin-bottom: clamp(12px, 1.4vw, 18px) !important;
+      color: rgba(245, 242, 236, 0.46) !important;
+      margin-bottom: clamp(10px, 1.2vw, 16px) !important;
       display: block !important;
     }
     body.home-page .ct-heading {
-      color: rgba(245, 242, 236, 0.86) !important;
-      font-size: clamp(2.6rem, 3.9vw, 4.5rem) !important;
-      line-height: 0.97 !important;
-      margin-bottom: clamp(30px, 4vw, 48px) !important;
+      color: rgba(245, 242, 236, 0.76) !important;
+      font-size: clamp(2.25rem, 3.2vw, 3.8rem) !important;
+      line-height: 1 !important;
+      margin-bottom: clamp(28px, 3.6vw, 44px) !important;
+    }
+    body.home-page .ct-carousel {
+      display: grid !important;
+      align-items: center !important;
+      margin: 0 auto clamp(18px, 2.2vw, 28px) !important;
+    }
+    body.home-page .ct-slide {
+      grid-area: 1 / 1 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transition:
+        opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 900ms !important;
+    }
+    body.home-page .ct-slide.is-active {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transition:
+        opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 0s !important;
     }
     body.home-page .ct-quote {
-      margin: 0 0 clamp(18px, 2.2vw, 28px) !important;
+      margin: 0 !important;
       padding: 0 !important;
       border: 0 !important;
     }
     body.home-page .ct-quote__text {
       display: block !important;
       font-family: var(--font-serif) !important;
-      font-size: clamp(1.18rem, 1.52vw, 1.72rem) !important;
+      font-size: clamp(1.72rem, 2.45vw, 3.05rem) !important;
       font-weight: 400 !important;
       font-style: italic !important;
-      line-height: 1.48 !important;
-      color: rgba(245, 242, 236, 0.68) !important;
-      max-width: 18em !important;
-      margin: 0 auto clamp(14px, 1.6vw, 20px) !important;
+      line-height: 1.18 !important;
+      color: rgba(245, 242, 236, 0.84) !important;
+      max-width: 17.5em !important;
+      margin: 0 auto clamp(22px, 2.5vw, 34px) !important;
     }
     body.home-page .ct-quote__footer {
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      flex-wrap: wrap !important;
-      gap: 6px 10px !important;
+      flex-direction: column !important;
+      gap: clamp(6px, 0.8vw, 9px) !important;
       font-family: var(--font-sans) !important;
-      font-size: clamp(0.64rem, 0.70vw, 0.74rem) !important;
+      font-size: clamp(0.62rem, 0.68vw, 0.74rem) !important;
       font-weight: 500 !important;
-      letter-spacing: 0.16em !important;
+      letter-spacing: 0.18em !important;
       text-transform: uppercase !important;
-      color: rgba(214, 196, 160, 0.32) !important;
+      color: rgba(245, 242, 236, 0.34) !important;
     }
     body.home-page .ct-quote__name {
-      color: rgba(214, 196, 160, 0.52) !important;
+      color: rgba(245, 242, 236, 0.62) !important;
+    }
+    body.home-page .ct-quote__meta {
+      letter-spacing: 0.10em !important;
+      text-transform: none !important;
+      color: rgba(245, 242, 236, 0.34) !important;
+    }
+    body.home-page .ct-controls {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 12px !important;
+      margin-top: clamp(22px, 2.4vw, 32px) !important;
+    }
+    body.home-page .ct-control {
+      width: 42px !important;
+      height: 28px !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      color: inherit !important;
+      padding: 0 !important;
+      cursor: pointer !important;
+      position: relative !important;
+    }
+    body.home-page .ct-control::before {
+      content: "" !important;
+      position: absolute !important;
+      left: 50% !important;
+      top: 50% !important;
+      width: 32px !important;
+      height: 1px !important;
+      transform: translate(-50%, -50%) !important;
+      background: rgba(245, 242, 236, 0.22) !important;
+      transition: background-color 260ms ease, width 260ms ease !important;
+    }
+    body.home-page .ct-control.is-active::before,
+    body.home-page .ct-control:hover::before,
+    body.home-page .ct-control:focus-visible::before {
+      width: 42px !important;
+      background: rgba(245, 242, 236, 0.58) !important;
+    }
+    body.home-page .ct-control:focus-visible {
+      outline: 1px solid rgba(245, 242, 236, 0.42) !important;
+      outline-offset: 5px !important;
     }
     body.home-page .ct-more {
       margin-top: clamp(24px, 3vw, 38px) !important;
@@ -4416,11 +4503,11 @@
 
       /* Testimonial */
       body.home-page .ct-heading {
-        font-size: clamp(2.4rem, 9vw, 3.3rem) !important;
-        margin-bottom: clamp(28px, 6vw, 42px) !important;
+        font-size: clamp(2.1rem, 8vw, 3.0rem) !important;
+        margin-bottom: clamp(24px, 5vw, 36px) !important;
       }
       body.home-page .ct-quote__text {
-        font-size: clamp(1.10rem, 4.8vw, 1.44rem) !important;
+        font-size: clamp(1.42rem, 5.4vw, 2.05rem) !important;
       }
     }
 
@@ -4459,11 +4546,16 @@
         padding: clamp(48px, 11vw, 64px) 20px !important;
       }
       body.home-page .ct-heading {
-        font-size: clamp(2.2rem, 11vw, 2.9rem) !important;
+        font-size: clamp(2.0rem, 10vw, 2.55rem) !important;
         margin-bottom: clamp(22px, 6vw, 34px) !important;
       }
       body.home-page .ct-quote__text {
-        font-size: clamp(1.02rem, 5.2vw, 1.28rem) !important;
+        font-size: clamp(1.34rem, 7vw, 1.72rem) !important;
+        line-height: 1.22 !important;
+      }
+      body.home-page .ct-section::before {
+        font-size: clamp(4.0rem, 21vw, 6.8rem) !important;
+        top: 44% !important;
       }
     }
 
@@ -4835,6 +4927,9 @@
         filter: none !important;
         transition: opacity 1ms linear !important;
         will-change: auto !important;
+      }
+      body.home-page .ct-slide {
+        transition: none !important;
       }
     }
   </style>
@@ -5285,20 +5380,41 @@
       <div class="ct-inner">
 
         <header class="ct-header reveal">
-          <p class="ct-eyebrow editorial-eyebrow">Client Stories</p>
+          <p class="ct-eyebrow editorial-eyebrow">CLIENT STORIES</p>
           <h2 class="ct-heading editorial-heading" id="ct-heading">In their words.</h2>
         </header>
 
-        <blockquote class="ct-quote reveal">
-          <p class="ct-quote__text">"Geoff showed us a home we wouldn't have considered — and it ended up being the one."</p>
-          <footer class="ct-quote__footer">
-            <span class="ct-quote__name">Nathan Small</span>
-            <span aria-hidden="true">·</span>
-            <span>First-Time Buyer</span>
-            <span aria-hidden="true">·</span>
-            <span>Burlington</span>
-          </footer>
-        </blockquote>
+        <div class="ct-carousel reveal" data-client-stories aria-live="polite">
+          <blockquote class="ct-quote ct-slide is-active" data-client-story aria-hidden="false">
+            <p class="ct-quote__text">"Geoff showed us a home we wouldn&rsquo;t have considered &mdash; and it ended up being the one."</p>
+            <footer class="ct-quote__footer">
+              <span class="ct-quote__name">NATHAN SMALL</span>
+              <span class="ct-quote__meta">First-Time Buyer &middot; Burlington</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="ct-quote ct-slide" data-client-story aria-hidden="true">
+            <p class="ct-quote__text">"You made the process seem very easy."</p>
+            <footer class="ct-quote__footer">
+              <span class="ct-quote__name">GEORGE ARRENDONDO &amp; NANCY SANTANA</span>
+              <span class="ct-quote__meta">Buyers &middot; Hamilton</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="ct-quote ct-slide" data-client-story aria-hidden="true">
+            <p class="ct-quote__text">"When we were ready to give up, Geoff helped us keep moving forward."</p>
+            <footer class="ct-quote__footer">
+              <span class="ct-quote__name">DEREK MOORE &amp; ALICA DUSIL</span>
+              <span class="ct-quote__meta">Buyers &amp; Sellers &middot; Burlington</span>
+            </footer>
+          </blockquote>
+        </div>
+
+        <div class="ct-controls reveal" role="tablist" aria-label="Client story slides">
+          <button class="ct-control is-active" type="button" role="tab" aria-label="Show Nathan Small client story" aria-selected="true" data-client-story-control="0"></button>
+          <button class="ct-control" type="button" role="tab" aria-label="Show George Arrendondo and Nancy Santana client story" aria-selected="false" data-client-story-control="1"></button>
+          <button class="ct-control" type="button" role="tab" aria-label="Show Derek Moore and Alica Dusil client story" aria-selected="false" data-client-story-control="2"></button>
+        </div>
 
         <div class="ct-more reveal">
           <a class="ct-more__link editorial-cta" href="#">Read more client stories <span aria-hidden="true">→</span></a>
@@ -5386,6 +5502,62 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    (() => {
+      const carousel = document.querySelector('[data-client-stories]');
+      if (!carousel) return;
+
+      const slides = Array.from(carousel.querySelectorAll('[data-client-story]'));
+      const controls = Array.from(document.querySelectorAll('[data-client-story-control]'));
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const section = carousel.closest('.ct-section');
+      let activeIndex = slides.findIndex((slide) => slide.classList.contains('is-active'));
+      let timer = null;
+
+      if (activeIndex < 0) activeIndex = 0;
+
+      const showSlide = (index) => {
+        activeIndex = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          const isActive = slideIndex === activeIndex;
+          slide.classList.toggle('is-active', isActive);
+          slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        });
+        controls.forEach((control, controlIndex) => {
+          const isActive = controlIndex === activeIndex;
+          control.classList.toggle('is-active', isActive);
+          control.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+      };
+
+      const stop = () => {
+        if (timer) window.clearInterval(timer);
+        timer = null;
+      };
+
+      const start = () => {
+        if (prefersReducedMotion || timer || slides.length < 2) return;
+        timer = window.setInterval(() => showSlide(activeIndex + 1), 8500);
+      };
+
+      controls.forEach((control, index) => {
+        control.addEventListener('click', () => {
+          stop();
+          showSlide(index);
+        });
+        control.addEventListener('focus', stop);
+      });
+
+      if (section) {
+        section.addEventListener('mouseenter', stop);
+        section.addEventListener('mouseleave', start);
+        section.addEventListener('focusin', stop);
+      }
+
+      showSlide(activeIndex);
+      start();
+    })();
+  </script>
   <script>
     (() => {
       const mediaWrap = document.querySelector('.hero__video-wrap');
