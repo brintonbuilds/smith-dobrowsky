@@ -2727,27 +2727,6 @@
       margin-bottom: 0 !important;
     }
 
-    body.home-page .cm-insight__link {
-      width: fit-content !important;
-      padding-bottom: 0 !important;
-      border-bottom: 0 !important;
-      color: rgba(17, 29, 51, 0.82) !important;
-      font-size: var(--type-cta) !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.03em !important;
-      text-transform: none !important;
-      text-decoration: none !important;
-      transition: color 180ms ease, text-decoration-color 180ms ease !important;
-    }
-
-    body.home-page .cm-insight__link:hover,
-    body.home-page .cm-insight__link:focus-visible {
-      color: #08182e !important;
-      text-decoration: underline !important;
-      text-underline-offset: 0.38em !important;
-      text-decoration-thickness: 1px !important;
-    }
-
     body.home-page .cm-insight {
       width: min(248px, 100%) !important;
       margin-top: clamp(44px, 3.6vw, 58px) !important;
@@ -4044,17 +4023,6 @@
       padding-top: 0 !important;
     }
 
-    body.home-page .cm-bridge {
-      font-family: var(--font-sans) !important;
-      font-size: clamp(0.62rem, 0.66vw, 0.70rem) !important;
-      font-weight: 500 !important;
-      letter-spacing: 0.20em !important;
-      text-transform: uppercase !important;
-      line-height: 1.5 !important;
-      color: rgba(17, 29, 51, 0.38) !important;
-      margin: 0 0 clamp(10px, 1.1vw, 14px) !important;
-    }
-
     body.home-page .cm-insight__name {
       font-family: var(--font-sans) !important;
       font-size: clamp(0.82rem, 0.90vw, 0.96rem) !important;
@@ -4119,7 +4087,7 @@
     /* ── Trust Divider ─────────────────────────────────────────── */
     body.home-page .td-section {
       background: #F6F2EB !important;
-      padding: clamp(34px, 3.6vw, 48px) clamp(24px, 6vw, 80px) clamp(32px, 3.4vw, 46px) !important;
+      padding: clamp(30px, 3.4vw, 48px) clamp(24px, 6vw, 80px) clamp(28px, 3.2vw, 44px) !important;
       text-align: center !important;
     }
     body.home-page .td-rule,
@@ -4127,34 +4095,33 @@
     body.home-page .td-support {
       display: none !important;
     }
-    body.home-page .td-label {
-      font-family: var(--font-sans) !important;
-      font-size: clamp(0.60rem, 0.62vw, 0.68rem) !important;
-      font-weight: 500 !important;
-      letter-spacing: 0.22em !important;
-      line-height: 1.4 !important;
-      text-transform: uppercase !important;
-      color: rgba(15, 18, 20, 0.35) !important;
-      margin-bottom: 30px !important;
-    }
     body.home-page .td-heading {
       font-family: var(--font-serif) !important;
-      font-size: clamp(1.75rem, 2.05vw, 2.35rem) !important;
-      font-weight: 400 !important;
-      line-height: 1.18 !important;
-      letter-spacing: 0 !important;
-      color: #1A1D21 !important;
-      max-width: 760px !important;
+      font-size: clamp(3rem, 3.65vw, 4.3rem) !important;
+      font-weight: 500 !important;
+      line-height: 0.96 !important;
+      letter-spacing: -0.01em !important;
+      color: #0F1B30 !important;
+      max-width: 500px !important;
       margin: 0 auto !important;
+      text-wrap: balance !important;
+    }
+
+    body.home-page .td-heading em {
+      display: block !important;
+      font-style: italic !important;
+      font-weight: 400 !important;
+      white-space: nowrap !important;
+      color: rgba(40, 56, 84, 0.7) !important;
     }
     body.home-page .td-heading--editorial-reveal.reveal {
       opacity: 0 !important;
-      transform: translateY(14px) !important;
-      filter: blur(5px) !important;
+      transform: translateY(18px) scale(0.985) !important;
+      filter: blur(4px) !important;
       transition:
-        opacity 1050ms cubic-bezier(0.22, 1, 0.36, 1),
-        transform 1050ms cubic-bezier(0.22, 1, 0.36, 1),
-        filter 1050ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+        opacity 1250ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1250ms cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1250ms cubic-bezier(0.22, 1, 0.36, 1) !important;
       will-change: opacity, transform, filter !important;
     }
     body.home-page .td-heading--editorial-reveal.reveal.is-visible {
@@ -4162,16 +4129,6 @@
       transform: none !important;
       filter: blur(0) !important;
     }
-    body.home-page .td-support {
-      font-family: var(--font-sans) !important;
-      font-size: clamp(0.80rem, 0.86vw, 0.92rem) !important;
-      font-weight: 400 !important;
-      line-height: 1.65 !important;
-      color: rgba(15, 18, 20, 0.55) !important;
-      max-width: 420px !important;
-      margin: 0 auto !important;
-    }
-
     /* ── Buyers Feature (dark) ─────────────────────────────────── */
     body.home-page .bf-section {
       position: relative !important;
@@ -4483,12 +4440,12 @@
     /* ── Editorial Flow: Responsive ─────────────────────────────── */
     @media (max-width: 820px) {
       body.home-page .td-section {
-        padding: clamp(30px, 5vw, 42px) clamp(20px, 5vw, 40px) clamp(30px, 5vw, 42px) !important;
+        padding: clamp(30px, 6vw, 44px) clamp(20px, 5vw, 40px) clamp(28px, 5.5vw, 40px) !important;
       }
       body.home-page .td-heading {
-        font-size: clamp(1.55rem, 4.5vw, 2.05rem) !important;
-        line-height: 1.2 !important;
-        max-width: 660px !important;
+        font-size: clamp(2.42rem, 7vw, 3.18rem) !important;
+        line-height: 0.96 !important;
+        max-width: 8.4em !important;
       }
 
       /* Buyers */
@@ -4549,11 +4506,11 @@
 
     @media (max-width: 480px) {
       body.home-page .td-section {
-        padding: 28px 20px 30px !important;
+        padding: 30px 20px 30px !important;
       }
       body.home-page .td-heading {
-        font-size: clamp(1.38rem, 6.4vw, 1.68rem) !important;
-        line-height: 1.22 !important;
+        font-size: clamp(2.32rem, 11.2vw, 2.85rem) !important;
+        line-height: 0.98 !important;
       }
 
       body.home-page .bf-text {
@@ -4906,6 +4863,675 @@
       }
     }
 
+    /* Authoritative homepage design foundation: reusable page tokens for future sections/pages. */
+    body.home-page {
+      --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --surface-light: #F6F2EB;
+      --surface-warm: #EDE8DF;
+      --surface-dark: #0D1116;
+      --surface-ink: #040608;
+
+      --text-primary: #0F1B30;
+      --text-secondary: rgba(17, 29, 51, 0.66);
+      --text-muted: rgba(17, 29, 51, 0.48);
+      --text-metadata: rgba(17, 29, 51, 0.32);
+      --text-inverse: rgba(245, 242, 236, 0.92);
+      --text-inverse-secondary: rgba(245, 242, 236, 0.66);
+      --text-inverse-muted: rgba(245, 242, 236, 0.46);
+
+      --hairline-light: rgba(15, 18, 20, 0.09);
+      --hairline-dark: rgba(245, 242, 236, 0.09);
+      --border-soft: rgba(17, 29, 51, 0.12);
+
+      --radius-card: 8px;
+      --radius-image: 0;
+
+      --space-1: 6px;
+      --space-2: 10px;
+      --space-3: 14px;
+      --space-4: 18px;
+      --space-5: 24px;
+      --space-6: 32px;
+      --space-7: 44px;
+      --space-8: 64px;
+
+      --section-pad-x: clamp(24px, 6vw, 80px);
+      --section-pad-y: clamp(56px, 6.5vw, 86px);
+      --section-pad-y-compact: clamp(30px, 3.4vw, 48px);
+      --section-pad-y-mobile: clamp(44px, 10vw, 64px);
+
+      --type-display: clamp(3.3rem, 4vw, 4.75rem);
+      --type-section-heading: clamp(3rem, 3.65vw, 4.3rem);
+      --type-pathway-heading: clamp(2rem, 3vw, 3.4rem);
+      --type-card-heading: clamp(1.08rem, 1.45vw, 1.55rem);
+      --type-small-heading: clamp(0.82rem, 0.9vw, 0.96rem);
+      --type-body: clamp(0.94rem, 0.94vw, 1rem);
+      --type-small-body: clamp(0.82rem, 0.84vw, 0.9rem);
+      --type-metadata: clamp(10px, 0.72vw, 11px);
+
+      --weight-heading: 500;
+      --weight-body: 300;
+      --leading-display: 0.96;
+      --leading-heading: 0.96;
+      --leading-pathway: 1.04;
+      --leading-body: 1.72;
+      --leading-small: 1.56;
+
+      --eyebrow-size: clamp(10px, 0.72vw, 11px);
+      --eyebrow-weight: 600;
+      --eyebrow-tracking: 0.24em;
+      --eyebrow-leading: 1.42;
+      --eyebrow-gap: clamp(14px, 1.5vw, 20px);
+      --eyebrow-dark: rgba(238,235,228,0.58);
+      --eyebrow-light: rgba(11,22,38,0.48);
+
+      --cta-size: clamp(10.5px, 0.76vw, 12px);
+      --cta-weight: 600;
+      --cta-tracking: 0.14em;
+      --cta-leading: 1.2;
+      --cta-arrow-gap: 10px;
+      --cta-arrow-shift: 4px;
+      --cta-dark: rgba(238,235,228,0.74);
+      --cta-dark-hover: rgba(250,248,244,0.96);
+      --cta-light: rgba(11,22,38,0.66);
+      --cta-light-hover: rgba(11,22,38,0.92);
+      --btn-pad-y: 13px;
+      --btn-pad-x: clamp(26px, 2.3vw, 34px);
+      --btn-border-light: rgba(11,22,38,0.34);
+      --btn-border-light-hover: rgba(11,22,38,0.62);
+      --btn-border-dark: rgba(238,235,228,0.36);
+      --btn-border-dark-hover: rgba(238,235,228,0.68);
+    }
+
+    @media (max-width: 600px) {
+      body.home-page {
+        --type-section-heading: clamp(2.32rem, 11.2vw, 2.85rem);
+        --type-pathway-heading: clamp(2.05rem, 10vw, 2.75rem);
+        --type-body: clamp(0.92rem, 4vw, 1rem);
+        --type-small-body: 0.86rem;
+        --section-pad-y: var(--section-pad-y-mobile);
+        --eyebrow-size: 9.5px;
+        --eyebrow-tracking: 0.24em;
+        --eyebrow-leading: 1.4;
+        --eyebrow-gap: 14px;
+        --cta-size: 10.5px;
+        --cta-tracking: 0.13em;
+        --btn-pad-y: 12px;
+        --btn-pad-x: 24px;
+      }
+    }
+
+    .surface-light {
+      background: var(--surface-light);
+      color: var(--text-primary);
+    }
+
+    .surface-dark {
+      background: var(--surface-dark);
+      color: var(--text-inverse);
+    }
+
+    .section-shell {
+      padding: var(--section-pad-y) var(--section-pad-x);
+    }
+
+    .section-shell--compact {
+      padding-top: var(--section-pad-y-compact);
+      padding-bottom: var(--section-pad-y-compact);
+    }
+
+    .editorial-heading,
+    .section-heading {
+      font-family: var(--font-serif) !important;
+      font-weight: var(--weight-heading) !important;
+      line-height: var(--leading-heading) !important;
+      letter-spacing: -0.01em !important;
+      text-transform: none !important;
+    }
+
+    .editorial-heading em,
+    .section-heading em {
+      font-style: italic !important;
+      font-weight: 400 !important;
+    }
+
+    .editorial-body,
+    .body-copy {
+      font-family: var(--font-sans) !important;
+      font-size: var(--type-body) !important;
+      font-weight: var(--weight-body) !important;
+      line-height: var(--leading-body) !important;
+      letter-spacing: 0 !important;
+      max-width: 58ch !important;
+    }
+
+    .body-copy--small,
+    .editorial-small,
+    .metadata {
+      font-family: var(--font-sans) !important;
+      font-size: var(--type-small-body) !important;
+      font-weight: 400 !important;
+      line-height: var(--leading-small) !important;
+      letter-spacing: 0 !important;
+    }
+
+    .metadata {
+      color: var(--text-metadata) !important;
+    }
+
+    /* Authoritative homepage eyebrow system: calm, editorial, reusable. */
+    body.home-page .editorial-eyebrow,
+    body.home-page .section-eyebrow,
+    body.home-page .meet-team__eyebrow,
+    body.home-page .meet-editorial .meet-team__eyebrow,
+    body.home-page .sp-header .section-eyebrow,
+    body.home-page .hero__h1-location,
+    body.home-page .hero__location-kicker,
+    body.home-page .cm-eyebrow,
+    body.home-page .bf-eyebrow,
+    body.home-page .sf-eyebrow,
+    body.home-page .ct-eyebrow,
+    body.home-page .closing-cta__eyebrow {
+      font-family: var(--font-sans) !important;
+      font-size: var(--eyebrow-size) !important;
+      font-style: normal !important;
+      font-weight: var(--eyebrow-weight) !important;
+      letter-spacing: var(--eyebrow-tracking) !important;
+      line-height: var(--eyebrow-leading) !important;
+      text-transform: uppercase !important;
+      text-decoration: none !important;
+    }
+
+    body.home-page .editorial-eyebrow.editorial-eyebrow--dark,
+    body.home-page .sp-header .editorial-eyebrow--dark {
+      color: var(--eyebrow-dark) !important;
+    }
+
+    body.home-page .editorial-eyebrow.editorial-eyebrow--light,
+    body.home-page .meet-editorial .editorial-eyebrow--light {
+      color: var(--eyebrow-light) !important;
+    }
+
+    body.home-page :is(
+      .meet-team__eyebrow,
+      .section-eyebrow,
+      .sp-header .section-eyebrow,
+      .cm-eyebrow,
+      .bf-eyebrow,
+      .sf-eyebrow,
+      .ct-eyebrow,
+      .closing-cta__eyebrow
+    ) {
+      margin-top: 0 !important;
+      margin-right: 0 !important;
+      margin-bottom: var(--eyebrow-gap) !important;
+      margin-left: 0 !important;
+    }
+
+    body.home-page .hero__h1-location {
+      margin-bottom: clamp(22px, 3vh, 32px) !important;
+    }
+
+    body.home-page .hero__location-kicker {
+      margin: 0 !important;
+      text-shadow: 0 1px 16px rgba(0,0,0,0.66) !important;
+    }
+
+    body.home-page .cm-eyebrow {
+      display: block !important;
+      gap: 0 !important;
+    }
+
+    body.home-page .meet-editorial .meet-team__eyebrow {
+      padding-top: 0 !important;
+    }
+
+    body.home-page .cm-eyebrow::before,
+    body.home-page .meet-editorial .meet-team__eyebrow::before {
+      display: none !important;
+    }
+
+    /* Authoritative homepage CTA system: restrained outlined buttons + editorial text links. */
+    body.home-page .btn,
+    body.home-page .text-link,
+    body.home-page .editorial-cta {
+      font-family: var(--font-sans) !important;
+      font-size: var(--cta-size) !important;
+      font-weight: var(--cta-weight) !important;
+      letter-spacing: var(--cta-tracking) !important;
+      line-height: var(--cta-leading) !important;
+      text-transform: uppercase !important;
+      text-decoration: none !important;
+    }
+
+    body.home-page .btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: var(--cta-arrow-gap) !important;
+      min-height: 44px !important;
+      padding: var(--btn-pad-y) var(--btn-pad-x) !important;
+      border: 1px solid currentColor !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      cursor: pointer !important;
+      transition:
+        color 220ms ease,
+        border-color 220ms ease,
+        background-color 220ms ease,
+        transform 180ms ease !important;
+    }
+
+    body.home-page .btn--outline.btn--light {
+      color: var(--cta-light) !important;
+      border-color: var(--btn-border-light) !important;
+    }
+
+    body.home-page .btn--outline.btn--dark {
+      color: var(--cta-dark) !important;
+      border-color: var(--btn-border-dark) !important;
+    }
+
+    body.home-page .btn:hover,
+    body.home-page .btn:focus-visible {
+      transform: translateY(-1px) !important;
+    }
+
+    body.home-page .btn--outline.btn--light:hover,
+    body.home-page .btn--outline.btn--light:focus-visible {
+      color: var(--cta-light-hover) !important;
+      border-color: var(--btn-border-light-hover) !important;
+      background-color: rgba(11,22,38,0.045) !important;
+    }
+
+    body.home-page .btn--outline.btn--dark:hover,
+    body.home-page .btn--outline.btn--dark:focus-visible {
+      color: var(--cta-dark-hover) !important;
+      border-color: var(--btn-border-dark-hover) !important;
+      background-color: rgba(238,235,228,0.055) !important;
+    }
+
+    body.home-page .btn:focus-visible,
+    body.home-page .text-link:focus-visible {
+      outline: 1px solid currentColor !important;
+      outline-offset: 5px !important;
+    }
+
+    body.home-page .btn > span[aria-hidden="true"] {
+      display: inline-block !important;
+      transition: transform 200ms ease !important;
+    }
+
+    body.home-page .btn:hover > span[aria-hidden="true"],
+    body.home-page .btn:focus-visible > span[aria-hidden="true"] {
+      transform: translateX(var(--cta-arrow-shift)) !important;
+    }
+
+    body.home-page .text-link {
+      position: relative !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: var(--cta-arrow-gap) !important;
+      min-height: 44px !important;
+      width: auto !important;
+      border: 0 !important;
+      border-bottom: 0 !important;
+      background: transparent !important;
+      cursor: pointer !important;
+      text-decoration: none !important;
+      text-decoration-line: none !important;
+      text-underline-offset: initial !important;
+      transition: color 220ms ease !important;
+    }
+
+    body.home-page .text-link:hover,
+    body.home-page .text-link:focus-visible,
+    body.home-page a.sp-card:hover .text-link,
+    body.home-page a.sp-card:focus-visible .text-link {
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+      text-decoration-line: none !important;
+    }
+
+    body.home-page .text-link--dark {
+      color: var(--cta-dark) !important;
+    }
+
+    body.home-page .text-link--light {
+      color: var(--cta-light) !important;
+    }
+
+    body.home-page .text-link--dark:hover,
+    body.home-page .text-link--dark:focus-visible,
+    body.home-page a.sp-card:hover .text-link--dark,
+    body.home-page a.sp-card:focus-visible .text-link--dark {
+      color: var(--cta-dark-hover) !important;
+    }
+
+    body.home-page .text-link--light:hover,
+    body.home-page .text-link--light:focus-visible {
+      color: var(--cta-light-hover) !important;
+    }
+
+    body.home-page .text-link::after {
+      content: "" !important;
+      position: absolute !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: auto !important;
+      bottom: 7px !important;
+      height: 1px !important;
+      background: currentColor !important;
+      opacity: 0.42 !important;
+      transform: scaleX(0) !important;
+      transform-origin: left center !important;
+      transition: transform 240ms ease, opacity 220ms ease !important;
+    }
+
+    body.home-page .text-link:hover::after,
+    body.home-page .text-link:focus-visible::after,
+    body.home-page a.sp-card:hover .text-link::after,
+    body.home-page a.sp-card:focus-visible .text-link::after {
+      transform: scaleX(1) !important;
+    }
+
+    body.home-page .text-link--arrow > span[aria-hidden="true"],
+    body.home-page .text-link--arrow .hero__cta-arrow,
+    body.home-page .text-link--arrow .sp-card__arrow {
+      display: inline-block !important;
+      transition: transform 200ms ease !important;
+    }
+
+    body.home-page .text-link--arrow:hover > span[aria-hidden="true"],
+    body.home-page .text-link--arrow:focus-visible > span[aria-hidden="true"],
+    body.home-page .text-link--arrow:hover .hero__cta-arrow,
+    body.home-page .text-link--arrow:focus-visible .hero__cta-arrow,
+    body.home-page .text-link--arrow:hover .sp-card__arrow,
+    body.home-page .text-link--arrow:focus-visible .sp-card__arrow,
+    body.home-page a.sp-card:hover .text-link--arrow > span[aria-hidden="true"],
+    body.home-page a.sp-card:focus-visible .text-link--arrow > span[aria-hidden="true"],
+    body.home-page a.sp-card:hover .text-link--arrow .sp-card__arrow,
+    body.home-page a.sp-card:focus-visible .text-link--arrow .sp-card__arrow {
+      transform: translateX(var(--cta-arrow-shift)) !important;
+    }
+
+    body.home-page .hero__cta-link,
+    body.home-page .hero__cta-link--primary,
+    body.home-page .hero__cta-link--secondary,
+    body.home-page .bf-cta,
+    body.home-page .sf-cta,
+    body.home-page .cm-insight__link,
+    body.home-page .ct-more__link,
+    body.home-page .sp-all-link,
+    body.home-page .sp-card__cta {
+      padding-top: 0 !important;
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+      text-decoration: none !important;
+      text-decoration-line: none !important;
+      border-left: 0 !important;
+      border-bottom: 0 !important;
+      box-shadow: none !important;
+      text-transform: uppercase !important;
+    }
+
+    body.home-page .hero__cta-link:hover,
+    body.home-page .hero__cta-link:focus-visible,
+    body.home-page .bf-cta:hover,
+    body.home-page .bf-cta:focus-visible,
+    body.home-page .sf-cta:hover,
+    body.home-page .sf-cta:focus-visible,
+    body.home-page .cm-insight__link:hover,
+    body.home-page .cm-insight__link:focus-visible,
+    body.home-page .ct-more__link:hover,
+    body.home-page .ct-more__link:focus-visible,
+    body.home-page .sp-all-link:hover,
+    body.home-page .sp-all-link:focus-visible,
+    body.home-page a.sp-card:hover .sp-card__cta,
+    body.home-page a.sp-card:focus-visible .sp-card__cta {
+      text-decoration: none !important;
+      text-decoration-line: none !important;
+      border-bottom: 0 !important;
+      box-shadow: none !important;
+    }
+
+    body.home-page .meet-editorial a.meet-team__cta,
+    body.home-page .closing-cta__link {
+      box-shadow: none !important;
+    }
+
+    body.home-page .meet-editorial a.meet-team__cta.btn,
+    body.home-page .closing-cta__link.btn {
+      font-size: var(--cta-size) !important;
+      font-weight: var(--cta-weight) !important;
+      letter-spacing: var(--cta-tracking) !important;
+      line-height: var(--cta-leading) !important;
+      text-transform: uppercase !important;
+      min-height: 44px !important;
+      padding: var(--btn-pad-y) var(--btn-pad-x) !important;
+      width: fit-content !important;
+    }
+
+    body.home-page .meet-editorial a.meet-team__cta.btn--light,
+    body.home-page .closing-cta__link.btn--light {
+      color: var(--cta-light) !important;
+      border-color: var(--btn-border-light) !important;
+      background-color: transparent !important;
+    }
+
+    body.home-page .meet-editorial a.meet-team__cta.btn--light:hover,
+    body.home-page .meet-editorial a.meet-team__cta.btn--light:focus-visible,
+    body.home-page .closing-cta__link.btn--light:hover,
+    body.home-page .closing-cta__link.btn--light:focus-visible {
+      color: var(--cta-light-hover) !important;
+      border-color: var(--btn-border-light-hover) !important;
+      background-color: rgba(11,22,38,0.045) !important;
+    }
+
+    body.home-page .closing-cta__link {
+      width: fit-content !important;
+    }
+
+    body.home-page .bf-cta,
+    body.home-page .sf-cta,
+    body.home-page .sp-card__cta {
+      align-self: flex-start !important;
+      width: auto !important;
+    }
+
+    body.home-page .sp-card__footer .sp-card__cta.text-link {
+      flex-basis: auto !important;
+      width: max-content !important;
+      max-width: 100% !important;
+    }
+
+    /* Local Expertise text hierarchy: one calm editorial story across breakpoints. */
+    body.home-page .cm-insight::before,
+    body.home-page .cm-insight__panel::before {
+      display: none !important;
+    }
+
+    body.home-page .cm-service-area {
+      max-width: 38ch !important;
+      margin-top: clamp(18px, 2vw, 24px) !important;
+      color: var(--text-metadata) !important;
+      font-family: var(--font-sans) !important;
+      font-size: var(--type-metadata) !important;
+      font-weight: 400 !important;
+      line-height: 1.5 !important;
+      letter-spacing: 0.01em !important;
+    }
+
+    /* Homepage component system: current sections mapped to reusable page patterns. */
+    body.home-page .td-section {
+      padding: var(--section-pad-y-compact) var(--section-pad-x) !important;
+      background: var(--surface-light) !important;
+    }
+
+    body.home-page .td-heading,
+    body.home-page .cm-heading {
+      font-size: var(--type-section-heading) !important;
+      font-weight: var(--weight-heading) !important;
+      line-height: var(--leading-heading) !important;
+      letter-spacing: -0.01em !important;
+    }
+
+    body.home-page .td-heading {
+      max-width: 500px !important;
+      color: var(--text-primary) !important;
+    }
+
+    body.home-page .td-heading em,
+    body.home-page .cm-heading em {
+      color: rgba(40, 56, 84, 0.7) !important;
+      font-style: italic !important;
+      font-weight: 400 !important;
+    }
+
+    body.home-page .meet-team__heading,
+    body.home-page .sp-heading,
+    body.home-page .closing-cta__heading {
+      font-size: var(--type-section-heading) !important;
+      line-height: var(--leading-heading) !important;
+      letter-spacing: -0.01em !important;
+    }
+
+    body.home-page .bf-section,
+    body.home-page .sf-section {
+      min-height: clamp(480px, 46vw, 560px) !important;
+      overflow: hidden !important;
+    }
+
+    body.home-page .bf-text,
+    body.home-page .sf-text {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      padding: clamp(60px, 7.5vw, 100px) clamp(40px, 5.2vw, 76px) !important;
+    }
+
+    body.home-page .bf-heading,
+    body.home-page .sf-heading {
+      font-family: var(--font-serif) !important;
+      font-size: var(--type-pathway-heading) !important;
+      font-weight: var(--weight-heading) !important;
+      line-height: var(--leading-pathway) !important;
+      letter-spacing: -0.01em !important;
+      max-width: 11.25em !important;
+    }
+
+    body.home-page .bf-heading {
+      margin-bottom: clamp(28px, 3.2vw, 44px) !important;
+      color: var(--text-inverse) !important;
+    }
+
+    body.home-page .sf-heading {
+      margin-bottom: clamp(18px, 2vw, 26px) !important;
+      color: rgba(15, 18, 20, 0.88) !important;
+    }
+
+    body.home-page .bf-heading em {
+      color: rgba(245, 242, 236, 0.60) !important;
+      font-style: italic !important;
+      font-weight: 400 !important;
+    }
+
+    body.home-page .sf-heading em {
+      color: rgba(15, 18, 20, 0.56) !important;
+      font-style: italic !important;
+      font-weight: 400 !important;
+    }
+
+    body.home-page .sf-copy,
+    body.home-page .cm-insight__line,
+    body.home-page .closing-cta__trust {
+      font-family: var(--font-sans) !important;
+      font-size: var(--type-body) !important;
+      font-weight: var(--weight-body) !important;
+      line-height: var(--leading-body) !important;
+      letter-spacing: 0 !important;
+      color: var(--text-secondary) !important;
+    }
+
+    body.home-page .sf-copy {
+      max-width: 36ch !important;
+      margin: 0 0 clamp(22px, 2.4vw, 32px) !important;
+    }
+
+    body.home-page .cm-insight {
+      width: min(420px, 100%) !important;
+      padding: 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    body.home-page .cm-insight__name {
+      font-family: var(--font-sans) !important;
+      font-size: var(--type-small-heading) !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.01em !important;
+      line-height: 1.35 !important;
+      color: rgba(17, 29, 51, 0.72) !important;
+      margin: 0 0 clamp(9px, 1vw, 13px) !important;
+    }
+
+    body.home-page .cm-insight__line {
+      max-width: 36ch !important;
+      font-size: var(--type-small-body) !important;
+      line-height: var(--leading-small) !important;
+      color: rgba(40, 50, 67, 0.74) !important;
+      margin: 0 !important;
+    }
+
+    /* Local Expertise mobile: keep the stacked story on one left edge. */
+    @media (max-width: 620px) {
+      body.home-page .cm-header,
+      body.home-page .cm-copy,
+      body.home-page .cm-insight,
+      body.home-page .cm-insight__name,
+      body.home-page .cm-insight__line,
+      body.home-page .cm-insight__link,
+      body.home-page .cm-service-area {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        text-align: left !important;
+      }
+
+      body.home-page .cm-insight {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: clamp(30px, 8vw, 42px) !important;
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+
+      body.home-page .cm-insight__name {
+        max-width: 100% !important;
+        margin: 0 0 clamp(10px, 3vw, 14px) !important;
+      }
+
+      body.home-page .cm-insight__line {
+        max-width: 100% !important;
+        margin: 0 !important;
+      }
+
+      body.home-page .cm-insight__link {
+        margin-top: clamp(18px, 5vw, 24px) !important;
+      }
+
+      body.home-page .cm-service-area {
+        margin-top: clamp(18px, 5vw, 24px) !important;
+        font-size: 0.66rem !important;
+      }
+    }
+
     /* Buyer/Seller editorial stack: tablet + mobile only */
     @media (max-width: 900px) {
       body.home-page .bf-section,
@@ -4943,9 +5569,52 @@
         line-height: 1.04 !important;
       }
 
-      body.home-page .bf-image,
-      body.home-page .sf-image {
+      body.home-page .bf-cta {
         order: 3 !important;
+        justify-self: start !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 clamp(32px, 7vw, 48px) clamp(34px, 6vw, 48px) !important;
+      }
+
+      body.home-page .bf-cta::after {
+        left: clamp(32px, 7vw, 48px) !important;
+        right: clamp(32px, 7vw, 48px) !important;
+        bottom: clamp(34px, 6vw, 48px) !important;
+      }
+
+      body.home-page .bf-image {
+        order: 4 !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 3 / 2 !important;
+        overflow: hidden !important;
+      }
+
+      body.home-page .sf-copy {
+        order: 3 !important;
+        width: 100% !important;
+        max-width: 36ch !important;
+        margin: 0 !important;
+        padding: 0 clamp(32px, 7vw, 48px) clamp(26px, 4.8vw, 38px) !important;
+      }
+
+      body.home-page .sf-cta {
+        order: 4 !important;
+        justify-self: start !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 clamp(32px, 7vw, 48px) clamp(34px, 6vw, 48px) !important;
+      }
+
+      body.home-page .sf-cta::after {
+        left: clamp(32px, 7vw, 48px) !important;
+        right: clamp(32px, 7vw, 48px) !important;
+        bottom: clamp(34px, 6vw, 48px) !important;
+      }
+
+      body.home-page .sf-image {
+        order: 5 !important;
         width: 100% !important;
         height: auto !important;
         aspect-ratio: 3 / 2 !important;
@@ -4977,15 +5646,6 @@
         object-position: 50% 42% !important;
       }
 
-      body.home-page .bf-cta,
-      body.home-page .sf-cta {
-        order: 4 !important;
-        justify-self: start !important;
-        width: auto !important;
-        margin: 0 !important;
-        padding: clamp(28px, 5vw, 40px) clamp(32px, 7vw, 48px) clamp(48px, 8vw, 72px) !important;
-      }
-
       body.home-page .ef-gap {
         height: 0 !important;
       }
@@ -5014,9 +5674,23 @@
         aspect-ratio: 4 / 3 !important;
       }
 
-      body.home-page .bf-cta,
       body.home-page .sf-cta {
-        padding: 30px 32px 52px !important;
+        padding: 0 32px 34px !important;
+      }
+
+      body.home-page .sf-copy {
+        padding: 0 32px 28px !important;
+      }
+
+      body.home-page .bf-cta {
+        padding: 0 32px 34px !important;
+      }
+
+      body.home-page .bf-cta::after,
+      body.home-page .sf-cta::after {
+        left: 32px !important;
+        right: 32px !important;
+        bottom: 34px !important;
       }
 
       body.home-page .ef-gap {
@@ -5090,7 +5764,7 @@
         <!-- ── Left: Content ── -->
         <div class="hero__left">
 
-          <div class="hero__h1-location editorial-eyebrow">
+          <div class="hero__h1-location editorial-eyebrow editorial-eyebrow--dark">
             Burlington · Hamilton<br>
             and surrounding communities
           </div>
@@ -5108,8 +5782,8 @@
 
           <!-- TEMPORARY CLIENT REVIEW MODE - INTERNAL LINKS DISABLED -->
           <div class="hero__ctas">
-            <a href="#" class="hero__cta-link hero__cta-link--primary editorial-cta">Explore Local Insight <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
-            <a href="#" class="hero__cta-link hero__cta-link--secondary editorial-cta">View listings <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
+            <a href="#" class="hero__cta-link hero__cta-link--primary editorial-cta text-link text-link--arrow text-link--dark">Explore Local Insight <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
+            <a href="#" class="hero__cta-link hero__cta-link--secondary editorial-cta text-link text-link--arrow text-link--dark">View listings <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
           </div>
 
           <p class="hero__reassurance">Unhurried. Considered. Always local.</p>
@@ -5124,7 +5798,7 @@
               <source src="assets/hero-loop.mp4" type="video/mp4">
             </video>
             <div class="hero__location-label" aria-live="polite">
-              <span class="hero__location-kicker">Established Roots</span>
+              <span class="hero__location-kicker editorial-eyebrow editorial-eyebrow--dark">Established Roots</span>
               <span class="hero__location-name">Burlington · Hamilton Region</span>
             </div>
             <div class="hero__progress" aria-hidden="true">
@@ -5162,14 +5836,14 @@
         </div>
 
         <div class="meet-team__content meet-editorial__content">
-          <span class="meet-team__eyebrow editorial-eyebrow">Burlington &amp; Hamilton Realtors® · Since 2006</span>
+          <span class="meet-team__eyebrow editorial-eyebrow editorial-eyebrow--light">Burlington &amp; Hamilton Realtors® · Since 2006</span>
           <h2 class="meet-team__heading editorial-heading">
             <span class="meet-heading-line">Real estate</span><span class="meet-heading-line">is personal.</span><br>
             <em>So is our approach.</em>
           </h2>
           <p class="meet-team__body editorial-body">Buying or selling is rarely just about the property.
           It comes with timing, pressure, family decisions, and a lot of uncertainty. Geoff and Katrinna help clients slow things down, understand their options, and <strong>move forward with confidence.</strong></p>
-          <a href="#" class="meet-team__cta editorial-cta">How We Work</a>
+          <a href="#" class="meet-team__cta editorial-cta btn btn--outline btn--light">How We Work</a>
         </div>
 
       </div>
@@ -5181,7 +5855,7 @@
     <section class="sp-section">
 
       <div class="sp-header reveal">
-        <div class="section-eyebrow editorial-eyebrow">Recent &amp; Featured</div>
+        <div class="section-eyebrow editorial-eyebrow editorial-eyebrow--dark">Recent &amp; Featured</div>
         <h2 class="sp-heading editorial-heading">A few recent<br><em>moves.</em></h2>
       </div>
 
@@ -5203,7 +5877,7 @@
             <p class="sp-card__teaser">A well-kept family home where presentation, timing, and neighbourhood context all matter.</p>
             <div class="sp-card__footer">
               <span class="sp-card__price">Offered at $939,900</span>
-              <span class="sp-card__cta editorial-cta">See the details <span class="sp-card__arrow" aria-hidden="true">&#8594;</span></span>
+              <span class="sp-card__cta editorial-cta text-link text-link--arrow text-link--dark">See the details <span class="sp-card__arrow" aria-hidden="true">&#8594;</span></span>
             </div>
           </div>
         </a>
@@ -5254,7 +5928,7 @@
       </div><!-- /sp-grid -->
 
       <div class="sp-footer">
-        <a href="#" class="sp-all-link editorial-cta">View homes <span aria-hidden="true">&#8594;</span></a>
+        <a href="#" class="sp-all-link editorial-cta text-link text-link--arrow text-link--dark">View homes <span aria-hidden="true">&#8594;</span></a>
       </div>
 
     </section>
@@ -5267,16 +5941,15 @@
 
         <div class="cm-left reveal">
           <header class="cm-header">
-            <div class="cm-eyebrow editorial-eyebrow">Local Expertise</div>
+            <div class="cm-eyebrow editorial-eyebrow editorial-eyebrow--light">Local Expertise</div>
             <h2 class="cm-heading editorial-heading" id="cm-heading">Local insight.<br><em>Street by street.</em></h2>
             <p class="cm-copy editorial-body">Most people compare neighbourhoods. Geoff looks closer — at the streets, routines, timing, and small shifts that shape a better move.</p>
           </header>
 
           <div class="cm-insight">
-            <p class="cm-bridge">The details broad averages miss.</p>
             <h3 class="cm-insight__name">What people tend to overlook.</h3>
             <p class="cm-insight__line">A few pockets in this region are consistently underestimated. Buyers who look past the obvious often find stronger fundamentals, better value, and less competition.</p>
-            <a class="cm-insight__link editorial-cta" href="#">Explore Local Expertise <span aria-hidden="true">&#8594;</span></a>
+            <a class="cm-insight__link editorial-cta text-link text-link--arrow text-link--light" href="#">Explore Local Expertise <span aria-hidden="true">&#8594;</span></a>
           </div>
 
           <p class="cm-service-area">Serving Burlington, Oakville, Hamilton, Milton, Waterdown, Grimsby, Stoney Creek, Cambridge &amp; Flamborough.</p>
@@ -5442,7 +6115,7 @@
          TRUST DIVIDER
     ══════════════════════════════════════ -->
     <div class="td-section">
-      <p class="td-heading td-heading--editorial-reveal reveal">Whether you&rsquo;re buying or selling, the right move starts with local context.</p>
+      <p class="td-heading td-heading--editorial-reveal reveal">Local context<br><em>changes everything.</em></p>
     </div>
 
     <!-- ══════════════════════════════════════
@@ -5450,9 +6123,9 @@
     ══════════════════════════════════════ -->
     <section class="bf-section reveal" id="buyers" aria-label="Buying with Geoff">
       <div class="bf-text">
-        <p class="bf-eyebrow editorial-eyebrow">For Buyers</p>
+        <p class="bf-eyebrow editorial-eyebrow editorial-eyebrow--dark">For Buyers</p>
         <h2 class="bf-heading editorial-heading">Find the right street<br><em>before the right house.</em></h2>
-        <a class="bf-cta editorial-cta" href="#">Explore Buying <span aria-hidden="true">→</span></a>
+        <a class="bf-cta editorial-cta text-link text-link--arrow text-link--dark" href="#">Explore Buying <span aria-hidden="true">→</span></a>
       </div>
       <div class="bf-image" aria-hidden="true">
         <img src="assets/buyers-smith-dobrowsky.webp" alt="" loading="lazy">
@@ -5466,10 +6139,10 @@
     ══════════════════════════════════════ -->
     <section class="sf-section reveal" id="sellers" aria-label="Selling with Geoff">
       <div class="sf-text">
-        <p class="sf-eyebrow editorial-eyebrow">For Sellers</p>
+        <p class="sf-eyebrow editorial-eyebrow editorial-eyebrow--light">For Sellers</p>
         <h2 class="sf-heading editorial-heading">Protect your value<br><em>before you go to market.</em></h2>
         <p class="sf-copy">Selling a home involves more than putting it on the market. Geoff provides thoughtful guidance on pricing, preparation, marketing, and negotiation so you can move forward with confidence.</p>
-        <a class="sf-cta editorial-cta" href="#">Explore Selling <span aria-hidden="true">→</span></a>
+        <a class="sf-cta editorial-cta text-link text-link--arrow text-link--light" href="#">Explore Selling <span aria-hidden="true">→</span></a>
       </div>
       <div class="sf-image" aria-hidden="true">
         <img src="assets/sellers.webp" alt="" loading="lazy">
@@ -5483,7 +6156,7 @@
       <div class="ct-inner">
 
         <header class="ct-header reveal">
-          <p class="ct-eyebrow editorial-eyebrow">CLIENT STORIES</p>
+          <p class="ct-eyebrow editorial-eyebrow editorial-eyebrow--dark">CLIENT STORIES</p>
           <h2 class="ct-heading editorial-heading" id="ct-heading">In their words.</h2>
         </header>
 
@@ -5520,7 +6193,7 @@
         </div>
 
         <div class="ct-more reveal">
-          <a class="ct-more__link editorial-cta" href="#">Read more client stories <span aria-hidden="true">→</span></a>
+          <a class="ct-more__link editorial-cta text-link text-link--arrow text-link--dark" href="#">Read more client stories <span aria-hidden="true">→</span></a>
         </div>
 
       </div>
@@ -5533,10 +6206,10 @@
       <div class="closing-cta__inner">
 
         <div class="closing-cta__left">
-          <p class="closing-cta__eyebrow editorial-eyebrow">When The Time Feels Right</p>
+          <p class="closing-cta__eyebrow editorial-eyebrow editorial-eyebrow--light">When The Time Feels Right</p>
           <h2 class="closing-cta__heading editorial-heading">Start with a<br><em>conversation.</em></h2>
           <p class="closing-cta__trust">Helping people understand their options before making a move.</p>
-          <a href="#" class="closing-cta__link">Talk With Geoff <span aria-hidden="true">→</span></a>
+          <a href="#" class="closing-cta__link btn btn--outline btn--light">Talk With Geoff <span aria-hidden="true">→</span></a>
         </div>
 
         <div class="closing-cta__media" aria-hidden="true">
