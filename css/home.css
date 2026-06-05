@@ -14992,3 +14992,196 @@ body.home-page .cm-insight__link {
 
 
 /* ─────────────────────────────────────────────────────────────
+   HERO READABILITY — Terminal contrast overrides
+   Placed at end of cascade to win over all earlier declarations.
+   ───────────────────────────────────────────────────────────── */
+
+/* Body copy — was ~0.74, now 0.86 */
+body.home-page .hero__sub {
+  color: rgba(250, 246, 237, 0.86) !important;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.25),
+    0 8px 28px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Eyebrow — warm tone, clearly readable */
+body.home-page .hero__overline {
+  color: rgba(200, 190, 174, 0.92) !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.30) !important;
+}
+
+/* Location badge above headline */
+body.home-page .hero__h1-location {
+  color: rgba(200, 190, 174, 0.90) !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.30) !important;
+}
+
+/* Reassurance line — was 0.26–0.48 where visible */
+body.home-page .hero__reassurance {
+  color: rgba(218, 207, 187, 0.58) !important;
+}
+
+/* Bottom-right callout — kicker label */
+body.home-page .hero__location-kicker {
+  color: rgba(218, 207, 187, 0.90) !important;
+}
+
+/* Bottom-right callout — borders more defined */
+body.home-page .hero__location-label {
+  border-color: rgba(244, 241, 234, 0.22) !important;
+  border-left-color: rgba(218, 207, 187, 0.80) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HERO RESPONSIVE TYPE — prevent awkward headline wrapping
+   ───────────────────────────────────────────────────────────── */
+
+body.home-page .hero__h1 {
+  text-wrap: balance !important;
+}
+
+body.home-page .hero__h1-line,
+body.home-page .hero__h1-em {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  white-space: nowrap !important;
+}
+
+body.home-page .hero__h1-line {
+  white-space: nowrap !important;
+}
+
+body.home-page .hero__h1-em {
+  margin-top: 0.04em !important;
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+  body.home-page .hero__h1 {
+    max-width: 31rem !important;
+  }
+
+  body.home-page .hero__h1-line,
+  body.home-page .hero__h1-em {
+    font-size: clamp(2.45rem, 3.45vw, 4.25rem) !important;
+    line-height: 0.98 !important;
+  }
+
+  body.home-page .hero__h1-em {
+    margin-top: 0.08em !important;
+  }
+}
+
+@media (max-width: 900px) {
+  body.home-page .hero__h1 {
+    max-width: min(100%, 36rem) !important;
+  }
+
+  body.home-page .hero__h1-line,
+  body.home-page .hero__h1-em {
+    font-size: clamp(2.35rem, 6.5vw, 3.15rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body.home-page .hero__h1-em {
+    margin-top: 0.08em !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body.home-page .hero__h1 {
+    max-width: 100% !important;
+    margin-bottom: 24px !important;
+  }
+
+  body.home-page .hero__h1-line,
+  body.home-page .hero__h1-em {
+    font-size: clamp(1.95rem, 8.2vw, 2.55rem) !important;
+    line-height: 1.04 !important;
+    letter-spacing: -0.014em !important;
+  }
+
+  body.home-page .hero__h1-em {
+    margin-top: 0.12em !important;
+  }
+
+  body.home-page .hero__sub {
+    max-width: 34rem !important;
+    font-size: clamp(0.94rem, 3.8vw, 1.02rem) !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HERO MOBILE/TABLET READABILITY
+   ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  body.home-page .hero__left,
+  body.home-page .hero__h1-location,
+  body.home-page .hero__h1,
+  body.home-page .hero__h1-line,
+  body.home-page .hero__h1-em,
+  body.home-page .hero__sub,
+  body.home-page .hero__ctas,
+  body.home-page .hero__cta-link,
+  body.home-page .hero__cta-arrow {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  body.home-page .hero__h1-location,
+  body.home-page .hero__h1-location.editorial-eyebrow,
+  body.home-page .hero__h1-location.editorial-eyebrow--dark {
+    color: rgba(255, 255, 255, 0.88) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.18) !important;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.46) !important;
+  }
+
+  body.home-page .hero__h1-line {
+    color: #f4f1ea !important;
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.34),
+      0 8px 30px rgba(0, 0, 0, 0.36) !important;
+  }
+
+  body.home-page .hero__h1-em {
+    color: rgba(255, 255, 255, 0.78) !important;
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.34),
+      0 8px 30px rgba(0, 0, 0, 0.36) !important;
+  }
+
+  body.home-page .hero__sub {
+    color: rgba(255, 255, 255, 0.82) !important;
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.30),
+      0 8px 28px rgba(0, 0, 0, 0.28) !important;
+  }
+
+  body.home-page .hero__cta-link,
+  body.home-page .hero__cta-link--primary,
+  body.home-page .hero__cta-link--secondary {
+    color: rgba(255, 255, 255, 0.90) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.32) !important;
+  }
+
+  body.home-page .hero__cta-arrow,
+  body.home-page .text-link--arrow .hero__cta-arrow {
+    color: rgba(255, 255, 255, 0.85) !important;
+    opacity: 1 !important;
+  }
+
+  body.home-page .hero__cta-link::after,
+  body.home-page .text-link--light::after,
+  body.home-page .text-link--arrow::after {
+    background: rgba(255, 255, 255, 0.72) !important;
+    opacity: 1 !important;
+  }
+
+  body.home-page .text-link--light,
+  body.home-page .text-link--light:visited {
+    color: rgba(255, 255, 255, 0.90) !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}

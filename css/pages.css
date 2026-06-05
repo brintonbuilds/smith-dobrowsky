@@ -22,7 +22,7 @@
   --eyebrow-size: clamp(10px, 0.72vw, 11px);
   --eyebrow-leading: 1.42;
   --eyebrow-gap: clamp(14px, 1.5vw, 20px);
-  --eyebrow-dark: rgba(238,235,228,0.58);
+  --eyebrow-dark: rgba(238, 235, 228, 0.88);
   --eyebrow-light: rgba(11,22,38,0.48);
   --cta-size: clamp(10.5px, 0.76vw, 12px);
   --cta-weight: 600;
@@ -265,7 +265,15 @@
   color: var(--text-inverse);
   margin: 0 0 28px;
   max-width: 10em;
+  text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: normal;
   text-shadow: 0 2px 32px rgba(0,0,0,0.75), 0 1px 6px rgba(0,0,0,0.55);
+}
+
+.ip-hero__heading-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .ip-hero__heading em {
@@ -275,6 +283,8 @@
   display: block;
   margin-top: 0.04em;
   letter-spacing: -0.028em;
+  text-wrap: balance;
+  white-space: nowrap;
 }
 
 .ip-hero__body {
@@ -282,10 +292,12 @@
   font-size: 15.5px;
   font-weight: var(--weight-body);
   line-height: 1.74;
-  color: rgba(255,255,255,0.58);
+  color: rgba(255, 255, 255, 0.84);
   max-width: 440px;
   margin: 0 0 32px;
-  text-shadow: 0 1px 16px rgba(0,0,0,0.65);
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.25),
+    0 8px 28px rgba(0, 0, 0, 0.28);
 }
 
 .ip-hero__ctas {
@@ -920,6 +932,20 @@
     min-height: 60vh;
   }
 
+  .ip-hero__inner {
+    max-width: 100%;
+  }
+
+  .ip-hero__heading {
+    max-width: 9.25em;
+    font-size: clamp(2.45rem, 5.8vw, 4rem);
+    line-height: 0.98;
+  }
+
+  .ip-hero__heading em {
+    margin-top: 0.08em;
+  }
+
   /* Split — stack on tablet */
   .ip-split__inner {
     grid-template-columns: 1fr;
@@ -985,6 +1011,24 @@
   /* Hero */
   .ip-hero {
     min-height: 54vh;
+  }
+
+  .ip-hero__heading {
+    max-width: 100%;
+    font-size: clamp(1.95rem, 8.7vw, 2.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+
+  .ip-hero__heading em {
+    margin-top: 0.12em;
+    letter-spacing: -0.018em;
+  }
+
+  .ip-hero__body {
+    max-width: 34rem;
+    font-size: clamp(0.94rem, 3.8vw, 1.02rem);
   }
 
   .ip-hero__ctas {
