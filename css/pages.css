@@ -1059,3 +1059,593 @@
     font-size: clamp(1.22rem, 5.5vw, 1.6rem);
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   BUYERS HERO — Editorial refinement
+   Scoped to .ip-hero--buyers so other inner pages are unaffected.
+   Goal: beautiful neighbourhood photography, not dark web banner.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Image treatment: golden-hour scene, warm, editorial ─────── */
+/* New image (home-buyers-hamilton-halton-waterdown.png) is a        */
+/* bright golden-hour street scene — Brant Street, Burlington.       */
+/* Slight brightness reduction preserves richness without washing.   */
+.ip-hero--buyers .ip-hero__bg img {
+  filter: saturate(0.90) contrast(0.90) brightness(0.80) sepia(0.02);
+  /* Center frame shows couple + street perspective + lake horizon  */
+  object-position: 52% 38%;
+}
+
+/* ── Overlay: reinforced left for bright golden-hour image ───── */
+/* This image is significantly brighter than the previous one.      */
+/* The left gradient is stronger to ensure text reads clearly       */
+/* while the right side (lake, shops, street) breathes through.     */
+.ip-hero--buyers .ip-hero__overlay {
+  background:
+    /* Left text-anchor — warm deep navy, fades into the scene */
+    linear-gradient(
+      106deg,
+      rgba(10, 18, 34, 0.78) 0%,
+      rgba(10, 18, 34, 0.52) 32%,
+      rgba(10, 18, 34, 0.14) 58%,
+      transparent 74%
+    ),
+    /* Bottom anchor — grounds the street, draws eye up the lane */
+    linear-gradient(
+      to top,
+      rgba(6, 11, 22, 0.50) 0%,
+      transparent 44%
+    ),
+    /* Top vignette — subtle frame for nav zone */
+    linear-gradient(
+      to bottom,
+      rgba(5, 9, 15, 0.24) 0%,
+      transparent 18%
+    );
+}
+
+/* ── Heading: slightly reduced to let image breathe ──────────── */
+.ip-hero--buyers .ip-hero__heading {
+  font-size: clamp(46px, 5.0vw, 78px);
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.60), 0 1px 5px rgba(0, 0, 0, 0.40);
+}
+
+/* ── Italic line: warmer and more readable ───────────────────── */
+.ip-hero--buyers .ip-hero__heading em {
+  color: rgba(255, 255, 255, 0.90);
+}
+
+/* ── Eyebrow: clean, letter-spaced ──────────────────────────── */
+.ip-hero--buyers .ip-hero__eyebrow {
+  margin-bottom: clamp(18px, 2.4vh, 28px);
+  letter-spacing: 0.22em;
+  font-size: 10px;
+}
+
+/* ── Body copy: more readable — weight 400, higher opacity ───── */
+.ip-hero--buyers .ip-hero__body {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.90);
+  line-height: 1.78;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.34);
+  max-width: 420px;
+  margin-bottom: 36px;
+}
+
+/* ── CTA refinement ──────────────────────────────────────────── */
+.ip-hero--buyers .ip-hero__ctas {
+  padding-top: 4px;
+}
+
+/* Make the CTA link bolder and more premium */
+.ip-hero--buyers .ip-hero__ctas .text-link--light {
+  color: rgba(238, 235, 228, 0.92);
+  letter-spacing: 0.13em;
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.ip-hero--buyers .ip-hero__ctas .text-link--light:hover {
+  color: #ffffff;
+}
+
+/* ── Editorial caption — bottom right, magazine style ────────── */
+.ip-hero__caption {
+  position: absolute;
+  bottom: clamp(28px, 3.8vh, 48px);
+  right: clamp(28px, 4vw, 56px);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.ip-hero__caption-rule {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: rgba(238, 235, 228, 0.44);
+  align-self: flex-end;
+  margin-bottom: 2px;
+}
+
+.ip-hero__caption-location {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: rgba(238, 235, 228, 0.56);
+  line-height: 1;
+  text-align: right;
+}
+
+.ip-hero__caption-sub {
+  font-family: var(--font-serif);
+  font-size: clamp(12px, 1.0vw, 14px);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(238, 235, 228, 0.44);
+  line-height: 1.2;
+  text-align: right;
+}
+
+/* ── Responsive refinements ──────────────────────────────────── */
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .ip-hero--buyers .ip-hero__heading {
+    font-size: clamp(42px, 5.2vw, 68px);
+  }
+}
+
+/* 768px — tablet: caption moves to bottom-left to avoid text overlap */
+@media (max-width: 768px) {
+  .ip-hero__caption {
+    right: auto;
+    left: clamp(22px, 5vw, 40px);
+    align-items: flex-start;
+    bottom: clamp(22px, 3vh, 36px);
+  }
+
+  .ip-hero__caption-rule {
+    align-self: flex-start;
+  }
+
+  .ip-hero__caption-location,
+  .ip-hero__caption-sub {
+    text-align: left;
+  }
+
+  .ip-hero--buyers .ip-hero__heading {
+    font-size: clamp(38px, 5.8vw, 58px);
+  }
+
+  .ip-hero--buyers .ip-hero__body {
+    max-width: 100%;
+  }
+}
+
+/* 600px — mobile */
+@media (max-width: 600px) {
+  .ip-hero--buyers .ip-hero__body {
+    font-size: clamp(0.94rem, 3.8vw, 1.02rem);
+  }
+
+  /* Caption hidden on smallest screens — text already tight */
+  .ip-hero__caption {
+    display: none;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   BUYING PROCESS — Scroll-driven step reveal
+   Two-column sticky layout on desktop; tap accordion on mobile.
+   Prefix: bp- (buying process). Self-contained design tokens.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Section-scoped design tokens ────────────────────────────── */
+.bp-section {
+  --bp-bg:             #07090f;
+  --bp-nav-h:          88px;
+  --bp-border:         rgba(238, 235, 228, 0.08);
+  --bp-border-active:  rgba(238, 235, 228, 0.20);
+  --bp-num-color:      rgba(238, 235, 228, 0.28);
+  --bp-step-rest:      rgba(238, 235, 228, 0.46);
+  --bp-step-active:    #ffffff;
+  --bp-desc:           rgba(238, 235, 228, 0.76);
+  --bp-ease:           cubic-bezier(0.4, 0, 0.2, 1);
+  --bp-dur:            480ms;
+  background: var(--bp-bg);
+  overflow: hidden;
+}
+
+/* ── Two-column grid ──────────────────────────────────────────── */
+.bp-inner {
+  display: grid;
+  grid-template-columns: 46fr 54fr;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   LEFT: sticky media panel
+   ───────────────────────────────────────────────────────────── */
+.bp-media {
+  position: sticky;
+  top: var(--bp-nav-h);
+  height: calc(100vh - var(--bp-nav-h));
+  overflow: hidden;
+  align-self: start; /* required for sticky inside a grid */
+}
+
+.bp-media__frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Crossfading slides */
+.bp-media__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  filter: saturate(0.76) brightness(0.70);
+  transform: scale(1.04);
+  transition:
+    opacity var(--bp-dur) var(--bp-ease),
+    transform calc(var(--bp-dur) * 1.8) var(--bp-ease);
+  will-change: opacity, transform;
+}
+
+.bp-media__slide.is-active {
+  opacity: 1;
+  transform: scale(1.0);
+  z-index: 1;
+}
+
+/* Cinematic gradient overlay */
+.bp-media__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(to right,  rgba(7, 9, 15, 0.22) 0%,  transparent 45%),
+    linear-gradient(to top,    rgba(7, 9, 15, 0.58) 0%,  transparent 55%),
+    linear-gradient(to bottom, rgba(7, 9, 15, 0.30) 0%,  transparent 24%);
+}
+
+/* Step caption — bottom-left corner of media */
+.bp-media__caption {
+  position: absolute;
+  bottom: clamp(24px, 3.5vh, 44px);
+  left: clamp(24px, 3.2vw, 40px);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bp-media__caption-num {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(238, 235, 228, 0.40);
+  line-height: 1;
+}
+
+.bp-media__caption-label {
+  font-family: var(--font-serif);
+  font-size: clamp(13px, 1.1vw, 17px);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(238, 235, 228, 0.64);
+  line-height: 1.2;
+  transition: opacity var(--bp-dur) var(--bp-ease);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RIGHT: content panel
+   ───────────────────────────────────────────────────────────── */
+.bp-content {
+  display: flex;
+  flex-direction: column;
+  padding:
+    clamp(64px, 8vw, 108px)
+    clamp(44px, 5.5vw, 88px)
+    clamp(64px, 8vw, 108px)
+    clamp(52px, 5.5vw, 80px);
+  border-left: 1px solid var(--bp-border);
+}
+
+/* ── Section header ───────────────────────────────────────────── */
+.bp-header {
+  margin-bottom: clamp(40px, 5.5vw, 68px);
+}
+
+.bp-eyebrow {
+  margin-bottom: clamp(14px, 1.6vw, 20px);
+}
+
+/* Override the global editorial-heading color for this dark context */
+.bp-heading.editorial-heading {
+  font-size: clamp(2.2rem, 2.9vw, 3.8rem);
+  color: #ffffff;
+  margin: 0;
+}
+
+.bp-heading.editorial-heading em {
+  color: rgba(238, 235, 228, 0.44);
+}
+
+/* ── Steps list ───────────────────────────────────────────────── */
+.bp-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+/* ── Individual step ──────────────────────────────────────────── */
+.bp-step {
+  border-top: 1px solid var(--bp-border);
+  transition: border-top-color var(--bp-dur) var(--bp-ease);
+}
+
+.bp-step:last-child {
+  border-bottom: 1px solid var(--bp-border);
+}
+
+.bp-step.is-active {
+  border-top-color: var(--bp-border-active);
+}
+
+/* ── Step trigger button ──────────────────────────────────────── */
+.bp-step__trigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: clamp(14px, 1.8vw, 22px);
+  padding: clamp(20px, 2.6vw, 34px) 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  color: var(--bp-step-rest);
+  transition: color var(--bp-dur) var(--bp-ease);
+}
+
+.bp-step.is-active .bp-step__trigger {
+  color: var(--bp-step-active);
+}
+
+.bp-step__trigger:hover:not(:focus-visible) {
+  color: rgba(238, 235, 228, 0.82);
+}
+
+.bp-step__trigger:focus-visible {
+  outline: 1px solid rgba(238, 235, 228, 0.36);
+  outline-offset: 4px;
+  border-radius: 2px;
+  color: rgba(238, 235, 228, 0.82);
+}
+
+/* Step number */
+.bp-step__num {
+  font-family: var(--font-serif);
+  font-size: clamp(0.78rem, 0.92vw, 0.98rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: var(--bp-num-color);
+  flex-shrink: 0;
+  min-width: 24px;
+  transition: color var(--bp-dur) var(--bp-ease);
+}
+
+.bp-step.is-active .bp-step__num {
+  color: rgba(238, 235, 228, 0.50);
+}
+
+/* Step title */
+.bp-step__title {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: clamp(1.0rem, 1.4vw, 1.52rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: inherit;
+}
+
+/* Chevron — border-trick arrow */
+.bp-step__chevron {
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translate(-2px, -2px);
+  opacity: 0.34;
+  transition:
+    transform var(--bp-dur) var(--bp-ease),
+    opacity   var(--bp-dur) var(--bp-ease);
+}
+
+.bp-step.is-active .bp-step__chevron {
+  transform: rotate(-135deg) translate(-2px, -2px);
+  opacity: 0.60;
+}
+
+/* ── Step description — CSS grid accordion ────────────────────── */
+.bp-step__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--bp-dur) var(--bp-ease);
+}
+
+.bp-step.is-active .bp-step__panel {
+  grid-template-rows: 1fr;
+}
+
+/* Inner wrapper is required for the grid-row trick */
+.bp-step__panel-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.bp-step__desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.90rem, 0.98vw, 1.02rem);
+  font-weight: 400;
+  line-height: 1.76;
+  color: var(--bp-desc);
+  margin: 0;
+  padding-bottom: clamp(20px, 2.6vw, 32px);
+  padding-left: clamp(38px, 4.2vw, 46px); /* visually aligned under the title */
+  max-width: 44ch;
+}
+
+/* ── Reduced motion: static, all open ────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .bp-media__slide {
+    transition: opacity 160ms ease !important;
+    transform: none !important;
+  }
+  .bp-step__panel {
+    transition: none !important;
+  }
+  .bp-step__trigger,
+  .bp-step__chevron,
+  .bp-step__num {
+    transition: none !important;
+  }
+  /* JS will open all panels — ensure they're visible with no animation */
+  .bp-step.is-active .bp-step__panel {
+    grid-template-rows: 1fr;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RESPONSIVE — Buying Process
+   ───────────────────────────────────────────────────────────── */
+
+/* 1200px — tighter columns */
+@media (max-width: 1200px) {
+  .bp-inner {
+    grid-template-columns: 44fr 56fr;
+  }
+  .bp-content {
+    padding:
+      clamp(56px, 7vw, 88px)
+      clamp(32px, 4.5vw, 64px)
+      clamp(56px, 7vw, 88px)
+      clamp(36px, 4.5vw, 64px);
+  }
+}
+
+/* 1024px — narrow media panel */
+@media (max-width: 1024px) {
+  .bp-inner {
+    grid-template-columns: 40fr 60fr;
+  }
+  .bp-content {
+    padding:
+      clamp(48px, 6.5vw, 80px)
+      clamp(28px, 4vw, 52px)
+      clamp(48px, 6.5vw, 80px)
+      clamp(28px, 4vw, 52px);
+  }
+  .bp-step__desc {
+    max-width: 100%;
+  }
+}
+
+/* 900px — stack: image top / accordion below ─────────────────── */
+@media (max-width: 900px) {
+  .bp-section {
+    --bp-nav-h: 76px;
+  }
+
+  .bp-inner {
+    display: block;
+  }
+
+  /* Media becomes a static banner, not sticky */
+  .bp-media {
+    position: relative;
+    top: auto;
+    height: 60vw;
+    min-height: 280px;
+    max-height: 500px;
+    align-self: auto;
+  }
+
+  /* Content panel: no left border, top border instead */
+  .bp-content {
+    border-left: none;
+    border-top: 1px solid var(--bp-border);
+    padding: clamp(44px, 7vw, 72px) var(--section-pad-x) clamp(56px, 8vw, 80px);
+  }
+
+  /* Caption sits lower on smaller image */
+  .bp-media__caption {
+    bottom: clamp(20px, 3vh, 32px);
+    left: clamp(20px, 4vw, 32px);
+  }
+}
+
+/* 600px — mobile ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .bp-section {
+    --bp-nav-h: 60px;
+  }
+
+  .bp-media {
+    height: 66vw;
+    min-height: 240px;
+    max-height: 380px;
+  }
+
+  .bp-header {
+    margin-bottom: clamp(32px, 6vw, 48px);
+  }
+
+  .bp-heading.editorial-heading {
+    font-size: clamp(1.9rem, 7.5vw, 2.8rem);
+  }
+
+  .bp-step__desc {
+    font-size: 0.94rem;
+    padding-left: clamp(24px, 6.5vw, 38px);
+    max-width: 100%;
+  }
+}
+
+/* 375px — very small mobile ──────────────────────────────────── */
+@media (max-width: 375px) {
+  .bp-media {
+    height: 72vw;
+    max-height: 320px;
+  }
+
+  .bp-step__desc {
+    padding-left: 0;
+  }
+
+  .bp-step__trigger {
+    gap: 12px;
+  }
+}

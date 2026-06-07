@@ -23,11 +23,11 @@
     <!-- ══════════════════════════════════════
          HERO
     ══════════════════════════════════════ -->
-    <section class="ip-hero" aria-labelledby="buyers-heading">
+    <section class="ip-hero ip-hero--buyers" aria-labelledby="buyers-heading">
 
       <div class="ip-hero__bg" aria-hidden="true">
         <img
-          src="assets/buyers-smith-dobrowsky.webp"
+          src="assets/home-buyers-hamilton-halton-waterdown.png"
           alt=""
           loading="eager"
           decoding="async"
@@ -50,6 +50,13 @@
             Talk With Geoff <span aria-hidden="true">→</span>
           </a>
         </div>
+      </div>
+
+      <!-- Editorial caption — bottom right, magazine-style placement -->
+      <div class="ip-hero__caption" aria-hidden="true">
+        <span class="ip-hero__caption-rule"></span>
+        <span class="ip-hero__caption-location">Burlington · Hamilton · Waterdown</span>
+        <span class="ip-hero__caption-sub">Neighbourhood expertise since 2006</span>
       </div>
 
     </section>
@@ -145,59 +152,123 @@
 
 
     <!-- ══════════════════════════════════════
-         BUYING PROCESS
+         BUYING PROCESS — Scroll-driven reveal
     ══════════════════════════════════════ -->
-    <section class="ip-process ip-process--dark reveal" aria-labelledby="process-heading">
-      <div class="ip-process__inner">
+    <section class="bp-section" aria-labelledby="bp-heading" id="buying-process">
+      <div class="bp-inner">
 
-        <header class="ip-process__header">
-          <p class="ip-process__eyebrow editorial-eyebrow editorial-eyebrow--light">The Buying Process</p>
-          <h2 class="ip-process__heading editorial-heading" id="process-heading">
-            Move with clarity.<br><em>Not urgency.</em>
-          </h2>
-        </header>
-
-        <div class="ip-process__steps">
-
-          <div class="ip-process__step reveal reveal-delay-1">
-            <p class="ip-process__num"></p>
-            <h3 class="ip-process__label">Clarity</h3>
-            <p class="ip-process__body">Know your numbers before the search begins.</p>
+        <!-- Left: sticky visual panel -->
+        <div class="bp-media" aria-hidden="true">
+          <div class="bp-media__frame">
+            <img class="bp-media__slide is-active" src="assets/GettyImages-2248448116.jpg"   alt="" loading="eager" decoding="async">
+            <img class="bp-media__slide"            src="assets/GettyImages-2162730763.jpg"   alt="" loading="lazy"  decoding="async">
+            <img class="bp-media__slide"            src="assets/GettyImages-1388101414.jpg"   alt="" loading="lazy"  decoding="async">
+            <img class="bp-media__slide"            src="assets/GettyImages-2231150857.jpg"   alt="" loading="lazy"  decoding="async">
+            <img class="bp-media__slide"            src="assets/GettyImages-2165218184.jpg"   alt="" loading="lazy"  decoding="async">
+            <img class="bp-media__slide"            src="assets/Burlington-Pier-Real-Estate.webp" alt="" loading="lazy" decoding="async">
+            <div class="bp-media__overlay"></div>
           </div>
-
-          <div class="ip-process__step reveal reveal-delay-2">
-            <p class="ip-process__num"></p>
-            <h3 class="ip-process__label">Context</h3>
-            <p class="ip-process__body">The right home is rarely just the listing.</p>
+          <div class="bp-media__caption">
+            <span class="bp-media__caption-num">01</span>
+            <span class="bp-media__caption-label">Clarity</span>
           </div>
-
-          <div class="ip-process__step reveal reveal-delay-3">
-            <p class="ip-process__num"></p>
-            <h3 class="ip-process__label">Evaluation</h3>
-            <p class="ip-process__body">Understand value before emotion takes over.</p>
-          </div>
-
-          <div class="ip-process__step reveal reveal-delay-4">
-            <p class="ip-process__num"></p>
-            <h3 class="ip-process__label">Strategy</h3>
-            <p class="ip-process__body">Shape the offer around more than price.</p>
-          </div>
-
-          <div class="ip-process__step reveal reveal-delay-5">
-            <p class="ip-process__num"></p>
-            <h3 class="ip-process__label">Protection</h3>
-            <p class="ip-process__body">Reduce risk before conditions are removed.</p>
-          </div>
-
-          <div class="ip-process__step reveal reveal-delay-6">
-            <p class="ip-process__num"></p>
-            <h3 class="ip-process__label">Confidence</h3>
-            <p class="ip-process__body">Close with the details already handled.</p>
-          </div>
-
         </div>
 
-      </div>
+        <!-- Right: intro + accordion steps -->
+        <div class="bp-content">
+
+          <header class="bp-header">
+            <p class="bp-eyebrow editorial-eyebrow editorial-eyebrow--light">The Buying Process</p>
+            <h2 class="bp-heading editorial-heading" id="bp-heading">
+              Move with clarity.<br><em>Not urgency.</em>
+            </h2>
+          </header>
+
+          <ol class="bp-steps" aria-label="Six steps in the buying process">
+
+            <li class="bp-step is-active" data-step="0">
+              <button class="bp-step__trigger" type="button" aria-expanded="true" aria-controls="bp-panel-0">
+                <span class="bp-step__num">01</span>
+                <span class="bp-step__title">Clarity</span>
+                <span class="bp-step__chevron" aria-hidden="true"></span>
+              </button>
+              <div class="bp-step__panel" id="bp-panel-0" role="region" aria-label="Clarity">
+                <div class="bp-step__panel-inner">
+                  <p class="bp-step__desc">Know your numbers before the search begins.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="bp-step" data-step="1">
+              <button class="bp-step__trigger" type="button" aria-expanded="false" aria-controls="bp-panel-1">
+                <span class="bp-step__num">02</span>
+                <span class="bp-step__title">Context</span>
+                <span class="bp-step__chevron" aria-hidden="true"></span>
+              </button>
+              <div class="bp-step__panel" id="bp-panel-1" role="region" aria-label="Context">
+                <div class="bp-step__panel-inner">
+                  <p class="bp-step__desc">The right home is rarely just the listing.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="bp-step" data-step="2">
+              <button class="bp-step__trigger" type="button" aria-expanded="false" aria-controls="bp-panel-2">
+                <span class="bp-step__num">03</span>
+                <span class="bp-step__title">Evaluation</span>
+                <span class="bp-step__chevron" aria-hidden="true"></span>
+              </button>
+              <div class="bp-step__panel" id="bp-panel-2" role="region" aria-label="Evaluation">
+                <div class="bp-step__panel-inner">
+                  <p class="bp-step__desc">Understand value before emotion takes over.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="bp-step" data-step="3">
+              <button class="bp-step__trigger" type="button" aria-expanded="false" aria-controls="bp-panel-3">
+                <span class="bp-step__num">04</span>
+                <span class="bp-step__title">Strategy</span>
+                <span class="bp-step__chevron" aria-hidden="true"></span>
+              </button>
+              <div class="bp-step__panel" id="bp-panel-3" role="region" aria-label="Strategy">
+                <div class="bp-step__panel-inner">
+                  <p class="bp-step__desc">Shape the offer around more than price.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="bp-step" data-step="4">
+              <button class="bp-step__trigger" type="button" aria-expanded="false" aria-controls="bp-panel-4">
+                <span class="bp-step__num">05</span>
+                <span class="bp-step__title">Protection</span>
+                <span class="bp-step__chevron" aria-hidden="true"></span>
+              </button>
+              <div class="bp-step__panel" id="bp-panel-4" role="region" aria-label="Protection">
+                <div class="bp-step__panel-inner">
+                  <p class="bp-step__desc">Reduce risk before conditions are removed.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="bp-step" data-step="5">
+              <button class="bp-step__trigger" type="button" aria-expanded="false" aria-controls="bp-panel-5">
+                <span class="bp-step__num">06</span>
+                <span class="bp-step__title">Confidence</span>
+                <span class="bp-step__chevron" aria-hidden="true"></span>
+              </button>
+              <div class="bp-step__panel" id="bp-panel-5" role="region" aria-label="Confidence">
+                <div class="bp-step__panel-inner">
+                  <p class="bp-step__desc">Close with the details already handled.</p>
+                </div>
+              </div>
+            </li>
+
+          </ol>
+
+        </div><!-- /bp-content -->
+
+      </div><!-- /bp-inner -->
     </section>
 
 
@@ -345,6 +416,130 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <script>
+  /* ── Buying Process — Scroll-driven accordion ─────────────────────────────
+     Desktop (≥901px): scroll position drives the active step + image.
+     Mobile  (<901px): tap/click opens each step; one open at a time.
+     Respects prefers-reduced-motion: shows all panels open, no scroll logic.
+  ─────────────────────────────────────────────────────────────────────────── */
+  (function () {
+    'use strict';
+
+    var section = document.querySelector('.bp-section');
+    if (!section) return;
+
+    var steps    = Array.from(section.querySelectorAll('.bp-step'));
+    var slides   = Array.from(section.querySelectorAll('.bp-media__slide'));
+    var capNum   = section.querySelector('.bp-media__caption-num');
+    var capLabel = section.querySelector('.bp-media__caption-label');
+    var reduced  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var desktopMQ = window.matchMedia('(min-width: 901px)');
+
+    var stepMeta = [
+      { num: '01', label: 'Clarity' },
+      { num: '02', label: 'Context' },
+      { num: '03', label: 'Evaluation' },
+      { num: '04', label: 'Strategy' },
+      { num: '05', label: 'Protection' },
+      { num: '06', label: 'Confidence' }
+    ];
+
+    var activeIdx = 0;
+
+    /* ── Activate a step ────────────────────────────────────────── */
+    function activate(idx) {
+      if (idx === activeIdx && steps[idx].classList.contains('is-active')) return;
+      activeIdx = idx;
+
+      steps.forEach(function (step, i) {
+        var on = (i === idx);
+        step.classList.toggle('is-active', on);
+        var btn = step.querySelector('.bp-step__trigger');
+        if (btn) btn.setAttribute('aria-expanded', on ? 'true' : 'false');
+      });
+
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle('is-active', i === idx);
+      });
+
+      if (capNum)   capNum.textContent   = stepMeta[idx].num;
+      if (capLabel) capLabel.textContent = stepMeta[idx].label;
+    }
+
+    /* ── Determine active step from scroll position ─────────────── */
+    function getScrollIdx() {
+      /* The active step is the last one whose top edge is at or above
+         42% from the viewport top — gives a natural "just passed" feel. */
+      var threshold = window.innerHeight * 0.42;
+      var active = 0;
+      steps.forEach(function (step, i) {
+        if (step.getBoundingClientRect().top <= threshold) active = i;
+      });
+      return active;
+    }
+
+    /* ── Scroll listener (desktop only) ────────────────────────── */
+    var rafPending = false;
+    function onScroll() {
+      if (!desktopMQ.matches || rafPending) return;
+      rafPending = true;
+      requestAnimationFrame(function () {
+        rafPending = false;
+        var idx = getScrollIdx();
+        if (idx !== activeIdx) activate(idx);
+      });
+    }
+
+    /* ── Click/tap handler (always active) ─────────────────────── */
+    steps.forEach(function (step, idx) {
+      var btn = step.querySelector('.bp-step__trigger');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        /* On desktop: clicking a step forces it active (scroll will re-sync on next scroll) */
+        /* On mobile:  already active steps stay open (one always open) */
+        if (!step.classList.contains('is-active')) activate(idx);
+      });
+    });
+
+    /* ── Keyboard: arrow keys navigate between steps ────────────── */
+    steps.forEach(function (step, idx) {
+      var btn = step.querySelector('.bp-step__trigger');
+      if (!btn) return;
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown' && idx < steps.length - 1) {
+          e.preventDefault();
+          activate(idx + 1);
+          var nextBtn = steps[idx + 1].querySelector('.bp-step__trigger');
+          if (nextBtn) nextBtn.focus();
+        }
+        if (e.key === 'ArrowUp' && idx > 0) {
+          e.preventDefault();
+          activate(idx - 1);
+          var prevBtn = steps[idx - 1].querySelector('.bp-step__trigger');
+          if (prevBtn) prevBtn.focus();
+        }
+      });
+    });
+
+    /* ── Reduced motion: show all panels open, static image ─────── */
+    if (reduced) {
+      steps.forEach(function (step) {
+        step.classList.add('is-active');
+        var btn = step.querySelector('.bp-step__trigger');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+      });
+      if (slides[0]) slides[0].classList.add('is-active');
+      /* No scroll listener — static experience */
+      return;
+    }
+
+    /* ── Init ───────────────────────────────────────────────────── */
+    activate(0);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+  }());
+  </script>
 
 </body>
 </html>
