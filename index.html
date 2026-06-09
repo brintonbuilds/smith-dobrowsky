@@ -11,7 +11,7 @@
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="stylesheet" href="css/styles.css?v=20260604-fullsync" />
   <link rel="stylesheet" href="css/nav.css?v=20260604-fullsync" />
-  <link rel="stylesheet" href="css/home.css?v=20260605-map-mobile" />
+  <link rel="stylesheet" href="css/home.css?v=20260607-map-callouts" />
   <link rel="preload" as="image" href="assets/geoff-smith-burlington-hamilton-local-neighbourhood-expert-hero.webp" />
 
   <!-- ── Preloader styles: hoisted above everything so they render immediately ── -->
@@ -83,8 +83,6 @@
             <a href="#" class="hero__cta-link hero__cta-link--primary editorial-cta text-link text-link--arrow text-link--dark">Explore Local Insight <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
             <a href="#" class="hero__cta-link hero__cta-link--secondary editorial-cta text-link text-link--arrow text-link--dark">View listings <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
           </div>
-
-          <p class="hero__reassurance">Unhurried. Considered. Always local.</p>
 
         </div><!-- /hero__left -->
 
@@ -241,7 +239,7 @@
           <header class="cm-header">
             <div class="cm-eyebrow editorial-eyebrow editorial-eyebrow--light">Local Expertise</div>
             <h2 class="cm-heading editorial-heading" id="cm-heading">Local insight.<br><em>Street by street.</em></h2>
-            <p class="cm-copy editorial-body">Most people compare neighbourhoods. Geoff looks closer — at the streets, routines, timing, and small shifts that shape a better move.</p>
+            <p class="cm-copy editorial-body">Most people compare neighbourhoods. The Smith Dobrowsky Team looks closer — at the streets, routines, timing, and small shifts that shape a better move.</p>
           </header>
 
           <div class="cm-insight">
@@ -249,7 +247,6 @@
             <p class="cm-insight__line">A few pockets in this region are consistently underestimated. Buyers who look past the obvious often find stronger fundamentals, better value, and less competition.</p>
             <div class="cm-insight__cta-group">
               <a class="cm-insight__link editorial-cta text-link text-link--arrow text-link--dark" href="#">Explore Local Expertise <span aria-hidden="true">&#8594;</span></a>
-              <p class="cm-insight__cta-support">Discover Burlington, Waterdown, Hamilton, and the small details that shape a better move.</p>
             </div>
           </div>
 
@@ -383,13 +380,13 @@
     <!-- ══════════════════════════════════════
          BUYERS FEATURE
     ══════════════════════════════════════ -->
-    <section class="bf-section reveal" id="buyers" aria-label="Buying with Geoff">
+    <section class="bf-section reveal" id="buyers" aria-label="Buying with The Smith Dobrowsky Team">
       <div class="bf-text">
         <p class="bf-eyebrow editorial-eyebrow editorial-eyebrow--dark">For Buyers</p>
         <h2 class="bf-heading editorial-heading">Find the right street<br><em>before the right house.</em></h2>
         <a class="bf-cta editorial-cta text-link text-link--arrow text-link--dark" href="buyers.html">Explore Buying <span aria-hidden="true">→</span></a>
       </div>
-      <a class="bf-image" href="buyers.html" aria-label="Explore buying with Geoff">
+      <a class="bf-image" href="buyers.html" aria-label="Explore buying with The Smith Dobrowsky Team">
         <img src="assets/buyers-smith-dobrowsky.webp" alt="" loading="lazy">
       </a>
     </section>
@@ -399,11 +396,11 @@
     <!-- ══════════════════════════════════════
          SELLERS FEATURE
     ══════════════════════════════════════ -->
-    <section class="sf-section reveal" id="sellers" aria-label="Selling with Geoff">
+    <section class="sf-section reveal" id="sellers" aria-label="Selling with The Smith Dobrowsky Team">
       <div class="sf-text">
         <p class="sf-eyebrow editorial-eyebrow editorial-eyebrow--light">For Sellers</p>
         <h2 class="sf-heading editorial-heading">Protect your value<br><em>before you go to market.</em></h2>
-        <p class="sf-copy">Selling a home involves more than putting it on the market. Geoff provides thoughtful guidance on pricing, preparation, marketing, and negotiation so you can move forward with confidence.</p>
+        <p class="sf-copy">Selling a home involves more than putting it on the market. Geoff and Katrinna provide thoughtful guidance on pricing, preparation, marketing, and negotiation so you can move forward with confidence.</p>
         <a class="sf-cta editorial-cta text-link text-link--arrow text-link--light" href="#">Explore Selling <span aria-hidden="true">→</span></a>
       </div>
       <div class="sf-image" aria-hidden="true">
@@ -471,7 +468,7 @@
           <p class="closing-cta__eyebrow editorial-eyebrow editorial-eyebrow--light">When The Time Feels Right</p>
           <h2 class="closing-cta__heading editorial-heading">Start with a<br><em>conversation.</em></h2>
           <p class="closing-cta__trust">Helping people understand their options before making a move.</p>
-          <a href="#" class="closing-cta__link btn btn--outline btn--light">Talk With Geoff <span aria-hidden="true">→</span></a>
+          <a href="#" class="closing-cta__link btn btn--outline btn--light">Talk With the Team <span aria-hidden="true">→</span></a>
         </div>
 
         <div class="closing-cta__media" aria-hidden="true">
@@ -815,75 +812,7 @@
 })();
 </script>
 
-<script>
-/* Communities — evergreen insight themes + atmospheric map */
-(function () {
-  'use strict';
-
-  function init() {
-    var section = document.querySelector('.cm-section');
-    if (!section) return;
-
-    /* ── Atmospheric map markers — hover highlights, click navigates ── */
-    var communities = {
-      burlington: { x: 0.530, y: 0.440, labelX: 14, labelY: -12, name: 'Burlington', href: '#' },
-      hamilton:   { x: 0.275, y: 0.760, labelX: 14, labelY: -12, name: 'Hamilton',   href: '#' },
-      waterdown:  { x: 0.415, y: 0.265, labelX: 14, labelY: -12, name: 'Waterdown',  href: '#' }
-    };
-
-    var markerLayer = section.querySelector('.cm-map-marker-layer');
-    var markerEls   = {};
-
-    if (markerLayer) {
-      markerLayer.innerHTML = '';
-      Object.keys(communities).forEach(function (key) {
-        var c  = communities[key];
-        var el = document.createElement('button');
-        el.type = 'button';
-        el.className = 'cm-map-marker';
-        el.setAttribute('data-community', key);
-        el.setAttribute('aria-label', 'Learn about ' + c.name);
-        el.style.setProperty('--marker-x', (c.x * 100).toFixed(2) + '%');
-        el.style.setProperty('--marker-y', (c.y * 100).toFixed(2) + '%');
-        el.style.setProperty('--label-x',  c.labelX + 'px');
-        el.style.setProperty('--label-y',  c.labelY + 'px');
-        el.innerHTML = '<span class="cm-map-marker__dot" aria-hidden="true"></span>'
-                     + '<span class="cm-map-marker__label">' + c.name + '</span>';
-
-        markerEls[key] = el;
-        markerLayer.appendChild(el);
-
-        function clearActive() {
-          Object.values(markerEls).forEach(function (m) { m.classList.remove('is-active'); });
-          section.classList.remove('has-active');
-        }
-
-        el.addEventListener('click', function () {
-          window.location.href = c.href;
-        });
-        el.addEventListener('mouseenter', function () {
-          clearActive();
-          el.classList.add('is-active');
-          section.classList.add('has-active');
-        });
-        el.addEventListener('mouseleave', clearActive);
-        el.addEventListener('focus', function () {
-          clearActive();
-          el.classList.add('is-active');
-          section.classList.add('has-active');
-        });
-        el.addEventListener('blur', clearActive);
-      });
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-}());
-</script>
+<script src="js/community-map.js"></script>
 
 <script>
 /* ── Preloader cleanup ────────────────────────────────────────

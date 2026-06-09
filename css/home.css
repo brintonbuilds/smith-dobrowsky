@@ -984,14 +984,6 @@ body.home-page .hero__h1-em {
       color: rgba(255,255,255,0.58) !important;
     }
 
-    body.home-page .hero__reassurance {
-      margin: 0 !important;
-      color: rgba(255,255,255,0.38) !important;
-      font-size: 12px !important;
-      line-height: 1.5 !important;
-      letter-spacing: 0.025em !important;
-    }
-
     @media (prefers-reduced-motion: reduce) {
       body.home-page .hero__local-detail span {
         animation: none !important;
@@ -1108,10 +1100,6 @@ body.home-page .hero .btn-text-link {
         justify-content: center !important;
       }
 
-      body.home-page .hero__reassurance {
-        width: 100% !important;
-        text-align: center !important;
-      }
     }
 
     @media (max-width: 380px) {
@@ -2160,10 +2148,6 @@ body.home-page .hero__trust-item:not(:first-child) {
     color: rgba(255,255,255,0.46) !important;
   }
 
-  body.home-page .hero__reassurance {
-    color: rgba(255,255,255,0.34) !important;
-  }
-
   @media (max-width: 1200px) and (min-width: 901px) {
     body.home-page .hero__left {
       padding: clamp(50px, 5.5vh, 72px) 42px clamp(44px, 4.8vh, 60px) 58px !important;
@@ -2603,12 +2587,6 @@ body.home-page .hero__ctas .btn-text-link:focus-visible {
   outline-offset: 4px !important;
 }
 
-body.home-page .hero__reassurance {
-  color: rgba(250, 246, 237, 0.48) !important;
-  font-size: 0.84rem !important;
-  letter-spacing: 0.04em !important;
-}
-
 body.home-page .hero__right {
   align-self: stretch !important;
   min-height: clamp(560px, 72vh, 760px) !important;
@@ -2945,11 +2923,6 @@ body.home-page .hero__ctas .btn-text-link {
   color: rgba(244, 241, 234, 0.72) !important;
 }
 
-body.home-page .hero__reassurance {
-  margin: 0 !important;
-  color: rgba(250, 246, 237, 0.46) !important;
-}
-
 body.home-page .hero__right {
   align-self: center !important;
   min-width: 0 !important;
@@ -3180,10 +3153,6 @@ body.home-page .hero__right {
   }
 
   body.home-page .hero__context {
-    display: none !important;
-  }
-
-  body.home-page .hero__reassurance {
     display: none !important;
   }
 
@@ -3480,8 +3449,7 @@ body.home-page .hero__right {
     font-size: clamp(2.3rem, 9.5vw, 3rem) !important;
   }
 
-  body.home-page .hero__context,
-  body.home-page .hero__reassurance {
+  body.home-page .hero__context {
     display: none !important;
   }
 }
@@ -5167,10 +5135,6 @@ body.home-page .hero__ctas .btn-text-link {
 body.home-page .hero__ctas .btn-text-link:hover {
   color: rgba(250, 248, 244, 0.94) !important;
   transform: translate3d(3px, 0, 0) !important;
-}
-
-body.home-page .hero__reassurance {
-  display: none !important;
 }
 
 body.home-page .hero__location-label {
@@ -9507,14 +9471,6 @@ body.home-page .cm-insight__link {
       body.home-page .hero__left {
         padding-top: clamp(60px, 7.5vh, 96px) !important;
       }
-    }
-
-    /* Reassurance */
-    body.home-page .hero__reassurance {
-      font-size: 10px !important;
-      letter-spacing: 0.10em !important;
-      color: rgba(218,207,187,0.26) !important;
-      margin-top: 10px !important;
     }
 
     /* Location label — editorial photo caption */
@@ -14741,17 +14697,6 @@ body.home-page .cm-insight__link {
       margin-top: clamp(20px, 2.2vw, 28px) !important;
     }
 
-    body.home-page .cm-insight__cta-support {
-      font-family: var(--font-sans) !important;
-      font-size: clamp(0.68rem, 0.74vw, 0.76rem) !important;
-      font-weight: 400 !important;
-      line-height: 1.6 !important;
-      letter-spacing: 0.01em !important;
-      color: rgba(40, 50, 67, 0.52) !important;
-      max-width: 32ch !important;
-      margin: 0 !important;
-    }
-
     /* Local Expertise mobile: keep the stacked story on one left edge. */
     @media (max-width: 620px) {
       body.home-page .cm-header,
@@ -14760,7 +14705,6 @@ body.home-page .cm-insight__link {
       body.home-page .cm-insight__name,
       body.home-page .cm-insight__line,
       body.home-page .cm-insight__link,
-      body.home-page .cm-insight__cta-support,
       body.home-page .cm-service-area {
         margin-left: 0 !important;
         padding-left: 0 !important;
@@ -14770,10 +14714,6 @@ body.home-page .cm-insight__link {
       body.home-page .cm-insight__cta-group {
         margin-top: clamp(18px, 5vw, 24px) !important;
         gap: 8px !important;
-      }
-
-      body.home-page .cm-insight__cta-support {
-        max-width: 100% !important;
       }
 
       body.home-page .cm-insight {
@@ -15014,11 +14954,6 @@ body.home-page .hero__overline {
 body.home-page .hero__h1-location {
   color: rgba(200, 190, 174, 0.90) !important;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.30) !important;
-}
-
-/* Reassurance line — was 0.26–0.48 where visible */
-body.home-page .hero__reassurance {
-  color: rgba(218, 207, 187, 0.58) !important;
 }
 
 /* Bottom-right callout — kicker label */
@@ -15511,22 +15446,6 @@ body.home-page .hero__ctas .hero__cta-link:focus-visible .hero__cta-arrow {
   transform: translate(4px, -0.02em) !important;
 }
 
-body.home-page .hero__reassurance {
-  display: block !important;
-  width: min(100%, var(--hero-copy-width)) !important;
-  margin: clamp(10px, 1.6vh, 15px) 0 0 !important;
-  color: rgba(241, 234, 220, 0.72) !important;
-  opacity: 1 !important;
-  filter: none !important;
-  font-size: clamp(0.58rem, 0.66vw, 0.68rem) !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.16em !important;
-  line-height: 1.5 !important;
-  text-align: left !important;
-  text-transform: uppercase !important;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.42) !important;
-}
-
 body.home-page .hero__media-slide {
   filter: saturate(0.92) contrast(1.04) brightness(0.82) !important;
 }
@@ -15722,11 +15641,6 @@ body.home-page .hero__media-slide {
     letter-spacing: 0.13em !important;
   }
 
-  body.home-page .hero__reassurance {
-    width: 100% !important;
-    margin-top: 12px !important;
-    font-size: 0.56rem !important;
-  }
 }
 
 @media (max-width: 480px) {
@@ -15798,5 +15712,87 @@ body.home-page .hero__media-slide {
     /* Measured: "Move with confidence." = 574px at 62px in 572px   */
     /* container — wraps. At 58px = ~537px, 35px clear margin.      */
     font-size: clamp(54px, 3.88vw, 58px) !important;
+  }
+}
+
+/* Community map callout stability — shared marker behavior. */
+body.home-page .cm-map-marker {
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation !important;
+}
+
+body.home-page .cm-map-marker-layer {
+  pointer-events: none !important;
+}
+
+body.home-page .cm-map-marker-layer .cm-map-marker {
+  pointer-events: auto !important;
+}
+
+body.home-page .cm-map-marker:hover .cm-map-marker__dot,
+body.home-page .cm-map-marker:focus-visible .cm-map-marker__dot,
+body.home-page .cm-map-marker.is-active .cm-map-marker__dot {
+  width: 12px !important;
+  height: 12px !important;
+  flex-basis: 12px !important;
+  border-color: rgba(248, 245, 239, 0.98) !important;
+  background: #08182e !important;
+  box-shadow: 0 5px 14px rgba(8, 24, 46, 0.18) !important;
+}
+
+@media (max-width: 850px) {
+  body.home-page .cm-map-marker,
+  body.home-page .cm-section.has-active .cm-map-marker:not(.is-active) {
+    opacity: 1 !important;
+  }
+
+  body.home-page .cm-map-marker .cm-map-marker__label,
+  body.home-page .cm-map-marker[data-community="waterdown"]:not(.is-active) .cm-map-marker__label,
+  body.home-page .cm-map-marker:not(.is-active) .cm-map-marker__label {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Local Expertise callout readability — keep the existing editorial layout, but
+   restore enough contrast for the insight card and its service-area treatment. */
+body.home-page .cm-insight__name {
+  color: rgba(15, 27, 48, 0.9) !important;
+}
+
+body.home-page .cm-insight__line {
+  color: rgba(17, 29, 51, 0.76) !important;
+}
+
+body.home-page .cm-insight__link.text-link--dark {
+  color: rgba(11, 22, 38, 0.86) !important;
+}
+
+body.home-page .cm-insight__link.text-link--dark:hover,
+body.home-page .cm-insight__link.text-link--dark:focus-visible {
+  color: rgba(11, 22, 38, 0.98) !important;
+}
+
+body.home-page .cm-insight__link.text-link--dark::after {
+  background: currentColor !important;
+}
+
+body.home-page .cm-service-area {
+  max-width: 44ch !important;
+  margin-top: clamp(24px, 2.8vw, 38px) !important;
+  padding-top: clamp(14px, 1.6vw, 18px) !important;
+  border-top: 1px solid rgba(17, 29, 51, 0.18) !important;
+  color: rgba(15, 27, 48, 0.72) !important;
+  font-size: clamp(0.72rem, 0.78vw, 0.82rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0.02em !important;
+}
+
+@media (max-width: 620px) {
+  body.home-page .cm-service-area {
+    margin-top: clamp(22px, 6vw, 30px) !important;
+    font-size: clamp(0.72rem, 3.1vw, 0.82rem) !important;
   }
 }

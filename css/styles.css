@@ -1283,10 +1283,11 @@ textarea { height: 100px; resize: none; }
 }
 
 
-/* Premium hero responsive overrides */
+/* overflow-x: clip prevents horizontal bleed without creating a scroll
+   container — overflow: hidden on body would break position: sticky. */
 html,
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .sd-overline,

@@ -425,6 +425,219 @@
   color: var(--text-inverse-secondary);
 }
 
+/* Buyers Local Expertise map — reuses the homepage community marker system. */
+.buyers-local-map .cm-map-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: none;
+  filter: none;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.buyers-local-map .cm-map-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.buyers-local-map .cm-map-frame::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  inset: -1px;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 62% 52%,
+      transparent 42%,
+      rgba(12, 18, 30, 0.044) 66%,
+      rgba(8, 13, 22, 0.09) 100%
+    ),
+    radial-gradient(
+      ellipse at center,
+      transparent 68%,
+      rgba(245, 241, 234, 0.38) 88%,
+      rgba(245, 241, 234, 0.76) 100%
+    );
+  mix-blend-mode: multiply;
+}
+
+.buyers-local-map .cm-map-stage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: auto;
+  min-width: 100%;
+  aspect-ratio: 1682 / 935;
+  isolation: isolate;
+  transform: translate(-50%, -50%);
+}
+
+.buyers-local-map .cm-map-stage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.76' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  background-repeat: repeat;
+  opacity: 0.036;
+  mix-blend-mode: soft-light;
+}
+
+.buyers-local-map .cm-map-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  filter: contrast(0.99) brightness(1.022) saturate(0.92);
+  pointer-events: none;
+  user-select: none;
+}
+
+.buyers-local-map .cm-map-marker-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.buyers-local-map .cm-map-marker-layer .cm-map-marker {
+  pointer-events: auto;
+}
+
+.buyers-local-map .cm-map-marker {
+  --marker-x: 50%;
+  --marker-y: 50%;
+  --label-x: 14px;
+  --label-y: -50%;
+  position: absolute;
+  left: var(--marker-x);
+  top: var(--marker-y);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(17, 29, 51, 0.62);
+  font-family: var(--font-sans);
+  font-size: clamp(0.58rem, 0.68vw, 0.72rem);
+  font-weight: var(--weight-meta);
+  letter-spacing: 0.2em;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0.82;
+  transform: translate(-50%, -50%);
+  transition: opacity 180ms ease, transform 180ms ease, color 180ms ease;
+  white-space: nowrap;
+}
+
+.buyers-local-map .cm-map-marker__dot {
+  position: relative;
+  display: block;
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  border: 1.5px solid rgba(248, 245, 239, 0.9);
+  border-radius: 999px;
+  background: #85898c;
+  box-shadow: 0 3px 9px rgba(17, 29, 51, 0.12);
+  transition: width 180ms ease, height 180ms ease, flex-basis 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.buyers-local-map .cm-map-marker__dot::before {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border: 1px solid rgba(127, 133, 139, 0.16);
+  border-radius: inherit;
+  background: rgba(127, 133, 139, 0.08);
+}
+
+.buyers-local-map .cm-map-marker__label {
+  position: absolute;
+  left: var(--label-x);
+  top: var(--label-y);
+  display: block;
+  text-shadow: 0 1px 10px rgba(248, 245, 239, 0.72);
+}
+
+.buyers-local-map.has-active .cm-map-marker:not(.is-active) {
+  opacity: 0.64;
+}
+
+.buyers-local-map .cm-map-marker:hover,
+.buyers-local-map .cm-map-marker:focus-visible,
+.buyers-local-map .cm-map-marker.is-active {
+  color: #08182e;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.025);
+}
+
+.buyers-local-map .cm-map-marker:hover .cm-map-marker__dot,
+.buyers-local-map .cm-map-marker:focus-visible .cm-map-marker__dot,
+.buyers-local-map .cm-map-marker.is-active .cm-map-marker__dot {
+  width: 12px;
+  height: 12px;
+  flex-basis: 12px;
+  border-color: rgba(248, 245, 239, 0.98);
+  background: #08182e;
+  box-shadow: 0 5px 14px rgba(8, 24, 46, 0.18);
+}
+
+.buyers-local-map .cm-map-marker.is-active .cm-map-marker__label {
+  font-weight: 800;
+}
+
+.buyers-local-map .cm-map-marker[data-community="burlington"] {
+  font-size: clamp(0.65rem, 0.76vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: rgba(10, 19, 37, 0.90);
+  opacity: 0.98;
+}
+
+.buyers-local-map .cm-map-marker[data-community="burlington"] .cm-map-marker__dot {
+  width: 10px;
+  height: 10px;
+  flex-basis: 10px;
+  background: rgba(10, 19, 37, 0.72);
+  border-color: rgba(248, 245, 240, 0.96);
+  box-shadow: 0 3px 12px rgba(10, 19, 37, 0.22);
+}
+
+.buyers-local-map .cm-map-marker[data-community="hamilton"],
+.buyers-local-map .cm-map-marker[data-community="waterdown"] {
+  font-size: clamp(0.58rem, 0.66vw, 0.72rem);
+  font-weight: 500;
+  letter-spacing: 0.20em;
+  color: rgba(17, 29, 51, 0.80);
+  opacity: 0.95;
+}
+
+.buyers-local-map .cm-map-marker.is-active {
+  color: rgba(8, 18, 38, 0.94);
+  opacity: 1;
+}
+
+.buyers-local-map .cm-map-marker.is-active .cm-map-marker__dot {
+  background: #08182e;
+  box-shadow: 0 4px 14px rgba(8, 24, 46, 0.24);
+}
+
 /* ─────────────────────────────────────────────────────────────
    REVEAL DELAY UTILITIES
    Staggered entrance for grid children.
@@ -977,6 +1190,22 @@
     width: calc(100% + 2 * var(--section-pad-x));
   }
 
+  .buyers-local-map .cm-map-stage {
+    width: 100%;
+    height: auto;
+    min-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 1682 / 935;
+  }
+
+  .buyers-local-map .cm-map-marker {
+    opacity: 1;
+  }
+
+  .buyers-local-map.has-active .cm-map-marker:not(.is-active) {
+    opacity: 1;
+  }
+
   /* Insight points — 2 columns on tablet */
   .ip-insight__points {
     grid-template-columns: repeat(2, 1fr);
@@ -1035,6 +1264,16 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+  }
+
+  .buyers-local-map .cm-map-marker {
+    font-size: 0.56rem;
+    letter-spacing: 0.14em;
+  }
+
+  .buyers-local-map .cm-map-marker[data-community="waterdown"] {
+    --label-x: 10px !important;
+    --label-y: -16px !important;
   }
 
   /* Insight points — 1 column on mobile */
@@ -1258,10 +1497,12 @@
   --bp-step-rest:      rgba(238, 235, 228, 0.46);
   --bp-step-active:    #ffffff;
   --bp-desc:           rgba(238, 235, 228, 0.76);
-  --bp-ease:           cubic-bezier(0.4, 0, 0.2, 1);
-  --bp-dur:            480ms;
+  --bp-ease:           cubic-bezier(0.25, 0, 0.15, 1);
+  --bp-dur:            340ms;
   background: var(--bp-bg);
-  overflow: hidden;
+  /* overflow: clip keeps visual cropping without creating a scroll context,
+     which allows position: sticky inside to work against the document. */
+  overflow: clip;
 }
 
 /* ── Two-column grid ──────────────────────────────────────────── */
@@ -1277,8 +1518,10 @@
    ───────────────────────────────────────────────────────────── */
 .bp-media {
   position: sticky;
-  top: var(--bp-nav-h);
-  height: calc(100vh - var(--bp-nav-h));
+  /* Centre the panel in the viewport: top = (100vh - height) / 2.
+     max() ensures it never creeps behind the fixed nav. */
+  top: max(var(--bp-nav-h), calc(50vh - 34vh));
+  height: 68vh;
   overflow: hidden;
   align-self: start; /* required for sticky inside a grid */
 }
@@ -1310,6 +1553,11 @@
   opacity: 1;
   transform: scale(1.0);
   z-index: 1;
+}
+
+/* Clarity image: shift right to keep the foreground planter visible */
+.bp-media__slide--clarity {
+  object-position: 62% center;
 }
 
 /* Cinematic gradient overlay */
@@ -1355,6 +1603,17 @@
   transition: opacity var(--bp-dur) var(--bp-ease);
 }
 
+.bp-media__caption-context {
+  font-family: var(--font-sans);
+  font-size: clamp(10px, 0.82vw, 12px);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(238, 235, 228, 0.34);
+  line-height: 1.4;
+  margin-top: 2px;
+  transition: opacity var(--bp-dur) var(--bp-ease);
+}
+
 /* ─────────────────────────────────────────────────────────────
    RIGHT: content panel
    ───────────────────────────────────────────────────────────── */
@@ -1364,18 +1623,29 @@
   padding:
     clamp(64px, 8vw, 108px)
     clamp(44px, 5.5vw, 88px)
-    clamp(64px, 8vw, 108px)
+    clamp(200px, 28vw, 360px)
     clamp(52px, 5.5vw, 80px);
   border-left: 1px solid var(--bp-border);
 }
 
 /* ── Section header ───────────────────────────────────────────── */
 .bp-header {
-  margin-bottom: clamp(40px, 5.5vw, 68px);
+  margin-bottom: clamp(36px, 5vw, 60px);
 }
 
 .bp-eyebrow {
   margin-bottom: clamp(14px, 1.6vw, 20px);
+}
+
+/* Bridge statement — quiet connective tissue between headline and steps */
+.bp-bridge {
+  font-family: var(--font-sans);
+  font-size: clamp(0.88rem, 0.94vw, 0.98rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(238, 235, 228, 0.44);
+  margin: clamp(18px, 2.2vw, 28px) 0 0;
+  max-width: 42ch;
 }
 
 /* Override the global editorial-heading color for this dark context */
@@ -1510,12 +1780,13 @@
   font-family: var(--font-sans);
   font-size: clamp(0.90rem, 0.98vw, 1.02rem);
   font-weight: 400;
-  line-height: 1.76;
+  line-height: 1.78;
   color: var(--bp-desc);
   margin: 0;
-  padding-bottom: clamp(20px, 2.6vw, 32px);
+  padding-top: clamp(2px, 0.4vw, 6px);
+  padding-bottom: clamp(22px, 2.8vw, 36px);
   padding-left: clamp(38px, 4.2vw, 46px); /* visually aligned under the title */
-  max-width: 44ch;
+  max-width: 48ch;
 }
 
 /* ── Reduced motion: static, all open ────────────────────────── */
@@ -1647,5 +1918,37 @@
 
   .bp-step__trigger {
     gap: 12px;
+  }
+}
+
+/* Community map callout stability — matches the Home page marker behavior. */
+.buyers-local-map .cm-map-marker {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.buyers-local-map .cm-map-marker:hover .cm-map-marker__dot,
+.buyers-local-map .cm-map-marker:focus-visible .cm-map-marker__dot,
+.buyers-local-map .cm-map-marker.is-active .cm-map-marker__dot {
+  width: 12px;
+  height: 12px;
+  flex-basis: 12px;
+  border-color: rgba(248, 245, 239, 0.98);
+  background: #08182e;
+  box-shadow: 0 5px 14px rgba(8, 24, 46, 0.18);
+}
+
+@media (max-width: 850px) {
+  .buyers-local-map .cm-map-marker,
+  .buyers-local-map.has-active .cm-map-marker:not(.is-active) {
+    opacity: 1;
+  }
+
+  .buyers-local-map .cm-map-marker .cm-map-marker__label,
+  .buyers-local-map .cm-map-marker[data-community="waterdown"]:not(.is-active) .cm-map-marker__label,
+  .buyers-local-map .cm-map-marker:not(.is-active) .cm-map-marker__label {
+    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 }
