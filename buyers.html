@@ -52,23 +52,16 @@
         </div>
       </div>
 
-      <!-- Editorial caption — bottom right, magazine-style placement -->
-      <div class="ip-hero__caption" aria-hidden="true">
-        <span class="ip-hero__caption-rule"></span>
-        <span class="ip-hero__caption-location">Burlington · Hamilton · Waterdown</span>
-        <span class="ip-hero__caption-sub">Neighbourhood expertise since 2006</span>
-      </div>
-
     </section>
 
 
     <!-- ══════════════════════════════════════
          WHAT BUYERS ASK — Editorial questions
     ══════════════════════════════════════ -->
-    <section class="ip-questions reveal" aria-labelledby="buyers-ask-heading">
+    <section class="ip-questions" aria-labelledby="buyers-ask-heading">
       <div class="ip-questions__inner">
 
-        <header class="ip-questions__header">
+        <header class="ip-questions__header reveal">
           <p class="ip-questions__eyebrow editorial-eyebrow editorial-eyebrow--dark">What Buyers Ask</p>
           <h2 class="ip-questions__heading editorial-heading" id="buyers-ask-heading">
             Most people start with
@@ -315,18 +308,23 @@
     <!-- ══════════════════════════════════════
          TESTIMONIAL
     ══════════════════════════════════════ -->
-    <section class="ip-testimonial reveal" aria-label="Client story">
-      <div class="ip-testimonial__inner">
+    <section class="ct-section" aria-labelledby="ct-heading-buyers">
+      <div class="ct-inner">
 
-        <p class="ip-testimonial__eyebrow editorial-eyebrow editorial-eyebrow--light">In Their Words</p>
+        <header class="ct-header reveal">
+          <p class="ct-eyebrow editorial-eyebrow editorial-eyebrow--dark">CLIENT STORIES</p>
+          <h2 class="ct-heading editorial-heading" id="ct-heading-buyers">In their words.</h2>
+        </header>
 
-        <blockquote>
-          <p class="ip-testimonial__quote">&ldquo;Geoff showed us a home we wouldn&rsquo;t have considered &mdash; and it ended up being the one.&rdquo;</p>
-        </blockquote>
-
-        <div class="ip-testimonial__rule" aria-hidden="true"></div>
-        <span class="ip-testimonial__name">Nathan Small</span>
-        <span class="ip-testimonial__meta">First-Time Buyer &middot; Burlington</span>
+        <div class="ct-carousel reveal" data-client-stories aria-live="polite">
+          <blockquote class="ct-quote ct-slide is-active" data-client-story aria-hidden="false">
+            <p class="ct-quote__text">&ldquo;Geoff showed us a home we wouldn&rsquo;t have considered &mdash; and it ended up being the one.&rdquo;</p>
+            <footer class="ct-quote__footer">
+              <span class="ct-quote__name">NATHAN SMALL</span>
+              <span class="ct-quote__meta">First-Time Buyer &middot; Burlington</span>
+            </footer>
+          </blockquote>
+        </div>
 
       </div>
     </section>
@@ -378,9 +376,9 @@
 
       <!-- TEMPORARY CLIENT REVIEW MODE - INTERNAL LINKS DISABLED -->
       <nav class="footer__nav" aria-label="Footer navigation">
-        <a href="#" class="footer__nav-link">Listings</a>
+        <a href="listings.html" class="footer__nav-link">Listings</a>
         <a href="#" class="footer__nav-link">Buyers</a>
-        <a href="#" class="footer__nav-link">Sellers</a>
+        <a href="sellers.html" class="footer__nav-link">Sellers</a>
         <a href="#" class="footer__nav-link">Local Insight</a>
         <a href="#" class="footer__nav-link">Contact</a>
       </nav>
