@@ -2730,6 +2730,40 @@
 }
 
 
+/* ── Editorial observations — replaces bullet list format ── */
+
+.li-observations {
+  padding-top: clamp(40px, 4.5vw, 56px);
+  border-top: 1px solid var(--border-medium);
+  display: flex;
+  flex-direction: column;
+}
+
+.li-observations--dark {
+  border-top-color: rgba(238, 235, 228, 0.10);
+}
+
+.li-observation {
+  font-family: var(--font-sans);
+  font-size: clamp(0.90rem, 1.04vw, 1.06rem);
+  font-weight: var(--weight-body);
+  line-height: 1.82;
+  color: rgba(11, 22, 38, 0.70);
+  margin: 0;
+  padding: clamp(22px, 2.6vw, 30px) 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.li-observation:first-child {
+  padding-top: 0;
+}
+
+.li-observations--dark .li-observation {
+  color: rgba(238, 235, 228, 0.56);
+  border-bottom-color: rgba(238, 235, 228, 0.08);
+}
+
+
 /* ── Geoff's Notes — editorial observation cards ── */
 
 .li-notes {
@@ -2814,4 +2848,292 @@
   .li-community__inner {
     gap: clamp(28px, 6vw, 40px);
   }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   LOCAL MARKET NOTES
+   .mn-section        — outer section
+   .mn-feature-card   — large editorial featured note
+   .mn-note           — grid note card
+   .mn-category       — category label pill
+   ═══════════════════════════════════════════════════════════════ */
+
+.mn-section {
+  padding: var(--section-pad-y) var(--section-pad-x);
+  background: var(--surface-ink);
+}
+
+.mn-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+
+.mn-header {
+  max-width: 680px;
+  margin-bottom: clamp(48px, 6vw, 80px);
+}
+
+.mn-eyebrow {
+  margin-bottom: clamp(14px, 1.6vw, 20px);
+}
+
+.mn-heading {
+  color: var(--text-inverse);
+  margin: 0 0 clamp(20px, 2.4vw, 30px);
+}
+
+.mn-heading em {
+  color: rgba(238, 235, 228, 0.48);
+}
+
+.mn-intro {
+  font-family: var(--font-sans);
+  font-size: clamp(0.90rem, 1.02vw, 1.04rem);
+  font-weight: var(--weight-body);
+  line-height: 1.78;
+  color: rgba(238, 235, 228, 0.50);
+  max-width: 58ch;
+  margin: 0;
+}
+
+/* ── Category label ── */
+
+.mn-category {
+  font-family: var(--font-sans);
+  font-size: clamp(9px, 0.68vw, 10.5px);
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: rgba(238, 235, 228, 0.88);
+  background: rgba(238, 235, 228, 0.10);
+  padding: 5px 10px;
+  display: inline-block;
+}
+
+.mn-category--subtle {
+  background: transparent;
+  padding: 0;
+  color: rgba(238, 235, 228, 0.40);
+  letter-spacing: 0.18em;
+}
+
+/* ── Featured note card ── */
+
+.mn-feature {
+  margin-bottom: clamp(36px, 4.5vw, 56px);
+}
+
+.mn-feature-card {
+  background: rgba(238, 235, 228, 0.05);
+  border: 1px solid rgba(238, 235, 228, 0.10);
+  padding: clamp(36px, 4.5vw, 60px) clamp(32px, 4vw, 56px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  column-gap: clamp(40px, 6vw, 88px);
+  row-gap: clamp(18px, 2.2vw, 26px);
+  align-items: start;
+}
+
+.mn-feature-card__meta {
+  grid-column: 1 / -1;
+}
+
+.mn-feature-card__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 2.0vw, 2.28rem);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.020em;
+  color: var(--text-inverse);
+  margin: 0;
+  max-width: 20em;
+  grid-column: 1;
+}
+
+.mn-feature-card__body {
+  font-family: var(--font-sans);
+  font-size: clamp(0.88rem, 0.98vw, 1.02rem);
+  font-weight: var(--weight-body);
+  line-height: 1.78;
+  color: rgba(238, 235, 228, 0.52);
+  margin: 0;
+  max-width: 54ch;
+  grid-column: 1;
+}
+
+.mn-feature-card__cta {
+  grid-column: 1;
+  width: fit-content;
+  color: var(--cta-dark);
+  border-color: var(--btn-border-dark);
+}
+
+.mn-feature-card__cta:hover,
+.mn-feature-card__cta:focus-visible {
+  color: var(--cta-dark-hover);
+  border-color: var(--btn-border-dark-hover);
+  background-color: rgba(238, 235, 228, 0.055);
+  transform: translateY(-1px);
+}
+
+/* ── Note grid ── */
+
+.mn-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(238, 235, 228, 0.10);
+}
+
+.mn-note {
+  padding: clamp(28px, 3.2vw, 40px) clamp(24px, 2.8vw, 36px) clamp(28px, 3.2vw, 40px) 0;
+  border-right: 1px solid rgba(238, 235, 228, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.6vw, 18px);
+}
+
+.mn-note:last-child {
+  border-right: none;
+}
+
+.mn-note:not(:first-child) {
+  padding-left: clamp(24px, 2.8vw, 36px);
+}
+
+.mn-note__meta {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.4vw, 18px);
+}
+
+.mn-note__date {
+  font-family: var(--font-sans);
+  font-size: clamp(9px, 0.68vw, 10.5px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(238, 235, 228, 0.28);
+  line-height: 1;
+}
+
+.mn-note__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.02rem, 1.18vw, 1.28rem);
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -0.010em;
+  color: rgba(238, 235, 228, 0.90);
+  margin: 0;
+}
+
+.mn-note__body {
+  font-family: var(--font-sans);
+  font-size: var(--type-small);
+  font-weight: var(--weight-body);
+  line-height: 1.76;
+  color: rgba(238, 235, 228, 0.44);
+  margin: 0;
+  flex: 1;
+}
+
+.mn-note__cta {
+  color: rgba(238, 235, 228, 0.50);
+  margin-top: auto;
+}
+
+.mn-note__cta:hover,
+.mn-note__cta:focus-visible {
+  color: rgba(238, 235, 228, 0.88);
+}
+
+.mn-note__cta::after {
+  background: rgba(238, 235, 228, 0.30);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 960px) {
+  .mn-feature-card {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .mn-feature-card__heading {
+    font-size: clamp(1.30rem, 3.8vw, 1.88rem);
+  }
+}
+
+@media (max-width: 760px) {
+  .mn-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mn-note {
+    border-right: none;
+    border-bottom: 1px solid rgba(238, 235, 228, 0.08);
+    padding: clamp(24px, 5vw, 32px) 0;
+  }
+
+  .mn-note:last-child {
+    border-bottom: none;
+  }
+
+  .mn-note:not(:first-child) {
+    padding-left: 0;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   SCREEN-READER ONLY UTILITY
+   Used for accessible labels on animated elements.
+   ───────────────────────────────────────────────────────────── */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   LOCAL INSIGHT HERO — STAT LINE
+   Quiet proof point between body copy and CTA.
+   Only the count number animates; all surrounding text is still.
+   ───────────────────────────────────────────────────────────── */
+
+.li-hero-stat {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.1vw, 14px);
+  font-family: var(--font-sans);
+  font-size: clamp(10px, 0.74vw, 11.5px);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(238, 235, 228, 0.46);
+  line-height: 1;
+  margin: 0 0 clamp(28px, 3.2vw, 38px);
+}
+
+.li-hero-stat__num {
+  font-variant-numeric: tabular-nums;
+  color: rgba(238, 235, 228, 0.78);
+  letter-spacing: 0.12em;
+}
+
+.li-hero-stat__sep {
+  opacity: 0.30;
+  letter-spacing: 0;
 }
