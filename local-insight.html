@@ -9,12 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="stylesheet" href="css/styles.css?v=20260610-local-insight" />
-  <link rel="stylesheet" href="css/nav.css?v=20260610-local-insight" />
-  <link rel="stylesheet" href="css/pages.css?v=20260610-local-insight-v2" />
+  <link rel="stylesheet" href="css/styles.css?v=20260617-local-insight" />
+  <link rel="stylesheet" href="css/nav.css?v=20260617-local-insight" />
+  <link rel="stylesheet" href="css/pages.css?v=20260617-interior-hero" />
   <!-- home.css is intentionally NOT loaded on this page -->
 </head>
-<body>
+<body class="interior-page local-insight-page">
 
   <script src="js/nav.js"></script>
 
@@ -27,7 +27,7 @@
 
       <div class="ip-hero__bg" aria-hidden="true">
         <img
-          src="assets/Halton-Escarpment-Real-Estate.png"
+          src="assets/halton-hamilton-map.png"
           alt=""
           loading="eager"
           decoding="async"
@@ -46,14 +46,8 @@
           Most people compare neighbourhoods. Geoff looks closer — at the streets, patterns, and small shifts that rarely appear in a market report.
         </p>
 
-        <p class="li-hero-stat" aria-label="3 core markets. Street-level perspective.">
-          <span class="li-hero-stat__num" aria-hidden="true" data-count-to="3">0</span>&nbsp;Core Markets
-          <span class="li-hero-stat__sep" aria-hidden="true">&middot;</span>
-          Street-Level Perspective
-        </p>
-
         <div class="ip-hero__ctas">
-          <a href="#burlington" class="editorial-cta text-link text-link--light text-link--arrow">
+          <a href="#community-guide" class="editorial-cta text-link text-link--light text-link--arrow">
             Explore the Communities <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -63,246 +57,327 @@
 
 
     <!-- ══════════════════════════════════════
-         SECTION 1 — BURLINGTON
+         COMMUNITY GUIDE — TABBED INTERFACE
     ══════════════════════════════════════ -->
-    <section class="li-community li-community--burlington" id="burlington" aria-labelledby="li-burlington-heading">
-      <div class="li-community__inner">
+    <section class="li-tabs-section" id="community-guide" aria-label="Community guides">
 
-        <div class="li-community__header reveal">
-          <p class="li-community__eyebrow editorial-eyebrow editorial-eyebrow--dark">Burlington</p>
-          <h2 class="li-community__heading editorial-heading" id="li-burlington-heading">
-            Burlington is not<br><em>one market.</em>
-          </h2>
-          <p class="li-community__body">
-            Downtown, Aldershot, Millcroft, Alton Village, Shoreacres, and the waterfront each attract a different buyer. A home in one pocket of Burlington can behave very differently from a home two kilometres away.
-          </p>
-        </div>
-
-        <figure class="li-community__visual reveal reveal-delay-1" aria-label="Burlington waterfront and walkable downtown context">
-          <img
-            src="assets/home-buyers-hamilton-halton-waterdown.png"
-            alt=""
-            loading="lazy"
-            decoding="async"
+      <!-- Community selector -->
+      <div class="li-selector">
+        <div class="li-selector__inner">
+          <p class="li-selector__eyebrow" aria-hidden="true">Explore by Community</p>
+          <p class="li-selector__intro">Each market behaves differently. Choose a community to explore Geoff's perspective.</p>
+          <div
+            class="li-tabs-bar"
+            role="tablist"
+            aria-label="Select a community to explore"
           >
-          <figcaption class="li-community__caption">
-            <span>Waterfront / Downtown</span>
-            <span>Walkability, character, lake proximity</span>
-          </figcaption>
-        </figure>
+            <button
+              role="tab"
+              id="tab-burlington"
+              aria-controls="panel-burlington"
+              aria-selected="true"
+              class="li-tab"
+            >
+              <span class="li-tab__label">Burlington</span>
+              <span class="li-tab__desc" aria-hidden="true">Lakefront &amp; Established</span>
+            </button>
+            <button
+              role="tab"
+              id="tab-hamilton"
+              aria-controls="panel-hamilton"
+              aria-selected="false"
+              class="li-tab"
+              tabindex="-1"
+            >
+              <span class="li-tab__label">Hamilton</span>
+              <span class="li-tab__desc" aria-hidden="true">Character &amp; Opportunity</span>
+            </button>
+            <button
+              role="tab"
+              id="tab-waterdown"
+              aria-controls="panel-waterdown"
+              aria-selected="false"
+              class="li-tab"
+              tabindex="-1"
+            >
+              <span class="li-tab__label">Waterdown</span>
+              <span class="li-tab__desc" aria-hidden="true">Village &amp; Growth</span>
+            </button>
+          </div>
+        </div>
+      </div>
 
-        <div class="li-observations li-observations--burlington reveal reveal-delay-2">
-          <p class="li-pullquote">The buyer drawn to the lake is rarely shopping the same Burlington as a buyer focused on subdivision space.</p>
 
-          <article class="li-observation">
-            <span class="li-observation__num">01</span>
-            <div class="li-observation__copy">
-              <h3 class="li-observation__title">Lake access changes the buyer pool</h3>
-              <p>Downtown and the waterfront attract a buyer that other parts of Burlington don't. Walkability, character, and proximity to the lake carry consistent weight — and that buyer rarely moves to a newer subdivision.</p>
+      <!-- ── BURLINGTON ───────────────────── -->
+      <div
+        role="tabpanel"
+        id="panel-burlington"
+        aria-labelledby="tab-burlington"
+        class="li-guide"
+      >
+
+        <!-- Feature: image + meta -->
+        <div class="li-guide__feature">
+
+          <div class="li-guide__image">
+            <img
+              src="assets/Burlington-Pier-Real-Estate.webp"
+              alt="Burlington waterfront and pier at dusk"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+
+          <div class="li-guide__meta">
+            <div class="li-guide__signal">
+              <span class="li-guide__signal-dot" aria-hidden="true"></span>
+              <span class="li-guide__signal-label">High Momentum</span>
             </div>
-          </article>
-
-          <article class="li-observation">
-            <span class="li-observation__num">02</span>
-            <div class="li-observation__copy">
-              <h3 class="li-observation__title">Aldershot has its own value logic</h3>
-              <p>Aldershot offers Burlington access at different value dynamics. GO proximity matters. But the day-to-day experience is meaningfully distinct from South Burlington — that gap is easy to underestimate until you've lived both sides of it.</p>
+            <h2 class="li-guide__name">Burlington</h2>
+            <p class="li-guide__subline">Lakefront living with deep roots.</p>
+            <div class="li-guide__stats">
+              <div class="li-guide__stat">
+                <p class="li-guide__stat-label">Typical Price Range</p>
+                <p class="li-guide__stat-value" data-countup>$850K – $2.2M</p>
+              </div>
+              <div class="li-guide__stat">
+                <p class="li-guide__stat-label">Known For</p>
+                <p class="li-guide__stat-value">Waterfront trail &middot; Spencer Smith Park &middot; Downtown core</p>
+              </div>
             </div>
-          </article>
+            <a href="#" class="li-guide__meta-cta text-link text-link--dark text-link--arrow">
+              Ask About Burlington <span aria-hidden="true">→</span>
+            </a>
+          </div>
 
-          <article class="li-observation">
-            <span class="li-observation__num">03</span>
-            <div class="li-observation__copy">
-              <h3 class="li-observation__title">The street still decides the outcome</h3>
-              <p>Two homes at the same price on different Burlington streets can sell in three days or sit for six weeks. The explanation is almost always the street.</p>
-            </div>
-          </article>
         </div>
 
-      </div>
-    </section>
+        <!-- Editorial intro -->
+        <div class="li-guide__editorial">
+          <h3 class="li-guide__editorial-heading">Burlington is not<br><em>one market.</em></h3>
+          <p class="li-guide__editorial-body">Downtown, Aldershot, Millcroft, Alton Village, Shoreacres, and the waterfront each attract a different buyer. A home in one pocket of Burlington can behave very differently from a home two kilometres away.</p>
+        </div>
+
+        <!-- Four-column callout grid -->
+        <div class="li-guide__grid" aria-label="Burlington community breakdown">
+
+          <div class="li-guide__card">
+            <p class="li-guide__card-label">Lifestyle</p>
+            <p class="li-guide__card-body">Burlington sits between Lake Ontario and the Niagara Escarpment, offering waterfront access, mature neighbourhoods, trails, and an established downtown. Buyers are often drawn to the balance of calm, convenience, and long-term quality of life.</p>
+          </div>
+
+          <div class="li-guide__card">
+            <p class="li-guide__card-label">Housing</p>
+            <p class="li-guide__card-body">Burlington housing changes significantly by pocket. Aldershot, Shoreacres, Roseland, Millcroft, and newer north-end communities each behave differently. Lot size, school catchments, renovation quality, lake proximity, and commute routes can all shift value quickly.</p>
+          </div>
+
+          <div class="li-guide__card">
+            <p class="li-guide__card-label">Schools &amp; Family Fit</p>
+            <p class="li-guide__card-body">Burlington attracts many family-focused buyers because of its established neighbourhoods, parks, schools, and perceived stability. For many buyers, the decision is less about the house alone and more about whether the street, school area, commute, and lifestyle all fit.</p>
+          </div>
+
+          <div class="li-guide__card">
+            <p class="li-guide__card-label">Commute</p>
+            <p class="li-guide__card-body">Burlington benefits from GO access, QEW, 403, and 407 connectivity. Commute convenience can meaningfully affect demand, especially for buyers balancing Toronto, Hamilton, Oakville, and Mississauga work patterns.</p>
+          </div>
+
+        </div>
+
+        <!-- Geoff's Perspective -->
+        <div class="li-guide__perspective">
+          <div class="li-guide__perspective-inner">
+            <p class="li-guide__perspective-eyebrow editorial-eyebrow">Geoff&rsquo;s Perspective</p>
+            <blockquote class="li-guide__perspective-quote">
+              &ldquo;Burlington has been a destination market for a decade. The waterfront and downtown core continue to carry strong appeal, but the best decisions often come from understanding the difference between lifestyle value, school-driven demand, and long-term resale strength.&rdquo;
+            </blockquote>
+          </div>
+        </div>
+
+      </div><!-- /panel-burlington -->
+
+
+      <!-- ── HAMILTON ─────────────────────── -->
+      <div
+        role="tabpanel"
+        id="panel-hamilton"
+        aria-labelledby="tab-hamilton"
+        class="li-guide"
+        hidden
+      >
+
+        <!-- Feature: image + meta -->
+        <div class="li-guide__feature">
+
+          <div class="li-guide__image">
+            <img
+              src="assets/Halton-Escarpment-Real-Estate.png"
+              alt="Hamilton escarpment and city overview"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+
+          <div class="li-guide__meta">
+            <div class="li-guide__signal">
+              <span class="li-guide__signal-dot" aria-hidden="true"></span>
+              <span class="li-guide__signal-label">Strong Momentum</span>
+            </div>
+            <h2 class="li-guide__name">Hamilton</h2>
+            <p class="li-guide__subline">A city in the middle of its best chapter.</p>
+            <div class="li-guide__stats">
+              <div class="li-guide__stat">
+                <p class="li-guide__stat-label">Typical Price Range</p>
+                <p class="li-guide__stat-value" data-countup>$560K – $1.4M</p>
+              </div>
+              <div class="li-guide__stat">
+                <p class="li-guide__stat-label">Known For</p>
+                <p class="li-guide__stat-value">James Street North &middot; Locke Street &middot; Waterfall Country</p>
+              </div>
+            </div>
+            <a href="#" class="li-guide__meta-cta text-link text-link--dark text-link--arrow">
+              Ask About Hamilton <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Editorial intro -->
+        <div class="li-guide__editorial">
+          <h3 class="li-guide__editorial-heading">Hamilton rewards<br><em>local context.</em></h3>
+          <p class="li-guide__editorial-body">Hamilton changes quickly from street to street. Character homes, mountain neighbourhoods, escarpment access, family pockets, and investor activity can all influence how a property should be evaluated or positioned.</p>
+        </div>
+
+        <!-- Four-column callout grid -->
+        <div class="li-guide__grid" aria-label="Hamilton community breakdown">
+
+          <div class="li-guide__card">
+            <p class="li-guide__card-label">Lifestyle</p>
+            <p class="li-guide__card-body">Hamilton has undergone a major cultural shift over the past decade. Restaurants, independent businesses, arts corridors, trails, escarpment access, and historic neighbourhoods have created strong appeal for buyers who want character and value without losing urban energy.</p>
+          </div>
+
+          <div class="li-guide__card">
+            <p class="li-guide__card-label">Housing</p>
+            <p class="li-guide__card-body">Hamilton offers century homes, brick semis, post-war bungalows, mountain family homes, newer builds, and rural-edge properties. Condition, street quality, parking, updates, and neighbourhood reputation can dramatically affect value — often block by block.</p>
+          </div>
+
+          <div class="li-guide__card">
+            <p class="li-guide__card-label">Schools &amp; Family Fit</p>
+            <p class="li-guide__card-body">Hamilton's family appeal varies heavily by neighbourhood. Some buyers prioritize schools and parks, while others focus on affordability, lot size, or character. The right fit depends on lifestyle, budget, and tolerance for change from one pocket to another.</p>
+          </div>
+
+          <div class="li-guide__card">
+            <p class="li-guide__card-label">Commute</p>
+            <p class="li-guide__card-body">Hamilton offers GO service, Highway 403, QEW, the Linc, Red Hill Valley Parkway, and future transit improvements. Commute patterns matter, especially for buyers balancing Hamilton affordability with work in Burlington, Oakville, Mississauga, or Toronto.</p>
+          </div>
+
+        </div>
+
+        <!-- Geoff's Perspective -->
+        <div class="li-guide__perspective">
+          <div class="li-guide__perspective-inner">
+            <p class="li-guide__perspective-eyebrow editorial-eyebrow">Geoff&rsquo;s Perspective</p>
+            <blockquote class="li-guide__perspective-quote">
+              &ldquo;Hamilton is not a simple market. Some streets are still value plays, some are already established destination pockets, and some require a very careful read. The opportunity is real — but the neighbourhood context matters as much as the house.&rdquo;
+            </blockquote>
+          </div>
+        </div>
+
+      </div><!-- /panel-hamilton -->
+
+
+      <!-- ── WATERDOWN ──────────────────────── -->
+      <div
+        role="tabpanel"
+        id="panel-waterdown"
+        aria-labelledby="tab-waterdown"
+        class="li-guide"
+        hidden
+      >
+
+        <!-- Feature: image + meta -->
+        <div class="li-guide__feature">
+
+          <div class="li-guide__image">
+            <img
+              src="assets/GettyImages-2162730763.jpg"
+              alt="Waterdown residential neighbourhood with escarpment backdrop"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+
+          <div class="li-guide__meta">
+            <div class="li-guide__signal">
+              <span class="li-guide__signal-dot li-guide__signal-dot--steady" aria-hidden="true"></span>
+              <span class="li-guide__signal-label li-guide__signal-label--steady">Steady Momentum</span>
+            </div>
+            <h2 class="li-guide__name">Waterdown</h2>
+            <p class="li-guide__subline">Village scale. Escarpment views.</p>
+            <div class="li-guide__stats">
+              <div class="li-guide__stat">
+                <p class="li-guide__stat-label">Typical Price Range</p>
+                <p class="li-guide__stat-value" data-countup>$780K – $1.5M</p>
+              </div>
+              <div class="li-guide__stat">
+                <p class="li-guide__stat-label">Known For</p>
+                <p class="li-guide__stat-value">Escarpment trails &middot; Christie Lake Conservation &middot; Clappison&rsquo;s Corners</p>
+              </div>
+            </div>
+            <a href="#" class="li-guide__meta-cta text-link text-link--dark text-link--arrow">
+              Ask About Waterdown <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Editorial intro -->
+        <div class="li-guide__editorial">
+          <h3 class="li-guide__editorial-heading">Waterdown balances<br><em>village feel and growth.</em></h3>
+          <p class="li-guide__editorial-body">Waterdown attracts buyers who want proximity to Burlington and Hamilton while still valuing a quieter community feel. Growth, commute patterns, schools, and family demand all shape how homes perform here.</p>
+        </div>
+
+        <!-- Four-column callout grid -->
+        <div class="li-guide__grid" aria-label="Waterdown community breakdown">
+
+          <div class="li-guide__card">
+            <p class="li-guide__card-label">Lifestyle</p>
+            <p class="li-guide__card-body">Waterdown offers a quieter pace with access to trails, escarpment views, local shops, schools, and family-oriented neighbourhoods. It appeals to buyers who want space and calm without feeling disconnected from Burlington, Hamilton, or major commuter routes.</p>
+          </div>
+
+          <div class="li-guide__card">
+            <p class="li-guide__card-label">Housing</p>
+            <p class="li-guide__card-body">Waterdown includes older character homes near the village core, established family homes, townhomes, and newer subdivisions. Buyers often compare Waterdown against Burlington and Hamilton — value depends heavily on space, condition, commute, and neighbourhood feel.</p>
+          </div>
+
+          <div class="li-guide__card">
+            <p class="li-guide__card-label">Schools &amp; Family Fit</p>
+            <p class="li-guide__card-body">Waterdown is especially attractive to families looking for a quieter setting, strong community feel, and practical access to schools and amenities. The family appeal is one of the major reasons demand remains steady across cycles.</p>
+          </div>
+
+          <div class="li-guide__card">
+            <p class="li-guide__card-label">Commute</p>
+            <p class="li-guide__card-body">Waterdown benefits from access to Highway 6, Highway 403, Aldershot GO, Burlington, and Hamilton. It is not purely a commuter suburb, but commute convenience remains a significant part of its buyer appeal.</p>
+          </div>
+
+        </div>
+
+        <!-- Geoff's Perspective -->
+        <div class="li-guide__perspective">
+          <div class="li-guide__perspective-inner">
+            <p class="li-guide__perspective-eyebrow editorial-eyebrow">Geoff&rsquo;s Perspective</p>
+            <blockquote class="li-guide__perspective-quote">
+              &ldquo;Waterdown has appreciated steadily because buyers are consciously choosing quality of life. It tends to attract people who want space, calm, and connection — and many of them plan to stay.&rdquo;
+            </blockquote>
+          </div>
+        </div>
+
+      </div><!-- /panel-waterdown -->
+
+    </section><!-- /li-tabs-section -->
 
 
     <!-- ══════════════════════════════════════
-         SECTION 2 — HAMILTON
-    ══════════════════════════════════════ -->
-    <section class="li-community li-community--hamilton li-community--dark" id="hamilton" aria-labelledby="li-hamilton-heading">
-      <div class="li-community__inner">
-
-        <div class="li-community__header reveal">
-          <p class="li-community__eyebrow editorial-eyebrow editorial-eyebrow--light">Hamilton</p>
-          <h2 class="li-community__heading li-community__heading--inverse editorial-heading" id="li-hamilton-heading">
-            Hamilton rewards<br><em>local knowledge.</em>
-          </h2>
-          <p class="li-community__body li-community__body--inverse">
-            Two homes minutes apart can have meaningfully different buyer demand, resale confidence, and long-term fit. Which side of a street. Which direction a block is moving. What the surrounding properties say about where things are heading. Experience here isn't optional.
-          </p>
-        </div>
-
-        <figure class="li-community__visual li-community__visual--dark reveal reveal-delay-1" aria-label="Hamilton layered street and escarpment context">
-          <img
-            src="assets/Halton-Escarpment-Real-Estate.png"
-            alt=""
-            loading="lazy"
-            decoding="async"
-          >
-          <figcaption class="li-community__caption li-community__caption--dark">
-            <span>Escarpment / Lower City</span>
-            <span>Block condition, momentum, buyer confidence</span>
-          </figcaption>
-        </figure>
-
-        <div class="li-observations li-observations--dark reveal reveal-delay-2">
-          <div class="li-street-ledger" aria-hidden="true">
-            <span>North side</span>
-            <span>Half block</span>
-            <span>Corner influence</span>
-            <span>Resale confidence</span>
-          </div>
-
-          <article class="li-observation">
-            <span class="li-observation__num">01</span>
-            <div class="li-observation__copy">
-              <h3 class="li-observation__title">Momentum is block-specific</h3>
-              <p>Which blocks are improving consistently — and which are absorbing risk that a listing photo doesn't reveal. That pattern doesn't follow neighbourhood boundaries, and it changes the offer strategy.</p>
-            </div>
-          </article>
-
-          <article class="li-observation">
-            <span class="li-observation__num">02</span>
-            <div class="li-observation__copy">
-              <h3 class="li-observation__title">The escarpment premium is precise</h3>
-              <p>Escarpment proximity carries lifestyle value with a specific buyer. That premium is real but narrowly targeted — it matters intensely to one buyer profile and almost not at all to everyone else.</p>
-            </div>
-          </article>
-
-          <article class="li-observation">
-            <span class="li-observation__num">03</span>
-            <div class="li-observation__copy">
-              <h3 class="li-observation__title">Up-and-coming is not enough</h3>
-              <p>Up-and-coming is rarely precise enough to be useful. The question is always whether the specific block supports the specific move — and answering that honestly requires knowing the block.</p>
-            </div>
-          </article>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ══════════════════════════════════════
-         SECTION 3 — WATERDOWN
-    ══════════════════════════════════════ -->
-    <section class="li-community li-community--waterdown" id="waterdown" aria-labelledby="li-waterdown-heading">
-      <div class="li-community__inner">
-
-        <div class="li-community__header reveal">
-          <p class="li-community__eyebrow editorial-eyebrow editorial-eyebrow--dark">Waterdown</p>
-          <h2 class="li-community__heading editorial-heading" id="li-waterdown-heading">
-            Waterdown rewards<br><em>knowing where to look.</em>
-          </h2>
-          <p class="li-community__body">
-            Space, community feel, and access to Burlington, Hamilton, and the GTA from a single address — Waterdown offers something genuinely difficult to replicate at the same price point. But not every part of Waterdown delivers the same experience.
-          </p>
-        </div>
-
-        <figure class="li-community__visual reveal reveal-delay-1" aria-label="Waterdown quiet residential context">
-          <img
-            src="assets/GettyImages-2162730763.jpg"
-            alt=""
-            loading="lazy"
-            decoding="async"
-          >
-          <figcaption class="li-community__caption">
-            <span>Established pockets / New growth</span>
-            <span>Space, schools, commute patterns</span>
-          </figcaption>
-        </figure>
-
-        <div class="li-observations li-observations--waterdown reveal reveal-delay-2">
-          <p class="li-pullquote">Waterdown often works beautifully when the trade-offs are understood before the search gets emotional.</p>
-
-          <article class="li-observation">
-            <span class="li-observation__num">01</span>
-            <div class="li-observation__copy">
-              <h3 class="li-observation__title">Space comes with a trade</h3>
-              <p>Families choosing Waterdown are making a calculated trade — more space, quieter streets, and highway access in exchange for less walkability. Most don't regret it. The ones who do usually didn't think through the trade before buying.</p>
-            </div>
-          </article>
-
-          <article class="li-observation">
-            <span class="li-observation__num">02</span>
-            <div class="li-observation__copy">
-              <h3 class="li-observation__title">Established and new feel different</h3>
-              <p>Not every part of Waterdown delivers the same experience. Established pockets and newer subdivisions have different streetscapes, different community character, and different neighbours. Which matters depends entirely on who's buying.</p>
-            </div>
-          </article>
-
-          <article class="li-observation">
-            <span class="li-observation__num">03</span>
-            <div class="li-observation__copy">
-              <h3 class="li-observation__title">Approved growth changes the read</h3>
-              <p>Growth here is ongoing and largely approved. What looks like a quiet address today can shift. Understanding what's been approved versus what's still speculative changes how you evaluate a specific street.</p>
-            </div>
-          </article>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ══════════════════════════════════════
-         SECTION 4 — FIELD OBSERVATIONS
-    ══════════════════════════════════════ -->
-    <section class="li-notes" aria-labelledby="li-notes-heading">
-      <div class="li-notes__inner">
-
-        <header class="li-notes__header reveal">
-          <p class="li-notes__eyebrow editorial-eyebrow editorial-eyebrow--dark">Field Observations</p>
-          <h2 class="li-notes__heading editorial-heading" id="li-notes-heading">
-            What the data<br><em>doesn't show.</em>
-          </h2>
-        </header>
-
-        <div class="li-notes__grid">
-
-          <div class="li-note reveal reveal-delay-1">
-            <h3 class="li-note__heading">The street, not the house</h3>
-            <p class="li-note__body">Same neighbourhood. Same finishes. Same price. One moves in days, one sits for weeks. The explanation is almost always the street.</p>
-          </div>
-
-          <div class="li-note reveal reveal-delay-2">
-            <h3 class="li-note__heading">Hamilton's blocks don't follow its neighbourhood names</h3>
-            <p class="li-note__body">Kirkendall, Durand, Westdale, Stipley. Each draws a different buyer. The neighbourhood name is rarely the full answer — the specific block usually is.</p>
-          </div>
-
-          <div class="li-note reveal reveal-delay-3">
-            <h3 class="li-note__heading">Know what's approved before buying in Waterdown</h3>
-            <p class="li-note__body">What looks like a quiet street can shift. Understanding what's been approved versus what's still in planning changes how you evaluate any specific address.</p>
-          </div>
-
-          <div class="li-note reveal reveal-delay-4">
-            <h3 class="li-note__heading">Walkability scores measure access, not experience</h3>
-            <p class="li-note__body">The gap between a high score and a genuinely walkable daily life is wider than most buyers expect. The score doesn't account for what you'll actually use.</p>
-          </div>
-
-          <div class="li-note reveal reveal-delay-5">
-            <h3 class="li-note__heading">Up-and-coming means buyers absorb the risk</h3>
-            <p class="li-note__body">Genuinely improving means the evidence is already visible on the block. That distinction matters before you commit.</p>
-          </div>
-
-          <div class="li-note reveal reveal-delay-6">
-            <h3 class="li-note__heading">Resale is about what the next buyer sees first</h3>
-            <p class="li-note__body">It's about what they see when they drive down the street. Surrounding condition shifts buyer confidence more than most sellers account for.</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ══════════════════════════════════════
-         SECTION 5 — MAP / LOCAL COVERAGE
+         MAP / LOCAL COVERAGE
     ══════════════════════════════════════ -->
     <section class="ip-split ip-split--reverse ip-split--bleed-right ip-split--warm buyers-local-map reveal" aria-labelledby="li-map-heading">
       <div class="ip-split__inner">
@@ -431,43 +506,104 @@
   <script src="js/community-map.js"></script>
 
   <script>
-  /* ── Hero stat counter — counts the "3" from 0 on first view ──────────────
-     Triggers once via IntersectionObserver. Respects prefers-reduced-motion.
-     Eases out cubic so the finish feels settled, not mechanical.
+  /* ── Community tabs + price count-up ─────────────────────────────────────
+     Accessible tablist: click + arrow key navigation.
+     Count-up: animates [data-countup] price ranges on tab activation.
+     Runs once per community. Respects prefers-reduced-motion.
   ─────────────────────────────────────────────────────────────────────────── */
   (function () {
     'use strict';
 
-    var el = document.querySelector('[data-count-to]');
-    if (!el) return;
+    /* ── Count-up constants (declared first — used by activateTab on init) ── */
 
-    var target   = parseInt(el.getAttribute('data-count-to'), 10);
-    var duration = 1200; /* ms — calm and premium */
-    var reduced  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var DURATION      = 1050;  /* ms */
+    var START_RATIO   = 0.64;  /* begin at 64% of final value */
 
-    function run() {
-      if (reduced) {
-        el.textContent = target;
-        return;
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+    /* Parse "$850K – $2.2M" → wrap numeric parts in animated spans */
+    function prepareElement(el) {
+      if (el.dataset.cuReady) return;
+      el.dataset.cuReady = '1';
+      el.innerHTML = el.textContent.replace(/\$(\d+\.?\d*)([KM])/g, function (_, num, unit) {
+        var to       = parseFloat(num);
+        var decimals = num.indexOf('.') !== -1 ? num.split('.')[1].length : 0;
+        var from     = parseFloat((to * START_RATIO).toFixed(decimals));
+        return '$<span class="cu-num" data-to="' + to
+          + '" data-from="' + from
+          + '" data-dec="'  + decimals + '">'
+          + to.toFixed(decimals) + '</span>' + unit;
+      });
+    }
+
+    function animateElement(el) {
+      if (el.dataset.cuDone) return;
+      el.dataset.cuDone = '1';
+      if (reducedMotion) return; /* final values already rendered — nothing to do */
+      el.querySelectorAll('.cu-num').forEach(function (span) {
+        var to      = parseFloat(span.dataset.to);
+        var from    = parseFloat(span.dataset.from);
+        var dec     = parseInt(span.dataset.dec, 10);
+        var startTs = null;
+        function step(ts) {
+          if (!startTs) startTs = ts;
+          var progress = Math.min((ts - startTs) / DURATION, 1);
+          span.textContent = (from + (to - from) * easeOutCubic(progress)).toFixed(dec);
+          if (progress < 1) requestAnimationFrame(step);
+          else span.textContent = to.toFixed(dec); /* lock exact final value */
+        }
+        requestAnimationFrame(step);
+      });
+    }
+
+    /* Prepare spans; fire animation shortly after panel becomes visible.
+     * 80ms gives the browser time to paint the panel before the numbers
+     * start moving — imperceptible to the user, reliable across contexts. */
+    function scheduleCountUp(panel) {
+      panel.querySelectorAll('[data-countup]').forEach(function (el) {
+        prepareElement(el);
+        if (el.dataset.cuDone) return;
+        setTimeout(function () { animateElement(el); }, 80);
+      });
+    }
+
+    /* ── Tab controller ── */
+
+    var tabs   = Array.from(document.querySelectorAll('[role="tab"]'));
+    var panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+
+    if (!tabs.length) return;
+
+    function activateTab(tab) {
+      tabs.forEach(function (t) {
+        t.setAttribute('aria-selected', 'false');
+        t.setAttribute('tabindex', '-1');
+      });
+      panels.forEach(function (p) { p.hidden = true; });
+      tab.setAttribute('aria-selected', 'true');
+      tab.setAttribute('tabindex', '0');
+      var panel = document.getElementById(tab.getAttribute('aria-controls'));
+      if (panel) {
+        panel.hidden = false;
+        scheduleCountUp(panel);
       }
-
-      var startTime = Date.now();
-      var timer = setInterval(function () {
-        var elapsed  = Date.now() - startTime;
-        var progress = Math.min(elapsed / duration, 1);
-        /* ease-out cubic: decelerates to a calm stop */
-        var eased    = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(eased * target);
-        if (progress >= 1) clearInterval(timer);
-      }, 16);
     }
 
-    /* Hero is always first in viewport — trigger on paint rather than observe */
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function () { setTimeout(run, 300); });
-    } else {
-      setTimeout(run, 300);
-    }
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () { activateTab(tab); });
+      tab.addEventListener('keydown', function (e) {
+        var idx  = tabs.indexOf(tab);
+        var next = null;
+        if (e.key === 'ArrowRight') next = tabs[(idx + 1) % tabs.length];
+        if (e.key === 'ArrowLeft')  next = tabs[(idx - 1 + tabs.length) % tabs.length];
+        if (e.key === 'Home')       next = tabs[0];
+        if (e.key === 'End')        next = tabs[tabs.length - 1];
+        if (next) { e.preventDefault(); activateTab(next); next.focus(); }
+      });
+    });
+
+    activateTab(tabs[0]);
 
   }());
   </script>
