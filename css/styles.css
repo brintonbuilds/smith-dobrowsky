@@ -270,7 +270,7 @@ p {
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(244, 241, 234, 0.42);
+  color: rgba(244, 241, 234, 0.62);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -299,7 +299,7 @@ p {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(244, 241, 234, 0.35);
+  color: rgba(244, 241, 234, 0.56);
 }
 
 .footer__contact-phone {
@@ -330,7 +330,7 @@ p {
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.06em;
-  color: rgba(244, 241, 234, 0.28);
+  color: rgba(244, 241, 234, 0.52);
   text-decoration: none;
   margin-top: 10px;
   transition: color 0.2s ease;
@@ -378,7 +378,7 @@ p {
   gap: 3px;
   font-family: var(--font-sans);
   line-height: 1.35;
-  color: rgba(244, 241, 234, 0.32);
+  color: rgba(244, 241, 234, 0.52);
   min-width: 0;
 }
 
@@ -386,14 +386,14 @@ p {
   font-size: 10.5px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: rgba(244, 241, 234, 0.42);
+  color: rgba(244, 241, 234, 0.62);
 }
 
 .footer__brokerage-address {
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 0.01em;
-  color: rgba(244, 241, 234, 0.28);
+  color: rgba(244, 241, 234, 0.52);
 }
 
 .footer__legal-bar {
@@ -410,7 +410,7 @@ p {
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1;
-  color: rgba(244, 241, 234, 0.28);
+  color: rgba(244, 241, 234, 0.52);
   text-transform: none;
 }
 

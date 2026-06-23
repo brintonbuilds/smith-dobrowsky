@@ -17,7 +17,7 @@
         '<li><a href="buyers.html" class="nav__link">Buyers</a></li>',
         '<li><a href="sellers.html" class="nav__link">Sellers</a></li>',
         '<li><a href="local-insight.html" class="nav__link">Local Insight</a></li>',
-        '<li><a href="#" class="nav__link">Contact</a></li>',
+        '<li><a href="contact.html" class="nav__link">Contact</a></li>',
       '</ul>',
       '<a href="tel:9056393355" class="nav__cta--phone" aria-label="Call The Smith Dobrowsky Team at 905-639-3355">905.639.3355</a>',
       '<button class="nav__toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">',
@@ -29,7 +29,7 @@
       '<a href="buyers.html">Buyers</a>',
       '<a href="sellers.html">Sellers</a>',
       '<a href="local-insight.html">Local Insight</a>',
-      '<a href="#">Contact</a>',
+      '<a href="contact.html">Contact</a>',
       '<a href="tel:9056393355" class="nav__mobile-phone">905.639.3355</a>',
     '</div>'
   ].join(''));
