@@ -1220,6 +1220,23 @@
   object-position: center 35%;
 }
 
+.closing-cta__photo-caption {
+  position: absolute;
+  left: clamp(20px, 2vw, 28px);
+  bottom: clamp(20px, 2vw, 28px);
+  margin: 0;
+  padding: 8px 14px;
+  background: rgba(5, 9, 15, 0.56);
+  backdrop-filter: blur(4px);
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-sans);
+  font-size: clamp(10px, 0.74vw, 11px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
 .closing-cta__trust {
   margin: clamp(36px, 4vw, 52px) 0 0;
   color: rgba(11, 22, 38, 0.42);
@@ -2843,52 +2860,6 @@
 }
 
 
-/* ── Intro section ── */
-
-.li-intro {
-  padding: clamp(40px, 3.4vw, 48px) var(--section-pad-x);
-  background: var(--surface-warm);
-}
-
-.li-intro__inner {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.li-intro__content {
-  max-width: 880px;
-}
-
-.li-intro__eyebrow {
-  margin-bottom: clamp(14px, 1.6vw, 20px);
-}
-
-.li-intro__heading {
-  max-width: 15em;
-  margin: 0;
-}
-
-@media (max-width: 800px) {
-  .li-intro {
-    padding-top: clamp(40px, 9vw, 48px);
-    padding-bottom: clamp(42px, 9.5vw, 52px);
-  }
-}
-
-@media (max-width: 600px) {
-  .li-intro__heading {
-    max-width: 100%;
-    font-size: clamp(2rem, 8.8vw, 2.5rem);
-    line-height: 1.02;
-  }
-
-  .li-intro__heading em {
-    margin-top: 0.08em;
-  }
-
-}
-
-
 /* ── Community section — shared base ── */
 
 .li-community {
@@ -3664,6 +3635,38 @@
 
 
 /* ═══════════════════════════════════════════════════════════════
+   LOCAL INSIGHT — EDITORIAL INTRODUCTION
+   The opening spread beneath the hero: one headline, one restrained
+   paragraph, generous whitespace. Establishes why the monthly read
+   matters before the community editions are introduced below it.
+   ═══════════════════════════════════════════════════════════════ */
+
+.li-opening {
+  background: var(--surface-light);
+  padding: clamp(76px, 10vw, 132px) var(--section-pad-x) clamp(60px, 7.5vw, 96px);
+}
+
+.li-opening__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.li-opening__heading {
+  margin: 0 0 clamp(24px, 2.8vw, 32px);
+}
+
+.li-opening__body {
+  font-family: var(--font-sans);
+  font-size: clamp(1.0rem, 1.1vw, 1.12rem);
+  font-weight: var(--weight-body);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0 auto;
+  max-width: 56ch;
+}
+
+/* ═══════════════════════════════════════════════════════════════
    LOCAL INSIGHT — TABBED COMMUNITY GUIDE
    .li-tabs-section  — outer wrapper
    .li-tabs-bar      — sticky horizontal tab strip
@@ -3681,11 +3684,7 @@
 
 .li-selector {
   background: var(--surface-light);
-  padding: clamp(44px, 5.5vw, 68px) var(--section-pad-x) clamp(20px, 2.4vw, 28px);
-}
-
-.li-intro + .li-tabs-section .li-selector {
-  padding-top: clamp(22px, 2.2vw, 30px);
+  padding: clamp(8px, 1vw, 16px) var(--section-pad-x) clamp(36px, 4.4vw, 52px);
 }
 
 .li-selector__inner {
@@ -3700,29 +3699,20 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(11, 22, 38, 0.34);
-  margin: 0 0 clamp(10px, 1.2vw, 14px) 0;
+  margin: 0 0 clamp(22px, 2.6vw, 32px) 0;
   line-height: 1;
+  text-align: center;
 }
 
-.li-selector__intro {
-  font-family: var(--font-sans);
-  font-size: clamp(0.88rem, 0.96vw, 1.0rem);
-  font-weight: 400;
-  line-height: 1.6;
-  color: rgba(11, 22, 38, 0.50);
-  margin: 0 0 clamp(24px, 3vw, 36px) 0;
-  max-width: 52ch;
-}
-
-/* ── Tab bar ── */
+/* ── Tab bar — styled as a row of editions, not a UI control.
+     No filled background, no pill shape: plain text mastheads
+     separated by hairline dividers, with a thin underline marking
+     the current edition. ── */
 
 .li-tabs-bar {
-  display: inline-flex;
-  gap: 3px;
-  background: rgba(11, 22, 38, 0.038);
-  border: 1px solid rgba(11, 22, 38, 0.09);
-  border-radius: 3px;
-  padding: 4px;
+  display: flex;
+  justify-content: center;
+  gap: 0;
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -3733,32 +3723,46 @@
   display: none;
 }
 
-/* ── Individual tab button ── */
+/* ── Individual edition ── */
 
 .li-tab {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
+  align-items: center;
+  gap: 6px;
   font-family: var(--font-sans);
-  color: rgba(11, 22, 38, 0.60);
   background: transparent;
   border: none;
-  border-radius: 2px;
-  padding: clamp(14px, 1.8vw, 20px) clamp(32px, 4vw, 56px);
+  border-left: 1px solid rgba(11, 22, 38, 0.12);
+  border-bottom: 2px solid transparent;
+  padding: clamp(6px, 1vw, 10px) clamp(28px, 4vw, 56px) clamp(18px, 2.2vw, 24px);
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 0;
-  transition: color 180ms ease, background 180ms ease;
-  text-align: left;
+  transition: opacity 200ms ease, border-color 200ms ease;
+  text-align: center;
+  opacity: 0.46;
+}
+
+.li-tab:first-child {
+  border-left: none;
+}
+
+.li-tab__index {
+  font-size: clamp(9px, 0.6vw, 10px);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: rgba(11, 22, 38, 0.42);
+  display: block;
 }
 
 .li-tab__label {
-  font-size: clamp(11px, 0.82vw, 13px);
-  font-weight: 600;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  line-height: 1;
+  font-family: var(--font-serif);
+  font-size: clamp(1.18rem, 1.5vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  line-height: 1.1;
+  color: var(--text-primary);
   display: block;
 }
 
@@ -3770,30 +3774,15 @@
   line-height: 1;
   color: rgba(11, 22, 38, 0.50);
   display: block;
-  transition: color 180ms ease;
 }
 
 .li-tab:hover {
-  background: rgba(11, 22, 38, 0.042);
-  color: rgba(11, 22, 38, 0.84);
-}
-
-.li-tab:hover .li-tab__desc {
-  color: rgba(11, 22, 38, 0.52);
+  opacity: 0.74;
 }
 
 .li-tab[aria-selected="true"] {
-  background: rgba(29, 44, 59, 0.82);
-  color: rgba(238, 235, 228, 0.88);
-}
-
-.li-tab[aria-selected="true"] .li-tab__desc {
-  color: rgba(238, 235, 228, 0.50);
-}
-
-.li-tab[aria-selected="true"]:hover {
-  background: rgba(29, 44, 59, 0.88);
-  color: rgba(238, 235, 228, 0.92);
+  opacity: 1;
+  border-bottom-color: var(--text-primary);
 }
 
 .li-tab:focus-visible {
@@ -3801,13 +3790,18 @@
   outline-offset: 2px;
 }
 
-@media (max-width: 480px) {
-  .li-tab__desc {
-    display: none;
+@media (max-width: 640px) {
+  /* Centering an overflowing row clips the first/last items with no
+     scroll affordance. Left-align instead so the active (first) edition
+     is always fully visible, and the row scrolls naturally from there. */
+  .li-tabs-bar {
+    justify-content: flex-start;
   }
+}
 
+@media (max-width: 480px) {
   .li-tab {
-    padding: clamp(12px, 3.5vw, 16px) clamp(18px, 5vw, 26px);
+    padding: clamp(6px, 2vw, 10px) clamp(18px, 5vw, 26px) clamp(14px, 3.5vw, 18px);
   }
 }
 
@@ -3815,10 +3809,16 @@
 
 .li-guide {
   background: var(--surface-light);
+  opacity: 1;
+  transition: opacity 320ms ease;
 }
 
 .li-guide[hidden] {
   display: none;
+}
+
+.li-guide.is-fading-in {
+  opacity: 0;
 }
 
 /* ── Feature block: large image left, meta panel right ── */
@@ -4024,6 +4024,621 @@
   line-height: 1.74;
   color: var(--text-secondary);
   margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BURLINGTON INTELLIGENCE™ — li-intelligence-* components
+   Reusable monthly market-intelligence module, presented as a guided
+   publication (chapters disclosed progressively rather than a single
+   data dump). Built for Burlington first; Hamilton/Waterdown can
+   reuse this block unchanged later.
+   ═══════════════════════════════════════════════════════════════ */
+
+.li-intelligence {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(8px, 1vw, 16px) var(--section-pad-x) clamp(72px, 9vw, 112px);
+}
+
+.li-intelligence__section-label {
+  font-family: var(--font-sans);
+  font-size: clamp(9px, 0.66vw, 10px);
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: rgba(11, 22, 38, 0.40);
+  margin: 0 0 clamp(18px, 2.2vw, 26px);
+}
+
+.li-intelligence__section-label--inline {
+  margin: 0;
+}
+
+/* Shared chapter rhythm — every chapter gets a top divider + consistent pad */
+.li-intelligence__chapter {
+  padding: clamp(40px, 5vw, 56px) 0;
+  border-top: 1px solid rgba(11, 22, 38, 0.10);
+}
+
+/* First chapter sits directly under the cover, which already has its own
+   bottom divider — an extra top border here would double up the rule. */
+.li-intelligence__chapter--first {
+  border-top: none;
+  padding-top: clamp(8px, 1vw, 12px);
+}
+
+/* ══════════════════════════════════════
+   Cover — merged Burlington intro +
+   30-second snapshot
+   ══════════════════════════════════════ */
+
+.li-cover {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(8px, 1vw, 16px) var(--section-pad-x) 0;
+}
+
+.li-cover__eyebrow {
+  margin-bottom: clamp(10px, 1.2vw, 14px);
+}
+
+.li-cover__issue {
+  font-family: var(--font-sans);
+  font-size: clamp(11px, 0.78vw, 12px);
+  color: rgba(11, 22, 38, 0.40);
+  margin: 0 0 clamp(32px, 4vw, 44px);
+}
+
+.li-cover__feature {
+  margin-bottom: clamp(36px, 4.5vw, 48px);
+}
+
+.li-cover__tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.18rem, 1.5vw, 1.46rem);
+  line-height: 1.42;
+  color: rgba(11, 22, 38, 0.62);
+  margin: 0 0 clamp(26px, 3.2vw, 36px);
+  letter-spacing: -0.006em;
+}
+
+.li-cover__snapshot {
+  padding: clamp(32px, 4vw, 44px) 0 clamp(48px, 6vw, 64px);
+  border-top: 1px solid rgba(11, 22, 38, 0.10);
+}
+
+/* ── Market Balance Index snapshot — gauge + interpretation ── */
+
+.li-intelligence__gauge-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+  margin-bottom: clamp(28px, 3.4vw, 36px);
+}
+
+.li-intelligence__gauge {
+  width: clamp(170px, 18vw, 220px);
+}
+
+.li-intelligence__gauge-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.li-intelligence__gauge-track {
+  fill: none;
+  stroke: rgba(11, 22, 38, 0.08);
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.li-intelligence__gauge-fill {
+  fill: none;
+  stroke: #2e5a4a;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 0 100;
+  transition: stroke-dasharray 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.li-intelligence__gauge-needle {
+  stroke: var(--text-primary);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+[data-gauge-needle] {
+  transform: rotate(-90deg);
+  transform-origin: 100px 100px;
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.li-intelligence__gauge-hub {
+  fill: var(--text-primary);
+}
+
+.li-intelligence__gauge-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+  margin-top: -18%;
+}
+
+.li-intelligence__glance-value {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.li-intelligence__glance-max {
+  font-family: var(--font-sans);
+  font-size: clamp(0.8rem, 0.9vw, 0.9rem);
+  color: rgba(11, 22, 38, 0.40);
+}
+
+.li-intelligence__gauge-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  font-size: clamp(8px, 0.6vw, 9px);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(11, 22, 38, 0.34);
+  margin-top: 4px;
+}
+
+.li-intelligence__glance-label {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 1.6vw, 1.6rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0 0 6px;
+}
+
+.li-intelligence__glance-sublabel {
+  font-family: var(--font-sans);
+  font-size: clamp(9px, 0.66vw, 10px);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #2e5a4a;
+  margin: 0 0 clamp(14px, 1.8vw, 18px);
+}
+
+.li-intelligence__glance-note {
+  font-family: var(--font-sans);
+  font-size: clamp(0.92rem, 1vw, 1.0rem);
+  font-weight: var(--weight-body);
+  line-height: 1.66;
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 480px;
+}
+
+.li-intelligence__quicksignals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(20px, 3vw, 40px);
+  list-style: none;
+  margin: 0;
+  padding: clamp(24px, 3vw, 32px) 0 0;
+  border-top: 1px solid rgba(11, 22, 38, 0.08);
+}
+
+.li-intelligence__quicksignal {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.li-intelligence__quicksignal-arrow {
+  font-size: clamp(0.92rem, 1vw, 1rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.li-intelligence__quicksignal-arrow--up {
+  color: #2e5a4a;
+}
+
+.li-intelligence__quicksignal-arrow--down {
+  color: #8a4a3c;
+}
+
+.li-intelligence__quicksignal-name {
+  font-family: var(--font-sans);
+  font-size: clamp(0.84rem, 0.92vw, 0.92rem);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.li-intelligence__quicksignal-status {
+  font-family: var(--font-sans);
+  font-size: clamp(0.8rem, 0.88vw, 0.88rem);
+  color: var(--text-secondary);
+}
+
+/* ── Where do you fit? ── */
+
+.li-intelligence__meaning-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: clamp(28px, 3.4vw, 36px);
+}
+
+.li-intelligence__meaning-btn {
+  font-family: var(--font-sans);
+  font-size: clamp(0.86rem, 0.96vw, 0.96rem);
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid rgba(11, 22, 38, 0.16);
+  border-radius: 999px;
+  padding: 13px 26px;
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.li-intelligence__meaning-btn:hover {
+  border-color: rgba(11, 22, 38, 0.32);
+  color: var(--text-primary);
+}
+
+.li-intelligence__meaning-btn:focus-visible {
+  outline: 2px solid rgba(11, 22, 38, 0.42);
+  outline-offset: 2px;
+}
+
+.li-intelligence__meaning-btn.is-active {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: #FBFAF8;
+}
+
+.li-intelligence__meaning-panel {
+  border: 1px solid rgba(11, 22, 38, 0.10);
+  border-radius: 2px;
+  padding: clamp(28px, 3.4vw, 40px);
+  background: #FBFAF8;
+}
+
+.li-intelligence__meaning-content[hidden] {
+  display: none;
+}
+
+.li-intelligence__meaning-content {
+  opacity: 1;
+  transition: opacity 260ms ease;
+}
+
+.li-intelligence__meaning-content.is-fading-in {
+  opacity: 0;
+}
+
+.li-intelligence__meaning-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(1.18rem, 1.4vw, 1.4rem);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin: 0 0 clamp(14px, 1.6vw, 18px);
+  max-width: 600px;
+}
+
+.li-intelligence__meaning-body {
+  font-family: var(--font-sans);
+  font-size: clamp(1.0rem, 1.1vw, 1.08rem);
+  font-weight: var(--weight-body);
+  line-height: 1.74;
+  color: var(--text-secondary);
+  margin: 0 0 clamp(24px, 3vw, 32px);
+  max-width: 680px;
+}
+
+.li-intelligence__meaning-list {
+  list-style: none;
+  margin: 0;
+  padding: clamp(20px, 2.4vw, 26px) 0 0;
+  border-top: 1px solid rgba(11, 22, 38, 0.10);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.6vw, 16px);
+}
+
+.li-intelligence__meaning-list li {
+  font-family: var(--font-sans);
+  font-size: clamp(0.86rem, 0.94vw, 0.94rem);
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.li-intelligence__meaning-list-label {
+  display: inline-block;
+  min-width: 160px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgba(11, 22, 38, 0.50);
+  margin-right: 6px;
+}
+
+/* ── 04 · Dig Deeper — visually secondary, closed by default ── */
+
+.li-intelligence__deeper {
+  padding: clamp(40px, 5vw, 56px) 0;
+  border-top: 1px solid rgba(11, 22, 38, 0.10);
+}
+
+.li-intelligence__deeper-summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.li-intelligence__deeper-summary::-webkit-details-marker {
+  display: none;
+}
+
+.li-intelligence__deeper-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: clamp(0.78rem, 0.86vw, 0.86rem);
+  font-weight: 600;
+  color: rgba(11, 22, 38, 0.48);
+  transition: color 160ms ease;
+}
+
+.li-intelligence__deeper:hover .li-intelligence__deeper-toggle {
+  color: var(--text-primary);
+}
+
+.li-intelligence__deeper-toggle-icon {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  position: relative;
+}
+
+.li-intelligence__deeper-toggle-icon::before,
+.li-intelligence__deeper-toggle-icon::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.li-intelligence__deeper-toggle-icon::before {
+  width: 9px;
+  height: 1px;
+}
+
+.li-intelligence__deeper-toggle-icon::after {
+  width: 1px;
+  height: 9px;
+  transition: transform 160ms ease;
+}
+
+.li-intelligence__deeper[open] .li-intelligence__deeper-toggle-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
+
+.li-intelligence__deeper-body {
+  padding-top: clamp(28px, 3.4vw, 36px);
+}
+
+.li-intelligence__deeper-methodology {
+  font-family: var(--font-sans);
+  font-size: clamp(0.84rem, 0.92vw, 0.92rem);
+  line-height: 1.68;
+  color: var(--text-secondary);
+  margin: 0 0 clamp(32px, 4vw, 40px);
+  max-width: 640px;
+}
+
+.li-intelligence__deeper-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 4vw, 48px);
+  margin-bottom: clamp(28px, 3.4vw, 36px);
+}
+
+.li-intelligence__deeper-table-label {
+  font-family: var(--font-sans);
+  font-size: clamp(9px, 0.66vw, 10px);
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: rgba(11, 22, 38, 0.40);
+  margin: 0 0 clamp(14px, 1.6vw, 18px);
+}
+
+.li-intelligence__deeper-rows {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.li-intelligence__deeper-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 0;
+  border-top: 1px solid rgba(11, 22, 38, 0.07);
+}
+
+.li-intelligence__deeper-row:first-child {
+  border-top: none;
+}
+
+.li-intelligence__deeper-row dt {
+  font-family: var(--font-sans);
+  font-size: clamp(0.8rem, 0.88vw, 0.88rem);
+  color: var(--text-secondary);
+}
+
+.li-intelligence__deeper-row dd {
+  font-family: var(--font-sans);
+  font-size: clamp(0.84rem, 0.92vw, 0.92rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.li-intelligence__deeper-backdrop {
+  font-family: var(--font-sans);
+  font-size: clamp(11px, 0.78vw, 12px);
+  line-height: 1.6;
+  color: rgba(11, 22, 38, 0.40);
+  margin: 0 0 clamp(32px, 4vw, 40px);
+  padding-top: clamp(20px, 2.4vw, 26px);
+  border-top: 1px solid rgba(11, 22, 38, 0.08);
+}
+
+/* ── Monthly Archive teaser ── */
+
+.li-intelligence__archive-row {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(20px, 2.6vw, 32px);
+  padding: clamp(16px, 2vw, 20px) 0;
+  border-top: 1px solid rgba(11, 22, 38, 0.08);
+}
+
+.li-intelligence__archive-row:first-of-type {
+  border-top: none;
+}
+
+.li-intelligence__archive-date {
+  flex: 0 0 auto;
+  width: 110px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.0rem, 1.1vw, 1.1rem);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.li-intelligence__archive-row--upcoming .li-intelligence__archive-date,
+.li-intelligence__archive-row--upcoming .li-intelligence__archive-text {
+  color: rgba(11, 22, 38, 0.38);
+}
+
+.li-intelligence__archive-text {
+  font-family: var(--font-sans);
+  font-size: var(--type-small);
+  font-weight: var(--weight-body);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ── Soft CTA ── */
+
+.li-intelligence__cta {
+  padding-top: clamp(48px, 6vw, 64px);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.li-intelligence__cta-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.0vw, 1.9rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0 0 clamp(14px, 1.8vw, 18px);
+}
+
+.li-intelligence__cta-body {
+  font-family: var(--font-sans);
+  font-size: var(--type-small);
+  font-weight: var(--weight-body);
+  line-height: 1.74;
+  color: var(--text-secondary);
+  margin: 0 0 clamp(20px, 2.4vw, 26px);
+}
+
+.li-intelligence__cta-link {
+  display: inline-flex;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 860px) {
+  .li-intelligence__deeper-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(28px, 5vw, 36px);
+  }
+}
+
+@media (max-width: 560px) {
+  .li-intelligence {
+    padding-left: clamp(20px, 6vw, 28px);
+    padding-right: clamp(20px, 6vw, 28px);
+  }
+
+  .li-intelligence__gauge-row {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .li-intelligence__gauge {
+    width: 200px;
+  }
+
+  .li-intelligence__quicksignals {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .li-intelligence__meaning-toggle {
+    flex-direction: column;
+  }
+
+  .li-intelligence__meaning-btn {
+    text-align: center;
+  }
+
+  .li-intelligence__meaning-list-label {
+    display: block;
+    min-width: 0;
+    margin-right: 0;
+    margin-bottom: 2px;
+  }
+
+  .li-intelligence__deeper-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .li-intelligence__archive-date {
+    width: 84px;
+  }
+
+  .li-intelligence__archive-row {
+    align-items: flex-start;
+  }
 }
 
 /* ── Geoff's Perspective — dark full-width block ── */
