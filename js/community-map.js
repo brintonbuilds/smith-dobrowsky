@@ -3,9 +3,9 @@
   'use strict';
 
   var communities = {
-    burlington: { x: 0.530, y: 0.440, labelX: 14, labelY: -12, name: 'Burlington', href: '#' },
-    hamilton: { x: 0.275, y: 0.760, labelX: 14, labelY: -12, name: 'Hamilton', href: '#' },
-    waterdown: { x: 0.415, y: 0.265, labelX: 14, labelY: -12, name: 'Waterdown', href: '#' }
+    burlington: { x: 0.530, y: 0.440, labelX: 14, labelY: -12, name: 'Burlington', href: '' },
+    hamilton: { x: 0.275, y: 0.760, labelX: 14, labelY: -12, name: 'Hamilton', href: '' },
+    waterdown: { x: 0.415, y: 0.265, labelX: 14, labelY: -12, name: 'Waterdown', href: '' }
   };
 
   function activate(section, markerEls, marker) {

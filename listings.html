@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Current & Sold Properties — The Smith Dobrowsky Team</title>
-  <meta name="description" content="Current listing and a track record of homes represented by Geoff Smith and Katrinna Smith-Dobrowsky across Hamilton, Burlington, Halton, and surrounding communities." />
+  <title>Listings — The Smith Dobrowsky Team</title>
+  <meta name="description" content="Featured properties and a track record of homes represented by Geoff Smith and Katrinna Smith-Dobrowsky across Hamilton, Burlington, Halton, and surrounding communities." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -37,17 +37,17 @@
       <div class="ip-hero__overlay" aria-hidden="true"></div>
 
       <div class="ip-hero__inner">
-        <p class="ip-hero__eyebrow editorial-eyebrow editorial-eyebrow--light">Current &amp; Sold Properties</p>
+        <p class="ip-hero__eyebrow editorial-eyebrow editorial-eyebrow--light">Listings &amp; Representation</p>
         <h1 class="ip-hero__heading editorial-heading" id="listings-heading">
-          <span class="ip-hero__heading-line">Homes represented</span>
-          <em>across the region.</em>
+          <span class="ip-hero__heading-line">Property representation</span>
+          <em>with quiet precision.</em>
         </h1>
         <p class="ip-hero__body editorial-body">
-          Current opportunities and a record of properties successfully bought and sold throughout Burlington, Hamilton, Halton, and surrounding communities.
+          A curated look at current opportunities and recently completed work throughout Burlington, Hamilton, Halton, and the surrounding communities.
         </p>
         <div class="ip-hero__ctas">
-          <a href="#current-opportunity" class="editorial-cta text-link text-link--light text-link--arrow">
-            View Current Listings <span aria-hidden="true">→</span>
+          <a href="#featured-properties" class="editorial-cta text-link text-link--light text-link--arrow">
+            View Current Opportunities <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
@@ -56,55 +56,93 @@
 
 
     <!-- ══════════════════════════════════════
-         SECTION 1 — CURRENT OPPORTUNITY
+         SECTION 1 — PROPERTY OPPORTUNITIES
+         Switch data-featured-state between: empty, active, coming-soon
     ══════════════════════════════════════ -->
-    <section class="lp-opportunity" id="current-opportunity" aria-labelledby="opportunity-heading">
+    <section class="lp-opportunity" id="featured-properties" aria-label="Current property opportunities" data-featured-state="empty">
       <div class="lp-opportunity__inner">
 
-        <header class="lp-opportunity__header reveal">
-          <p class="lp-opportunity__eyebrow editorial-eyebrow editorial-eyebrow--dark">Current Opportunity</p>
-          <h2 class="lp-opportunity__heading editorial-heading" id="opportunity-heading">
-            One carefully prepared home,<br><em>now available.</em>
-          </h2>
-          <p class="lp-opportunity__intro">
-            Current listings are shown here when they are publicly available. Some opportunities begin with quieter conversations, timing, and local context before they ever reach a portal.
-          </p>
-        </header>
+        <div class="lp-feature-state lp-feature-state--active">
+          <article class="lp-feature reveal reveal-delay-1" aria-label="55 Chesley Street, Hamilton — featured property">
 
-        <article class="lp-feature reveal reveal-delay-1" aria-label="55 Chesley Street, Hamilton — active listing">
+            <a class="lp-feature__media-link" href="https://sites.odyssey3d.ca/55chesleystreet" aria-label="View virtual tour for 55 Chesley Street, Hamilton" target="_blank" rel="noopener noreferrer" tabindex="-1">
+              <div class="lp-feature__media">
+                <img
+                  src="assets/listing-photos/55-chelsea.png"
+                  alt="55 Chesley Street, Hamilton — front exterior"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <span class="lp-feature__badge">Featured Property</span>
+              </div>
+            </a>
 
-          <a class="lp-feature__media-link" href="https://sites.odyssey3d.ca/55chesleystreet" aria-label="View virtual tour for 55 Chesley Street, Hamilton" target="_blank" rel="noopener noreferrer" tabindex="-1">
-            <div class="lp-feature__media">
-              <img
-                src="assets/listing-photos/55-chelsea.png"
-                alt="55 Chesley Street, Hamilton — front exterior"
-                loading="lazy"
-                decoding="async"
-              >
-              <span class="lp-feature__badge">Active</span>
+            <div class="lp-feature__content">
+
+              <div class="lp-feature__detail">
+                <p class="lp-feature__address">55 Chesley Street</p>
+                <p class="lp-feature__community">Hamilton</p>
+                <p class="lp-feature__copy">A well-kept family home where presentation, timing, and neighbourhood context all matter.</p>
+                <a href="https://sites.odyssey3d.ca/55chesleystreet" class="lp-feature__cta text-link text-link--dark text-link--arrow" target="_blank" rel="noopener noreferrer">
+                  View Property <span aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <aside class="lp-feature__context" aria-label="Looking for something specific?">
+                <p class="lp-feature__context-heading">Looking for something specific?</p>
+                <p class="lp-feature__context-copy">Not every opportunity starts online. If you are watching Burlington, Hamilton, Waterdown, Ancaster, Dundas, or surrounding communities, a conversation can help clarify what may be available, what is coming, and what is worth waiting for.</p>
+                <a href="contact.html" class="lp-feature__context-cta btn btn--outline btn--light">Start the Conversation <span aria-hidden="true">→</span></a>
+              </aside>
+
             </div>
-          </a>
 
-          <div class="lp-feature__content">
+          </article>
+        </div>
 
-            <div class="lp-feature__detail">
-              <p class="lp-feature__address">55 Chesley Street</p>
-              <p class="lp-feature__community">Hamilton</p>
-              <p class="lp-feature__copy">A well-kept family home where presentation, timing, and neighbourhood context all matter.</p>
-              <a href="https://sites.odyssey3d.ca/55chesleystreet" class="lp-feature__cta text-link text-link--dark text-link--arrow" target="_blank" rel="noopener noreferrer">
-                View Property <span aria-hidden="true">→</span>
-              </a>
+        <div class="lp-feature-state lp-feature-state--coming-soon">
+          <article class="lp-feature lp-feature--coming-soon reveal reveal-delay-1" aria-label="Coming soon featured property">
+
+            <div class="lp-feature__media lp-feature__media--coming-soon" aria-hidden="true">
+              <div class="lp-feature__media-placeholder">
+                <span class="lp-feature__badge lp-feature__badge--light">Coming Soon</span>
+                <p class="lp-feature__placeholder-kicker">Photography coming soon</p>
+              </div>
             </div>
 
-            <aside class="lp-feature__context" aria-label="Looking for something specific?">
-              <p class="lp-feature__context-heading">Looking for something specific?</p>
-              <p class="lp-feature__context-copy">Not every opportunity starts online. If you're watching Burlington, Hamilton, Waterdown, Ancaster, Dundas, or surrounding communities, a conversation can help clarify what may be available, what is coming, and what is worth waiting for.</p>
-              <a href="contact.html" class="lp-feature__context-cta btn btn--outline btn--light">Start the Conversation <span aria-hidden="true">→</span></a>
+            <div class="lp-feature__content">
+              <div class="lp-feature__detail">
+                <p class="lp-feature__address">A new opportunity is being prepared.</p>
+                <p class="lp-feature__community">Community to be announced</p>
+                <p class="lp-feature__copy">Details coming soon. Some properties begin with quiet preparation before photography, pricing, and public launch are ready.</p>
+                <a href="contact.html" class="lp-feature__cta text-link text-link--dark text-link--arrow">
+                  Be the first to know <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+
+          </article>
+        </div>
+
+        <div class="lp-feature-state lp-feature-state--empty">
+          <article class="lp-empty-feature reveal reveal-delay-1" aria-label="No active featured properties">
+            <div class="lp-empty-feature__content">
+              <p class="lp-empty-feature__eyebrow">Current Availability</p>
+              <h3 class="lp-empty-feature__heading">Every property has found its next owner.</h3>
+              <p class="lp-empty-feature__body">Geoff&rsquo;s listings do not always stay on the market for long. When there are no featured properties available, it usually means current listings have successfully reached the finish line before the next opportunity comes to market.</p>
+              <p class="lp-empty-feature__body">If you are watching Burlington, Hamilton, Halton, Waterdown, Ancaster, Dundas, Oakville, or surrounding communities, reach out to learn what may be coming next.</p>
+              <div class="lp-empty-feature__actions" aria-label="Featured property follow-up options">
+                <a href="contact.html" class="btn btn--outline btn--light">Join the Priority Buyer List <span aria-hidden="true">→</span></a>
+                <a href="contact.html" class="lp-empty-feature__secondary text-link text-link--dark text-link--arrow">
+                  Tell Geoff What You&rsquo;re Looking For <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+            <aside class="lp-empty-feature__aside" aria-label="What happens between public listings">
+              <p class="lp-empty-feature__aside-label">Between Public Launches</p>
+              <p class="lp-empty-feature__aside-copy">Preparation, timing, buyer conversations, and local context continue before the next property is ready to be featured here.</p>
             </aside>
-
-          </div>
-
-        </article>
+          </article>
+        </div>
 
       </div>
     </section>
@@ -120,58 +158,57 @@
           The right result often starts<br><em>before the sign goes up.</em>
         </h2>
         <p class="lp-advisor__body">
-          Every home has a different audience, a different timing window, and a different story. The value of experienced guidance is knowing how to position the property, read the neighbourhood context, and help clients make decisions with calm confidence.
+          Every home has a different audience, a different timing window, and a different story. The value of experienced guidance is knowing how to prepare the property, launch with discipline, read the neighbourhood context, and help clients make decisions with calm confidence.
         </p>
       </div>
     </section>
 
 
     <!-- ══════════════════════════════════════
-         SOLD RECORD INTRODUCTION
+         REPRESENTED RECORD INTRODUCTION
     ══════════════════════════════════════ -->
-    <section class="lp-record-intro" aria-labelledby="record-intro-heading">
-      <div class="lp-record-intro__inner reveal">
-        <h2 class="lp-record-intro__heading editorial-heading" id="record-intro-heading">
-          A record built<br><em>one move at a time.</em>
-        </h2>
-        <p class="lp-record-intro__body">
-          Every sale represents a different story, timeline, and set of priorities. These properties reflect work completed throughout Burlington, Hamilton, Waterdown, and surrounding communities.
-        </p>
-      </div>
-    </section>
-
-
     <!-- ══════════════════════════════════════
-         SECTION 3 — SOLD ARCHIVE
+         SECTION 3 — RECENTLY REPRESENTED HOMES
     ══════════════════════════════════════ -->
     <section class="lp-sold" aria-labelledby="sold-heading">
       <div class="lp-sold__inner">
 
         <header class="lp-sold__header reveal">
-          <p class="lp-sold__eyebrow editorial-eyebrow editorial-eyebrow--dark">The Record</p>
+          <p class="lp-sold__eyebrow editorial-eyebrow editorial-eyebrow--dark">Successfully Represented</p>
           <h2 class="lp-sold__heading editorial-heading" id="sold-heading">
-            Across Hamilton<br><em>&amp; Halton.</em>
+            Recently represented<br><em>homes.</em>
           </h2>
           <p class="lp-sold__intro">
-            Fifteen recorded sales across eight communities — established streets, family addresses, and rural properties, each handled with care for the specific context of the home.
+            A polished record of homes represented across established streets, family neighbourhoods, and rural properties, each handled with care for the specific context of the home.
           </p>
         </header>
 
-        <div class="lp-sold__proof reveal reveal-delay-1" aria-label="15 recorded sales across 8 local communities">
-          <p class="lp-sold__proof-kicker">Regional Experience</p>
-          <p class="lp-sold__proof-line"><span>15</span> Recorded Sales Across <span>8</span> Local Communities</p>
+        <div class="lp-sold__proof reveal reveal-delay-1" aria-label="Representation proof across local communities">
+          <div class="lp-sold__proof-item">
+            <span class="lp-sold__proof-number">150+</span>
+            <span class="lp-sold__proof-label">Transactions</span>
+          </div>
+          <div class="lp-sold__proof-item">
+            <span class="lp-sold__proof-number">9</span>
+            <span class="lp-sold__proof-label">Local communities</span>
+          </div>
+          <div class="lp-sold__proof-item lp-sold__proof-item--wide">
+            <span class="lp-sold__proof-number">Hamilton, Burlington, Halton and surrounding areas</span>
+            <span class="lp-sold__proof-label">Regional coverage</span>
+          </div>
         </div>
 
-        <div class="lp-sold__archive reveal" aria-label="Sold properties grouped by community">
+        <div class="lp-sold__archive reveal" aria-label="Successfully represented homes grouped by community">
 
-          <aside class="lp-sold__context" aria-label="Regional track record">
-            <p class="lp-sold__context-label">Regional Record</p>
+          <aside class="lp-sold__context" aria-label="Regional representation record">
+            <p class="lp-sold__context-label">Portfolio Record</p>
             <p class="lp-sold__context-copy">
-              Representation across established neighbourhoods, family streets, rural addresses, and commuter-connected communities.
+              Successfully represented across established neighbourhoods, family streets, rural properties, and commuter-connected communities.
             </p>
             <div class="lp-sold__region-list" aria-label="Communities served">
               <span>Hamilton</span>
               <span>Burlington</span>
+              <span>Waterdown</span>
               <span>Ancaster</span>
               <span>Dundas</span>
               <span>Milton</span>
@@ -187,11 +224,11 @@
               <p class="lp-sold__chapter" aria-hidden="true">01</p>
               <div class="lp-sold__community-head">
                 <p class="lp-sold__community-name" id="sold-hamilton">Hamilton</p>
-                <p class="lp-sold__community-note">Block-by-block context across mountain, central, and east-end addresses.</p>
+                <p class="lp-sold__community-note">Block-by-block context across mountain, central, and east-end neighbourhoods.</p>
               </div>
               <ul class="lp-sold__list">
-                <li><span>49 East 9th Street</span></li>
-                <li><span>1146 Upper Wentworth Street</span></li>
+                <li><span>Mountain neighbourhood representation</span></li>
+                <li><span>Central Hamilton representation</span></li>
               </ul>
             </section>
 
@@ -202,79 +239,91 @@
                 <p class="lp-sold__community-note">Established streets, condo townhomes, and family-focused pockets.</p>
               </div>
               <ul class="lp-sold__list">
-                <li><span>3514 Marion Court</span></li>
-                <li><span>15-705 Cumberland Avenue</span></li>
-                <li><span>15-2333 Walkers Line</span></li>
+                <li><span>Established residential street representation</span></li>
+                <li><span>Condo townhome representation</span></li>
+                <li><span>Family-focused neighbourhood representation</span></li>
               </ul>
             </section>
 
-            <section class="lp-sold__community reveal reveal-delay-3" aria-labelledby="sold-ancaster">
+            <section class="lp-sold__community reveal reveal-delay-3" aria-labelledby="sold-waterdown">
               <p class="lp-sold__chapter" aria-hidden="true">03</p>
               <div class="lp-sold__community-head">
-                <p class="lp-sold__community-name" id="sold-ancaster">Ancaster</p>
-                <p class="lp-sold__community-note">Quiet residential addresses with long-term family appeal.</p>
+                <p class="lp-sold__community-name" id="sold-waterdown">Waterdown</p>
+                <p class="lp-sold__community-note">Village-connected homes with commuter access and strong family appeal.</p>
               </div>
               <ul class="lp-sold__list">
-                <li><span>118 Citation Crescent</span></li>
-                <li><span>39 Oldmill Road</span></li>
+                <li><span>Village-edge representation</span></li>
+                <li><span>Family neighbourhood representation</span></li>
               </ul>
             </section>
 
-            <section class="lp-sold__community reveal reveal-delay-4" aria-labelledby="sold-dundas">
+            <section class="lp-sold__community reveal reveal-delay-4" aria-labelledby="sold-ancaster">
               <p class="lp-sold__chapter" aria-hidden="true">04</p>
+              <div class="lp-sold__community-head">
+                <p class="lp-sold__community-name" id="sold-ancaster">Ancaster</p>
+                <p class="lp-sold__community-note">Quiet residential pockets with long-term family appeal.</p>
+              </div>
+              <ul class="lp-sold__list">
+                <li><span>Residential crescent representation</span></li>
+                <li><span>Family home representation</span></li>
+              </ul>
+            </section>
+
+            <section class="lp-sold__community reveal reveal-delay-5" aria-labelledby="sold-dundas">
+              <p class="lp-sold__chapter" aria-hidden="true">05</p>
               <div class="lp-sold__community-head">
                 <p class="lp-sold__community-name" id="sold-dundas">Dundas</p>
                 <p class="lp-sold__community-note">Character, village proximity, and escarpment-side demand.</p>
               </div>
               <ul class="lp-sold__list">
-                <li><span>8 Wesite Avenue</span></li>
-                <li><span>312 King Street West</span></li>
+                <li><span>Village-area representation</span></li>
+                <li><span>Character home representation</span></li>
               </ul>
             </section>
 
-            <section class="lp-sold__community reveal reveal-delay-5" aria-labelledby="sold-milton">
-              <p class="lp-sold__chapter" aria-hidden="true">05</p>
+            <section class="lp-sold__community reveal reveal-delay-6" aria-labelledby="sold-milton">
+              <p class="lp-sold__chapter" aria-hidden="true">06</p>
               <div class="lp-sold__community-head">
                 <p class="lp-sold__community-name" id="sold-milton">Milton</p>
                 <p class="lp-sold__community-note">Growth-aware guidance for commuter-connected family homes.</p>
               </div>
               <ul class="lp-sold__list">
-                <li><span>1234 Chapman Crescent</span></li>
-                <li><span>59 Dawson Crescent</span></li>
+                <li><span>Commuter-connected home representation</span></li>
+                <li><span>Family neighbourhood representation</span></li>
               </ul>
             </section>
 
-            <section class="lp-sold__community reveal reveal-delay-6" aria-labelledby="sold-oakville">
-              <p class="lp-sold__chapter" aria-hidden="true">06</p>
+            <section class="lp-sold__community reveal reveal-delay-1" aria-labelledby="sold-oakville">
+              <p class="lp-sold__chapter" aria-hidden="true">07</p>
               <div class="lp-sold__community-head">
                 <p class="lp-sold__community-name" id="sold-oakville">Oakville</p>
                 <p class="lp-sold__community-note">Premium west-end context with careful positioning.</p>
               </div>
               <ul class="lp-sold__list">
-                <li><span>3167 River Path Common</span></li>
+                <li><span>Premium west-end representation</span></li>
               </ul>
             </section>
 
-            <section class="lp-sold__community reveal reveal-delay-1" aria-labelledby="sold-flamborough">
-              <p class="lp-sold__chapter" aria-hidden="true">07</p>
+            <section class="lp-sold__community reveal reveal-delay-2" aria-labelledby="sold-flamborough">
+              <p class="lp-sold__chapter" aria-hidden="true">08</p>
               <div class="lp-sold__community-head">
                 <p class="lp-sold__community-name" id="sold-flamborough">Flamborough</p>
-                <p class="lp-sold__community-note">Rural and village-edge addresses where context changes the conversation.</p>
+                <p class="lp-sold__community-note">Rural and village-edge properties where context changes the conversation.</p>
               </div>
               <ul class="lp-sold__list">
-                <li><span>45 8th Concession Road East</span></li>
+                <li><span>Rural property representation</span></li>
               </ul>
             </section>
 
-            <section class="lp-sold__community reveal reveal-delay-2" aria-labelledby="sold-stoney-creek">
-              <p class="lp-sold__chapter" aria-hidden="true">08</p>
+            <section class="lp-sold__community reveal reveal-delay-3" aria-labelledby="sold-stoney-creek">
+              <p class="lp-sold__chapter" aria-hidden="true">09</p>
               <div class="lp-sold__community-head">
                 <p class="lp-sold__community-name" id="sold-stoney-creek">Stoney Creek</p>
                 <p class="lp-sold__community-note">Neighbourhood fit across established and escarpment-adjacent streets.</p>
               </div>
               <ul class="lp-sold__list">
-                <li><span>54 Cornerstone Drive</span></li>
-                <li><span>2 Hill Place</span></li>
+                <li><span>Established neighbourhood representation</span></li>
+                <li><span>Escarpment-adjacent representation</span></li>
               </ul>
             </section>
 

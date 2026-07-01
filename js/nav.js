@@ -8,7 +8,6 @@
   /* ── 1. Inject nav HTML synchronously at parse time ── */
   document.write([
     '<nav class="nav nav--inverse" id="main-nav" role="navigation" aria-label="Main navigation">',
-      '<!-- TEMPORARY CLIENT REVIEW MODE - INTERNAL LINKS DISABLED -->',
       '<a href="index.html" class="nav__logo" aria-label="The Smith Dobrowsky Team — Home">',
         '<img class="nav__logo-img" src="assets/logo-transparent-header.png" alt="The Smith Dobrowsky Team" width="212" height="42">',
       '</a>',

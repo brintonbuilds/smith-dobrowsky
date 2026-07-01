@@ -1458,7 +1458,7 @@
 /* ═══════════════════════════════════════════════════════════════
    LISTINGS PAGE
    .lp-featured  — editorial property cards with Odyssey links
-   .lp-sold      — editorial address archive / social proof directory
+   .lp-sold      — editorial representation archive / social proof directory
    ═══════════════════════════════════════════════════════════════ */
 
 /* ── Listings hero image treatment ── */
@@ -1487,37 +1487,6 @@
       rgba(5, 9, 15, 0.20) 0%,
       transparent 18%
     );
-}
-
-
-/* ── Sold record introduction ── */
-
-.lp-record-intro {
-  padding: clamp(76px, 8vw, 116px) var(--section-pad-x);
-  background: var(--surface-light);
-}
-
-.lp-record-intro__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.72fr);
-  gap: clamp(48px, 8vw, 120px);
-  align-items: end;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.lp-record-intro__heading {
-  margin: 0;
-}
-
-.lp-record-intro__body {
-  max-width: 58ch;
-  margin: 0 0 0.35em;
-  color: var(--text-secondary);
-  font-family: var(--font-sans);
-  font-size: clamp(0.96rem, 1.04vw, 1.08rem);
-  font-weight: var(--weight-body);
-  line-height: 1.76;
 }
 
 
@@ -1686,7 +1655,7 @@
 }
 
 
-/* ── Sold Archive section ── */
+/* ── Successfully Represented Homes section ── */
 
 .lp-sold {
   position: relative;
@@ -1727,39 +1696,56 @@
 
 .lp-sold__proof {
   display: grid;
-  grid-template-columns: minmax(160px, 0.28fr) minmax(0, 1fr);
-  gap: clamp(28px, 4vw, 62px);
-  align-items: baseline;
+  grid-template-columns: minmax(160px, 0.65fr) minmax(160px, 0.55fr) minmax(260px, 1fr);
+  gap: clamp(22px, 3vw, 44px);
+  align-items: stretch;
   margin-bottom: clamp(62px, 7.4vw, 104px);
   padding: clamp(24px, 2.8vw, 36px) 0;
   border-top: 1px solid rgba(11, 22, 38, 0.18);
   border-bottom: 1px solid rgba(11, 22, 38, 0.10);
 }
 
-.lp-sold__proof-kicker {
+.lp-sold__proof-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: clamp(10px, 1.2vw, 14px);
+  min-height: 112px;
+  padding-right: clamp(18px, 2.4vw, 34px);
+  border-right: 1px solid rgba(11, 22, 38, 0.10);
+}
+
+.lp-sold__proof-item:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.lp-sold__proof-number {
   margin: 0;
-  color: rgba(11, 22, 38, 0.46);
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  font-size: clamp(2.1rem, 4.4vw, 5.2rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+}
+
+.lp-sold__proof-item--wide .lp-sold__proof-number {
+  max-width: 13ch;
+  font-size: clamp(1.4rem, 2.2vw, 2.65rem);
+  line-height: 1.02;
+}
+
+.lp-sold__proof-label {
+  margin: 0;
+  color: rgba(11, 22, 38, 0.48);
   font-family: var(--font-sans);
   font-size: var(--type-meta);
   font-weight: var(--weight-eyebrow);
   letter-spacing: var(--tracking-eyebrow);
   line-height: 1.35;
   text-transform: uppercase;
-}
-
-.lp-sold__proof-line {
-  margin: 0;
-  color: rgba(11, 22, 38, 0.78);
-  font-family: var(--font-serif);
-  font-size: clamp(1.42rem, 2.65vw, 3.05rem);
-  font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.014em;
-}
-
-.lp-sold__proof-line span {
-  color: var(--text-primary);
-  font-style: italic;
 }
 
 .lp-sold__archive {
@@ -1903,8 +1889,8 @@
 }
 
 /* ══════════════════════════════════════════════════════════════
-   CURRENT OPPORTUNITY — editorial full-width feature listing
-   Replaces the card grid. Scales from 1 to multiple listings.
+   PROPERTY OPPORTUNITIES — editorial state-driven feature area
+   Switch data-featured-state between: empty, active, coming-soon.
    ══════════════════════════════════════════════════════════════ */
 
 .lp-opportunity {
@@ -1917,27 +1903,20 @@
   margin: 0 auto;
 }
 
-.lp-opportunity__header {
-  max-width: 680px;
-  margin-bottom: clamp(48px, 6vw, 72px);
+.lp-feature-state {
+  display: none;
 }
 
-.lp-opportunity__eyebrow {
-  margin-bottom: clamp(14px, 1.6vw, 20px);
+.lp-opportunity[data-featured-state="active"] .lp-feature-state--active,
+.lp-opportunity[data-featured-state="coming-soon"] .lp-feature-state--coming-soon,
+.lp-opportunity[data-featured-state="empty"] .lp-feature-state--empty {
+  display: block;
 }
 
-.lp-opportunity__heading {
-  margin: 0 0 clamp(16px, 1.8vw, 22px);
-}
-
-.lp-opportunity__intro {
-  font-family: var(--font-sans);
-  font-size: var(--type-small);
-  font-weight: var(--weight-body);
-  line-height: var(--leading-small);
-  color: var(--text-secondary);
-  max-width: 54ch;
-  margin: 0;
+.lp-opportunity:not([data-featured-state="active"]) .lp-feature-state--active,
+.lp-opportunity:not([data-featured-state="coming-soon"]) .lp-feature-state--coming-soon,
+.lp-opportunity:not([data-featured-state="empty"]) .lp-feature-state--empty {
+  display: none;
 }
 
 /* Magazine-style feature listing */
@@ -1994,6 +1973,39 @@
   line-height: 1;
   background: rgba(11, 22, 38, 0.88);
   color: rgba(238, 235, 228, 0.96);
+}
+
+.lp-feature__badge--light {
+  background: rgba(238, 235, 228, 0.92);
+  border: 1px solid rgba(11, 22, 38, 0.12);
+  color: rgba(11, 22, 38, 0.74);
+}
+
+.lp-feature__media--coming-soon {
+  background:
+    linear-gradient(135deg, rgba(11, 22, 38, 0.07), transparent 46%),
+    linear-gradient(180deg, rgba(238, 235, 228, 0.96), rgba(229, 224, 215, 0.72));
+  border: 1px solid rgba(11, 22, 38, 0.08);
+}
+
+.lp-feature__media-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(24px, 3vw, 42px);
+}
+
+.lp-feature__placeholder-kicker {
+  max-width: 16ch;
+  margin: 0;
+  color: rgba(11, 22, 38, 0.50);
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 2.4vw, 2.65rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.014em;
+  line-height: 1.04;
 }
 
 .lp-feature__content {
@@ -2059,7 +2071,88 @@
   margin: 0 0 clamp(20px, 2.4vw, 28px);
 }
 
-/* Responsive — Current Opportunity */
+.lp-empty-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.42fr);
+  gap: clamp(42px, 5.5vw, 76px);
+  align-items: stretch;
+  padding: clamp(36px, 4.5vw, 64px);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.34), transparent 48%),
+    var(--surface-warm);
+  border-top: 1px solid rgba(11, 22, 38, 0.12);
+  border-bottom: 1px solid rgba(11, 22, 38, 0.08);
+}
+
+.lp-empty-feature__content {
+  max-width: 760px;
+}
+
+.lp-empty-feature__eyebrow,
+.lp-empty-feature__aside-label {
+  margin: 0 0 clamp(16px, 1.8vw, 22px);
+  color: rgba(11, 22, 38, 0.44);
+  font-family: var(--font-sans);
+  font-size: var(--type-meta);
+  font-weight: var(--weight-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.lp-empty-feature__heading {
+  max-width: 12ch;
+  margin: 0 0 clamp(22px, 2.8vw, 34px);
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.8vw, 5.9rem);
+  font-weight: 500;
+  letter-spacing: -0.026em;
+  line-height: 0.96;
+}
+
+.lp-empty-feature__body {
+  max-width: 68ch;
+  margin: 0 0 clamp(16px, 2vw, 22px);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: clamp(0.98rem, 1.06vw, 1.10rem);
+  font-weight: var(--weight-body);
+  line-height: 1.78;
+}
+
+.lp-empty-feature__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px clamp(22px, 3vw, 34px);
+  align-items: center;
+  margin-top: clamp(28px, 3.6vw, 44px);
+}
+
+.lp-empty-feature__secondary {
+  display: inline-flex;
+}
+
+.lp-empty-feature__aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: clamp(26px, 3vw, 44px);
+  border-left: 1px solid rgba(11, 22, 38, 0.10);
+}
+
+.lp-empty-feature__aside-copy {
+  margin: 0;
+  color: rgba(11, 22, 38, 0.54);
+  font-family: var(--font-serif);
+  font-size: clamp(1.16rem, 1.55vw, 1.62rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.34;
+}
+
+/* Responsive — Property Opportunities */
 
 @media (max-width: 900px) {
   .lp-feature {
@@ -2070,18 +2163,42 @@
   .lp-feature__content {
     padding-top: 0;
   }
+
+  .lp-empty-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .lp-empty-feature__aside {
+    padding-left: 0;
+    padding-top: clamp(26px, 4vw, 36px);
+    border-left: none;
+    border-top: 1px solid rgba(11, 22, 38, 0.10);
+  }
 }
 
 @media (max-width: 560px) {
   .lp-feature__address {
     font-size: clamp(1.38rem, 7.5vw, 1.9rem);
   }
+
+  .lp-empty-feature {
+    padding: clamp(28px, 7vw, 38px);
+  }
+
+  .lp-empty-feature__heading {
+    font-size: clamp(2.25rem, 12vw, 3.6rem);
+  }
+
+  .lp-empty-feature__actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 
 /* ══════════════════════════════════════════════════════════════
    GEOFF'S PERSPECTIVE — advisor insight section
-   Dark editorial section between current listing and sold archive.
+   Dark editorial section between featured properties and represented archive.
    ══════════════════════════════════════════════════════════════ */
 
 .lp-advisor {
@@ -2139,6 +2256,19 @@
     gap: clamp(14px, 2.5vw, 22px);
   }
 
+  .lp-sold__proof-item {
+    min-height: 0;
+    padding-right: 0;
+    padding-bottom: clamp(20px, 3vw, 28px);
+    border-right: none;
+    border-bottom: 1px solid rgba(11, 22, 38, 0.10);
+  }
+
+  .lp-sold__proof-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
   .lp-sold__archive {
     grid-template-columns: 1fr;
     gap: clamp(42px, 5vw, 64px);
@@ -2163,16 +2293,6 @@
 }
 
 @media (max-width: 800px) {
-  .lp-record-intro__inner {
-    grid-template-columns: 1fr;
-    gap: clamp(24px, 5vw, 36px);
-    align-items: start;
-  }
-
-  .lp-record-intro__body {
-    max-width: 56ch;
-  }
-
   .lp-sold__community {
     grid-template-columns: clamp(40px, 8vw, 56px) 1fr;
     grid-template-areas:
@@ -2207,11 +2327,6 @@
 }
 
 @media (max-width: 560px) {
-  .lp-record-intro {
-    padding-top: clamp(68px, 17vw, 88px);
-    padding-bottom: clamp(68px, 17vw, 88px);
-  }
-
   .lp-sold {
     padding-top: clamp(72px, 18vw, 94px);
     padding-bottom: clamp(72px, 18vw, 94px);
@@ -3643,7 +3758,7 @@
 
 .li-opening {
   background: var(--surface-light);
-  padding: clamp(76px, 10vw, 132px) var(--section-pad-x) clamp(60px, 7.5vw, 96px);
+  padding: clamp(76px, 10vw, 132px) var(--section-pad-x) clamp(32px, 4vw, 48px);
 }
 
 .li-opening__inner {
@@ -3684,7 +3799,7 @@
 
 .li-selector {
   background: var(--surface-light);
-  padding: clamp(8px, 1vw, 16px) var(--section-pad-x) clamp(36px, 4.4vw, 52px);
+  padding: clamp(4px, 0.6vw, 10px) var(--section-pad-x) clamp(20px, 2.6vw, 32px);
 }
 
 .li-selector__inner {
@@ -3694,12 +3809,12 @@
 
 .li-selector__eyebrow {
   font-family: var(--font-sans);
-  font-size: clamp(9px, 0.64vw, 10px);
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-size: clamp(10px, 0.7vw, 11px);
+  font-weight: 700;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(11, 22, 38, 0.34);
-  margin: 0 0 clamp(22px, 2.6vw, 32px) 0;
+  color: rgba(11, 22, 38, 0.58);
+  margin: 0 0 clamp(22px, 2.6vw, 30px) 0;
   line-height: 1;
   text-align: center;
 }
@@ -3723,25 +3838,27 @@
   display: none;
 }
 
-/* ── Individual edition ── */
+/* ── Individual edition ──
+   Dimming is done with deliberate per-element colour, not a blanket
+   opacity filter — keeps the serif labels crisp instead of washed out,
+   and lets the active edition read as clearly, confidently selected. */
 
 .li-tab {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   font-family: var(--font-sans);
   background: transparent;
   border: none;
   border-left: 1px solid rgba(11, 22, 38, 0.12);
-  border-bottom: 2px solid transparent;
-  padding: clamp(6px, 1vw, 10px) clamp(28px, 4vw, 56px) clamp(18px, 2.2vw, 24px);
+  border-bottom: 2.5px solid transparent;
+  padding: clamp(8px, 1.2vw, 12px) clamp(34px, 4.6vw, 64px) clamp(22px, 2.6vw, 28px);
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 0;
-  transition: opacity 200ms ease, border-color 200ms ease;
+  transition: border-color 200ms ease;
   text-align: center;
-  opacity: 0.46;
 }
 
 .li-tab:first-child {
@@ -3752,18 +3869,20 @@
   font-size: clamp(9px, 0.6vw, 10px);
   font-weight: 600;
   letter-spacing: 0.18em;
-  color: rgba(11, 22, 38, 0.42);
+  color: rgba(11, 22, 38, 0.36);
   display: block;
+  transition: color 200ms ease;
 }
 
 .li-tab__label {
   font-family: var(--font-serif);
-  font-size: clamp(1.18rem, 1.5vw, 1.5rem);
+  font-size: clamp(1.3rem, 1.7vw, 1.72rem);
   font-weight: 500;
   letter-spacing: -0.012em;
   line-height: 1.1;
-  color: var(--text-primary);
+  color: rgba(11, 22, 38, 0.42);
   display: block;
+  transition: color 200ms ease;
 }
 
 .li-tab__desc {
@@ -3772,17 +3891,30 @@
   letter-spacing: 0.03em;
   text-transform: none;
   line-height: 1;
-  color: rgba(11, 22, 38, 0.50);
+  color: rgba(11, 22, 38, 0.36);
   display: block;
+  transition: color 200ms ease;
 }
 
-.li-tab:hover {
-  opacity: 0.74;
+.li-tab:hover .li-tab__label {
+  color: rgba(11, 22, 38, 0.68);
 }
 
 .li-tab[aria-selected="true"] {
-  opacity: 1;
   border-bottom-color: var(--text-primary);
+}
+
+.li-tab[aria-selected="true"] .li-tab__index {
+  color: rgba(11, 22, 38, 0.50);
+}
+
+.li-tab[aria-selected="true"] .li-tab__label {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.li-tab[aria-selected="true"] .li-tab__desc {
+  color: rgba(11, 22, 38, 0.56);
 }
 
 .li-tab:focus-visible {
@@ -3895,7 +4027,7 @@
 
 .li-guide__name {
   font-family: var(--font-serif);
-  font-size: clamp(3rem, 5.2vw, 6.4rem);
+  font-size: clamp(3.2rem, 5.8vw, 7rem);
   font-weight: 500;
   line-height: 0.92;
   letter-spacing: -0.024em;
@@ -4042,11 +4174,11 @@
 
 .li-intelligence__section-label {
   font-family: var(--font-sans);
-  font-size: clamp(9px, 0.66vw, 10px);
-  font-weight: 600;
+  font-size: clamp(10px, 0.7vw, 11px);
+  font-weight: 700;
   letter-spacing: 0.20em;
   text-transform: uppercase;
-  color: rgba(11, 22, 38, 0.40);
+  color: rgba(11, 22, 38, 0.56);
   margin: 0 0 clamp(18px, 2.2vw, 26px);
 }
 
@@ -4072,25 +4204,36 @@
    30-second snapshot
    ══════════════════════════════════════ */
 
+/* li-cover is purely a transparent container — no own padding or max-width.
+   The child li-guide__feature (via the base rule) handles all layout,
+   matching Hamilton's formatting exactly. */
 .li-cover {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: clamp(8px, 1vw, 16px) var(--section-pad-x) 0;
-}
-
-.li-cover__eyebrow {
-  margin-bottom: clamp(10px, 1.2vw, 14px);
-}
-
-.li-cover__issue {
-  font-family: var(--font-sans);
-  font-size: clamp(11px, 0.78vw, 12px);
-  color: rgba(11, 22, 38, 0.40);
-  margin: 0 0 clamp(32px, 4vw, 44px);
+  padding: 0;
 }
 
 .li-cover__feature {
+  padding-top: clamp(44px, 5vw, 72px);
   margin-bottom: clamp(36px, 4.5vw, 48px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(44px, 5vw, 72px);
+  align-items: start;
+}
+
+.li-cover__feature > * {
+  min-width: 0;
+}
+
+.li-cover__feature .li-guide__image {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 4 / 3;
+  align-self: start;
+}
+
+.li-cover__feature .li-guide__image img {
+  width: 100%;
+  height: 100%;
+  object-position: 50% 50%;
 }
 
 .li-cover__tagline {
@@ -4100,12 +4243,50 @@
   font-size: clamp(1.18rem, 1.5vw, 1.46rem);
   line-height: 1.42;
   color: rgba(11, 22, 38, 0.62);
-  margin: 0 0 clamp(26px, 3.2vw, 36px);
+  margin: 0 0 clamp(26px, 3vw, 36px);
   letter-spacing: -0.006em;
 }
 
+.li-market-intel {
+  position: relative;
+  padding: clamp(26px, 3.2vw, 38px) 0 clamp(28px, 3.4vw, 42px);
+  margin: 0 0 clamp(22px, 2.8vw, 34px);
+  border-top: 1px solid rgba(11, 22, 38, 0.12);
+  border-bottom: 1px solid rgba(11, 22, 38, 0.12);
+}
+
+.li-market-intel__label {
+  font-family: var(--font-sans);
+  font-size: clamp(9px, 0.66vw, 10px);
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: rgba(11, 22, 38, 0.40);
+  margin: 0 0 clamp(18px, 2.2vw, 26px);
+}
+
+.li-market-intel__gauge-row {
+  grid-template-columns: minmax(150px, 210px) minmax(0, 1fr);
+  gap: clamp(28px, 3.2vw, 44px);
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.li-market-intel__gauge {
+  width: min(100%, 210px);
+  max-width: 210px;
+  justify-self: start;
+}
+
+.li-market-intel__meta {
+  padding-top: clamp(2px, 0.6vw, 8px);
+}
+
 .li-cover__snapshot {
-  padding: clamp(32px, 4vw, 44px) 0 clamp(48px, 6vw, 64px);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(20px, 3vw, 34px) var(--section-pad-x) clamp(48px, 6vw, 64px);
   border-top: 1px solid rgba(11, 22, 38, 0.10);
 }
 
@@ -4230,8 +4411,7 @@
   gap: clamp(20px, 3vw, 40px);
   list-style: none;
   margin: 0;
-  padding: clamp(24px, 3vw, 32px) 0 0;
-  border-top: 1px solid rgba(11, 22, 38, 0.08);
+  padding: 0;
 }
 
 .li-intelligence__quicksignal {
@@ -4677,6 +4857,21 @@
   .li-guide__feature {
     grid-template-columns: 1fr 1fr;
   }
+
+  .li-cover__feature {
+    gap: clamp(32px, 4vw, 48px);
+  }
+
+  .li-market-intel__gauge-row {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: clamp(20px, 2.8vw, 28px);
+  }
+
+  .li-market-intel__gauge {
+    width: min(100%, 190px);
+    max-width: 190px;
+  }
 }
 
 @media (max-width: 860px) {
@@ -4687,6 +4882,14 @@
 
   .li-guide__image {
     aspect-ratio: 16 / 9;
+  }
+
+  .li-cover__feature .li-guide__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .li-cover__feature {
+    padding-top: clamp(34px, 7vw, 50px);
   }
 
   .li-guide__meta {
