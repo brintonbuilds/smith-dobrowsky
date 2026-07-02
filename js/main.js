@@ -70,11 +70,11 @@
 
 /* ── Contact form success state ── */
 (function () {
-  const form       = document.getElementById('contact-form');
+  const form       = document.querySelector('form#contact-form');
   const successEl  = document.getElementById('contact-success');
   const formWrap   = document.getElementById('contact-form-wrap');
   const backBtn    = document.getElementById('back-btn');
-  if (!form) return;
+  if (!form || !successEl || !formWrap) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
