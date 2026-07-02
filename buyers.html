@@ -13,6 +13,85 @@
   <link rel="stylesheet" href="css/nav.css?v=20260604-fullsync" />
   <link rel="stylesheet" href="css/pages.css?v=20260618-question-heading" />
   <!-- home.css is intentionally NOT loaded on this page -->
+  <style>
+    body.buyers-page .ip-hero--buyers {
+      min-height: clamp(560px, 68svh, 780px);
+      align-items: flex-end;
+    }
+
+    body.buyers-page .ip-hero--buyers .ip-hero__inner {
+      padding-top: clamp(128px, 15vh, 168px);
+      padding-bottom: clamp(72px, 10vh, 116px);
+    }
+
+    body.buyers-page .ip-hero--buyers .ip-hero__eyebrow {
+      margin-bottom: clamp(12px, 1.35vw, 18px);
+    }
+
+    body.buyers-page .ip-hero--buyers .ip-hero__heading {
+      max-width: 10.2em;
+      margin-bottom: clamp(18px, 2vw, 28px);
+      font-size: clamp(46px, 5.65vw, 86px);
+      line-height: 0.96;
+      letter-spacing: -0.038em;
+    }
+
+    body.buyers-page .ip-hero--buyers .ip-hero__heading em {
+      margin-top: 0.02em;
+      letter-spacing: -0.032em;
+    }
+
+    body.buyers-page .ip-hero--buyers .ip-hero__ctas {
+      margin-top: 0;
+    }
+
+    body.buyers-page .ip-hero--buyers .ip-hero__ctas .text-link--light {
+      min-height: 34px;
+      letter-spacing: 0.15em;
+    }
+
+    @media (max-width: 960px) {
+      body.buyers-page .ip-hero--buyers {
+        min-height: clamp(540px, 66svh, 700px);
+      }
+
+      body.buyers-page .ip-hero--buyers .ip-hero__inner {
+        padding-bottom: clamp(58px, 8vh, 86px);
+      }
+
+      body.buyers-page .ip-hero--buyers .ip-hero__heading {
+        max-width: 9.8em;
+        font-size: clamp(42px, 7.4vw, 68px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body.buyers-page .ip-hero--buyers {
+        min-height: clamp(520px, 64svh, 640px);
+      }
+
+      body.buyers-page .ip-hero--buyers .ip-hero__inner {
+        padding-top: clamp(112px, 15vh, 132px);
+        padding-bottom: clamp(48px, 7vh, 68px);
+      }
+
+      body.buyers-page .ip-hero--buyers .ip-hero__eyebrow {
+        margin-bottom: 12px;
+      }
+
+      body.buyers-page .ip-hero--buyers .ip-hero__heading {
+        max-width: 100%;
+        margin-bottom: 18px;
+        font-size: clamp(38px, 11vw, 52px);
+        line-height: 0.98;
+      }
+
+      body.buyers-page .ip-hero--buyers .ip-hero__heading-line,
+      body.buyers-page .ip-hero--buyers .ip-hero__heading em {
+        white-space: normal;
+      }
+    }
+  </style>
 </head>
 <body class="interior-page buyers-page">
 
@@ -42,9 +121,6 @@
           <span class="ip-hero__heading-line">You have options,</span>
           <em>Buy with confidence.</em>
         </h1>
-        <p class="ip-hero__body editorial-body">
-          Geoff and Katrinna help you clarify budget, compare neighbourhoods, avoid overpaying, and move forward without pressure.
-        </p>
         <div class="ip-hero__ctas">
           <a href="contact.html" class="editorial-cta text-link text-link--light text-link--arrow">
             Talk With the Team <span aria-hidden="true">→</span>

@@ -13,6 +13,90 @@
   <link rel="stylesheet" href="css/nav.css?v=20260622-contact" />
   <link rel="stylesheet" href="css/pages.css?v=20260622-contact" />
   <!-- home.css is intentionally NOT loaded on this page -->
+  <style>
+    body.contact-page .ip-hero--contact {
+      min-height: clamp(560px, 68svh, 780px);
+      align-items: flex-end;
+    }
+
+    body.contact-page .ip-hero--contact .ip-hero__inner {
+      padding-top: clamp(128px, 15vh, 168px);
+      padding-bottom: clamp(72px, 10vh, 116px);
+    }
+
+    body.contact-page .ip-hero--contact .ip-hero__eyebrow {
+      margin-bottom: clamp(12px, 1.35vw, 18px);
+    }
+
+    body.contact-page .ip-hero--contact .ip-hero__heading {
+      max-width: 10.7em;
+      margin-bottom: clamp(18px, 2vw, 28px);
+      font-size: clamp(46px, 5.65vw, 86px);
+      line-height: 0.96;
+      letter-spacing: -0.038em;
+    }
+
+    body.contact-page .ip-hero--contact .ip-hero__heading em {
+      margin-top: 0.02em;
+      letter-spacing: -0.032em;
+    }
+
+    body.contact-page .ip-hero--contact .ip-hero__ctas {
+      gap: clamp(22px, 2.4vw, 36px);
+      margin-top: 0;
+    }
+
+    body.contact-page .ip-hero--contact .ip-hero__ctas .text-link--light {
+      min-height: 34px;
+      letter-spacing: 0.15em;
+    }
+
+    @media (max-width: 960px) {
+      body.contact-page .ip-hero--contact {
+        min-height: clamp(540px, 66svh, 700px);
+      }
+
+      body.contact-page .ip-hero--contact .ip-hero__inner {
+        padding-bottom: clamp(58px, 8vh, 86px);
+      }
+
+      body.contact-page .ip-hero--contact .ip-hero__heading {
+        max-width: 10.2em;
+        font-size: clamp(42px, 7.4vw, 68px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body.contact-page .ip-hero--contact {
+        min-height: clamp(520px, 64svh, 640px);
+      }
+
+      body.contact-page .ip-hero--contact .ip-hero__inner {
+        padding-top: clamp(112px, 15vh, 132px);
+        padding-bottom: clamp(48px, 7vh, 68px);
+      }
+
+      body.contact-page .ip-hero--contact .ip-hero__eyebrow {
+        margin-bottom: 12px;
+      }
+
+      body.contact-page .ip-hero--contact .ip-hero__heading {
+        max-width: 100%;
+        margin-bottom: 18px;
+        font-size: clamp(38px, 11vw, 52px);
+        line-height: 0.98;
+      }
+
+      body.contact-page .ip-hero--contact .ip-hero__heading-line,
+      body.contact-page .ip-hero--contact .ip-hero__heading em {
+        white-space: normal;
+      }
+
+      body.contact-page .ip-hero--contact .ip-hero__ctas {
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body class="interior-page contact-page">
 
@@ -42,9 +126,6 @@
           <span class="ip-hero__heading-line">Let's talk about</span>
           <em>your next move.</em>
         </h1>
-        <p class="ip-hero__body editorial-body">
-          Whether you're buying, selling, or simply trying to understand the market — Geoff will give you a clear, honest starting point.
-        </p>
         <div class="ip-hero__ctas">
           <a href="tel:9056393355" class="editorial-cta text-link text-link--light text-link--arrow">
             Call Geoff directly <span aria-hidden="true">→</span>
