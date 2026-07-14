@@ -3,518 +3,558 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Smith Dobrowsky Team — Burlington &amp; Hamilton Realtors</title>
-  <meta name="description" content="Geoff Smith &amp; Katrinna Smith-Dobrowsky — trusted REALTORS® serving Burlington, Hamilton and Waterdown since 2004." />
+  <title>The Smith Dobrowsky Team — A New Website Is Coming Soon</title>
+  <meta name="description" content="A refined new website for The Smith Dobrowsky Team is on the way. In the meantime, Geoff Smith &amp; Katrinna Smith-Dobrowsky are here to help with buying and selling across Burlington, Hamilton and Waterdown. Call or text 905.639.3355." />
+  <meta name="theme-color" content="#05090f" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph — for when Geoff shares the link -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Smith Dobrowsky Team — A New Website Is Coming Soon" />
+  <meta property="og:description" content="A refined new website is on the way. In the meantime, Geoff &amp; Katrinna are here to help with your next move across Burlington and Hamilton. Call or text 905.639.3355." />
+  <!-- Note: replace with the absolute URL once deployed for link previews to render -->
+  <meta property="og:image" content="assets/coming-soon-team.webp" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+
+  <!-- Brand fonts — same system as the full site -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="stylesheet" href="css/styles.css?v=20260604-fullsync" />
-  <link rel="stylesheet" href="css/nav.css?v=20260604-fullsync" />
-  <link rel="stylesheet" href="css/home.css?v=20260610-media-fallback" />
-  <link rel="preload" as="image" href="assets/geoff-smith-burlington-hamilton-local-neighbourhood-expert-hero.webp" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- ── Preloader styles: hoisted above everything so they render immediately ── -->
+  <!-- Prioritise the two above-the-fold visuals -->
+  <link rel="preload" as="image" href="assets/coming-soon-team.webp" />
+  <link rel="preload" as="image" href="assets/logo-transparent-header.png" />
+
+  <style>
+    /* ═══════════════════════════════════════════
+       The Smith Dobrowsky Team — Coming Soon
+       Self-contained. Brand system mirrored inline.
+    ═══════════════════════════════════════════ */
+    :root {
+      --navy:      #1B2A4A;
+      --navy-dark: #111D33;
+      --ink:       #05090f;
+      --ink-2:     #080d16;
+      --cream:     #F7F5F1;
+      --pearl:     #E8E4DC;
+      --gold:      #9a9080;
+      --gold-lt:   #b8ad9c;
+
+      --text:      rgba(250,248,244,0.95);
+      --text-soft: rgba(250,248,244,0.72);
+      --text-mut:  rgba(238,235,228,0.60);
+      --line:      rgba(238,235,228,0.14);
+      --line-str:  rgba(238,235,228,0.26);
+
+      --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+      --eyebrow-tracking: 0.24em;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--gold-lt);
+      outline-offset: 4px;
+      border-radius: 1px;
+    }
+
+    /* ── Shared editorial atoms ── */
+    .eyebrow {
+      display: inline-block;
+      font-size: clamp(0.62rem, 0.72vw, 0.69rem);
+      font-weight: 600;
+      letter-spacing: var(--eyebrow-tracking);
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin: 0;
+    }
+
+    /* ═══════════ HERO ═══════════ */
+    .cs {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      min-height: 100svh;
+    }
+
+    /* ── Left: content panel ── */
+    .cs__panel {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: clamp(26px, 3.2vh, 46px);
+      padding: clamp(30px, 4vw, 58px) clamp(28px, 5vw, 80px);
+      background:
+        radial-gradient(120% 100% at 12% 0%, rgba(27,42,74,0.55) 0%, rgba(17,29,51,0.28) 42%, rgba(5,9,15,0) 78%),
+        linear-gradient(180deg, var(--ink-2) 0%, var(--ink) 100%);
+      overflow: hidden;
+    }
+    /* faint top hairline accent */
+    .cs__panel::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--line-str) 22%, var(--line-str) 78%, transparent);
+    }
+
+    .cs__brand-img {
+      width: clamp(200px, 20vw, 292px);
+      height: auto;
+    }
+
+    .cs__body { max-width: 34rem; }
+
+    .cs__status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: clamp(0.62rem, 0.72vw, 0.69rem);
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mut);
+      margin-bottom: clamp(20px, 2.4vh, 30px);
+    }
+    .cs__status-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold-lt);
+      box-shadow: 0 0 0 0 rgba(184,173,156,0.55);
+      animation: csPulse 2.6s var(--ease) infinite;
+    }
+
+    .cs__title {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(2.55rem, 5.6vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.028em;
+      margin: 0 0 clamp(16px, 2.2vh, 26px);
+      color: var(--cream);
+    }
+    .cs__title em {
+      display: block;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold-lt);
+      letter-spacing: -0.02em;
+    }
+
+    .cs__rule {
+      width: 54px; height: 1px;
+      background: var(--gold);
+      margin: 0 0 clamp(18px, 2.4vh, 26px);
+      transform-origin: left center;
+    }
+
+    .cs__lead {
+      font-size: clamp(1rem, 1.05vw, 1.12rem);
+      line-height: 1.7;
+      color: var(--text-soft);
+      margin: 0 0 clamp(22px, 2.8vh, 32px);
+    }
+
+    /* services + service area */
+    .cs__facts {
+      display: grid;
+      gap: clamp(12px, 1.6vh, 18px);
+      margin-bottom: clamp(22px, 2.8vh, 32px);
+      padding: clamp(16px, 2vh, 22px) 0 0;
+      border-top: 1px solid var(--line);
+    }
+    .cs__fact-label {
+      display: block;
+      margin-bottom: 7px;
+    }
+    .cs__fact-value {
+      font-size: clamp(0.95rem, 1vw, 1.04rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    /* CTAs */
+    .cs__ctas {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: clamp(14px, 1.4vw, 18px);
+    }
+    .cs__cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 clamp(24px, 2.2vw, 32px);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      transition: transform 0.4s var(--ease), background-color 0.4s var(--ease), border-color 0.4s var(--ease), color 0.4s var(--ease);
+    }
+    .cs__cta-arrow { transition: transform 0.4s var(--ease); }
+    .cs__cta--primary {
+      background: var(--cream);
+      color: var(--navy-dark);
+    }
+    .cs__cta--primary:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+    .cs__cta--primary:hover .cs__cta-arrow { transform: translateX(4px); }
+    .cs__cta--ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--line-str);
+    }
+    .cs__cta--ghost:hover {
+      border-color: var(--cream);
+      background: rgba(247,245,241,0.05);
+      transform: translateY(-2px);
+    }
+    .cs__cta--ghost:hover .cs__cta-arrow { transform: translateX(4px); }
+
+    .cs__signature {
+      font-size: clamp(0.8rem, 0.9vw, 0.88rem);
+      color: var(--text-mut);
+      letter-spacing: 0.01em;
+      margin: 0;
+    }
+    .cs__signature strong {
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    /* ── Right: media ── */
+    .cs__media {
+      position: relative;
+      overflow: hidden;
+      background: var(--ink-2);
+      min-height: 320px;
+    }
+    .cs__media-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 54% 30%;
+    }
+    /* blend the photo edge into the panel + anchor the caption */
+    .cs__media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, var(--ink) 0%, rgba(5,9,15,0.35) 16%, rgba(5,9,15,0) 42%),
+        linear-gradient(180deg, rgba(5,9,15,0) 46%, rgba(5,9,15,0.62) 100%);
+      pointer-events: none;
+    }
+    .cs__caption {
+      position: absolute;
+      left: clamp(24px, 2.6vw, 40px);
+      bottom: clamp(24px, 2.8vw, 40px);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .cs__caption-rule {
+      width: 30px; height: 1px;
+      background: var(--gold-lt);
+      margin-bottom: 4px;
+    }
+    .cs__caption-name {
+      font-family: var(--serif);
+      font-size: clamp(1.05rem, 1.5vw, 1.4rem);
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.1;
+    }
+    .cs__caption-meta {
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    /* ═══════════ FOOTER ═══════════ */
+    .cs-footer {
+      background: var(--ink);
+      border-top: 1px solid var(--line);
+      padding: clamp(30px, 4vw, 46px) clamp(28px, 5vw, 80px);
+    }
+    .cs-footer__bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(22px, 3vw, 40px);
+    }
+    .cs-footer__logo { width: clamp(150px, 15vw, 188px); height: auto; opacity: 0.92; }
+    .cs-footer__contact {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: clamp(14px, 1.6vw, 26px);
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+    }
+    .cs-footer__link {
+      color: var(--text-soft);
+      transition: color 0.3s var(--ease);
+    }
+    .cs-footer__link:hover { color: var(--cream); }
+    .cs-footer__sep { color: var(--line-str); }
+    .cs-footer__ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .cs-footer__ig svg { width: 13px; height: 13px; }
+
+    .cs-footer__brokerage {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px 28px;
+      margin-top: clamp(24px, 3vw, 34px);
+      padding-top: clamp(20px, 2.4vw, 26px);
+      border-top: 1px solid var(--line);
+    }
+    .cs-footer__aff {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .cs-footer__cb-logo { width: 44px; height: auto; opacity: 0.9; }
+    .cs-footer__aff-copy { display: flex; flex-direction: column; gap: 2px; }
+    .cs-footer__aff-name {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+    .cs-footer__aff-addr {
+      font-size: 0.72rem;
+      color: var(--text-mut);
+      letter-spacing: 0.02em;
+    }
+    .cs-footer__legal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      color: var(--text-mut);
+    }
+
+    /* ═══════════ RESPONSIVE ═══════════ */
+    @media (max-width: 920px) {
+      .cs {
+        display: flex;
+        flex-direction: column;
+      }
+      .cs__media {
+        order: -1;
+        flex: 0 0 auto;
+        width: 100%;
+        height: clamp(250px, 42svh, 400px);
+        min-height: 0;
+      }
+      .cs__panel {
+        flex: 1 1 auto;
+      }
+      .cs__media-img { object-position: 50% 28%; }
+      .cs__media::after {
+        background:
+          linear-gradient(180deg, rgba(5,9,15,0) 40%, rgba(5,9,15,0.55) 100%),
+          linear-gradient(180deg, rgba(5,9,15,0) 88%, var(--ink) 100%);
+      }
+      .cs__panel {
+        justify-content: flex-start;
+        gap: clamp(30px, 4vh, 48px);
+        padding: clamp(30px, 7vw, 52px) clamp(26px, 7vw, 52px) clamp(40px, 8vw, 56px);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .cs__brand-img { width: 190px; }
+      .cs__ctas { gap: 12px; }
+      .cs__cta { width: 100%; }
+      .cs-footer__bar { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .cs-footer__brokerage { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ═══════════ MOTION ═══════════ */
+    @keyframes csRise {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes csImg {
+      from { opacity: 0; transform: scale(1.07); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes csRule {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+    @keyframes csPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(184,173,156,0.5); }
+      70%  { box-shadow: 0 0 0 8px rgba(184,173,156,0); }
+      100% { box-shadow: 0 0 0 0 rgba(184,173,156,0); }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .cs__brand-img,
+      .cs__status,
+      .cs__title,
+      .cs__lead,
+      .cs__facts,
+      .cs__ctas,
+      .cs__signature {
+        opacity: 0;
+        animation: csRise 0.8s var(--ease) forwards;
+      }
+      .cs__brand-img { animation-delay: 0.05s; }
+      .cs__status    { animation-delay: 0.34s; }
+      .cs__title     { animation-delay: 0.42s; }
+      .cs__lead      { animation-delay: 0.56s; }
+      .cs__facts     { animation-delay: 0.66s; }
+      .cs__ctas      { animation-delay: 0.76s; }
+      .cs__signature { animation-delay: 0.86s; }
+
+      .cs__rule { animation: csRule 0.9s var(--ease) 0.5s forwards; transform: scaleX(0); }
+      .cs__media-img { animation: csImg 1.5s var(--ease) forwards; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cs__status-dot { animation: none; }
+    }
+  </style>
 </head>
-<body class="home-page">
+<body>
 
-  <!-- ══════════════════════════════════════
-       PRELOADER — editorial brand reveal
-       CSS-animated, ~1.55s, no spinner
-  ══════════════════════════════════════ -->
-  <div id="sd-preloader" role="presentation" aria-hidden="true">
-    <div class="sd-preloader__stage">
+  <main class="cs">
 
-      <!-- SD monogram mark: fades in first -->
-      <figure class="sd-preloader__mark">
-        <img
-          src="assets/SD.png"
-          alt=""
-          width="80"
-          height="80"
-          loading="eager"
-          decoding="sync"
-          fetchpriority="high"
-        >
-      </figure>
+    <!-- ── Content ── -->
+    <section class="cs__panel" aria-labelledby="cs-title">
 
-      <!-- Wordmark: CSS-matched to site brand system, left-to-right reveal -->
-      <div class="sd-preloader__wordmark" aria-label="The Smith Dobrowsky Team">
-        <span class="sd-preloader__wm-the">The</span>
-        <strong class="sd-preloader__wm-name">Smith Dobrowsky</strong>
-        <span class="sd-preloader__wm-team">Team</span>
-      </div>
+      <img class="cs__brand-img"
+           src="assets/logo-transparent-header.png"
+           alt="The Smith Dobrowsky Team"
+           width="292" height="72" />
 
-    </div>
-  </div>
-  <!-- ── End preloader ── -->
+      <div class="cs__body">
 
-  <script src="js/nav.js"></script>
+        <p class="cs__status">
+          <span class="cs__status-dot" aria-hidden="true"></span>
+          New website in development
+        </p>
 
-  <main>
+        <h1 class="cs__title" id="cs-title">
+          A better website
+          <em>is coming soon.</em>
+        </h1>
 
-    <!-- ══════════════════════════════════════
-         HERO — 12-column grid layout
-         Left 5col: content  |  Right 7col: photo
-    ══════════════════════════════════════ -->
-    <section class="hero" aria-labelledby="hero-heading">
+        <div class="cs__rule" aria-hidden="true"></div>
 
-      <div class="hero__inner">
+        <p class="cs__lead">
+          We're building a refined new home for The Smith Dobrowsky Team — a clearer, more
+          considered experience for buyers and sellers across Burlington and Hamilton. While
+          it's being finished, Geoff and Katrinna are here and ready to help with your next move.
+        </p>
 
-        <!-- ── Left: Content ── -->
-        <div class="hero__left">
-
-          <div class="hero__h1-location editorial-eyebrow editorial-eyebrow--dark">
-            Burlington · Hamilton<br>
-            and surrounding communities
+        <div class="cs__facts">
+          <div class="cs__fact">
+            <span class="eyebrow cs__fact-label">How we help</span>
+            <span class="cs__fact-value">Buying &middot; Selling &middot; Local Insight &middot; Current Listings</span>
           </div>
-
-          <h1 class="hero__h1 editorial-heading" id="hero-heading">
-            <span class="hero__h1-line">Local guidance.</span>
-            <em class="hero__h1-em">Move with confidence.</em>
-          </h1>
-
-          <p class="hero__sub editorial-body">
-            Clear Burlington and Hamilton perspective for the move in front of you.
-          </p>
-
-          <div class="hero__ctas">
-            <a href="local-insight.html" class="hero__cta-link hero__cta-link--primary editorial-cta text-link text-link--arrow text-link--dark">Explore Local Insight <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
-            <a href="listings.html" class="hero__cta-link hero__cta-link--secondary editorial-cta text-link text-link--arrow text-link--dark">View listings <span class="hero__cta-arrow" aria-hidden="true">→</span></a>
+          <div class="cs__fact">
+            <span class="eyebrow cs__fact-label">Where we work</span>
+            <span class="cs__fact-value">Burlington &middot; Hamilton &middot; Waterdown &middot; Oakville &middot; Grimsby &middot; Stoney Creek &amp; surrounding communities</span>
           </div>
-
-        </div><!-- /hero__left -->
-
-        <!-- ── Right: Media panel ── -->
-        <div class="hero__right">
-          <div class="hero__video-wrap">
-            <img class="hero__media-slide hero__media-slide--image is-active"
-                 src="assets/geoff-smith-burlington-hamilton-local-neighbourhood-expert-hero.webp"
-                 alt="Morning light over the Burlington and Hamilton waterfront"
-                 loading="eager"
-                 decoding="async"
-                 fetchpriority="high">
-            <div class="hero__location-label" aria-live="polite">
-              <span class="hero__location-kicker editorial-eyebrow editorial-eyebrow--dark">Established Roots</span>
-              <span class="hero__location-name">Burlington · Hamilton Region</span>
-            </div>
-            <div class="hero__progress" aria-hidden="true">
-              <span class="hero__progress-track"><span class="hero__progress-fill"></span></span>
-              <span class="hero__progress-track"><span class="hero__progress-fill"></span></span>
-              <span class="hero__progress-track"><span class="hero__progress-fill"></span></span>
-              <span class="hero__progress-track"><span class="hero__progress-fill"></span></span>
-              <span class="hero__progress-track"><span class="hero__progress-fill"></span></span>
-              <span class="hero__progress-track"><span class="hero__progress-fill"></span></span>
-            </div>
-          </div>
-          <div class="hero__caption">
-            <span class="hero__caption-rule"></span>
-            <span class="hero__caption-name">Burlington &amp; Hamilton</span>
-            <span class="hero__caption-title">Neighbourhoods with a story</span>
-          </div>
-        </div><!-- /hero__right -->
-
-      </div><!-- /hero__inner -->
-    </section>
-
-    <!-- ══════════════════════════════════════
-         MEET THE TEAM
-    ══════════════════════════════════════ -->
-    <section class="meet-team reveal">
-      <div class="meet-team__inner meet-editorial">
-
-        <div class="meet-team__photo meet-editorial__media">
-          <img
-            class="meet-editorial__image"
-            src="assets/Geoff-and-Katrinna-Smith-Dobrowsky-Team.png"
-            alt="Geoff and Katrinna Smith Dobrowsky — Burlington &amp; Hamilton Realtors"
-            loading="lazy"
-          />
         </div>
 
-        <div class="meet-team__content meet-editorial__content">
-          <span class="meet-team__eyebrow editorial-eyebrow editorial-eyebrow--light">Burlington &amp; Hamilton Realtors® · Since 2006</span>
-          <h2 class="meet-team__heading editorial-heading">
-            <span class="meet-heading-line">Real estate</span> <span class="meet-heading-line">is personal.</span><br>
-            <em>So is our approach.</em>
-          </h2>
-          <p class="meet-team__body editorial-body">Buying or selling is rarely just about the property.
-          It comes with timing, pressure, family decisions, and a lot of uncertainty. Geoff and Katrinna help clients slow things down, understand their options, and <strong>move forward with confidence.</strong></p>
-          <a href="sellers.html" class="meet-team__cta editorial-cta btn btn--outline btn--light">How We Work</a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         SELECTED PROPERTIES
-    ══════════════════════════════════════ -->
-    <section class="sp-section">
-
-      <div class="sp-header reveal">
-        <div class="section-eyebrow editorial-eyebrow editorial-eyebrow--dark">Burlington, Hamilton, Waterdown</div>
-        <h2 class="sp-heading editorial-heading">Recently <em>Represented</em></h2>
-      </div>
-
-      <div class="sp-grid">
-
-        <!-- Primary feature: 55 Chesley Street, Hamilton — represented property -->
-        <a href="https://sites.odyssey3d.ca/55chesleystreet" target="_blank" rel="noopener noreferrer" class="sp-card sp-card--feature reveal" aria-label="View represented property details for 55 Chesley Street, Hamilton — opens in a new tab">
-          <div class="sp-card__media">
-            <img
-              src="assets/listing-photos/55-chelsea.png"
-              alt="55 Chesley Street, Hamilton — front exterior"
-              loading="eager"
-            >
-            <div class="sp-card__status">Represented</div>
-          </div>
-          <div class="sp-card__body">
-            <div class="sp-card__address">55 Chesley Street</div>
-            <div class="sp-card__location">Hamilton &middot; Detached bungalow</div>
-            <p class="sp-card__teaser">A well-kept family home where presentation, timing, and neighbourhood context all matter.</p>
-            <div class="sp-card__footer">
-              <span class="sp-card__price">Hamilton representation</span>
-              <span class="sp-card__cta editorial-cta text-link text-link--arrow text-link--dark">View Details <span class="sp-card__arrow" aria-hidden="true">&#8594;</span></span>
-            </div>
-          </div>
-        </a>
-
-        <!-- Secondary listings stack -->
-        <div class="sp-secondary">
-
-          <a href="https://listings.monstermediahouse.com/sites/rqlvzdpa/unbranded#&gid=1&pid=21" target="_blank" rel="noopener noreferrer" class="sp-card sp-card--secondary reveal reveal-delay-1" aria-label="View represented property details for 1811 Old Waterdown Road, Burlington — opens in a new tab">
-            <div class="sp-card__media">
-              <img
-                src="assets/listing-photos/1811-Old-Waterdown-Road.jpg"
-                alt="1811 Old Waterdown Road, Burlington — front exterior"
-                loading="lazy"
-              >
-              <div class="sp-card__status">Represented</div>
-            </div>
-            <div class="sp-card__body">
-              <div class="sp-card__address">1811 Old Waterdown Road</div>
-              <div class="sp-card__location">Burlington &middot; Country estate</div>
-              <p class="sp-card__teaser">A stunning country property in the city — vaulted ceilings, spa-like primary suite, and a massive detached garage workshop.</p>
-              <div class="sp-card__footer">
-                <span class="sp-card__price">Burlington representation</span>
-              </div>
-            </div>
+        <div class="cs__ctas">
+          <a href="tel:9056393355" class="cs__cta cs__cta--primary">
+            Call or text 905.639.3355
+            <span class="cs__cta-arrow" aria-hidden="true">&rarr;</span>
           </a>
-
-          <a href="https://listings.monstermediahouse.com/sites/rnqvmglm/unbranded" target="_blank" rel="noopener noreferrer" class="sp-card sp-card--secondary reveal reveal-delay-2" aria-label="View represented property details for 497 Elizabeth Street, Burlington — opens in a new tab">
-            <div class="sp-card__media">
-              <img
-                src="assets/listing-photos/497-ELIZABETH-Street.jpg"
-                alt="497 Elizabeth Street, Burlington — exterior"
-                loading="lazy"
-              >
-              <div class="sp-card__status">Represented</div>
-            </div>
-            <div class="sp-card__body">
-              <div class="sp-card__address">497 Elizabeth Street</div>
-              <div class="sp-card__location">Burlington &middot; Commercial office</div>
-              <p class="sp-card__teaser">6,867 sq. ft. of downtown Burlington office space — 16 offices, four boardrooms, and steps from the waterfront.</p>
-              <div class="sp-card__footer">
-                <span class="sp-card__price">Burlington representation</span>
-              </div>
-            </div>
+          <a href="mailto:info@smithdobrowsky.ca" class="cs__cta cs__cta--ghost">
+            Email the team
+            <span class="cs__cta-arrow" aria-hidden="true">&rarr;</span>
           </a>
+        </div>
 
-        </div><!-- /sp-secondary -->
-
-      </div><!-- /sp-grid -->
-
-      <div class="sp-footer">
-        <a href="listings.html" class="sp-all-link editorial-cta text-link text-link--arrow text-link--dark">View represented homes <span aria-hidden="true">&#8594;</span></a>
       </div>
+
+      <p class="cs__signature">
+        <strong>Geoff Smith &amp; Katrinna Smith-Dobrowsky</strong> &middot; REALTORS<sup>&reg;</sup> serving Burlington &amp; Hamilton
+      </p>
 
     </section>
 
-    <!-- ══════════════════════════════════════
-         COMMUNITIES — Interactive Map
-    ══════════════════════════════════════ -->
-    <section class="cm-section" aria-labelledby="cm-heading">
-      <div class="cm-inner">
-
-        <div class="cm-left reveal">
-          <header class="cm-header">
-            <div class="cm-eyebrow editorial-eyebrow editorial-eyebrow--light">Local Expertise</div>
-            <h2 class="cm-heading editorial-heading" id="cm-heading">Local insight.<br><em>Street by street.</em></h2>
-            <p class="cm-copy editorial-body">Most people compare neighbourhoods. The Smith Dobrowsky Team looks closer — at the streets, routines, timing, and small shifts that shape a better move.</p>
-          </header>
-
-          <div class="cm-insight">
-            <h3 class="cm-insight__name">The details rarely show up in market reports.</h3>
-            <p class="cm-insight__line">A few pockets in this region are consistently underestimated. Buyers who look past the obvious often find stronger fundamentals, better value, and less competition.</p>
-            <div class="cm-insight__cta-group">
-              <a class="cm-insight__link editorial-cta text-link text-link--arrow text-link--dark" href="local-insight.html">Explore Local Expertise <span aria-hidden="true">&#8594;</span></a>
-            </div>
-          </div>
-
-          <p class="cm-service-area">Serving Burlington, Waterdown, Hamilton, Grimsby, Stoney Creek, Oakville, Milton, Cambridge &amp; Flamborough.</p>
-        </div>
-
-        <div class="cm-map-panel reveal" aria-label="Map of Burlington, Hamilton and Waterdown">
-          <div class="cm-map-frame">
-            <div class="cm-map-stage">
-              <img class="cm-map-image" src="assets/halton-hamilton-map.png" alt="" loading="lazy" decoding="async" />
-              <div class="cm-map-marker-layer" role="group" aria-label="Community markers"></div>
-            </div>
-          </div>
-          <svg class="cm-svg" viewBox="0 0 680 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Editorial map of Burlington, Hamilton and Waterdown" aria-hidden="true">
-            <desc>Lake Ontario, quiet route lines and relative community positions for Burlington, Hamilton and Waterdown.</desc>
-            <defs>
-              <pattern id="cm-map-grid" width="46" height="46" patternUnits="userSpaceOnUse">
-                <path class="cm-grid" d="M46 0H0V46" fill="none"/>
-              </pattern>
-              <linearGradient id="cm-land-grad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#f2eee6"/>
-                <stop offset="48%" stop-color="#e8e1d6"/>
-                <stop offset="100%" stop-color="#ddd5c8"/>
-              </linearGradient>
-              <radialGradient id="cm-land-warmth" cx="58%" cy="44%" r="62%">
-                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.34"/>
-                <stop offset="58%" stop-color="#ffffff" stop-opacity="0.06"/>
-                <stop offset="100%" stop-color="#0b1626" stop-opacity="0.06"/>
-              </radialGradient>
-              <linearGradient id="cm-lake-grad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#dfd9cd"/>
-                <stop offset="100%" stop-color="#c9cfd2"/>
-              </linearGradient>
-              <filter id="cm-paper-grain" x="-10%" y="-10%" width="120%" height="120%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.92" numOctaves="2" seed="8"/>
-                <feColorMatrix type="saturate" values="0"/>
-                <feComponentTransfer>
-                  <feFuncA type="table" tableValues="0 0.06"/>
-                </feComponentTransfer>
-              </filter>
-            </defs>
-
-            <rect class="cm-map-field" width="680" height="520"/>
-            <rect class="cm-map-tone" width="680" height="520"/>
-            <rect class="cm-map-grain" width="680" height="520" filter="url(#cm-paper-grain)"/>
-            <rect class="cm-grid-field" width="680" height="520" fill="url(#cm-map-grid)"/>
-
-            <g class="cm-atlas-region" transform="translate(30 18) scale(0.95)">
-             <!-- Natural Topography Contours -->
-             <path class="cm-contour cm-contour--fine" d="M30 70 C94 48 150 52 214 78 S346 112 414 76 S538 34 626 54"/>
-             <path class="cm-contour cm-contour--major" d="M-10 128 C48 98 110 92 164 112 C228 136 278 154 344 132 C410 110 458 82 516 92 C576 102 630 78 694 58"/>
-             <path class="cm-escarpment" d="M16 150 C72 116 132 112 190 136 C250 160 306 178 370 154 C436 128 480 106 540 116 C598 126 644 110 694 88"/>
-             <path class="cm-contour" d="M12 216 C76 182 140 184 202 204 C260 222 326 240 388 212 C456 180 516 178 580 184 S664 174 704 158"/>
-             <path class="cm-contour cm-contour--fine" d="M132 356 C202 330 270 338 344 366 S474 396 570 358"/>
-
-            <path class="cm-lake" d="M0 438 C70 417 136 407 205 418 C260 427 302 439 348 424 C394 409 421 381 462 358 C525 322 602 309 680 286 L680 520 L0 520 Z" fill="url(#cm-lake-grad)"/>
-            <path class="cm-lake-line" d="M0 438 C70 417 136 407 205 418 C260 427 302 439 348 424 C394 409 421 381 462 358 C525 322 602 309 680 286"/>
-            <path class="cm-lake-contour" d="M18 462 C92 438 166 434 230 446 C296 458 356 456 420 422 C494 384 570 360 688 334"/>
-            <path class="cm-lake-contour" d="M50 492 C130 468 218 469 294 478 C368 486 430 468 490 430 C548 394 610 378 690 360"/>
-            <path class="cm-lake-contour cm-lake-contour--shore" d="M474 366 C538 332 602 314 682 304"/>
-            <text class="cm-svg__watermark cm-svg__watermark--water" x="510" y="454">Lake Ontario</text>
-
-            <path class="cm-road cm-road--major" data-route="qew" d="M132 414 C202 386 276 368 344 342 S468 292 594 270"/>
-            <path class="cm-road cm-road--major" data-route="403" d="M174 386 C232 334 276 292 334 244 S424 178 498 154"/>
-            <path class="cm-road cm-road--major" data-route="407" d="M292 186 C358 164 426 152 516 142 S612 134 656 116"/>
-            <path class="cm-road cm-road--major" data-route="rural" d="M124 178 C170 206 224 222 284 226 S392 216 468 184"/>
-            <path class="cm-road cm-road--secondary" d="M78 258 C150 230 228 226 306 244 S448 278 564 238"/>
-            <path class="cm-road cm-road--secondary" d="M252 306 C322 280 412 278 508 294 S622 292 682 266"/>
-            <path class="cm-road cm-road--secondary cm-road--broken" d="M162 226 C226 242 286 270 342 318 S430 374 506 386"/>
-            <path class="cm-road" d="M222 382 C236 322 278 278 334 244"/>
-            <path class="cm-road" d="M392 326 C420 274 460 204 498 154"/>
-            <path class="cm-road" d="M178 206 C210 260 218 324 222 382"/>
-            <path class="cm-road" d="M392 326 C440 320 488 304 538 282"/>
-
-            <text class="cm-svg__watermark cm-svg__watermark--ridge" x="320" y="146">Niagara Escarpment</text>
-
-            <!-- Burlington -->
-            <g class="cm-pin" data-community="burlington" role="button" tabindex="0" aria-label="Burlington">
-              <circle class="cm-pin__halo" cx="392" cy="326" r="9"/>
-              <circle class="cm-pin__bracket" cx="392" cy="326" r="5.5"/>
-              <text class="cm-pin__label" x="406" y="313">Burlington</text>
-
-              <g class="cm-callout" transform="translate(392, 281)">
-                <rect class="cm-callout__bg" x="-75" y="-32" width="150" height="42" rx="3"/>
-                <text class="cm-callout__name" x="0" y="-18">Burlington</text>
-                <text class="cm-callout__tag" x="0" y="-6">Lakefront &amp; Commuters</text>
-              </g>
-            </g>
-
-            <!-- Waterdown -->
-            <g class="cm-pin" data-community="waterdown" role="button" tabindex="0" aria-label="Waterdown">
-              <circle class="cm-pin__halo" cx="334" cy="244" r="9"/>
-              <circle class="cm-pin__bracket" cx="334" cy="244" r="5.5"/>
-              <text class="cm-pin__label" x="348" y="232">Waterdown</text>
-
-              <g class="cm-callout" transform="translate(334, 199)">
-                <rect class="cm-callout__bg" x="-75" y="-32" width="150" height="42" rx="3"/>
-                <text class="cm-callout__name" x="0" y="-18">Waterdown</text>
-                <text class="cm-callout__tag" x="0" y="-6">Village &amp; Escarpment</text>
-              </g>
-            </g>
-
-            <!-- Hamilton -->
-            <g class="cm-pin" data-community="hamilton" role="button" tabindex="0" aria-label="Hamilton">
-              <circle class="cm-pin__halo" cx="222" cy="382" r="9"/>
-              <circle class="cm-pin__bracket" cx="222" cy="382" r="5.5"/>
-              <text class="cm-pin__label" x="244" y="374">Hamilton</text>
-
-              <g class="cm-callout" transform="translate(222, 337)">
-                <rect class="cm-callout__bg" x="-75" y="-32" width="150" height="42" rx="3"/>
-                <text class="cm-callout__name" x="0" y="-18">Hamilton</text>
-                <text class="cm-callout__tag" x="0" y="-6">Character &amp; Pockets</text>
-              </g>
-            </g>
-
-            </g>
-          </svg>
-
-        </div>
-
+    <!-- ── Media ── -->
+    <aside class="cs__media">
+      <img class="cs__media-img"
+           src="assets/coming-soon-team.webp"
+           alt="Geoff Smith and Katrinna Smith-Dobrowsky, Burlington and Hamilton REALTORS"
+           width="1400" height="788"
+           fetchpriority="high" decoding="async" />
+      <div class="cs__caption">
+        <span class="cs__caption-rule" aria-hidden="true"></span>
+        <span class="cs__caption-name">Geoff &amp; Katrinna Smith-Dobrowsky</span>
+        <span class="cs__caption-meta">Burlington &amp; Hamilton REALTORS<sup>&reg;</sup></span>
       </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         TRUST DIVIDER
-    ══════════════════════════════════════ -->
-    <div class="td-section">
-      <p class="td-heading td-heading--editorial-reveal reveal">Local context<br><em>changes everything.</em></p>
-    </div>
-
-    <!-- ══════════════════════════════════════
-         BUYERS FEATURE
-    ══════════════════════════════════════ -->
-    <section class="bf-section reveal" id="buyers" aria-label="Buying with The Smith Dobrowsky Team">
-      <div class="bf-text">
-        <p class="bf-eyebrow editorial-eyebrow editorial-eyebrow--dark">For Buyers</p>
-        <h2 class="bf-heading editorial-heading">Find the right street<br><em>before the right house.</em></h2>
-        <a class="bf-cta editorial-cta text-link text-link--arrow text-link--dark" href="buyers.html">Explore Buying <span aria-hidden="true">→</span></a>
-      </div>
-      <a class="bf-image" href="buyers.html" aria-label="Explore buying with The Smith Dobrowsky Team">
-        <img src="assets/buyers-smith-dobrowsky.webp" alt="" loading="lazy">
-      </a>
-    </section>
-
-    <div class="ef-gap" aria-hidden="true"></div>
-
-    <!-- ══════════════════════════════════════
-         SELLERS FEATURE
-    ══════════════════════════════════════ -->
-    <section class="sf-section reveal" id="sellers" aria-label="Selling with The Smith Dobrowsky Team">
-      <div class="sf-text">
-        <p class="sf-eyebrow editorial-eyebrow editorial-eyebrow--light">For Sellers</p>
-        <h2 class="sf-heading editorial-heading">Protect your value<br><em>before you go to market.</em></h2>
-        <p class="sf-copy">Selling a home involves more than putting it on the market. Geoff and Katrinna provide thoughtful guidance on pricing, preparation, marketing, and negotiation so you can move forward with confidence.</p>
-        <a class="sf-cta editorial-cta text-link text-link--arrow text-link--light" href="sellers.html">Explore Selling <span aria-hidden="true">→</span></a>
-      </div>
-      <div class="sf-image" aria-hidden="true">
-        <img src="assets/sellers.webp" alt="" loading="lazy">
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         TESTIMONIAL TEASER
-    ══════════════════════════════════════ -->
-    <section class="ct-section" aria-labelledby="ct-heading">
-      <div class="ct-inner">
-
-        <header class="ct-header reveal">
-          <p class="ct-eyebrow editorial-eyebrow editorial-eyebrow--dark">CLIENT STORIES</p>
-          <h2 class="ct-heading editorial-heading" id="ct-heading">In their words.</h2>
-        </header>
-
-        <div class="ct-carousel reveal" data-client-stories aria-live="polite">
-          <blockquote class="ct-quote ct-slide is-active" data-client-story aria-hidden="false">
-            <p class="ct-quote__text">"Geoff showed us a home we wouldn&rsquo;t have considered &mdash; and it ended up being the one."</p>
-            <footer class="ct-quote__footer">
-              <span class="ct-quote__name">NATHAN SMALL</span>
-              <span class="ct-quote__meta">First-Time Buyer &middot; Burlington</span>
-            </footer>
-          </blockquote>
-
-          <blockquote class="ct-quote ct-slide" data-client-story aria-hidden="true">
-            <p class="ct-quote__text">"Being relatively new to the country, we felt overwhelmed at times &mdash; but you made the process seem very easy."</p>
-            <footer class="ct-quote__footer">
-              <span class="ct-quote__name">GEORGE ARRENDONDO &amp; NANCY SANTANA</span>
-              <span class="ct-quote__meta">Buyers &middot; Hamilton</span>
-            </footer>
-          </blockquote>
-
-          <blockquote class="ct-quote ct-slide" data-client-story aria-hidden="true">
-            <p class="ct-quote__text">"When we were ready to give up, Geoff helped us keep moving forward."</p>
-            <footer class="ct-quote__footer">
-              <span class="ct-quote__name">DEREK MOORE &amp; ALICA DUSIL</span>
-              <span class="ct-quote__meta">Buyers &amp; Sellers &middot; Burlington</span>
-            </footer>
-          </blockquote>
-        </div>
-
-        <div class="ct-controls reveal" role="tablist" aria-label="Client story slides">
-          <button class="ct-control is-active" type="button" role="tab" aria-label="Show Nathan Small client story" aria-selected="true" data-client-story-control="0"></button>
-          <button class="ct-control" type="button" role="tab" aria-label="Show George Arrendondo and Nancy Santana client story" aria-selected="false" data-client-story-control="1"></button>
-          <button class="ct-control" type="button" role="tab" aria-label="Show Derek Moore and Alica Dusil client story" aria-selected="false" data-client-story-control="2"></button>
-        </div>
-
-        <div class="ct-more reveal">
-          <a class="ct-more__link editorial-cta text-link text-link--arrow text-link--dark" href="contact.html">Talk with the team <span aria-hidden="true">→</span></a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         CLOSING CTA
-    ══════════════════════════════════════ -->
-    <section class="closing-cta reveal" aria-label="Start with a conversation">
-      <div class="closing-cta__inner">
-
-        <div class="closing-cta__left">
-          <p class="closing-cta__eyebrow editorial-eyebrow editorial-eyebrow--light">When The Time Feels Right</p>
-          <h2 class="closing-cta__heading editorial-heading">Start with a<br><em>conversation.</em></h2>
-          <p class="closing-cta__trust">Helping people understand their options before making a move.</p>
-          <a href="contact.html" class="closing-cta__link btn btn--outline btn--light">Talk With the Team <span aria-hidden="true">→</span></a>
-        </div>
-
-        <div class="closing-cta__media" aria-hidden="true">
-          <img class="closing-cta__photo"
-               src="assets/Burlington-Pier-Real-Estate.webp"
-               alt=""
-               loading="lazy"
-               decoding="async">
-        </div>
-
-      </div>
-    </section>
+    </aside>
 
   </main>
 
   <!-- ── Footer ── -->
-  <footer class="footer">
+  <footer class="cs-footer">
 
-    <!-- Main bar: brand · nav · contact -->
-    <div class="footer__bar">
+    <div class="cs-footer__bar">
+      <img class="cs-footer__logo"
+           src="assets/logo-transparent-header.png"
+           alt="The Smith Dobrowsky Team"
+           width="188" height="46" loading="lazy" />
 
-      <a href="index.html" class="footer__brand" aria-label="The Smith Dobrowsky Team — Home">
-        <img src="assets/logo-transparent-header.png"
-             alt="The Smith Dobrowsky Team"
-             class="footer__logo-img"
-             loading="lazy">
-      </a>
-
-      <nav class="footer__nav" aria-label="Footer navigation">
-        <a href="listings.html" class="footer__nav-link">Listings</a>
-        <a href="buyers.html" class="footer__nav-link">Buyers</a>
-        <a href="sellers.html" class="footer__nav-link">Sellers</a>
-        <a href="local-insight.html" class="footer__nav-link">Local Insight</a>
-        <a href="contact.html" class="footer__nav-link">Contact</a>
-      </nav>
-
-      <div class="footer__contact">
-        <span class="footer__contact-label">Call or text</span>
-        <a href="tel:9056393355" class="footer__contact-phone">905.639.3355</a>
-        <a href="https://www.instagram.com/smith_dobrowsky_team/"
-           class="footer__instagram"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Smith Dobrowsky Team on Instagram">
-          <svg class="footer__instagram-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <div class="cs-footer__contact">
+        <a class="cs-footer__link" href="tel:9056393355">905.639.3355</a>
+        <span class="cs-footer__sep" aria-hidden="true">&middot;</span>
+        <a class="cs-footer__link" href="mailto:info@smithdobrowsky.ca">info@smithdobrowsky.ca</a>
+        <span class="cs-footer__sep" aria-hidden="true">&middot;</span>
+        <a class="cs-footer__link cs-footer__ig"
+           href="https://www.instagram.com/smith_dobrowsky_team/"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="The Smith Dobrowsky Team on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
             <circle cx="12" cy="12" r="4"/>
             <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
@@ -522,325 +562,29 @@
           @smith_dobrowsky_team
         </a>
       </div>
-
     </div>
 
-    <!-- Brokerage affiliation + legal -->
-    <div class="footer__brokerage-bar">
-      <div class="footer__brokerage-affiliation">
-        <img src="assets/coldwell-banker-burnhill-realty-brokerage.png"
+    <div class="cs-footer__brokerage">
+      <div class="cs-footer__aff">
+        <img class="cs-footer__cb-logo"
+             src="assets/coldwell-banker-burnhill-realty-brokerage.png"
              alt="Coldwell Banker Burnhill Realty, Brokerage"
-             class="footer__cb-logo">
-        <div class="footer__brokerage-copy">
-          <span class="footer__brokerage-name">Coldwell Banker Burnhill Realty, Brokerage</span>
-          <span class="footer__brokerage-address">514 Guelph Line · Burlington, ON L7R 3M4</span>
+             width="44" height="44" loading="lazy" />
+        <div class="cs-footer__aff-copy">
+          <span class="cs-footer__aff-name">Coldwell Banker Burnhill Realty, Brokerage</span>
+          <span class="cs-footer__aff-addr">514 Guelph Line &middot; Burlington, ON L7R 3M4</span>
         </div>
       </div>
-      <div class="footer__legal-bar">
-        <span class="footer__legal">© 2026 · Ontario, Canada</span>
-        <span class="footer__legal">MLS® · REALTORS® · <a href="#" class="footer__legal-link">Privacy Policy</a></span>
+      <div class="cs-footer__legal">
+        <span>&copy; 2026 The Smith Dobrowsky Team</span>
+        <span>&middot;</span>
+        <span>Ontario, Canada</span>
+        <span>&middot;</span>
+        <span>MLS<sup>&reg;</sup> &middot; REALTORS<sup>&reg;</sup></span>
       </div>
     </div>
 
   </footer>
 
-  <script src="js/main.js"></script>
-  <script>
-    (() => {
-      const carousel = document.querySelector('[data-client-stories]');
-      if (!carousel) return;
-
-      const slides = Array.from(carousel.querySelectorAll('[data-client-story]'));
-      const controls = Array.from(document.querySelectorAll('[data-client-story-control]'));
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const section = carousel.closest('.ct-section');
-      let activeIndex = slides.findIndex((slide) => slide.classList.contains('is-active'));
-      let timer = null;
-
-      if (activeIndex < 0) activeIndex = 0;
-
-      const showSlide = (index) => {
-        activeIndex = (index + slides.length) % slides.length;
-        slides.forEach((slide, slideIndex) => {
-          const isActive = slideIndex === activeIndex;
-          slide.classList.toggle('is-active', isActive);
-          slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
-        });
-        controls.forEach((control, controlIndex) => {
-          const isActive = controlIndex === activeIndex;
-          control.classList.toggle('is-active', isActive);
-          control.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        });
-      };
-
-      const stop = () => {
-        if (timer) window.clearInterval(timer);
-        timer = null;
-      };
-
-      const start = () => {
-        if (prefersReducedMotion || timer || slides.length < 2) return;
-        timer = window.setInterval(() => showSlide(activeIndex + 1), 8500);
-      };
-
-      controls.forEach((control, index) => {
-        control.addEventListener('click', () => {
-          stop();
-          showSlide(index);
-        });
-        control.addEventListener('focus', stop);
-      });
-
-      if (section) {
-        section.addEventListener('mouseenter', stop);
-        section.addEventListener('mouseleave', start);
-        section.addEventListener('focusin', stop);
-      }
-
-      showSlide(activeIndex);
-      start();
-    })();
-  </script>
-  <script>
-    (() => {
-      const mediaWrap = document.querySelector('.hero__video-wrap');
-      if (!mediaWrap) return;
-
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // ── Slide sequence: region → perspective → community → property → neighbourhood → timing
-      const heroMedia = [
-        {
-          src: 'assets/geoff-smith-burlington-hamilton-local-neighbourhood-expert-hero.webp',
-          alt: 'Morning light over the Burlington and Hamilton waterfront',
-          position: '62% 38%',
-          kicker: 'Established Roots',
-          caption: 'Burlington · Hamilton Region',
-          kb: { fromScale: 1.03, fromX: '-0.4%', fromY: '0.2%', toScale: 1.065, toX: '0.3%', toY: '-0.2%' }
-        },
-        {
-          src: 'assets/Halton-Escarpment-Real-Estate.png',
-          alt: 'Golden hour light over the Niagara Escarpment, trails and open sky above Burlington',
-          position: '50% 36%',
-          kicker: 'Regional Perspective',
-          caption: 'Escarpment views. Local context.',
-          kb: { fromScale: 1.03, fromX: '0.2%', fromY: '0.4%', toScale: 1.07, toX: '-0.2%', toY: '-0.2%' }
-        },
-        {
-          src: 'assets/GettyImages-2248448116.jpg',
-          alt: 'Downtown café and tree-lined street at golden hour',
-          position: '56% 44%',
-          kicker: 'Community Rhythm',
-          caption: 'Where daily life happens.',
-          kb: { fromScale: 1.03, fromX: '0.3%', fromY: '0.1%', toScale: 1.065, toX: '-0.2%', toY: '-0.1%' }
-        },
-        {
-          src: 'assets/GettyImages-1388101414.jpg',
-          alt: 'Refined home interior with natural light and architectural detail',
-          position: '54% 46%',
-          kicker: 'Property Detail',
-          caption: 'Small signals shape value.',
-          kb: { fromScale: 1.03, fromX: '-0.2%', fromY: '0.2%', toScale: 1.06, toX: '0.2%', toY: '-0.2%' }
-        },
-        {
-          src: 'assets/GettyImages-2162730763.jpg',
-          alt: 'Quiet established neighbourhood street beneath mature trees',
-          position: '52% 46%',
-          kicker: 'Neighbourhood Feel',
-          caption: 'The streets tell the story.',
-          kb: { fromScale: 1.03, fromX: '0.4%', fromY: '0.1%', toScale: 1.065, toX: '-0.3%', toY: '-0.1%' }
-        },
-        {
-          src: 'assets/GettyImages-2161701333.jpg',
-          alt: 'Warm evening glow across a neighbourhood street at sunset',
-          position: '50% 42%',
-          kicker: 'Local Timing',
-          caption: 'Observed over time.',
-          kb: { fromScale: 1.03, fromX: '0.2%', fromY: '0.3%', toScale: 1.065, toX: '-0.2%', toY: '-0.2%' }
-        }
-      ];
-
-      const locationLabel = mediaWrap.querySelector('.hero__location-label');
-      const locationKicker = locationLabel?.querySelector('.hero__location-kicker');
-      const locationName = locationLabel?.querySelector('.hero__location-name');
-
-      const updateLocationLabel = (index) => {
-        if (!locationLabel || !locationKicker || !locationName) return;
-        locationLabel.classList.remove('is-visible');
-        window.setTimeout(() => {
-          const item = heroMedia[index] || {};
-          locationKicker.textContent = item.kicker || 'Local Lens';
-          locationName.textContent = item.caption || 'Burlington & Hamilton';
-          locationLabel.classList.add('is-visible');
-        }, prefersReducedMotion ? 0 : 200);
-      };
-
-      // Clear old elements
-      mediaWrap.querySelectorAll('.hero__video, .hero__media-slide').forEach((node) => node.remove());
-
-      // Build slide elements
-      const slides = heroMedia.map((item, index) => {
-        const el = document.createElement('img');
-        el.className = 'hero__media-slide hero__media-slide--image';
-        el.style.setProperty('--hero-media-position', item.position || 'center center');
-
-        // Per-slide Ken Burns — distinct motion per image
-        if (!prefersReducedMotion && item.kb) {
-          el.style.setProperty('--kb-from-scale', item.kb.fromScale);
-          el.style.setProperty('--kb-from-x',     item.kb.fromX);
-          el.style.setProperty('--kb-from-y',     item.kb.fromY);
-          el.style.setProperty('--kb-to-scale',   item.kb.toScale);
-          el.style.setProperty('--kb-to-x',       item.kb.toX);
-          el.style.setProperty('--kb-to-y',       item.kb.toY);
-        }
-
-        el.src = item.src;
-        el.alt = item.alt || '';
-        el.decoding = 'async';
-        el.loading = index === 0 ? 'eager' : 'lazy';
-        el.fetchPriority = index === 0 ? 'high' : 'auto';
-
-        mediaWrap.insertBefore(el, locationLabel || mediaWrap.firstChild);
-        return el;
-      });
-
-      // Progress indicator
-      const progressTracks = Array.from(document.querySelectorAll('.hero__progress-track'));
-      const slideDuration = 7200;
-
-      function activateProgress(index) {
-        progressTracks.forEach((track, i) => {
-          const fill = track.querySelector('.hero__progress-fill');
-          if (!fill) return;
-          if (i === index) {
-            fill.style.transition = 'none';
-            fill.style.transform = 'scaleX(0)';
-            fill.offsetWidth; // force reflow so reset lands before animation
-            fill.style.transition = `transform ${slideDuration}ms linear`;
-            fill.style.transform = 'scaleX(1)';
-          } else {
-            fill.style.transition = 'none';
-            fill.style.transform = 'scaleX(0)';
-          }
-        });
-      }
-
-      let activeIndex = 0;
-
-      function showSlide(index, firstFrame) {
-        activeIndex = index;
-        slides.forEach((slide, i) => {
-          slide.classList.toggle('is-active', i === index);
-          slide.classList.toggle('hero__media-slide--first-frame', !!firstFrame && i === index);
-        });
-        updateLocationLabel(index);
-        if (!prefersReducedMotion) activateProgress(index);
-      }
-
-      showSlide(0, true);
-
-      // Lift the fast-entry class once the initial fade-in is done
-      if (!prefersReducedMotion) {
-        window.setTimeout(() => slides[0]?.classList.remove('hero__media-slide--first-frame'), 1500);
-      }
-
-      if (prefersReducedMotion || slides.length < 2) return;
-
-      window.setInterval(() => {
-        activeIndex = (activeIndex + 1) % slides.length;
-        showSlide(activeIndex, false);
-      }, slideDuration);
-    })();
-  </script>
-<script>
-(() => {
-  const teamImage = document.querySelector('img[alt="Geoff and Katrinna Smith Dobrowsky — Burlington & Hamilton Realtors"]');
-  const teamHeading = Array.from(document.querySelectorAll('h2')).find((heading) =>
-    /meet\s+geoff\s*&\s*katrinna/i.test(heading.textContent || '')
-  );
-
-  if (!teamImage || !teamHeading) return;
-
-  const imageAncestors = [];
-  for (let node = teamImage.parentElement; node && node !== document.body; node = node.parentElement) {
-    imageAncestors.push(node);
-  }
-
-  let sectionRoot = null;
-  for (let node = teamHeading.parentElement; node && node !== document.body; node = node.parentElement) {
-    if (imageAncestors.includes(node)) {
-      sectionRoot = node;
-      break;
-    }
-  }
-
-  if (!sectionRoot) return;
-
-  const mediaWrap = teamImage.closest('picture, figure, div') || teamImage.parentElement;
-  const contentWrap = teamHeading.closest('div') || teamHeading.parentElement;
-
-  sectionRoot.classList.add('meet-editorial');
-  mediaWrap?.classList.add('meet-editorial__media');
-  contentWrap?.classList.add('meet-editorial__content');
-  teamImage.classList.add('meet-editorial__image');
-
-  if (
-    mediaWrap &&
-    !mediaWrap.querySelector('.meet-editorial__duo') &&
-    !teamImage.getAttribute('src')?.includes('meet-geoff-katrinna-composite')
-  ) {
-    const duo = document.createElement('div');
-    duo.className = 'meet-editorial__duo';
-    duo.setAttribute('aria-hidden', 'true');
-
-    const geoff = document.createElement('img');
-    geoff.className = 'meet-editorial__person meet-editorial__person--geoff';
-    geoff.src = 'assets/A28U9908jj.png';
-    geoff.alt = '';
-    geoff.loading = 'lazy';
-
-    const katrinna = document.createElement('img');
-    katrinna.className = 'meet-editorial__person meet-editorial__person--katrinna';
-    katrinna.src = 'assets/A28U9895jjf.png';
-    katrinna.alt = '';
-    katrinna.loading = 'lazy';
-
-    duo.append(geoff, katrinna);
-    mediaWrap.append(duo);
-    teamImage.style.display = 'none';
-  }
-})();
-</script>
-
-<script src="js/community-map.js"></script>
-
-<script>
-/* ── Preloader cleanup ────────────────────────────────────────
-   Remove the preloader from the render tree once the CSS exit
-   animation finishes (1.35s delay + 0.2s duration = 1.55s).
-   pointer-events:none on #sd-preloader already blocks zero
-   interaction, but display:none ensures it is fully gone.
-   A fallback timeout guards against animationend not firing
-   (e.g. tab hidden, some mobile browsers).
-──────────────────────────────────────────────────────────────── */
-(function () {
-  'use strict';
-  var el = document.getElementById('sd-preloader');
-  if (!el) return;
-
-  function hide() { el.style.display = 'none'; }
-
-  /* Primary: listen for the named exit animation */
-  el.addEventListener('animationend', function handler(e) {
-    if (e.animationName === 'sd-exit') {
-      hide();
-      el.removeEventListener('animationend', handler);
-    }
-  });
-
-  /* Fallback: force-hide 400ms after the animation should be done */
-  setTimeout(hide, 1950);
-}());
-</script>
 </body>
 </html>
