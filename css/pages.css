@@ -1165,20 +1165,21 @@
 
 /* Top padding only — section bleeds into the dark footer */
 .closing-cta {
-  padding: clamp(52px, 5vw, 80px) 0 0;
+  padding: 0;
 }
 
-/* Override inner: remove horizontal padding, zero gap, full stretch */
 .closing-cta__inner {
-  max-width: 1280px;
+  max-width: none;
   padding: 0;
+  grid-template-columns: 1fr 1fr;
   gap: 0;
   align-items: stretch;
 }
 
-/* Left text panel: horizontal padding only — matches homepage */
 .closing-cta__left {
-  padding: 0 clamp(44px, 5vw, 80px) clamp(48px, 6vw, 80px);
+  width: min(100%, 720px);
+  justify-self: end;
+  padding: clamp(92px, 8.4vw, 136px) clamp(40px, 4.8vw, 72px) clamp(92px, 8.4vw, 136px) var(--section-pad-x);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1207,15 +1208,16 @@
 .closing-cta__media {
   position: relative;
   overflow: hidden;
-  padding-top: clamp(28px, 2.8vw, 42px);
-  padding-right: clamp(36px, 3.6vw, 52px);
+  min-height: clamp(620px, 54vw, 820px);
+  background: #050506;
+  box-shadow: inset 1px 0 0 rgba(202, 164, 83, 0.28);
 }
 
 .closing-cta__photo {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: clamp(320px, 34vw, 460px);
+  min-height: inherit;
   object-fit: cover;
   object-position: center 35%;
 }
@@ -1256,6 +1258,8 @@
   }
 
   .closing-cta__left {
+    width: 100%;
+    justify-self: stretch;
     padding: 0 clamp(24px, 5vw, 40px) clamp(36px, 6vw, 48px);
     justify-content: flex-start;
   }
@@ -1265,6 +1269,7 @@
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
+    min-height: 0;
     padding: 0;
   }
 
@@ -4998,18 +5003,25 @@
 /* ── 1. PRIMARY CONTACT ──────────────────────────────────────── */
 
 .ct-primary {
-  padding: var(--section-pad-y) 0;
+  padding: 0;
   background: var(--surface-light);
 }
 
 .ct-primary__inner {
-  max-width: 1280px;
+  max-width: none;
   margin: 0 auto;
-  padding: 0 var(--section-pad-x);
+  padding: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(56px, 7vw, 112px);
-  align-items: center;
+  gap: 0;
+  align-items: stretch;
+}
+
+.ct-primary__info {
+  width: min(100%, 720px);
+  justify-self: end;
+  align-self: center;
+  padding: clamp(92px, 8.4vw, 136px) clamp(40px, 4.8vw, 72px) clamp(92px, 8.4vw, 136px) var(--section-pad-x);
 }
 
 .ct-primary__eyebrow {
@@ -5103,16 +5115,18 @@
 .ct-primary__media {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 3 / 4;
-  max-height: 600px;
-  align-self: center;
+  min-height: clamp(620px, 54vw, 820px);
+  align-self: stretch;
+  background: #050506;
+  box-shadow: inset 1px 0 0 rgba(202, 164, 83, 0.28);
 }
 
 .ct-primary__media img {
   width: 100%;
   height: 100%;
+  min-height: inherit;
   object-fit: cover;
-  object-position: center top;
+  object-position: 58% 15%;
   display: block;
 }
 
@@ -5364,50 +5378,77 @@
 /* ── 4. CLOSING CTA ─────────────────────────────────────────── */
 
 .ct-closing {
-  padding: var(--section-pad-y) 0;
-  background: var(--surface-dark);
+  padding: clamp(112px, 11vw, 168px) 0 clamp(104px, 10vw, 152px);
+  background:
+    linear-gradient(180deg, rgba(8, 15, 28, 0.98), rgba(5, 9, 15, 1)),
+    var(--surface-dark);
 }
 
 .ct-closing__inner {
-  max-width: 880px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 0 var(--section-pad-x);
+  text-align: center;
 }
 
 .ct-closing__eyebrow {
-  margin-bottom: clamp(20px, 2.6vw, 32px);
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: clamp(22px, 2.8vw, 34px);
+  color: rgba(238, 235, 228, 0.58);
+}
+
+.ct-closing__eyebrow::before,
+.ct-closing__eyebrow::after {
+  content: "";
+  width: clamp(28px, 4vw, 54px);
+  height: 1px;
+  background: rgba(180, 148, 72, 0.42);
 }
 
 .ct-closing__heading {
   color: var(--text-inverse);
-  margin-bottom: clamp(18px, 2.2vw, 28px);
+  max-width: 10.5em;
+  margin: 0 auto clamp(26px, 3vw, 40px);
+  font-size: clamp(3.1rem, 5.2vw, 6.4rem);
+  line-height: 0.94;
+  letter-spacing: -0.018em;
+  text-wrap: balance;
 }
 
 .ct-closing .editorial-heading em {
-  color: rgba(238, 235, 228, 0.52);
+  color: rgba(238, 235, 228, 0.5);
+  font-weight: 400;
 }
 
 .ct-closing__body {
   font-family: var(--font-sans);
-  font-size: clamp(1rem, 1.06vw, 1.14rem);
+  font-size: clamp(1rem, 1.08vw, 1.16rem);
   font-weight: var(--weight-body);
-  line-height: 1.78;
-  color: var(--text-inverse-secondary);
-  max-width: 52ch;
-  margin: 0 0 clamp(32px, 4vw, 48px);
+  line-height: 1.74;
+  color: rgba(238, 235, 228, 0.68);
+  max-width: 42ch;
+  margin: 0 auto clamp(34px, 4.4vw, 56px);
+  text-wrap: balance;
 }
 
 .ct-closing__contacts {
   display: flex;
   align-items: baseline;
-  gap: 14px;
+  justify-content: center;
+  gap: clamp(13px, 1.4vw, 18px);
   flex-wrap: wrap;
-  margin-bottom: clamp(28px, 3.4vw, 42px);
+  max-width: 620px;
+  margin: 0 auto clamp(34px, 4vw, 52px);
+  padding: clamp(18px, 2vw, 24px) 0;
+  border-top: 1px solid rgba(238, 235, 228, 0.14);
+  border-bottom: 1px solid rgba(238, 235, 228, 0.14);
 }
 
 .ct-closing__phone {
   font-family: var(--font-serif);
-  font-size: clamp(1.6rem, 2.4vw, 2.6rem);
+  font-size: clamp(1.72rem, 2.2vw, 2.5rem);
   font-weight: 500;
   letter-spacing: -0.015em;
   color: var(--text-inverse);
@@ -5429,9 +5470,9 @@
 
 .ct-closing__email {
   font-family: var(--font-sans);
-  font-size: clamp(0.88rem, 1vw, 0.98rem);
+  font-size: clamp(0.88rem, 0.95vw, 0.98rem);
   font-weight: 400;
-  color: var(--text-inverse-muted);
+  color: rgba(238, 235, 228, 0.62);
   text-decoration: none;
   transition: color 0.22s ease;
 }
@@ -5444,20 +5485,20 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: clamp(18px, 2.2vw, 26px);
+  margin-bottom: 0;
   font-size: 10.5px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
 }
 
 .ct-closing__trust {
   font-family: var(--font-sans);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-inverse-muted);
-  margin: clamp(32px, 3.6vw, 48px) 0 0;
-  max-width: 58ch;
+  color: rgba(238, 235, 228, 0.42);
+  margin: clamp(24px, 2.8vw, 36px) auto 0;
+  max-width: 48ch;
   text-wrap: balance;
 }
 
@@ -5471,7 +5512,22 @@
     gap: clamp(44px, 7vw, 64px);
   }
 
+  .ct-primary {
+    padding: var(--section-pad-y) 0;
+  }
+
+  .ct-primary__inner {
+    padding: 0 var(--section-pad-x);
+  }
+
+  .ct-primary__info {
+    width: 100%;
+    justify-self: stretch;
+    padding: 0;
+  }
+
   .ct-primary__media {
+    min-height: 0;
     max-height: 420px;
     aspect-ratio: 16 / 9;
     order: -1;
@@ -5494,12 +5550,31 @@
 
   .ct-closing__contacts {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0;
   }
 
   .ct-closing__sep {
     display: none;
+  }
+
+  .ct-closing {
+    padding: clamp(76px, 20vw, 104px) 0 clamp(72px, 18vw, 96px);
+  }
+
+  .ct-closing__heading {
+    font-size: clamp(2.42rem, 12.2vw, 3.55rem);
+    line-height: 0.98;
+  }
+
+  .ct-closing__body {
+    line-height: 1.66;
+  }
+
+  .ct-closing__eyebrow::before,
+  .ct-closing__eyebrow::after {
+    width: 28px;
   }
 
   .ct-reasons__item {
