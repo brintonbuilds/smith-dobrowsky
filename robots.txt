@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brintonbuilds.github.io/smith-dobrowsky/sitemap.xml

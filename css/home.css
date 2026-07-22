@@ -4763,6 +4763,15 @@ body.home-page .meet-editorial a.meet-team__cta {
   }
 }
 
+/* Accessibility contrast refinements for small editorial and legal text. */
+body.home-page .meet-editorial .meet-team__eyebrow {
+  color: #646b75 !important;
+}
+
+body.home-page .footer__legal {
+  color: rgba(244, 241, 234, 0.60) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cm-pin__bracket,
   .cm-pin__label,
@@ -15911,4 +15920,13 @@ body.home-page .cm-service-area {
     gap: clamp(24px, 8vw, 34px) !important;
     margin-top: 18px !important;
   }
+}
+
+/* Keep small editorial and legal text above WCAG AA contrast thresholds. */
+body.home-page .meet-editorial .meet-team__eyebrow {
+  color: #646b75 !important;
+}
+
+body.home-page .footer__legal {
+  color: rgba(244, 241, 234, 0.60) !important;
 }

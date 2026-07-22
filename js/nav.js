@@ -1,39 +1,10 @@
 /* ============================================================
-   Smith Dobrowsky — Shared Navigation Component
-   Include as first child of <body> on every page.
+   Smith Dobrowsky — Shared Navigation Behaviour
+   Navigation markup lives in each page so links remain crawlable.
    ============================================================ */
 
 (function () {
-
-  /* ── 1. Inject nav HTML synchronously at parse time ── */
-  document.write([
-    '<nav class="nav nav--inverse" id="main-nav" role="navigation" aria-label="Main navigation">',
-      '<a href="index.html" class="nav__logo" aria-label="The Smith Dobrowsky Team — Home">',
-        '<img class="nav__logo-img" src="assets/logo-transparent-header.png" alt="The Smith Dobrowsky Team" width="212" height="42">',
-      '</a>',
-      '<ul class="nav__links" role="list">',
-        '<li><a href="listings.html" class="nav__link">Listings</a></li>',
-        '<li><a href="buyers.html" class="nav__link">Buyers</a></li>',
-        '<li><a href="sellers.html" class="nav__link">Sellers</a></li>',
-        '<li><a href="local-insight.html" class="nav__link">Local Insight</a></li>',
-        '<li><a href="contact.html" class="nav__link">Contact</a></li>',
-      '</ul>',
-      '<a href="tel:9056393355" class="nav__cta--phone" aria-label="Call The Smith Dobrowsky Team at 905-639-3355">905.639.3355</a>',
-      '<button class="nav__toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">',
-        '<span></span><span></span><span></span>',
-      '</button>',
-    '</nav>',
-    '<div class="nav__mobile-menu" id="nav-mobile-menu" aria-label="Navigation menu" aria-hidden="true">',
-      '<a href="listings.html">Listings</a>',
-      '<a href="buyers.html">Buyers</a>',
-      '<a href="sellers.html">Sellers</a>',
-      '<a href="local-insight.html">Local Insight</a>',
-      '<a href="contact.html">Contact</a>',
-      '<a href="tel:9056393355" class="nav__mobile-phone">905.639.3355</a>',
-    '</div>'
-  ].join(''));
-
-  /* ── 2. Wire behaviour after DOM is ready — run exactly once ── */
+  /* Wire behaviour after DOM is ready — run exactly once. */
   function initNav() {
     var toggle = document.getElementById('nav-toggle');
     if (!toggle || toggle.dataset.navInit) return; /* guard against double-init */
@@ -44,10 +15,11 @@
 
     /* ── Active link — match filename ── */
     var current = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav__link').forEach(function (link) {
+    document.querySelectorAll('.nav__link, .nav__mobile-menu a[href]').forEach(function (link) {
       var href = link.getAttribute('href') || '';
       if (href === current || (current === '' && href === 'index.html')) {
         link.classList.add('is-active');
+        link.setAttribute('aria-current', 'page');
       }
     });
 

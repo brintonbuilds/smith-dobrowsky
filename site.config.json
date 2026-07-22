@@ -1,0 +1,16 @@
+{
+  "siteName": "The Smith Dobrowsky Team",
+  "publicBaseUrl": "https://brintonbuilds.github.io/smith-dobrowsky",
+  "domainStatus": "temporary-github-pages-preview",
+  "finalProductionDomainConfirmed": false,
+  "language": "en-CA",
+  "errorPages": ["404.html"],
+  "publicPages": [
+    { "file": "index.html", "path": "/", "lastmod": "2026-07-21" },
+    { "file": "listings.html", "path": "/listings.html", "lastmod": "2026-07-21" },
+    { "file": "buyers.html", "path": "/buyers.html", "lastmod": "2026-07-21" },
+    { "file": "sellers.html", "path": "/sellers.html", "lastmod": "2026-07-21" },
+    { "file": "local-insight.html", "path": "/local-insight.html", "lastmod": "2026-07-21" },
+    { "file": "contact.html", "path": "/contact.html", "lastmod": "2026-07-21" }
+  ]
+}
