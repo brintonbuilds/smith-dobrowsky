@@ -32,7 +32,15 @@
     markerLayer.dataset.mapReady = 'true';
     markerLayer.innerHTML = '';
 
-    Object.keys(communities).forEach(function (key) {
+    var allowedCommunities = (markerLayer.getAttribute('data-communities') || '')
+      .split(',')
+      .map(function (key) { return key.trim(); })
+      .filter(Boolean);
+    var communityKeys = Object.keys(communities).filter(function (key) {
+      return allowedCommunities.length === 0 || allowedCommunities.indexOf(key) !== -1;
+    });
+
+    communityKeys.forEach(function (key) {
       var community = communities[key];
       var marker = document.createElement('button');
 

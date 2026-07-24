@@ -4799,7 +4799,9 @@ button,
 .nav,
 .nav__link,
 .nav__cta,
+.nav__contact,
 .nav__cta--phone,
+.nav__cta--email,
 .nav__mobile-menu,
 .announce-bar,
 .btn,
@@ -6551,13 +6553,24 @@ body.home-page .btn-navy {
   text-transform: none !important;
 }
 
-body.home-page .nav__cta--phone {
+body.home-page .nav__cta--phone,
+body.home-page .nav.nav--scrolled .nav__cta--phone {
   font-family: var(--font-sans) !important;
-  font-size: var(--type-cta) !important;
-  font-weight: var(--weight-cta) !important;
-  letter-spacing: var(--tracking-cta) !important;
-  line-height: 1 !important;
-  text-transform: uppercase !important;
+  font-size: 0.92rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1.05 !important;
+  text-transform: none !important;
+}
+
+body.home-page .nav__cta--email,
+body.home-page .nav.nav--scrolled .nav__cta--email {
+  font-family: var(--font-sans) !important;
+  font-size: 0.72rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1.05 !important;
+  text-transform: none !important;
 }
 
 body.home-page .hero__cta-link--primary {
@@ -9896,11 +9909,21 @@ body.home-page .cm-insight__link {
     body.home-page .nav__cta--phone,
     body.home-page .nav.nav--scrolled .nav__cta--phone {
       font-family: var(--font-sans) !important;
-      font-size: var(--type-cta) !important;
-      font-weight: var(--weight-cta) !important;
-      letter-spacing: var(--tracking-cta) !important;
-      line-height: 1 !important;
-      text-transform: uppercase !important;
+      font-size: 0.92rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.01em !important;
+      line-height: 1.05 !important;
+      text-transform: none !important;
+    }
+
+    body.home-page .nav__cta--email,
+    body.home-page .nav.nav--scrolled .nav__cta--email {
+      font-family: var(--font-sans) !important;
+      font-size: 0.72rem !important;
+      font-weight: 400 !important;
+      letter-spacing: 0.01em !important;
+      line-height: 1.05 !important;
+      text-transform: none !important;
     }
 
     body.home-page .hero__cta-link--primary {
@@ -14668,6 +14691,19 @@ body.home-page .cm-insight__link {
       color: var(--text-primary) !important;
     }
 
+    body.home-page .td-copy {
+      max-width: 640px !important;
+      margin: clamp(18px, 2vw, 26px) auto 0 !important;
+      font-family: var(--font-sans) !important;
+      font-size: clamp(0.98rem, 1vw, 1.08rem) !important;
+      font-weight: var(--weight-body) !important;
+      line-height: 1.72 !important;
+      letter-spacing: 0 !important;
+      color: rgba(40, 50, 67, 0.68) !important;
+      text-align: center !important;
+      text-wrap: balance !important;
+    }
+
     body.home-page .td-heading em,
     body.home-page .cm-heading em {
       color: rgba(40, 56, 84, 0.7) !important;
@@ -15929,4 +15965,18 @@ body.home-page .meet-editorial .meet-team__eyebrow {
 
 body.home-page .footer__legal {
   color: rgba(244, 241, 234, 0.60) !important;
+}
+
+@media (max-width: 1100px) {
+  body.home-page .nav__cta--phone,
+  body.home-page .nav.nav--scrolled .nav__cta--phone {
+    font-size: 0.82rem !important;
+    letter-spacing: 0 !important;
+  }
+
+  body.home-page .nav__cta--email,
+  body.home-page .nav.nav--scrolled .nav__cta--email {
+    font-size: 0.66rem !important;
+    letter-spacing: 0 !important;
+  }
 }
