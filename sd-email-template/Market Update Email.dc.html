@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<style>
+  body{margin:0;background:#e8e5e0}
+  a{color:#2f5641}
+  a:hover{color:#16202c}
+</style>
+</helmet>
+
+<section style="display:flex;flex-direction:column;gap:28px;padding:48px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:#e8e5e0">
+  <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
+    <div style="font-family:Georgia,'Times New Roman',serif;font-size:24px;color:#16202c">Monthly Market Update — reusable email template</div>
+    <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8d9298">Sample content: July 2026 issue · 640px content width</div>
+  </div>
+
+  <div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:nowrap;width:1560px">
+
+    <div id="1a" style="display:flex;gap:24px;align-items:flex-start">
+      <div style="width:212px;flex:0 0 212px;padding-top:6px">
+        <div style="display:inline-block;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;background:#16202c;color:#fff;padding:5px 11px;border-radius:999px;margin-bottom:18px">1a · Desktop</div>
+        <div style="font-size:12px;line-height:1.7;color:#4b5460">
+          <div style="font-weight:600;color:#16202c;margin-bottom:6px">What Geoff edits</div>
+          <div style="color:#6f767e;margin-bottom:14px">Sections appear in Mailchimp under these exact names.</div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div><div style="color:#16202c">Preview sentence</div><div style="font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:#8a5a2f;margin-top:3px">Replace this month</div></div>
+            <div><div style="color:#16202c">Branded header</div><div style="font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:#4b5460;margin-top:3px">Do not edit</div></div>
+            <div><div style="color:#16202c">Opening message</div><div style="font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:#8a5a2f;margin-top:3px">Replace this month</div></div>
+            <div><div style="color:#16202c">This month's key numbers</div><div style="font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:#8a5a2f;margin-top:3px">Replace this month</div></div>
+            <div><div style="color:#16202c">Burlington market update</div><div style="font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:#8a5a2f;margin-top:3px">Replace this month</div></div>
+            <div><div style="color:#16202c">Burlington infographic</div><div style="font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:#8a5a2f;margin-top:3px">Replace this month</div></div>
+            <div><div style="color:#16202c">Hamilton market update</div><div style="font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:#2f5641;margin-top:3px">Optional — hide if unused</div></div>
+            <div><div style="color:#16202c">Hamilton infographic</div><div style="font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:#2f5641;margin-top:3px">Optional — hide if unused</div></div>
+            <div><div style="color:#16202c">Geoff's perspective</div><div style="font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:#8a5a2f;margin-top:3px">Replace this month</div></div>
+            <div><div style="color:#16202c">Local insight</div><div style="font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:#2f5641;margin-top:3px">Optional — one paragraph</div></div>
+            <div><div style="color:#16202c">Contact Geoff</div><div style="font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:#4b5460;margin-top:3px">Do not edit</div></div>
+            <div><div style="color:#16202c">Permanent footer</div><div style="font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:#4b5460;margin-top:3px">Do not edit</div></div>
+          </div>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid #d8d2c6;color:#6f767e">Only text, numbers, links and images are editable. Spacing, type, colour and layout are locked into the template.</div>
+          <div style="margin-top:12px;color:#6f767e">The greeting fills in the reader's first name, and falls back to <span style="color:#16202c">Hello,</span> when there isn't one.</div>
+          <div style="margin-top:12px;color:#6f767e">Logo and headshot here are traced from screenshots — awaiting the original files.</div>
+        </div>
+      </div>
+      <div style="width:640px;flex:0 0 640px;box-shadow:0 18px 50px rgba(22,32,44,0.14)">
+        <dc-import name="SD Email Body" hint-size="640px,2600px"></dc-import>
+      </div>
+    </div>
+
+    <div id="1b" style="display:flex;gap:24px;align-items:flex-start;padding-top:6px">
+      <div style="width:375px;flex:0 0 375px;display:flex;flex-direction:column;gap:18px">
+        <div style="display:inline-block;align-self:flex-start;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;background:#16202c;color:#fff;padding:5px 11px;border-radius:999px">1b · Mobile · 375px</div>
+        <div style="box-shadow:0 18px 50px rgba(22,32,44,0.14)">
+          <dc-import name="SD Email Body" hint-size="375px,3800px"></dc-import>
+        </div>
+      </div>
+      <div style="width:196px;flex:0 0 196px;padding-top:44px;font-size:12px;line-height:1.7;color:#4b5460">
+        <div style="font-weight:600;color:#16202c;margin-bottom:10px">How it stacks</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div>Headshot moves above the greeting, full-width text below it.</div>
+          <div>Body copy rises to 17px / 1.75 line height on screens under 620px.</div>
+          <div>Snapshot stays a 2 × 2 grid — two stats per row, never four narrow columns.</div>
+          <div>Market KPIs hold three columns; values are short enough to fit 109px.</div>
+          <div>Each infographic is followed by a written summary and a link, so the section still works when the graphic is too small to read or images are switched off.</div>
+          <div>Buttons become full-width tap targets, 48px tall — same size and pill styling everywhere.</div>
+          <div>Footer columns stack; logos sit below the signature.</div>
+          <div style="color:#6f767e">Uppercase labels are 11–12px minimum at #6f767e on cream (4.6:1).</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+</body>
+</html>
