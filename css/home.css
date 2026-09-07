@@ -3669,12 +3669,17 @@ body.home-page .meet-editorial__media {
 }
 
 /*
-  Shift image right so Katrinna (right side of photo) stays fully visible.
-  82% horizontal pulls the view well right of centre.
-  15% vertical anchors near the top so both faces remain in frame.
+  Horizontal crop. In this photo Katrinna is on the LEFT (~32-55% of the
+  source) and Geoff on the RIGHT (~54-78%); the pair centres on ~55%.
+  The panel is close to square while the photo is 16:9, so only ~58% of
+  the source width is ever visible and the framing is unforgiving — 82%
+  panned far enough right to clip Katrinna's left side. 62% centres the
+  pair and leaves roughly even margin on both sides.
+  Vertical has no effect at this ratio: cover scales by height, so there
+  is no vertical overflow to position.
 */
 body.home-page .meet-editorial__image {
-  object-position: 82% 15% !important;
+  object-position: 62% 15% !important;
 }
 
 /* Warm light-wash overlay at bottom — photo grades into content */
@@ -3782,7 +3787,8 @@ body.home-page .meet-editorial a.meet-team__cta {
   }
 
   body.home-page .meet-editorial__image {
-    object-position: 82% 10% !important;
+    /* Wider crop is available here; 67% keeps the pair centred */
+    object-position: 67% 10% !important;
   }
 
   body.home-page .meet-editorial__content {
@@ -3800,13 +3806,16 @@ body.home-page .meet-editorial a.meet-team__cta {
 
 @media (max-width: 560px) {
   body.home-page .meet-editorial__media {
-    /* Tall enough to show both people comfortably */
-    min-height: clamp(420px, 114vw, 560px) !important;
+    /* A taller block crops MORE off the sides (cover scales by height),
+       which is what pinned Geoff and Katrinna to the edges. This ratio
+       leaves roughly 8% of the frame clear on either side of the pair. */
+    min-height: clamp(330px, 92vw, 430px) !important;
   }
 
   body.home-page .meet-editorial__image {
-    /* Right-bias so Katrinna (right side of photo) stays in frame */
-    object-position: 80% 10% !important;
+    /* Katrinna is on the LEFT of this photo, Geoff on the right;
+       63% centres the two of them in the visible crop. */
+    object-position: 63% 12% !important;
   }
 
   body.home-page .meet-editorial__content {
@@ -15978,5 +15987,143 @@ body.home-page .footer__legal {
   body.home-page .nav.nav--scrolled .nav__cta--email {
     font-size: 0.66rem !important;
     letter-spacing: 0 !important;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════
+   GOOGLE REVIEW BADGE — meet-the-team panel
+   Typographic, not a widget: site gold stars, Playfair score,
+   and the same CTA treatment as every other link on the page.
+   The whole block is one anchor, so the inner CTA is a span.
+
+   NOTE ON SELECTORS: `body.home-page .meet-editorial a` styles every
+   anchor in this panel as a bordered button (0,2,2). These rules must
+   carry `.meet-editorial a.gr-badge` (0,3,2) to outrank it, and must
+   reset padding/border wholesale before re-declaring the top edge.
+   ═════════════════════════════════════════════════════════════ */
+
+body.home-page .meet-editorial a.gr-badge {
+  display: block !important;
+  width: auto !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  margin: clamp(30px, 3.6vw, 44px) 0 clamp(26px, 3vw, 36px) !important;
+  padding: clamp(20px, 2.2vw, 26px) 0 0 !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(11, 22, 38, 0.13) !important;
+  border-radius: 0 !important;
+  text-align: left !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body.home-page .meet-editorial .gr-badge__row {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin-bottom: 7px !important;
+}
+
+body.home-page .meet-editorial .gr-badge__stars {
+  display: inline-flex !important;
+  color: var(--gold, #9a9080) !important;
+}
+
+body.home-page .meet-editorial .gr-badge__stars svg {
+  display: block !important;
+  width: 78px !important;
+  height: 14px !important;
+}
+
+body.home-page .meet-editorial .gr-badge__score {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(1.15rem, 1.35vw, 1.4rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.015em !important;
+  line-height: 1 !important;
+  text-transform: none !important;
+  color: #0b1626 !important;
+}
+
+body.home-page .meet-editorial .gr-badge__score-unit {
+  font-family: var(--font-sans) !important;
+  font-size: 0.62em !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  color: rgba(11, 22, 38, 0.62) !important;
+}
+
+body.home-page .meet-editorial .gr-badge__count {
+  display: block !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(11px, 0.78vw, 12.5px) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.015em !important;
+  line-height: 1.5 !important;
+  text-transform: none !important;
+  color: rgba(11, 22, 38, 0.52) !important;
+  margin: 0 0 clamp(14px, 1.5vw, 18px) !important;
+}
+
+body.home-page .meet-editorial .gr-badge__cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: var(--cta-arrow-gap, 10px) !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--cta-size, 11px) !important;
+  font-weight: var(--cta-weight, 600) !important;
+  letter-spacing: var(--cta-tracking, 0.14em) !important;
+  line-height: var(--cta-leading, 1.2) !important;
+  text-transform: uppercase !important;
+  color: var(--cta-light, rgba(11, 22, 38, 0.66)) !important;
+  transition: color 0.22s ease !important;
+}
+
+body.home-page .meet-editorial .gr-badge__cta span {
+  display: inline-block !important;
+  transition: transform 0.22s ease !important;
+}
+
+body.home-page .meet-editorial a.gr-badge:hover .gr-badge__cta,
+body.home-page .meet-editorial a.gr-badge:focus-visible .gr-badge__cta {
+  color: var(--cta-light-hover, rgba(11, 22, 38, 0.92)) !important;
+}
+
+body.home-page .meet-editorial a.gr-badge:hover .gr-badge__cta span {
+  transform: translateX(var(--cta-arrow-shift, 4px)) !important;
+}
+
+body.home-page .meet-editorial a.gr-badge:focus-visible {
+  outline: 1px solid rgba(11, 22, 38, 0.42) !important;
+  outline-offset: 6px !important;
+}
+
+@media (max-width: 620px) {
+  body.home-page .meet-editorial a.gr-badge {
+    margin: 26px 0 24px !important;
+    padding: 20px 0 0 !important;
+  }
+
+  body.home-page .meet-editorial .gr-badge__stars svg {
+    width: 72px !important;
+    height: 13px !important;
+  }
+
+  body.home-page .meet-editorial .gr-badge__row {
+    gap: 9px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.home-page .meet-editorial .gr-badge__cta span {
+    transition: none !important;
+  }
+
+  body.home-page .meet-editorial a.gr-badge:hover .gr-badge__cta span {
+    transform: none !important;
   }
 }

@@ -22,7 +22,7 @@
   inset: 0 0 auto !important;          /* top:0, left:0, right:0 */
   z-index: 9000 !important;
   display: grid !important;
-  grid-template-columns: auto 1fr auto auto !important;
+  grid-template-columns: auto 1fr auto auto auto !important;
   align-items: center !important;
   column-gap: 0 !important;
   height: 88px !important;
@@ -105,6 +105,12 @@
   text-decoration: none !important;
   border-bottom: none !important;
   transition: color 0.22s ease !important;
+}
+
+/* Six items now sit in this bar. Without nowrap, "Local Insight" breaks
+   onto two lines and grows the nav just above the 1100px breakpoint. */
+.nav__link {
+  white-space: nowrap !important;
 }
 
 /* Underline — scales in from left */
@@ -689,5 +695,130 @@
   .nav__mobile-menu a[href^="tel"]::after,
   .nav__mobile-menu a[href^="mailto"]::after {
     transition: none !important;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════
+   SOCIAL ICONS
+   Desktop: a quiet icon pair sitting right of the contact cluster.
+   Below 1100px the bar is already tight, so the icons move into
+   the mobile menu instead (see .nav__mobile-social).
+   ═════════════════════════════════════════════════════════════ */
+
+.nav__social,
+.nav.nav--scrolled .nav__social {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-self: end !important;
+  gap: 6px !important;
+  margin-left: clamp(14px, 1.6vw, 22px) !important;
+}
+
+.nav__social-link,
+.nav.nav--scrolled .nav__social-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 34px !important;
+  height: 34px !important;
+  padding: 0 !important;
+  color: var(--text-inverse-muted, rgba(255, 255, 255, 0.58)) !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  transition: color 0.22s ease !important;
+}
+
+.nav__social-link:hover,
+.nav__social-link:focus-visible,
+.nav.nav--scrolled .nav__social-link:hover {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.nav__social-link:focus-visible {
+  outline: 1px solid rgba(180, 168, 150, 0.74) !important;
+  outline-offset: 2px !important;
+}
+
+.nav__social-icon {
+  display: block !important;
+  width: 17px !important;
+  height: 17px !important;
+}
+
+@media (max-width: 1100px) {
+  .nav__social,
+  .nav.nav--scrolled .nav__social {
+    display: none !important;
+  }
+}
+
+/* ── Social row inside the mobile menu ───────────────────────── */
+.nav__mobile-menu .nav__mobile-social {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 18px clamp(20px, 5.5vw, 40px) 4px !important;
+  margin-top: 4px !important;
+  border-top: 1px solid rgba(180, 168, 150, 0.22) !important;
+}
+
+.nav__mobile-menu .nav__mobile-social a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: rgba(250, 248, 244, 0.78) !important;
+  border: 1px solid rgba(180, 168, 150, 0.26) !important;
+  border-bottom: 1px solid rgba(180, 168, 150, 0.26) !important;
+  background: transparent !important;
+  transition: color 0.2s ease, border-color 0.2s ease !important;
+}
+
+.nav__mobile-menu .nav__mobile-social a:hover,
+.nav__mobile-menu .nav__mobile-social a:focus-visible {
+  color: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(180, 168, 150, 0.62) !important;
+  background: transparent !important;
+}
+
+.nav__mobile-menu .nav__mobile-social .nav__social-icon {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Six links + contact cluster + two icons is a lot for the narrow end of the
+   desktop range. Tighten the gaps between 1101px and 1340px so the icons stay
+   inside the bar instead of running past the right edge. */
+@media (min-width: 1101px) and (max-width: 1340px) {
+  .nav,
+  .nav.nav--scrolled {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+
+  .nav__links {
+    gap: 18px !important;
+  }
+
+  .nav__contact,
+  .nav.nav--scrolled .nav__contact {
+    margin-left: 18px !important;
+    padding-left: 18px !important;
+  }
+
+  .nav__social,
+  .nav.nav--scrolled .nav__social {
+    margin-left: 10px !important;
+    gap: 2px !important;
+  }
+
+  .nav__social-link,
+  .nav.nav--scrolled .nav__social-link {
+    width: 30px !important;
   }
 }

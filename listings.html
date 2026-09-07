@@ -27,9 +27,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="stylesheet" href="css/styles.css?v=20260617-listings" />
-  <link rel="stylesheet" href="css/nav.css?v=20260723-contact-cluster" />
-  <link rel="stylesheet" href="css/pages.css?v=20260617-interior-hero" />
+  <link rel="stylesheet" href="css/styles.css?v=20260907-reviews" />
+  <link rel="stylesheet" href="css/nav.css?v=20260907-social" />
+  <link rel="stylesheet" href="css/pages.css?v=20260907-bleed" />
   <link rel="preload" as="image" href="assets/burlington-hamilton-waterdown-halton-listings-hero.webp" type="image/webp" fetchpriority="high" />
   <script src="js/nav.js" defer></script>
   <script type="application/ld+json">
@@ -191,16 +191,21 @@
       <li><a href="buyers.html" class="nav__link">Buyers</a></li>
       <li><a href="sellers.html" class="nav__link">Sellers</a></li>
       <li><a href="local-insight.html" class="nav__link">Local Insight</a></li>
-      <li><a href="contact.html" class="nav__link">Contact</a></li>
+      <li><a href="about.html" class="nav__link">About</a></li><li><a href="contact.html" class="nav__link">Contact</a></li>
     </ul>
     <div class="nav__contact" role="group" aria-label="Direct contact">
       <a href="tel:9056393355" class="nav__cta--phone" aria-label="Call The Smith Dobrowsky Team at 905-639-3355">905.639.3355</a>
       <a href="mailto:geoff@yourrealpro.com" class="nav__cta--email" aria-label="Email Geoff Smith at geoff@yourrealpro.com">geoff@yourrealpro.com</a>
     </div>
+    <div class="nav__social" role="group" aria-label="Social media">
+      <a href="https://www.instagram.com/smith_dobrowsky_team/" class="nav__social-link" target="_blank" rel="noopener noreferrer" aria-label="The Smith Dobrowsky Team on Instagram"><svg class="nav__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.facebook.com/GeoffSmithRealEstate" class="nav__social-link" target="_blank" rel="noopener noreferrer" aria-label="Geoff Smith on Facebook"><svg class="nav__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+    </div>
     <button class="nav__toggle" id="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile-menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="nav__mobile-menu" id="nav-mobile-menu" aria-label="Navigation menu" aria-hidden="true">
-    <a href="listings.html">Listings</a><a href="buyers.html">Buyers</a><a href="sellers.html">Sellers</a><a href="local-insight.html">Local Insight</a><a href="contact.html">Contact</a><a href="tel:9056393355" class="nav__mobile-phone">905.639.3355</a><a href="mailto:geoff@yourrealpro.com" class="nav__mobile-email">geoff@yourrealpro.com</a>
+    <a href="listings.html">Listings</a><a href="buyers.html">Buyers</a><a href="sellers.html">Sellers</a><a href="local-insight.html">Local Insight</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="tel:9056393355" class="nav__mobile-phone">905.639.3355</a><a href="mailto:geoff@yourrealpro.com" class="nav__mobile-email">geoff@yourrealpro.com</a>
+    <div class="nav__mobile-social" role="group" aria-label="Social media"><a href="https://www.instagram.com/smith_dobrowsky_team/" target="_blank" rel="noopener noreferrer" aria-label="The Smith Dobrowsky Team on Instagram"><svg class="nav__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/GeoffSmithRealEstate" target="_blank" rel="noopener noreferrer" aria-label="Geoff Smith on Facebook"><svg class="nav__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div>
   </div>
 
   <main>
@@ -573,6 +578,7 @@
         <a href="buyers.html" class="footer__nav-link">Buyers</a>
         <a href="sellers.html" class="footer__nav-link">Sellers</a>
         <a href="local-insight.html" class="footer__nav-link">Local Insight</a>
+        <a href="about.html" class="footer__nav-link">About</a>
         <a href="contact.html" class="footer__nav-link">Contact</a>
       </nav>
 
@@ -590,6 +596,14 @@
             <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
           </svg>
           @smith_dobrowsky_team
+        </a>
+        <a href="https://share.google/NzZbZGDKTHLcyW8YK"
+           class="footer__reviews"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="View our Google reviews (opens in a new tab)">
+          <svg class="footer__reviews-star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 1.3l1.98 4.01 4.43.64-3.2 3.12.75 4.41L8 11.4l-3.96 2.08.75-4.41-3.2-3.12 4.43-.64z"/></svg>
+          View our Google reviews
         </a>
       </div>
 

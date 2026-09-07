@@ -406,6 +406,51 @@
   align-self: stretch;
 }
 
+/* ── Bleed-left variant: mirror of the above, image on the left edge ──
+   Image column takes every pixel to the left of the text, and stretches
+   to the full height of the section instead of holding a 4:3 box. */
+.ip-split--bleed-left {
+  overflow: hidden;
+  padding: 0;
+}
+
+.ip-split--bleed-left .ip-split__inner {
+  max-width: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: max(var(--section-pad-x), calc((100vw - 1360px) / 2 + var(--section-pad-x)));
+  grid-template-columns: 1fr minmax(0, clamp(480px, 42vw, 640px));
+  align-items: stretch;
+  gap: clamp(48px, 5vw, 88px);
+}
+
+.ip-split--bleed-left .ip-split__content {
+  padding: var(--section-pad-y) 0;
+  max-width: none;
+}
+
+.ip-split--bleed-left .ip-split__image {
+  aspect-ratio: unset;
+  align-self: stretch;
+  min-height: 100%;
+}
+
+.ip-split--bleed-left .ip-split__image img {
+  height: 100%;
+  min-height: 100%;
+}
+
+/* "Where We Work": both heading lines are long — "Burlington, Hamilton,"
+   wants 669px and "and the streets between." 675px at the top of the type
+   scale. A 640px column split each of them in two, so the heading rendered
+   as four ragged lines instead of the two the <br> intends. Give this one
+   a wider column; the body copy still holds the site's 48ch measure. */
+@media (min-width: 961px) {
+  .about-region .ip-split__inner {
+    grid-template-columns: 1fr minmax(0, clamp(480px, 44vw, 730px));
+  }
+}
+
 .ip-split__eyebrow {
   margin-bottom: clamp(16px, 1.8vw, 24px);
 }
@@ -1340,6 +1385,31 @@
     margin-left: calc(-1 * var(--section-pad-x));
     margin-right: calc(-1 * var(--section-pad-x));
     width: calc(100% + 2 * var(--section-pad-x));
+  }
+
+  .ip-split--bleed-left .ip-split__inner {
+    padding: 0 var(--section-pad-x);
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: clamp(28px, 5vw, 48px);
+  }
+
+  .ip-split--bleed-left .ip-split__image {
+    aspect-ratio: 4 / 3;
+    min-height: unset;
+    align-self: auto;
+    margin-left: calc(-1 * var(--section-pad-x));
+    margin-right: calc(-1 * var(--section-pad-x));
+    width: calc(100% + 2 * var(--section-pad-x));
+  }
+
+  .ip-split--bleed-left .ip-split__image img {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .ip-split--bleed-left .ip-split__content {
+    padding: 0 0 var(--section-pad-y);
   }
 
   .buyers-local-map .cm-map-stage {
@@ -5620,4 +5690,253 @@
   .ct-primary__phone {
     font-size: 9vw;
   }
+}
+
+/* ═════════════════════════════════════════════════════════════
+   ABOUT PAGE
+   Hero treatment + team portrait blocks.
+   Portraits are transparent cutouts, so they sit on a soft
+   gradient panel rather than bleeding like .ip-split images.
+   ═════════════════════════════════════════════════════════════ */
+
+.ip-hero--about .ip-hero__bg img {
+  filter: saturate(0.82) contrast(0.94) brightness(0.80) sepia(0.04);
+  object-position: 50% 40%;
+}
+
+.ip-hero--about .ip-hero__overlay {
+  background:
+    linear-gradient(
+      104deg,
+      rgba(5, 9, 15, 0.80) 0%,
+      rgba(5, 9, 15, 0.52) 40%,
+      rgba(5, 9, 15, 0.26) 66%,
+      rgba(5, 9, 15, 0.18) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(4, 8, 16, 0.62) 0%,
+      rgba(4, 8, 16, 0.26) 30%,
+      transparent 54%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(4, 8, 16, 0.34) 0%,
+      transparent 22%
+    );
+}
+
+/* On phones the left-weighted diagonal covers the whole viewport width and
+   the photograph disappears. Content is bottom-aligned, so weight the
+   overlay to the bottom instead and let the street show through up top. */
+@media (max-width: 680px) {
+  .ip-hero--about .ip-hero__bg img {
+    filter: saturate(0.86) contrast(0.94) brightness(0.92) sepia(0.04);
+    object-position: 46% 42%;
+  }
+
+  .ip-hero--about .ip-hero__overlay {
+    background:
+      linear-gradient(
+        to top,
+        rgba(4, 8, 16, 0.88) 0%,
+        rgba(4, 8, 16, 0.76) 34%,
+        rgba(4, 8, 16, 0.46) 62%,
+        rgba(4, 8, 16, 0.22) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(4, 8, 16, 0.42) 0%,
+        transparent 20%
+      );
+  }
+}
+
+/* Registered mark inside a Playfair display heading — full size reads
+   as a typo, so scale and lift it. */
+.editorial-heading .tm {
+  font-size: 0.40em;
+  line-height: 1;
+  vertical-align: 0.78em;
+  letter-spacing: 0;
+}
+
+/* Team photograph. The bleed column stretches to the text height, so a 16:9
+   frame gets cropped to roughly half its width — anchor right to keep both
+   of them framed with the window light behind, and let wider screens
+   recover the staircase on the left. */
+.about-team .ip-split__image img {
+  object-position: 100% 46%;
+}
+
+/* ── Team bios ───────────────────────────────────────────────
+   Two columns beneath the intro copy, inside the same section. The
+   left edge lines up with the copy above it, so the whole thing reads
+   as one composition rather than a second stacked band.
+   ────────────────────────────────────────────────────────────── */
+
+/* The intro copy runs into the bios, so it no longer needs a full
+   section's worth of padding underneath it. */
+.about-team.ip-split--bleed-right .ip-split__content {
+  padding-bottom: clamp(40px, 4.2vw, 64px);
+}
+
+@media (min-width: 961px) {
+  /* The shared .ip-split column is 540px and caps content at 520px, which
+     left "One conversation." needing 521px — it wrapped by a single pixel
+     at ~1900px and wider. Widen the column so the display line clears at
+     every desktop size (it needs ~551px at the 4.55rem cap), then hold it
+     on one line. */
+  .about-team .ip-split__inner {
+    grid-template-columns: minmax(0, clamp(480px, 42vw, 640px)) 1fr;
+  }
+
+  .about-team .ip-split__content {
+    max-width: none;
+  }
+
+  .about-team .ip-split__heading em {
+    white-space: nowrap;
+  }
+
+  /* Body copy keeps the site-wide 48ch measure from .ip-split__body, so the
+     display line runs wide while the paragraphs stay at the same reading
+     width as every other split section. */
+}
+
+.about-bios {
+  /* Match .ip-split--bleed-right__inner's left edge exactly, and mirror it
+     on the right so the two columns stay centred on the same 1360 grid. */
+  padding-left: max(var(--section-pad-x), calc((100vw - 1360px) / 2 + var(--section-pad-x)));
+  padding-right: max(var(--section-pad-x), calc((100vw - 1360px) / 2 + var(--section-pad-x)));
+  padding-bottom: clamp(64px, 7vw, 104px);
+}
+
+.about-bios__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(36px, 4.5vw, 80px);
+  /* Slightly less space below the rule than above it, so the rule reads as
+     belonging to the bios rather than floating between the two halves. */
+  padding-top: clamp(30px, 3.2vw, 44px);
+  border-top: 1px solid var(--border-soft);
+}
+
+.ab-person__name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 1.8vw, 1.9rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.14;
+  color: var(--text-primary);
+  margin: 0 0 clamp(9px, 1vw, 13px);
+}
+
+.ab-person__role {
+  font-family: var(--font-sans);
+  font-size: var(--type-meta);
+  font-weight: var(--weight-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  line-height: var(--leading-meta);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 clamp(16px, 1.8vw, 22px);
+  padding-bottom: clamp(16px, 1.8vw, 22px);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.ab-person__bio {
+  font-family: var(--font-sans);
+  font-size: var(--type-small);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-body);
+  color: var(--text-secondary);
+  margin: 0 0 clamp(12px, 1.3vw, 16px);
+}
+
+.ab-person__bio:last-of-type {
+  margin-bottom: 0;
+}
+
+.ab-person__contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(14px, 1.8vw, 24px);
+  margin-top: clamp(18px, 2vw, 26px);
+}
+
+.ab-person__contact-link {
+  font-family: var(--font-sans);
+  font-size: var(--type-meta);
+  font-weight: var(--weight-cta);
+  letter-spacing: var(--tracking-meta);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border-medium);
+  transition: color 0.22s ease, border-color 0.22s ease;
+}
+
+.ab-person__contact-link:hover,
+.ab-person__contact-link:focus-visible {
+  color: var(--gold-dark);
+  border-bottom-color: var(--gold-dark);
+}
+
+@media (max-width: 900px) {
+  /* Stacked layout: the photo sits between the copy and the bios, so the
+     bios need their own breathing room above rather than a hairline. */
+  .about-bios {
+    padding-left: var(--section-pad-x);
+    padding-right: var(--section-pad-x);
+  }
+
+  .about-bios__grid {
+    padding-top: clamp(30px, 5vw, 44px);
+  }
+}
+
+@media (max-width: 700px) {
+  .about-bios__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(30px, 6vw, 44px);
+  }
+
+  /* Divider between the stacked bios so they stay distinct */
+  .about-bios__grid > .about-bio + .about-bio {
+    padding-top: clamp(30px, 6vw, 44px);
+    border-top: 1px solid var(--border-soft);
+  }
+}
+
+/* Bleed the media panel past the left edge of the centred 1440px grid.
+   .bp-inner is max-width:1440 + auto margins, so on wider screens there is
+   a gutter to its left; pull the panel across it and widen to match, so the
+   photograph runs to the viewport edge while the text column stays on grid.
+   Below 901px .bp-inner is display:block and the panel is already full
+   bleed, so this only applies to the two-column layout. */
+@media (min-width: 901px) {
+  .about-process .bp-media {
+    --bp-left-bleed: max(0px, (100vw - 1440px) / 2);
+    margin-left: calc(-1 * var(--bp-left-bleed));
+    width: calc(100% + var(--bp-left-bleed));
+    max-width: none;
+  }
+}
+
+/* Keys and the folder sit just right of centre in this frame. */
+.about-process .bp-media__slide {
+  object-position: 56% center;
+}
+
+/* The caption sits over the marble island in this frame, which catches a lot
+   of the low sun. Deepen the bottom of the scrim so it keeps its contrast
+   once the panel shrinks to a banner on smaller screens. */
+.about-process .bp-media__overlay {
+  background:
+    linear-gradient(to right,  rgba(7, 9, 15, 0.28) 0%, transparent 48%),
+    linear-gradient(to top,    rgba(7, 9, 15, 0.80) 0%, rgba(7, 9, 15, 0.30) 34%, transparent 62%),
+    linear-gradient(to bottom, rgba(7, 9, 15, 0.32) 0%, transparent 26%);
 }

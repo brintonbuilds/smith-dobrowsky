@@ -1350,3 +1350,37 @@ body {
    Homepage-specific styles live in css/home.css
    (body.home-page rules extracted in Phase 3A)
    ═══════════════════════════════════════════════════════════ */
+
+/* Google reviews link — footer contact cluster.
+   Deliberately quieter than the Instagram row above it. */
+.footer__reviews {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(244, 241, 234, 0.52);
+  text-decoration: none;
+  margin-top: 8px;
+  transition: color 0.2s ease;
+}
+
+.footer__reviews:hover,
+.footer__reviews:focus-visible {
+  color: rgba(244, 241, 234, 0.72);
+}
+
+.footer__reviews:focus-visible {
+  outline: 1px solid rgba(244, 241, 234, 0.5);
+  outline-offset: 4px;
+  border-radius: 1px;
+}
+
+.footer__reviews-star {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  color: var(--gold, #9a9080);
+}
