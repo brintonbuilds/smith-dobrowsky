@@ -125,7 +125,7 @@ Verified and implemented:
 
 - Team name: The Smith Dobrowsky Team.
 - People named visibly: Geoff Smith and Katrinna Smith-Dobrowsky.
-- Phone: `+1-905-639-3355`.
+- Phone: `+1-905-512-0301`.
 - Email: `geoff@yourrealpro.com`.
 - Brokerage displayed in the footer: Coldwell Banker Burnhill Realty, Brokerage.
 - Brokerage address displayed in the footer: 514 Guelph Line, Burlington, ON L7R 3M4.
