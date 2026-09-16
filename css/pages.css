@@ -4530,7 +4530,7 @@
 .li-intelligence__quicksignals {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(20px, 3vw, 40px);
+  gap: clamp(16px, 2vw, 28px);
   list-style: none;
   margin: 0;
   padding: 0;
