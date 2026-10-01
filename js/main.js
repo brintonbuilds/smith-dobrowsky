@@ -91,6 +91,21 @@
   }
 })();
 
+/* ── Local Insight — Mailchimp signup success state ──
+   Submits natively to Mailchimp in a background tab (target="_blank")
+   so the visitor never leaves the page, then swaps in a confirmation
+   message immediately rather than waiting on Mailchimp's own page. */
+(function () {
+  const form      = document.getElementById('li-signup-form');
+  const successEl = document.getElementById('li-signup-success');
+  if (!form || !successEl) return;
+
+  form.addEventListener('submit', () => {
+    form.hidden = true;
+    successEl.hidden = false;
+  });
+})();
+
 /* ── Pre-fill address from URL param ── */
 (function () {
   const addressInput = document.getElementById('form-address');
