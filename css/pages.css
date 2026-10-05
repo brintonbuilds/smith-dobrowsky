@@ -5208,6 +5208,19 @@
   margin: 0;
 }
 
+.li-signup__error {
+  max-width: 460px;
+  margin: 10px auto 0;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: #f2b8a8;
+}
+
+.li-signup__error[hidden] {
+  display: none;
+}
+
 .li-signup__disclaimer {
   font-family: var(--font-sans);
   font-size: 11px;

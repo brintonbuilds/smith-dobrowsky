@@ -91,16 +91,48 @@
   }
 })();
 
-/* ── Local Insight — Mailchimp signup success state ──
-   Submits natively to Mailchimp in a background tab (target="_blank")
-   so the visitor never leaves the page, then swaps in a confirmation
-   message immediately rather than waiting on Mailchimp's own page. */
+/* ── Local Insight — Mailchimp signup ──
+   Submits natively to Mailchimp in a new tab (target="_blank"), where
+   Mailchimp's own reCAPTCHA runs, then swaps in a confirmation message.
+   Light bot filters run first: the Mailchimp endpoint lives in
+   data-action (not in the HTML action), and submits that trip the
+   honeypot or arrive within seconds of page load are dropped. */
 (function () {
   const form      = document.getElementById('li-signup-form');
   const successEl = document.getElementById('li-signup-success');
+  const errorEl   = document.getElementById('li-signup-error');
   if (!form || !successEl) return;
 
-  form.addEventListener('submit', () => {
+  const MIN_FILL_MS = 3000;
+  const loadedAt    = Date.now();
+  const email       = form.querySelector('input[name="EMAIL"]');
+  const honeypot    = form.querySelector('input[name^="b_"]');
+
+  const showError = (msg) => {
+    if (!errorEl) return;
+    errorEl.textContent = msg;
+    errorEl.hidden = false;
+  };
+
+  form.addEventListener('submit', (e) => {
+    if (errorEl) errorEl.hidden = true;
+
+    // Bots: fill the hidden field or submit near-instantly. Fail silently.
+    if ((honeypot && honeypot.value) || Date.now() - loadedAt < MIN_FILL_MS) {
+      e.preventDefault();
+      form.hidden = true;
+      successEl.hidden = false;
+      return;
+    }
+
+    if (!email || !email.value.trim() || !email.checkValidity()) {
+      e.preventDefault();
+      showError('Please enter a valid email address.');
+      if (email) email.focus();
+      return;
+    }
+
+    form.action = form.dataset.action;
     form.hidden = true;
     successEl.hidden = false;
   });

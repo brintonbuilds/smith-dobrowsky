@@ -29,7 +29,7 @@
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="stylesheet" href="css/styles.css?v=20260907-reviews" />
   <link rel="stylesheet" href="css/nav.css?v=20260907-social" />
-  <link rel="stylesheet" href="css/pages.css?v=20260916-quicksignals" />
+  <link rel="stylesheet" href="css/pages.css?v=20261005-signup" />
   <link rel="preload" as="image" href="assets/halton-hamilton-map.webp" type="image/webp" fetchpriority="high" />
   <script src="js/nav.js" defer></script>
   <script type="application/ld+json">
@@ -897,7 +897,7 @@
         <form
           class="li-signup__form"
           id="li-signup-form"
-          action="https://YourRealPro.us14.list-manage.com/subscribe/post?u=9d96d60cfc2b644eef2985b6f&amp;id=edaf826e86&amp;f_id=00b640e5f0"
+          data-action="https://YourRealPro.us14.list-manage.com/subscribe/post?u=9d96d60cfc2b644eef2985b6f&amp;id=edaf826e86&amp;f_id=00b640e5f0"
           method="post"
           target="_blank"
           novalidate
@@ -924,9 +924,10 @@
             Subscribe <span aria-hidden="true">→</span>
           </button>
         </form>
+        <p class="li-signup__error" id="li-signup-error" role="alert" hidden></p>
 
         <div class="li-signup__success" id="li-signup-success" hidden>
-          <p>Thanks &mdash; check your inbox to confirm your subscription.</p>
+          <p>Almost done &mdash; finish the quick &ldquo;I&rsquo;m not a robot&rdquo; check in the tab that just opened, then confirm from your inbox.</p>
         </div>
 
         <p class="li-signup__disclaimer">No spam. Unsubscribe anytime.</p>
