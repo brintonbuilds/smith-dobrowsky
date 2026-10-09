@@ -1116,7 +1116,10 @@
       });
     });
 
-    activateTab(tabs[0]);
+    var wanted = null;
+    try { wanted = new URLSearchParams(window.location.search).get('community'); } catch (e) {}
+    var target = wanted && document.getElementById('tab-' + wanted.toLowerCase());
+    activateTab(target || tabs[0]);
 
   }());
   </script>

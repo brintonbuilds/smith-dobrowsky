@@ -29,7 +29,7 @@
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="stylesheet" href="css/styles.css?v=20260907-reviews" />
   <link rel="stylesheet" href="css/nav.css?v=20260907-social" />
-  <link rel="stylesheet" href="css/home.css?v=20260907-reviews" />
+  <link rel="stylesheet" href="css/home.css?v=20261008-map-cards" />
   <link rel="preload" as="image" href="assets/burlington-hamilton-region-established-roots.webp" type="image/webp" fetchpriority="high" />
   <script src="js/nav.js" defer></script>
   <script type="application/ld+json">
@@ -426,15 +426,15 @@
           <p class="cm-service-area">Serving Burlington, Waterdown, Hamilton, Grimsby, Stoney Creek, Oakville, Milton, Cambridge &amp; Flamborough.</p>
         </div>
 
-        <div class="cm-map-panel reveal" aria-label="Map of Burlington, Hamilton and Waterdown">
+        <div class="cm-map-panel reveal" aria-label="Map of Burlington and Hamilton">
           <div class="cm-map-frame">
             <div class="cm-map-stage">
               <img class="cm-map-image" src="assets/halton-hamilton-map.webp" alt="" width="1672" height="941" loading="lazy" decoding="async" />
-              <div class="cm-map-marker-layer" role="group" aria-label="Community markers"></div>
+              <div class="cm-map-marker-layer" role="group" aria-label="Community markers" data-communities="burlington,hamilton" data-snapshot></div>
             </div>
           </div>
-          <svg class="cm-svg" viewBox="0 0 680 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Editorial map of Burlington, Hamilton and Waterdown" aria-hidden="true">
-            <desc>Lake Ontario, quiet route lines and relative community positions for Burlington, Hamilton and Waterdown.</desc>
+          <svg class="cm-svg" viewBox="0 0 680 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Editorial map of Burlington and Hamilton" aria-hidden="true">
+            <desc>Lake Ontario, quiet route lines and relative community positions for Burlington and Hamilton.</desc>
             <defs>
               <pattern id="cm-map-grid" width="46" height="46" patternUnits="userSpaceOnUse">
                 <path class="cm-grid" d="M46 0H0V46" fill="none"/>
@@ -506,19 +506,6 @@
                 <rect class="cm-callout__bg" x="-75" y="-32" width="150" height="42" rx="3"/>
                 <text class="cm-callout__name" x="0" y="-18">Burlington</text>
                 <text class="cm-callout__tag" x="0" y="-6">Lakefront &amp; Commuters</text>
-              </g>
-            </g>
-
-            <!-- Waterdown -->
-            <g class="cm-pin" data-community="waterdown" role="button" tabindex="0" aria-label="Waterdown">
-              <circle class="cm-pin__halo" cx="334" cy="244" r="9"/>
-              <circle class="cm-pin__bracket" cx="334" cy="244" r="5.5"/>
-              <text class="cm-pin__label" x="348" y="232">Waterdown</text>
-
-              <g class="cm-callout" transform="translate(334, 199)">
-                <rect class="cm-callout__bg" x="-75" y="-32" width="150" height="42" rx="3"/>
-                <text class="cm-callout__name" x="0" y="-18">Waterdown</text>
-                <text class="cm-callout__tag" x="0" y="-6">Village &amp; Escarpment</text>
               </g>
             </g>
 
@@ -1039,7 +1026,8 @@
 })();
 </script>
 
-<script src="js/community-map.js"></script>
+<script src="data/market-snapshot.js?v=20261008"></script>
+<script src="js/community-map.js?v=20261008"></script>
 
 <script>
 /* ── Preloader cleanup ────────────────────────────────────────

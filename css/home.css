@@ -16127,3 +16127,138 @@ body.home-page .meet-editorial a.gr-badge:focus-visible {
     transform: none !important;
   }
 }
+
+/* Map hover cards — monthly market snapshot (content: data/market-snapshot.js). */
+body.home-page .cm-map-marker .cm-snap {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 50%;
+  z-index: 6;
+  display: block;
+  width: min(292px, 78vw);
+  padding: 18px 22px 20px;
+  border: 1px solid rgba(17, 29, 51, 0.1);
+  border-radius: 3px;
+  background: rgba(250, 248, 243, 0.98);
+  box-shadow: 0 18px 44px rgba(8, 24, 46, 0.18);
+  color: #111d33;
+  font-family: var(--font-sans);
+  letter-spacing: normal;
+  text-align: center;
+  text-transform: none;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 6px);
+  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms;
+}
+body.home-page .cm-map-marker .cm-snap--right {
+  top: 50%;
+  bottom: auto;
+  left: calc(100% + 28px);
+  transform: translate(-6px, -44%);
+}
+body.home-page .cm-map-marker .cm-snap--rightup {
+  top: auto;
+  bottom: -16px;
+  left: calc(100% + 28px);
+  transform: translate(-6px, 0);
+}
+body.home-page .cm-map-marker:hover .cm-snap,
+body.home-page .cm-map-marker:focus-visible .cm-snap,
+body.home-page .cm-map-marker.is-active .cm-snap {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+body.home-page .cm-map-marker:hover .cm-snap--rightup,
+body.home-page .cm-map-marker:focus-visible .cm-snap--rightup,
+body.home-page .cm-map-marker.is-active .cm-snap--rightup {
+  transform: translate(0, 0);
+}
+body.home-page .cm-map-marker:hover .cm-snap--right,
+body.home-page .cm-map-marker:focus-visible .cm-snap--right,
+body.home-page .cm-map-marker.is-active .cm-snap--right {
+  transform: translate(0, -44%);
+}
+body.home-page .cm-map-marker[data-has-snapshot].is-active { z-index: 8 !important; }
+/* Hover card is interactive (it holds the link) and bridges the gap to its marker. */
+body.home-page .cm-map-marker:hover .cm-snap,
+body.home-page .cm-map-marker:focus-within .cm-snap,
+body.home-page .cm-map-marker.is-active .cm-snap { pointer-events: auto; }
+body.home-page .cm-map-marker:focus-within .cm-snap { opacity: 1; visibility: visible; }
+.cm-snap::before { content: ''; position: absolute; top: 0; bottom: 0; left: -34px; width: 34px; }
+.cm-snap__link { display: inline-block; margin-top: 14px; padding-bottom: 3px; border-bottom: 1px solid rgba(45, 90, 70, 0.4); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; color: #2d5a46; cursor: pointer; transition: border-color 160ms ease, color 160ms ease; }
+.cm-snap__link:hover, .cm-snap__link:focus-visible { color: #0d1624; border-color: #0d1624; }
+
+.cm-snap__eyebrow { display: block; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(17, 29, 51, 0.5); }
+.cm-snap__eyebrow::after { content: ''; display: block; width: 28px; height: 1px; margin: 10px auto 0; background: rgba(17, 29, 51, 0.22); }
+.cm-snap__gauge { display: block; width: 148px; margin: 14px auto 0; }
+.cm-snap__gauge svg { display: block; width: 100%; height: auto; overflow: visible; }
+.cm-snap__track, .cm-snap__fill { fill: none; stroke-width: 5; stroke-linecap: round; }
+.cm-snap__track { stroke: #e6e5e2; }
+.cm-snap__fill { stroke: #2d5a46; }
+.cm-snap__tick { stroke: rgba(17, 29, 51, 0.28); stroke-width: 1; }
+.cm-snap__tick--mid { stroke: #2d5a46; stroke-width: 1.5; }
+.cm-snap__needle { stroke: #0d1624; stroke-width: 1.6; stroke-linecap: round; }
+.cm-snap__hub { fill: #0d1624; stroke: #0d1624; stroke-width: 2; }
+.cm-snap__scale { display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline; gap: 6px; margin-top: 6px; }
+.cm-snap__end { font-size: 0.5rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(17, 29, 51, 0.5); }
+.cm-snap__end:first-child { text-align: left; }
+.cm-snap__end:last-child { text-align: right; }
+.cm-snap__score { font-family: var(--font-serif); font-size: 1.75rem; line-height: 1; color: #0d1624; }
+.cm-snap__score small { font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 0.04em; color: rgba(17, 29, 51, 0.45); }
+.cm-snap__rule { display: block; width: 100%; height: 1px; margin: 14px 0 12px; background: linear-gradient(90deg, transparent, rgba(17, 29, 51, 0.2), transparent); }
+.cm-snap__headline { display: block; font-family: var(--font-serif); font-size: 1.3rem; line-height: 1.2; color: #0d1624; }
+.cm-snap__sub { display: block; margin-top: 8px; font-size: 0.55rem; font-weight: 600; letter-spacing: 0.2em; line-height: 1.7; text-transform: uppercase; color: #2d5a46; }
+.cm-snap__note { display: block; margin-top: 10px; font-size: 0.74rem; font-weight: 300; line-height: 1.58; color: rgba(17, 29, 51, 0.7); }
+
+/* Phone-only card, centred over the map (tap to dismiss). */
+.cm-snap-dock { display: none; }
+@media (max-width: 850px) {
+  body.home-page .cm-map-marker .cm-snap { display: none; }
+  .cm-snap-dock {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 20;
+    width: min(264px, calc(100% - 40px));
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  .cm-snap-dock[hidden] { display: none; }
+  .cm-snap-dock .cm-snap {
+    display: block;
+    padding: 16px 20px 18px;
+    border: 1px solid rgba(17, 29, 51, 0.1);
+    border-radius: 3px;
+    background: #faf8f3;
+    box-shadow: 0 18px 44px rgba(8, 24, 46, 0.28);
+    color: #111d33;
+    font-family: var(--font-sans);
+    text-align: center;
+  }
+  /* Score only, so the card stays small. */
+  .cm-snap-dock .cm-snap__sub,
+  .cm-snap-dock .cm-snap__note { display: none; }
+  .cm-snap-dock .cm-snap { padding: 12px 18px 14px; }
+  .cm-snap-dock .cm-snap__eyebrow::after { display: none; }
+  .cm-snap-dock .cm-snap__gauge { width: 100px; margin-top: 10px; }
+  .cm-snap-dock .cm-snap__scale { margin-top: 4px; }
+  .cm-snap-dock .cm-snap__score { font-size: 1.5rem; }
+  .cm-snap-dock .cm-snap__rule { display: none; }
+  .cm-snap-dock .cm-snap__link { margin-top: 8px; font-size: 0.54rem; }
+  .cm-snap-dock .cm-snap__headline { margin-top: 12px; font-size: 1.02rem; }
+}
+
+/* Mobile: size the map panel to the map image itself — no empty band above/below it. */
+@media (max-width: 850px) {
+  body.home-page .cm-map-panel {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 1682 / 935 !important;
+    padding: 0 !important;
+  }
+}
