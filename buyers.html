@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="css/styles.css?v=20260907-reviews" />
   <link rel="stylesheet" href="css/nav.css?v=20260907-social" />
   <link rel="stylesheet" href="css/pages.css?v=20260907-bleed" />
+  <link rel="stylesheet" href="css/map-cards.css?v=20261014b" />
   <link rel="preload" as="image" href="assets/buyers-hero.webp" type="image/webp" fetchpriority="high" />
   <script src="js/nav.js" defer></script>
   <script type="application/ld+json">
@@ -462,19 +463,19 @@
     <section class="ip-split ip-split--reverse ip-split--bleed-right ip-split--warm buyers-local-map reveal" aria-labelledby="local-heading">
       <div class="ip-split__inner">
 
-        <div class="ip-split__image buyers-local-map__media cm-map-panel" aria-label="Map of Burlington, Hamilton and Waterdown">
+        <div class="ip-split__image buyers-local-map__media cm-map-panel" aria-label="Map of Burlington and Hamilton">
           <div class="cm-map-frame">
             <div class="cm-map-stage">
               <img
                 class="cm-map-image"
                 src="assets/halton-hamilton-map.webp"
-                alt="Map of Burlington, Hamilton and Waterdown — The Smith Dobrowsky Team's local area"
+                alt="Map of Burlington and Hamilton — The Smith Dobrowsky Team's local area"
                 width="1672"
                 height="941"
                 loading="lazy"
                 decoding="async"
               >
-              <div class="cm-map-marker-layer" role="group" aria-label="Community markers"></div>
+              <div class="cm-map-marker-layer" role="group" aria-label="Burlington and Hamilton map markers" data-communities="burlington,hamilton" data-snapshot data-snap-burlington="left"></div>
             </div>
           </div>
         </div>
@@ -539,10 +540,12 @@
           <p class="closing-cta__trust">No pressure. No obligation. Just a clear conversation.</p>
         </div>
 
-        <div class="closing-cta__media" aria-hidden="true">
+        <div class="closing-cta__media">
           <img class="closing-cta__photo"
-               src="assets/burlington-pier-real-estate-optimized.webp"
-               alt=""
+               src="assets/burlington-waterfront-pier-sunset.webp"
+               srcset="assets/burlington-waterfront-pier-sunset-768.webp 768w, assets/burlington-waterfront-pier-sunset.webp 1536w"
+               sizes="(max-width: 768px) 100vw, 50vw"
+               alt="Burlington waterfront pier and lakeside trail at sunset on Lake Ontario, Burlington, Ontario"
                width="1536"
                height="1024"
                loading="lazy"
@@ -630,7 +633,8 @@
 
   <script src="js/main.js"></script>
 
-  <script src="js/community-map.js?v=20261008"></script>
+  <script src="data/market-snapshot.js?v=20261014"></script>
+  <script src="js/community-map.js?v=20261014c"></script>
 
   <script>
   /* ── Buying Process — Scroll-driven accordion ─────────────────────────────

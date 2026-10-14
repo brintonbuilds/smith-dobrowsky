@@ -1,31 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://yourrealpro.com/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-13</lastmod>
+    <image:image>
+      <image:loc>https://yourrealpro.com/assets/burlington-waterfront-pier-sunset.webp</image:loc>
+      <image:title>Burlington waterfront pier at sunset</image:title>
+      <image:caption>Sunset over Lake Ontario from the Burlington waterfront pier and lakeside trail in Burlington, Ontario.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://yourrealpro.com/listings.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
   <url>
     <loc>https://yourrealpro.com/buyers.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-13</lastmod>
+    <image:image>
+      <image:loc>https://yourrealpro.com/assets/burlington-waterfront-pier-sunset.webp</image:loc>
+      <image:title>Burlington waterfront pier at sunset</image:title>
+      <image:caption>Sunset over Lake Ontario from the Burlington waterfront pier and lakeside trail in Burlington, Ontario.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://yourrealpro.com/sellers.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-13</lastmod>
+    <image:image>
+      <image:loc>https://yourrealpro.com/assets/burlington-waterfront-pier-sunset.webp</image:loc>
+      <image:title>Burlington waterfront pier at sunset</image:title>
+      <image:caption>Sunset over Lake Ontario from the Burlington waterfront pier and lakeside trail in Burlington, Ontario.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://yourrealpro.com/local-insight.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-13</lastmod>
+    <image:image>
+      <image:loc>https://yourrealpro.com/assets/burlington-waterfront-pier-sunset.webp</image:loc>
+      <image:title>Burlington waterfront pier at sunset</image:title>
+      <image:caption>Sunset over Lake Ontario from the Burlington waterfront pier and lakeside trail in Burlington, Ontario.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://yourrealpro.com/about.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-13</lastmod>
+    <image:image>
+      <image:loc>https://yourrealpro.com/assets/burlington-waterfront-pier-sunset.webp</image:loc>
+      <image:title>Burlington waterfront pier at sunset</image:title>
+      <image:caption>Sunset over Lake Ontario from the Burlington waterfront pier and lakeside trail in Burlington, Ontario.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://yourrealpro.com/contact.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-13</lastmod>
+    <image:image>
+      <image:loc>https://yourrealpro.com/assets/burlington-waterfront-pier-sunset.webp</image:loc>
+      <image:title>Burlington waterfront pier at sunset</image:title>
+      <image:caption>Sunset over Lake Ontario from the Burlington waterfront pier and lakeside trail in Burlington, Ontario.</image:caption>
+    </image:image>
   </url>
 </urlset>

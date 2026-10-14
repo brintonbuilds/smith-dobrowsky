@@ -1,11 +1,11 @@
-/* Community map callouts shared by the Home and Buyers pages. */
+/* Community map callouts shared by the Home, Buyers and Local Insight pages. */
 (function () {
   'use strict';
 
   var communities = {
     burlington: { x: 0.530, y: 0.440, snap: 'right', labelX: 14, labelY: -12, name: 'Burlington', href: '' },
-    hamilton: { x: 0.275, y: 0.760, snap: 'rightup', labelX: 14, labelY: -12, name: 'Hamilton', href: '' },
-    waterdown: { x: 0.415, y: 0.265, labelX: 14, labelY: -12, name: 'Waterdown', href: '' }
+    hamilton: { x: 0.275, y: 0.760, snap: 'rightup', labelX: 14, labelY: -12, name: 'Hamilton', href: '' }
+    // Only Burlington and Hamilton are shown on the site's maps.
   };
 
   var snapshot = null;
@@ -129,7 +129,8 @@
 
       if (markerLayer.hasAttribute('data-snapshot')) {
         marker.setAttribute('data-has-snapshot', 'true');
-        marker.insertAdjacentHTML('beforeend', cardHtml(key, community.name, community.snap));
+        // A page can flip a card to the other side of its marker, e.g. data-snap-burlington="left".
+        marker.insertAdjacentHTML('beforeend', cardHtml(key, community.name, markerLayer.getAttribute('data-snap-' + key) || community.snap));
       }
 
       markerEls[key] = marker;

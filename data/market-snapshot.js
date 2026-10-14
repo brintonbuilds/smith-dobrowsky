@@ -4,19 +4,19 @@
   Keep each note to 1-2 sentences. Save, and the homepage map updates.
 */
 window.MARKET_SNAPSHOT = {
-  month: "August 2026",
+  month: "September 2026",
   communities: {
     burlington: {
       score: 55,
       headline: "Balanced Market",
       sublabel: "Mixed conditions, slightly favouring sellers",
-      note: "Sales slowed sharply in August, but detached inventory fell even faster — a balanced but highly selective market, with detached supply giving sellers a slight edge."
+      note: "Sales slowed and supply tightened — detached prices held firm while townhouse and condo prices softened, making this a balanced market with two distinct dynamics."
     },
     hamilton: {
-      score: 49,
+      score: 47,
       headline: "Balanced Market",
-      sublabel: "Slightly buyer favoured",
-      note: "Weaker demand, lower prices and longer selling times outweighed tightening inventory, tipping the index marginally to the buyer’s side of balanced."
+      sublabel: "Leaning toward buyers",
+      note: "Lower sales, softer prices and longer selling times leaned the market toward buyers, while tighter inventory kept it from tipping out of balance."
     }
   }
 };

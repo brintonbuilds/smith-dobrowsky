@@ -11,37 +11,79 @@
     {
       "file": "index.html",
       "path": "/",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-10-13",
+      "images": [
+        {
+          "path": "/assets/burlington-waterfront-pier-sunset.webp",
+          "title": "Burlington waterfront pier at sunset",
+          "caption": "Sunset over Lake Ontario from the Burlington waterfront pier and lakeside trail in Burlington, Ontario."
+        }
+      ]
     },
     {
       "file": "listings.html",
       "path": "/listings.html",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-10-13"
     },
     {
       "file": "buyers.html",
       "path": "/buyers.html",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-10-13",
+      "images": [
+        {
+          "path": "/assets/burlington-waterfront-pier-sunset.webp",
+          "title": "Burlington waterfront pier at sunset",
+          "caption": "Sunset over Lake Ontario from the Burlington waterfront pier and lakeside trail in Burlington, Ontario."
+        }
+      ]
     },
     {
       "file": "sellers.html",
       "path": "/sellers.html",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-10-13",
+      "images": [
+        {
+          "path": "/assets/burlington-waterfront-pier-sunset.webp",
+          "title": "Burlington waterfront pier at sunset",
+          "caption": "Sunset over Lake Ontario from the Burlington waterfront pier and lakeside trail in Burlington, Ontario."
+        }
+      ]
     },
     {
       "file": "local-insight.html",
       "path": "/local-insight.html",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-10-13",
+      "images": [
+        {
+          "path": "/assets/burlington-waterfront-pier-sunset.webp",
+          "title": "Burlington waterfront pier at sunset",
+          "caption": "Sunset over Lake Ontario from the Burlington waterfront pier and lakeside trail in Burlington, Ontario."
+        }
+      ]
     },
     {
       "file": "about.html",
       "path": "/about.html",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-10-13",
+      "images": [
+        {
+          "path": "/assets/burlington-waterfront-pier-sunset.webp",
+          "title": "Burlington waterfront pier at sunset",
+          "caption": "Sunset over Lake Ontario from the Burlington waterfront pier and lakeside trail in Burlington, Ontario."
+        }
+      ]
     },
     {
       "file": "contact.html",
       "path": "/contact.html",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-10-13",
+      "images": [
+        {
+          "path": "/assets/burlington-waterfront-pier-sunset.webp",
+          "title": "Burlington waterfront pier at sunset",
+          "caption": "Sunset over Lake Ontario from the Burlington waterfront pier and lakeside trail in Burlington, Ontario."
+        }
+      ]
     }
   ]
 }
