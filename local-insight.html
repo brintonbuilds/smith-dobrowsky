@@ -153,6 +153,22 @@
       filter: saturate(0.94) contrast(1.0) brightness(1.02);
     }
 
+    /* Links to the permanent monthly report pages (filled by scripts/build-market-reports.mjs) */
+    body.local-insight-page .li-report-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      align-items: baseline;
+      margin: 18px 0 0;
+    }
+
+    body.local-insight-page .li-report-links__all {
+      font-size: 0.82rem;
+      color: rgba(11, 22, 38, 0.6);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     body.local-insight-page .li-tabs-bar {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -439,6 +455,9 @@
               <a href="contact.html" class="li-guide__meta-cta text-link text-link--dark text-link--arrow">
                 Ask About Burlington <span aria-hidden="true">→</span>
               </a>
+              <!-- REPORT-LINKS:burlington -->
+              <p class="li-report-links"><a href="burlington-market-report-september-2026.html" class="text-link text-link--dark text-link--arrow">Read the full Burlington September 2026 report <span aria-hidden="true">&rarr;</span></a> <a href="burlington-real-estate-market.html" class="li-report-links__all">All Burlington reports &amp; trends</a></p>
+              <!-- /REPORT-LINKS -->
             </div>
 
           </div>
@@ -681,6 +700,9 @@
               <a href="contact.html" class="li-guide__meta-cta text-link text-link--dark text-link--arrow">
                 Ask About Hamilton <span aria-hidden="true">→</span>
               </a>
+              <!-- REPORT-LINKS:hamilton -->
+              <p class="li-report-links"><a href="hamilton-market-report-september-2026.html" class="text-link text-link--dark text-link--arrow">Read the full Hamilton September 2026 report <span aria-hidden="true">&rarr;</span></a> <a href="hamilton-real-estate-market.html" class="li-report-links__all">All Hamilton reports &amp; trends</a></p>
+              <!-- /REPORT-LINKS -->
             </div>
 
           </div>

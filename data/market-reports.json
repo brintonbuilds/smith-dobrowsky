@@ -1,0 +1,1324 @@
+{
+  "editions": [
+    {
+      "month": "2026-07",
+      "cities": {
+        "burlington": {
+          "tagline": "Inventory is tightening faster than sales are slowing, keeping Burlington&rsquo;s detached market competitive despite softer July activity.",
+          "score": 62,
+          "label": "Balanced Market",
+          "sublabel": "Trending toward sellers",
+          "note": "Detached inventory is falling sharply while sales cool, keeping competition elevated for the well-priced homes that remain.",
+          "signals": [
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Inventory",
+              "status": "Falling Fast"
+            },
+            {
+              "dir": "up",
+              "arrow": "&uarr;",
+              "name": "Detached demand",
+              "status": "Strengthening"
+            },
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Condo / townhome",
+              "status": "Buyer Opportunity"
+            },
+            {
+              "dir": "up",
+              "arrow": "&uarr;",
+              "name": "Competition",
+              "status": "Rising"
+            }
+          ],
+          "buying": {
+            "headline": "Detached supply keeps tightening, while condos still offer room to negotiate.",
+            "body": "Burlington&rsquo;s detached segment is being reshaped by a sharp pullback in new listings and inventory, even as sales cooled from June&rsquo;s pace &mdash; leaving fewer well-priced homes for buyers to choose from. The condo and townhome segment remains softer, with prices down from last year and days on market stretching to 50, giving buyers real negotiating leverage.",
+            "list": [
+              [
+                "Best opportunity",
+                "Condo / townhome segment"
+              ],
+              [
+                "Watch",
+                "Detached inventory shrinking faster than sales"
+              ],
+              [
+                "Geoff&rsquo;s advice",
+                "Be prepared before the right listing appears"
+              ]
+            ]
+          },
+          "selling": {
+            "headline": "Fewer competing listings are giving well-priced detached sellers real leverage.",
+            "body": "Detached sales cooled from June, but new listings and inventory fell even faster, tightening months of supply to just 2.7 &mdash; among the lowest levels this year. That leaves correctly priced, move-in-ready homes with less competition and stronger buyer attention, even as overall demand normalizes.",
+            "list": [
+              [
+                "Strongest advantage",
+                "Move-in-ready detached homes"
+              ],
+              [
+                "Watch",
+                "Buyer selectivity given softer overall sales"
+              ],
+              [
+                "Geoff&rsquo;s advice",
+                "Price accurately &mdash; inventory is doing the heavy lifting"
+              ]
+            ]
+          },
+          "analysis": [
+            "Detached sales declined 18.3% while detached inventory fell even faster, down 33.8% to just 245 homes, tightening supply to 2.7 months. Condo and townhome prices remain well below last year, preserving value for buyers even as overall inventory tightens."
+          ],
+          "tables": [
+            {
+              "label": "Detached",
+              "rows": [
+                [
+                  "Median sale price",
+                  "$1,194,750"
+                ],
+                [
+                  "Median price change",
+                  "&minus;4.4%"
+                ],
+                [
+                  "Sales",
+                  "94"
+                ],
+                [
+                  "Sales change",
+                  "&minus;18.3%"
+                ],
+                [
+                  "Months of inventory",
+                  "2.7"
+                ],
+                [
+                  "Months of inventory change",
+                  "&minus;34.1%"
+                ],
+                [
+                  "Average price",
+                  "$1,344,748"
+                ],
+                [
+                  "Average price change",
+                  "&minus;4.7%"
+                ],
+                [
+                  "New listings",
+                  "140"
+                ],
+                [
+                  "New listings change",
+                  "&minus;34.6%"
+                ],
+                [
+                  "Inventory",
+                  "245"
+                ],
+                [
+                  "Inventory change",
+                  "&minus;33.8%"
+                ],
+                [
+                  "Days on market",
+                  "30"
+                ],
+                [
+                  "Days-on-market change",
+                  "&minus;11.8%"
+                ],
+                [
+                  "% of list price received",
+                  "96.7%"
+                ],
+                [
+                  "List-price-received change",
+                  "0.0%"
+                ]
+              ]
+            },
+            {
+              "label": "Condo / Townhome",
+              "rows": [
+                [
+                  "Median sale price",
+                  "$645,000"
+                ],
+                [
+                  "Median price change",
+                  "&minus;14.5%"
+                ],
+                [
+                  "Sales",
+                  "83"
+                ],
+                [
+                  "Sales change",
+                  "&minus;17.0%"
+                ],
+                [
+                  "Months of inventory",
+                  "4.4"
+                ],
+                [
+                  "Months of inventory change",
+                  "&minus;2.2%"
+                ],
+                [
+                  "Average price",
+                  "$707,636"
+                ],
+                [
+                  "Average price change",
+                  "&minus;7.0%"
+                ],
+                [
+                  "New listings",
+                  "183"
+                ],
+                [
+                  "New listings change",
+                  "+1.7%"
+                ],
+                [
+                  "Inventory",
+                  "340"
+                ],
+                [
+                  "Inventory change",
+                  "&minus;6.8%"
+                ],
+                [
+                  "Days on market",
+                  "50"
+                ],
+                [
+                  "Days-on-market change",
+                  "+35.1%"
+                ],
+                [
+                  "% of list price received",
+                  "96.9%"
+                ],
+                [
+                  "List-price-received change",
+                  "+0.1%"
+                ]
+              ]
+            }
+          ],
+          "backdrop": "Based on July 2026 activity &middot; ITSO data current August 2, 2026 &middot; Bank of Canada policy rate held at 2.25% &middot; June 2026 inflation 2.8% year over year, easing from 3.2% in May &middot; July 2026 unemployment 6.4%, edging down from 6.5% in June &middot; Local data compares July 2026 with July 2025 &middot; Percent changes are calculated using rounded figures",
+          "summary": "Detached inventory fell sharply while sales cooled, tightening supply to 2.7 months and keeping competition elevated for well-priced homes."
+        },
+        "hamilton": {
+          "tagline": "Inventory continues to contract while prices hold steady, creating favorable conditions for well-prepared sellers and a measured market for buyers.",
+          "score": 51,
+          "label": "Slightly Buyer Favoured",
+          "sublabel": "Leaning toward buyers",
+          "note": "Inventory continues to contract while prices hold steady, creating favorable conditions for well-prepared sellers and a measured market for buyers.",
+          "signals": [
+            {
+              "dir": "flat",
+              "arrow": "&rarr;",
+              "name": "Demand",
+              "status": "Softening"
+            },
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Supply",
+              "status": "Falling"
+            },
+            {
+              "dir": "flat",
+              "arrow": "&rarr;",
+              "name": "Prices",
+              "status": "Stable"
+            },
+            {
+              "dir": "up",
+              "arrow": "&uarr;",
+              "name": "Competition",
+              "status": "Rising"
+            },
+            {
+              "dir": "flat",
+              "arrow": "&rarr;",
+              "name": "Outlook",
+              "status": "Slightly Buyer Favoured"
+            }
+          ],
+          "buying": {
+            "headline": "Buyers still have room to compare, though the best homes aren&rsquo;t lingering.",
+            "body": "Hamilton&rsquo;s detached median price held nearly flat at $750,000, and condo selection remains ahead of last July even as inventory pulled back 19.5%. Slightly buyer-favoured conditions give shoppers time to compare options, but well-priced homes are still finding buyers.",
+            "list": [
+              [
+                "Best opportunity",
+                "Condo / townhome selection"
+              ],
+              [
+                "Watch",
+                "Inventory tightening faster than in recent months"
+              ],
+              [
+                "Geoff&rsquo;s advice",
+                "Take time to compare, but don&rsquo;t wait too long on the right home"
+              ]
+            ]
+          },
+          "selling": {
+            "headline": "Declining inventory is supporting prices, even as sales activity slows.",
+            "body": "Detached prices held essentially flat while inventory fell 10.5%, leaving sellers with fewer competing listings to contend with. Buyers remain patient and price-sensitive, so move-in-ready condition and accurate pricing still matter more than aggressive positioning.",
+            "list": [
+              [
+                "Strongest advantage",
+                "Detached prices holding steady"
+              ],
+              [
+                "Watch",
+                "Buyers taking more time to compare"
+              ],
+              [
+                "Geoff&rsquo;s advice",
+                "Price with precision &mdash; presentation still closes the gap"
+              ]
+            ]
+          },
+          "analysis": [
+            "Hamilton is now slightly buyer-favoured as inventory pulls back across both segments. Detached prices held nearly flat while sales cooled, and condo and townhome sales rose even as inventory fell nearly 20%."
+          ],
+          "tables": [
+            {
+              "label": "Single Family Detached",
+              "rows": [
+                [
+                  "Median sale price",
+                  "$750,000"
+                ],
+                [
+                  "Median price change",
+                  "&minus;0.7%"
+                ],
+                [
+                  "Sales",
+                  "330"
+                ],
+                [
+                  "Sales change",
+                  "&minus;14.3%"
+                ],
+                [
+                  "Months of inventory",
+                  "4.5"
+                ],
+                [
+                  "Months of inventory change",
+                  "&minus;6.3%"
+                ],
+                [
+                  "Average price",
+                  "$848,891"
+                ],
+                [
+                  "Average price change",
+                  "&minus;0.6%"
+                ],
+                [
+                  "New listings",
+                  "688"
+                ],
+                [
+                  "New listings change",
+                  "&minus;16.5%"
+                ],
+                [
+                  "Inventory",
+                  "1,375"
+                ],
+                [
+                  "Inventory change",
+                  "&minus;10.5%"
+                ],
+                [
+                  "Days on market",
+                  "37"
+                ],
+                [
+                  "Days-on-market change",
+                  "+8.8%"
+                ],
+                [
+                  "% of list price received",
+                  "96.9%"
+                ],
+                [
+                  "List-price-received change",
+                  "&minus;0.7%"
+                ]
+              ]
+            },
+            {
+              "label": "Townhouse / Condo",
+              "rows": [
+                [
+                  "Median sale price",
+                  "$559,500"
+                ],
+                [
+                  "Median price change",
+                  "&minus;5.2%"
+                ],
+                [
+                  "Sales",
+                  "168"
+                ],
+                [
+                  "Sales change",
+                  "+5.7%"
+                ],
+                [
+                  "Months of inventory",
+                  "5.2"
+                ],
+                [
+                  "Months of inventory change",
+                  "&minus;11.9%"
+                ],
+                [
+                  "Average price",
+                  "$532,303"
+                ],
+                [
+                  "Average price change",
+                  "&minus;8.3%"
+                ],
+                [
+                  "New listings",
+                  "320"
+                ],
+                [
+                  "New listings change",
+                  "&minus;27.8%"
+                ],
+                [
+                  "Inventory",
+                  "729"
+                ],
+                [
+                  "Inventory change",
+                  "&minus;19.5%"
+                ],
+                [
+                  "Days on market",
+                  "50"
+                ],
+                [
+                  "Days-on-market change",
+                  "+4.2%"
+                ],
+                [
+                  "% of list price received",
+                  "96.6%"
+                ],
+                [
+                  "List-price-received change",
+                  "&minus;1.0%"
+                ]
+              ]
+            }
+          ],
+          "backdrop": "Based on July 2026 activity &middot; ITSO data current August 2, 2026 &middot; Bank of Canada policy rate held at 2.25% &middot; June 2026 inflation 2.8% year over year, easing from 3.2% in May &middot; July 2026 unemployment 6.4%, edging down from 6.5% in June &middot; Local data compares July 2026 with July 2025 &middot; Percent changes are calculated using rounded figures",
+          "summary": "Inventory pulled back across both segments while prices held mostly steady, nudging the market toward a slight buyer advantage."
+        }
+      },
+      "published": "2026-09-16"
+    },
+    {
+      "month": "2026-08",
+      "cities": {
+        "burlington": {
+          "tagline": "Supply is tightening, but August buyers took a breather &mdash; keeping Burlington in a balanced market with mixed conditions.",
+          "score": 55,
+          "label": "Balanced Market",
+          "sublabel": "Mixed conditions, slightly favouring sellers",
+          "note": "Sales slowed sharply in August, but detached inventory fell even faster &mdash; a balanced but highly selective market, with detached supply giving sellers a slight edge.",
+          "signals": [
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Inventory",
+              "status": "Tightening"
+            },
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Demand",
+              "status": "Softening"
+            },
+            {
+              "dir": "flat",
+              "arrow": "&harr;",
+              "name": "Prices",
+              "status": "Mixed"
+            },
+            {
+              "dir": "up",
+              "arrow": "&uarr;",
+              "name": "Competition",
+              "status": "Moderate"
+            }
+          ],
+          "buying": {
+            "headline": "Opportunities remain &mdash; especially in condos and townhomes, where choice is considerably better.",
+            "body": "Sales slowed significantly in August and homes are taking a little longer to sell, creating room to negotiate. Condo and townhome inventory rose 3.1% and months of supply climbed to 4.3, giving buyers far more selection there &mdash; while detached supply has fallen to just 2.5 months, so the best detached homes still don&rsquo;t sit for long.",
+            "list": [
+              [
+                "Best opportunity",
+                "Condo / townhome segment"
+              ],
+              [
+                "Watch",
+                "Detached supply at just 2.5 months"
+              ],
+              [
+                "Geoff&rsquo;s advice",
+                "Come prepared, and be realistic on price and conditions"
+              ]
+            ]
+          },
+          "selling": {
+            "headline": "Detached inventory is down sharply, and well-priced homes are still attracting serious buyers.",
+            "body": "Detached sales fell 21.4%, but inventory dropped an even larger 30.7%, and the median detached price held firm at $1.25 million, up 2.0% year over year. Condo sellers face more competition as inventory rises. With buyers selective, presentation, condition and pricing are critical.",
+            "list": [
+              [
+                "Strongest advantage",
+                "Limited detached competition"
+              ],
+              [
+                "Watch",
+                "Rising condo inventory and selective buyers"
+              ],
+              [
+                "Geoff&rsquo;s advice",
+                "Pricing and presentation matter more than ever"
+              ]
+            ]
+          },
+          "analysis": [
+            "Overall sales fell 14.2% year over year, led by a 21.4% drop in detached sales, yet overall inventory was 13.8% lower than last year. Detached supply tightened to 2.5 months while condo and townhome supply rose to 4.3 months &mdash; two different markets emerging. If buyers return while detached inventory stays this constrained, conditions could firm quickly."
+          ],
+          "tables": [
+            {
+              "label": "Detached",
+              "rows": [
+                [
+                  "Median sale price",
+                  "$1,250,000"
+                ],
+                [
+                  "Median price change",
+                  "+2.0%"
+                ],
+                [
+                  "Sales",
+                  "81"
+                ],
+                [
+                  "Sales change",
+                  "&minus;21.4%"
+                ],
+                [
+                  "Months of inventory",
+                  "2.5"
+                ],
+                [
+                  "Months of inventory change",
+                  "&minus;28.6%"
+                ],
+                [
+                  "Average price",
+                  "$1,414,631"
+                ],
+                [
+                  "Average price change",
+                  "&minus;4.0%"
+                ],
+                [
+                  "New listings",
+                  "123"
+                ],
+                [
+                  "New listings change",
+                  "&minus;14.0%"
+                ],
+                [
+                  "Inventory",
+                  "221"
+                ],
+                [
+                  "Inventory change",
+                  "&minus;30.7%"
+                ],
+                [
+                  "Days on market",
+                  "35"
+                ],
+                [
+                  "Days-on-market change",
+                  "+6.1%"
+                ],
+                [
+                  "% of list price received",
+                  "97.3%"
+                ],
+                [
+                  "List-price-received change",
+                  "+0.6%"
+                ]
+              ]
+            },
+            {
+              "label": "Condo / Townhome",
+              "rows": [
+                [
+                  "Median sale price",
+                  "$660,000"
+                ],
+                [
+                  "Median price change",
+                  "+1.4%"
+                ],
+                [
+                  "Sales",
+                  "82"
+                ],
+                [
+                  "Sales change",
+                  "&minus;5.7%"
+                ],
+                [
+                  "Months of inventory",
+                  "4.3"
+                ],
+                [
+                  "Months of inventory change",
+                  "+10.3%"
+                ],
+                [
+                  "Average price",
+                  "$683,979"
+                ],
+                [
+                  "Average price change",
+                  "&minus;5.0%"
+                ],
+                [
+                  "New listings",
+                  "153"
+                ],
+                [
+                  "New listings change",
+                  "+0.7%"
+                ],
+                [
+                  "Inventory",
+                  "328"
+                ],
+                [
+                  "Inventory change",
+                  "+3.1%"
+                ],
+                [
+                  "Days on market",
+                  "47"
+                ],
+                [
+                  "Days-on-market change",
+                  "+2.2%"
+                ],
+                [
+                  "% of list price received",
+                  "97.7%"
+                ],
+                [
+                  "List-price-received change",
+                  "+0.2%"
+                ]
+              ]
+            }
+          ],
+          "backdrop": "Based on August 2026 activity &middot; ITSO data current September 2, 2026 &middot; Bank of Canada policy rate held at 2.25% &middot; August 2026 inflation 3.03% year over year, up from 2.8% in June &middot; Unemployment unchanged at 6.4% &middot; Local data compares August 2026 with August 2025 &middot; Percent changes are calculated using rounded figures",
+          "summary": "Sales took a breather while detached inventory fell even faster, easing the index to 55 &mdash; balanced, selective, and slightly favouring sellers."
+        },
+        "hamilton": {
+          "tagline": "Supply is tightening, but buyer demand slowed sharply in August, keeping Hamilton in a balanced market.",
+          "score": 49,
+          "label": "Balanced Market",
+          "sublabel": "Slightly buyer favoured",
+          "note": "Weaker demand, lower prices and longer selling times outweighed tightening inventory, tipping the index marginally to the buyer&rsquo;s side of balanced.",
+          "signals": [
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Inventory",
+              "status": "Tightening"
+            },
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Demand",
+              "status": "Weaker"
+            },
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Prices",
+              "status": "Lower"
+            },
+            {
+              "dir": "up",
+              "arrow": "&uarr;",
+              "name": "Competition",
+              "status": "Rising"
+            },
+            {
+              "dir": "flat",
+              "arrow": "&rarr;",
+              "name": "Outlook",
+              "status": "Slightly Buyer Favoured"
+            }
+          ],
+          "buying": {
+            "headline": "August gave buyers a little more leverage &mdash; especially in condos.",
+            "body": "Sales fell 18.9% year over year and homes took 43 days to sell, up 16.2%, giving buyers more time and negotiating room. The townhouse and condo median dropped 14.5% to $543,000. But inventory is still contracting &mdash; if activity recovers this fall, that advantage could disappear quickly.",
+            "list": [
+              [
+                "Best opportunity",
+                "Condo / townhome selection"
+              ],
+              [
+                "Watch",
+                "Inventory still falling in both segments"
+              ],
+              [
+                "Geoff&rsquo;s advice",
+                "Negotiate on overpriced or stale listings &mdash; be ready when the right one appears"
+              ]
+            ]
+          },
+          "selling": {
+            "headline": "Lower inventory helps, but soft demand means expectations need to be realistic.",
+            "body": "Inventory is down in both segments &mdash; detached 11.1% and condo 12.9% &mdash; which is helping support prices. Detached homes remain more resilient, with the median down just 2.6% to $740,000. Homes are taking longer to sell, so pricing and presentation are critical.",
+            "list": [
+              [
+                "Strongest advantage",
+                "Fewer competing listings"
+              ],
+              [
+                "Watch",
+                "Longer days on market, especially for condos"
+              ],
+              [
+                "Geoff&rsquo;s advice",
+                "Price realistically &mdash; well-priced homes still attract serious buyers"
+              ]
+            ]
+          },
+          "analysis": [
+            "Overall sales declined 18.9% year over year, the median price fell 4.9% to $679,950 and the average declined 5.0% to $738,025. Homes took 43 days to sell, up 16.2%. Overall inventory was down 11.8%, the counterbalance keeping Hamilton balanced despite softer demand."
+          ],
+          "tables": [
+            {
+              "label": "Single Family Detached",
+              "rows": [
+                [
+                  "Median sale price",
+                  "$740,000"
+                ],
+                [
+                  "Median price change",
+                  "&minus;2.6%"
+                ],
+                [
+                  "Sales",
+                  "273"
+                ],
+                [
+                  "Sales change",
+                  "&minus;18.5%"
+                ],
+                [
+                  "Months of inventory",
+                  "4.1"
+                ],
+                [
+                  "Months of inventory change",
+                  "&minus;4.7%"
+                ],
+                [
+                  "Average price",
+                  "$817,086"
+                ],
+                [
+                  "Average price change",
+                  "&minus;2.7%"
+                ],
+                [
+                  "New listings",
+                  "539"
+                ],
+                [
+                  "New listings change",
+                  "&minus;18.5%"
+                ],
+                [
+                  "Inventory",
+                  "1,251"
+                ],
+                [
+                  "Inventory change",
+                  "&minus;11.1%"
+                ],
+                [
+                  "Days on market",
+                  "40"
+                ],
+                [
+                  "Days-on-market change",
+                  "+11.1%"
+                ],
+                [
+                  "% of list price received",
+                  "96.8%"
+                ],
+                [
+                  "List-price-received change",
+                  "&minus;0.8%"
+                ]
+              ]
+            },
+            {
+              "label": "Townhouse / Condo",
+              "rows": [
+                [
+                  "Median sale price",
+                  "$543,000"
+                ],
+                [
+                  "Median price change",
+                  "&minus;14.5%"
+                ],
+                [
+                  "Sales",
+                  "108"
+                ],
+                [
+                  "Sales change",
+                  "&minus;20.0%"
+                ],
+                [
+                  "Months of inventory",
+                  "5.3"
+                ],
+                [
+                  "Months of inventory change",
+                  "&minus;3.6%"
+                ],
+                [
+                  "Average price",
+                  "$536,309"
+                ],
+                [
+                  "Average price change",
+                  "&minus;13.7%"
+                ],
+                [
+                  "New listings",
+                  "300"
+                ],
+                [
+                  "New listings change",
+                  "&minus;19.8%"
+                ],
+                [
+                  "Inventory",
+                  "737"
+                ],
+                [
+                  "Inventory change",
+                  "&minus;12.9%"
+                ],
+                [
+                  "Days on market",
+                  "51"
+                ],
+                [
+                  "Days-on-market change",
+                  "+27.5%"
+                ],
+                [
+                  "% of list price received",
+                  "97.3%"
+                ],
+                [
+                  "List-price-received change",
+                  "&minus;0.6%"
+                ]
+              ]
+            }
+          ],
+          "backdrop": "Based on August 2026 activity &middot; ITSO data current September 2, 2026 &middot; Bank of Canada policy rate held at 2.25% &middot; August 2026 inflation 3.03% year over year, up from 2.8% in June &middot; Unemployment unchanged at 6.4% &middot; Local data compares August 2026 with August 2025 &middot; Percent changes are calculated using rounded figures",
+          "summary": "Demand slowed sharply and prices eased in both segments, moving the index to 49 &mdash; balanced, but marginally on the buyer&rsquo;s side."
+        }
+      },
+      "published": "2026-09-24"
+    },
+    {
+      "month": "2026-09",
+      "cities": {
+        "burlington": {
+          "tagline": "Burlington&rsquo;s market holds its balance as sales slow and supply tightens &mdash; with detached prices showing real resilience.",
+          "score": 55,
+          "label": "Balanced Market",
+          "sublabel": "Mixed conditions, slightly favouring sellers",
+          "note": "Sales slowed and supply tightened, with detached prices holding firm while townhouse and condo prices softened &mdash; a balanced market with two distinct dynamics.",
+          "signals": [
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Inventory",
+              "status": "Tightening"
+            },
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Demand",
+              "status": "Softening"
+            },
+            {
+              "dir": "flat",
+              "arrow": "&harr;",
+              "name": "Prices",
+              "status": "Mixed"
+            },
+            {
+              "dir": "up",
+              "arrow": "&uarr;",
+              "name": "Competition",
+              "status": "Moderate"
+            }
+          ],
+          "buying": {
+            "headline": "Townhouses and condos offer more room to negotiate, while detached homes remain well supported.",
+            "body": "Overall sales slowed 14.1% year over year, and the townhouse and condo median softened 8.2% to $670,000 with homes taking 13.5% longer to sell (42 days). Detached supply is tighter at 3.1 months of inventory and detached homes sold 23.5% faster, so well-priced detached listings still attract serious interest.",
+            "list": [
+              [
+                "Best opportunity",
+                "Townhouse / condo segment"
+              ],
+              [
+                "Watch",
+                "Detached inventory down 19.6%"
+              ],
+              [
+                "Geoff&rsquo;s advice",
+                "Know where you have room to negotiate, and where you don&rsquo;t"
+              ]
+            ]
+          },
+          "selling": {
+            "headline": "Detached sellers have the stronger hand, while condo and townhouse sellers face a softer market.",
+            "body": "Detached sales fell 19.8%, but inventory dropped 19.6% and the median detached price rose 1.8% to $1,190,000, with homes selling in 26 days. Townhouse and condo sellers face softer prices and longer marketing times. With buyers selective, realistic pricing and strong presentation matter most.",
+            "list": [
+              [
+                "Strongest advantage",
+                "Tight detached supply and faster sales"
+              ],
+              [
+                "Watch",
+                "Softer townhouse and condo prices"
+              ],
+              [
+                "Geoff&rsquo;s advice",
+                "Realistic pricing, strong presentation, neighbourhood-level knowledge"
+              ]
+            ]
+          },
+          "analysis": [
+            "Overall sales fell 14.1% year over year, led by a 19.8% drop in detached sales, while active listings fell 15.8%. Overall months of supply sit at 3.6, with detached at 3.1 months and townhouse/condo at 4.1 &mdash; two distinct market dynamics. A recovery in demand combined with limited inventory could strengthen competition, particularly for detached homes."
+          ],
+          "tables": [
+            {
+              "label": "Detached",
+              "rows": [
+                [
+                  "Median sale price",
+                  "$1,190,000"
+                ],
+                [
+                  "Median price change",
+                  "+1.8%"
+                ],
+                [
+                  "Sales",
+                  "77"
+                ],
+                [
+                  "Sales change",
+                  "&minus;19.8%"
+                ],
+                [
+                  "Months of inventory",
+                  "3.1"
+                ],
+                [
+                  "Months of inventory change",
+                  "&minus;13.9%"
+                ],
+                [
+                  "Average price",
+                  "$1,360,500"
+                ],
+                [
+                  "Average price change",
+                  "+6.2%"
+                ],
+                [
+                  "New listings",
+                  "211"
+                ],
+                [
+                  "New listings change",
+                  "&minus;14.6%"
+                ],
+                [
+                  "Inventory",
+                  "274"
+                ],
+                [
+                  "Inventory change",
+                  "&minus;19.6%"
+                ],
+                [
+                  "Days on market",
+                  "26"
+                ],
+                [
+                  "Days-on-market change",
+                  "&minus;23.5%"
+                ],
+                [
+                  "% of list price received",
+                  "96.6%"
+                ],
+                [
+                  "List-price-received change",
+                  "&minus;0.6%"
+                ]
+              ]
+            },
+            {
+              "label": "Condo / Townhome",
+              "rows": [
+                [
+                  "Median sale price",
+                  "$670,000"
+                ],
+                [
+                  "Median price change",
+                  "&minus;8.2%"
+                ],
+                [
+                  "Sales",
+                  "69"
+                ],
+                [
+                  "Sales change",
+                  "&minus;6.8%"
+                ],
+                [
+                  "Months of inventory",
+                  "4.1"
+                ],
+                [
+                  "Months of inventory change",
+                  "&minus;4.7%"
+                ],
+                [
+                  "Average price",
+                  "$734,527"
+                ],
+                [
+                  "Average price change",
+                  "&minus;5.1%"
+                ],
+                [
+                  "New listings",
+                  "177"
+                ],
+                [
+                  "New listings change",
+                  "&minus;22.0%"
+                ],
+                [
+                  "Inventory",
+                  "314"
+                ],
+                [
+                  "Inventory change",
+                  "&minus;12.0%"
+                ],
+                [
+                  "Days on market",
+                  "42"
+                ],
+                [
+                  "Days-on-market change",
+                  "+13.5%"
+                ],
+                [
+                  "% of list price received",
+                  "97.3%"
+                ],
+                [
+                  "List-price-received change",
+                  "&minus;0.6%"
+                ]
+              ]
+            }
+          ],
+          "backdrop": "Based on September 2026 activity &middot; ITSO data current October 2, 2026 &middot; Bank of Canada policy rate held at 2.25% &middot; September 2026 inflation 2.5% year over year &middot; Unemployment 6.5%, slightly higher &middot; Local data compares September 2026 with September 2025 &middot; Percent changes are calculated using rounded figures",
+          "summary": "Sales slowed and inventory tightened while detached prices held firm, keeping the index at 55 &mdash; balanced, with two distinct market dynamics."
+        },
+        "hamilton": {
+          "tagline": "Slower sales and softer prices create more room for buyers, while reduced inventory keeps Hamilton broadly balanced.",
+          "score": 47,
+          "label": "Balanced Market",
+          "sublabel": "Leaning toward buyers",
+          "note": "Lower sales, softer prices and longer selling times leaned the market toward buyers, while tighter inventory kept it from tipping out of balance.",
+          "signals": [
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Inventory",
+              "status": "Tightening"
+            },
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Demand",
+              "status": "Softening"
+            },
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Prices",
+              "status": "Lower"
+            },
+            {
+              "dir": "down",
+              "arrow": "&darr;",
+              "name": "Competition",
+              "status": "Easing"
+            },
+            {
+              "dir": "flat",
+              "arrow": "&rarr;",
+              "name": "Outlook",
+              "status": "Leaning Toward Buyers"
+            }
+          ],
+          "buying": {
+            "headline": "Buyers have more time and more room to negotiate, with improved affordability.",
+            "body": "Overall sales fell 22.6% year over year and the median price declined 8.9% to $640,000. Detached homes averaged 44 days on market (up 18.9%) and townhouses and condos 51 days (up 10.9%), giving buyers time to compare. Inventory is down 14.5%, and conditions can differ significantly between neighbourhoods, property types and price ranges.",
+            "list": [
+              [
+                "Best opportunity",
+                "Longer selling times in both segments"
+              ],
+              [
+                "Watch",
+                "Inventory down 14.5% overall"
+              ],
+              [
+                "Geoff&rsquo;s advice",
+                "Take time to compare, and negotiate on price and condition"
+              ]
+            ]
+          },
+          "selling": {
+            "headline": "Reduced inventory helps, but buyers are comparing carefully, so expectations need to be realistic.",
+            "body": "Inventory is down in both segments &mdash; detached 12.6% and condo 17.8% &mdash; which is preventing a bigger imbalance. But buyers are less inclined to overlook condition or pricing concerns, and homes are taking longer to sell. Well-presented homes priced for their neighbourhood still draw serious interest.",
+            "list": [
+              [
+                "Strongest advantage",
+                "Fewer competing listings"
+              ],
+              [
+                "Watch",
+                "Longer days on market in both segments"
+              ],
+              [
+                "Geoff&rsquo;s advice",
+                "Price for your neighbourhood and present the home well"
+              ]
+            ]
+          },
+          "analysis": [
+            "Overall sales declined 22.6% year over year and the median sale price fell 8.9% to $640,000. Detached homes took 44 days to sell (up 18.9%) and townhouses and condos 51 days (up 10.9%). Active inventory was down 14.5%, with 4.8 months of inventory overall &mdash; broadly balanced, but noticeably softer than a year earlier."
+          ],
+          "tables": [
+            {
+              "label": "Single Family Detached",
+              "rows": [
+                [
+                  "Median sale price",
+                  "$692,500"
+                ],
+                [
+                  "Median price change",
+                  "&minus;9.9%"
+                ],
+                [
+                  "Sales",
+                  "270"
+                ],
+                [
+                  "Sales change",
+                  "&minus;20.6%"
+                ],
+                [
+                  "Months of inventory",
+                  "4.5"
+                ],
+                [
+                  "Months of inventory change",
+                  "&minus;2.2%"
+                ],
+                [
+                  "Average price",
+                  "$778,972"
+                ],
+                [
+                  "Average price change",
+                  "&minus;9.2%"
+                ],
+                [
+                  "New listings",
+                  "737"
+                ],
+                [
+                  "New listings change",
+                  "&minus;20.2%"
+                ],
+                [
+                  "Inventory",
+                  "1,335"
+                ],
+                [
+                  "Inventory change",
+                  "&minus;12.6%"
+                ],
+                [
+                  "Days on market",
+                  "44"
+                ],
+                [
+                  "Days-on-market change",
+                  "+18.9%"
+                ],
+                [
+                  "% of list price received",
+                  "96.7%"
+                ],
+                [
+                  "List-price-received change",
+                  "&minus;0.2%"
+                ]
+              ]
+            },
+            {
+              "label": "Townhouse / Condo",
+              "rows": [
+                [
+                  "Median sale price",
+                  "$565,000"
+                ],
+                [
+                  "Median price change",
+                  "&minus;5.8%"
+                ],
+                [
+                  "Sales",
+                  "106"
+                ],
+                [
+                  "Sales change",
+                  "&minus;27.4%"
+                ],
+                [
+                  "Months of inventory",
+                  "5.4"
+                ],
+                [
+                  "Months of inventory change",
+                  "&minus;6.9%"
+                ],
+                [
+                  "Average price",
+                  "$549,996"
+                ],
+                [
+                  "Average price change",
+                  "&minus;6.3%"
+                ],
+                [
+                  "New listings",
+                  "320"
+                ],
+                [
+                  "New listings change",
+                  "&minus;33.1%"
+                ],
+                [
+                  "Inventory",
+                  "729"
+                ],
+                [
+                  "Inventory change",
+                  "&minus;17.8%"
+                ],
+                [
+                  "Days on market",
+                  "51"
+                ],
+                [
+                  "Days-on-market change",
+                  "+10.9%"
+                ],
+                [
+                  "% of list price received",
+                  "97.0%"
+                ],
+                [
+                  "List-price-received change",
+                  "&minus;0.5%"
+                ]
+              ]
+            }
+          ],
+          "backdrop": "Based on September 2026 activity &middot; ITSO data current October 2, 2026 &middot; Bank of Canada policy rate held at 2.25% &middot; September 2026 inflation 2.5% year over year &middot; Unemployment 6.5%, slightly higher &middot; Local data compares September 2026 with September 2025 &middot; Percent changes are calculated using rounded figures",
+          "summary": "Sales fell 22.6% and prices softened further, moving the index to 47 &mdash; balanced, but leaning more toward buyers."
+        }
+      },
+      "published": "2026-10-13"
+    }
+  ]
+}
