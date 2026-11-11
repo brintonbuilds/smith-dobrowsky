@@ -4,19 +4,19 @@
   Keep each note to 1-2 sentences. Save, and the homepage map updates.
 */
 window.MARKET_SNAPSHOT = {
-  month: "September 2026",
+  month: "November 2026",
   communities: {
     burlington: {
-      score: 55,
+      score: 53,
       headline: "Balanced Market",
       sublabel: "Mixed conditions, slightly favouring sellers",
-      note: "Sales slowed and supply tightened — detached prices held firm while townhouse and condo prices softened, making this a balanced market with two distinct dynamics."
+      note: "Detached prices rose 4.0% and inventory fell 18.3% while sales eased, keeping Burlington balanced with firmer detached prices and a softer condo market."
     },
     hamilton: {
-      score: 47,
+      score: 45,
       headline: "Balanced Market",
-      sublabel: "Leaning toward buyers",
-      note: "Lower sales, softer prices and longer selling times leaned the market toward buyers, while tighter inventory kept it from tipping out of balance."
+      sublabel: "Slightly favouring buyers",
+      note: "Sales and prices were lower in both property types, but reduced inventory is helping keep Hamilton balanced, slightly favouring buyers."
     }
   }
 };

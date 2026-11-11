@@ -17,7 +17,7 @@
    Import an older edition from a saved copy of local-insight.html:
      node scripts/build-market-reports.mjs --import path/to/local-insight.html 2026-07 2026-09-16
 */
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, unlink } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -111,6 +111,9 @@ function extractCity(panel) {
 function extractEdition(html, ym) {
   const label = monthLabel(ym);
   const edition = { month: ym, cities: {} };
+  // The issue month can differ from the data month (e.g. November issue = October activity).
+  const dm = html.match(/Based on (\w+ \d{4}) activity/);
+  if (dm) edition.dataLabel = dm[1];
   for (const key of Object.keys(CITIES)) {
     const start = html.indexOf(`id="panel-${key}"`);
     const end = html.indexOf(`<!-- /panel-${key} -->`, start);
@@ -281,9 +284,10 @@ function reportPage(c, key, ed, prev, next) {
   const label = monthLabel(ed.month);
   const file = reportFile(key, ed.month);
   const s = keyStats(city);
+  const dl = ed.dataLabel || label;
   const title = `${meta.name} Real Estate Market Report, ${label} | Smith Dobrowsky`;
-  const description = `${meta.name} housing market, ${label}: detached median ${s.median} (${change(s.medianChg)}), ${s.sales} sales, ${s.dom} days on market. ${plain(city.label)}, ${city.score}/100 on the Market Balance Index.`;
-  const list = faqs(meta.name, label, city);
+  const description = `${meta.name} housing market, ${dl}: detached median ${s.median} (${change(s.medianChg)}), ${s.sales} sales, ${s.dom} days on market. ${plain(city.label)}, ${city.score}/100 on the Market Balance Index.`;
+  const list = faqs(meta.name, dl, city);
   const crumbItems = [['Home', 'index.html'], ['Local Insight', 'local-insight.html'], [`${meta.name} Market`, hubFile(key)], [label, file]];
   const table = (t) => `
           <div class="rp-table-wrap">
@@ -317,14 +321,14 @@ function reportPage(c, key, ed, prev, next) {
 
     <div class="rp-wrap rp-body">
 
-      <section class="rp-section rp-snapshot" aria-label="${label} snapshot">${scoreCard(city)}
+      <section class="rp-section rp-snapshot" aria-label="${dl} snapshot">${scoreCard(city)}
         <div class="rp-snapshot__side">
           <p class="rp-label">At a glance</p>${signalList(city)}${statGrid(s)}
         </div>
       </section>
 
       <section class="rp-section" aria-labelledby="rp-analysis-heading">
-        <h2 class="rp-h2" id="rp-analysis-heading">What happened in ${label}</h2>
+        <h2 class="rp-h2" id="rp-analysis-heading">What happened in ${dl}</h2>
         ${city.analysis.map((p) => `<p class="rp-lead">${p}</p>`).join('\n        ')}
       </section>
 
@@ -335,7 +339,7 @@ function reportPage(c, key, ed, prev, next) {
       </section>
 
       <section class="rp-section" aria-labelledby="rp-data-heading">
-        <h2 class="rp-h2" id="rp-data-heading">The full ${label} data</h2>
+        <h2 class="rp-h2" id="rp-data-heading">The full ${dl} data</h2>
         <div class="rp-tables">${city.tables.map(table).join('')}
         </div>
         <p class="rp-source">${city.backdrop}</p>
@@ -385,8 +389,9 @@ function hubPage(c, key, editions) {
   const label = monthLabel(latest.month);
   const s = keyStats(city);
   const title = `${meta.name} Real Estate Market: Prices, Trends &amp; Monthly Reports`;
-  const description = `Latest ${meta.name} housing market data (${label}): detached median ${s.median}, ${s.dom} days on market, Market Balance Index ${city.score}/100. Monthly reports from Geoff Smith.`;
-  const list = faqs(meta.name, label, city).slice(0, 2);
+  const dl = latest.dataLabel || label;
+  const description = `Latest ${meta.name} housing market data (${dl}): detached median ${s.median}, ${s.dom} days on market, Market Balance Index ${city.score}/100. Monthly reports from Geoff Smith.`;
+  const list = faqs(meta.name, dl, city).slice(0, 2);
   list[0][0] = `Is ${meta.name} a buyer&rsquo;s or seller&rsquo;s market right now?`;
   const crumbItems = [['Home', 'index.html'], ['Local Insight', 'local-insight.html'], [`${meta.name} Market`, file]];
   const newestFirst = [...editions].reverse();
@@ -404,7 +409,7 @@ function hubPage(c, key, editions) {
     <div class="rp-wrap rp-body">
 
       <section class="rp-section" aria-labelledby="rp-latest-heading">
-        <h2 class="rp-h2" id="rp-latest-heading">The latest: ${label}</h2>
+        <h2 class="rp-h2" id="rp-latest-heading">The latest: ${label} edition</h2>
         <p class="rp-lead">${city.tagline}</p>
         <div class="rp-snapshot">${scoreCard(city)}
           <div class="rp-snapshot__side">
@@ -493,7 +498,12 @@ if (args[0] === '--import') {
     console.log(`Updated ${monthLabel(ym)} from local-insight.html`);
   }
 }
+// Only the newest MAX_EDITIONS are kept (older report pages are deleted and dropped from the sitemap).
+const MAX_EDITIONS = 1;
+const dropped = data.editions.slice(0, Math.max(0, data.editions.length - MAX_EDITIONS));
+data.editions = data.editions.slice(-MAX_EDITIONS);
 await writeFile(DATA_FILE, JSON.stringify(data, null, 2) + '\n');
+for (const ed of dropped) for (const key of Object.keys(CITIES)) await unlink(path.join(root, reportFile(key, ed.month))).catch(() => {});
 
 const c = chrome(li);
 const pages = [];
@@ -518,6 +528,8 @@ await writeFile(liPath, li);
 /* Register pages for the sitemap + validator. */
 const cfgPath = path.join(root, 'site.config.json');
 const cfg = JSON.parse(await readFile(cfgPath, 'utf8'));
+const droppedFiles = new Set(dropped.flatMap((ed) => Object.keys(CITIES).map((k) => reportFile(k, ed.month))));
+cfg.publicPages = cfg.publicPages.filter((pg) => !droppedFiles.has(pg.file));
 for (const p of pages) {
   const key = Object.keys(CITIES).find((k) => p.file.startsWith(k));
   const entry = {
