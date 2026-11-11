@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="css/nav.css?v=20260907-social" />
   <link rel="stylesheet" href="css/pages.css?v=20261005-signup" />
   <link rel="stylesheet" href="css/map-cards.css?v=20261014b" />
-  <link rel="preload" as="image" href="assets/halton-hamilton-map-thanksgiving.webp" type="image/webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/halton-hamilton-map.webp" type="image/webp" fetchpriority="high" />
   <script src="js/nav.js" defer></script>
   <script type="application/ld+json">
   {
@@ -148,9 +148,92 @@
       letter-spacing: 0.15em;
     }
 
-    /* Seasonal hero: let the warm autumn grade and gold leaves come through */
-    body.local-insight-page .ip-hero--local-insight .ip-hero__bg img {
-      filter: saturate(0.94) contrast(1.0) brightness(1.02);
+    /* ── Geoff in the hero ──
+       Cut-out studio portrait standing on the cream escarpment side of the
+       map, fading into the hero floor. Desktop only; smaller screens get
+       the avatar beside the signup lede instead. */
+    body.local-insight-page .li-hero-geoff {
+      display: none;
+    }
+
+    @media (min-width: 1100px) {
+      body.local-insight-page .li-hero-geoff {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        right: max(2vw, calc((100vw - 1280px) / 2 - 20px));
+        height: min(92%, 700px);
+        aspect-ratio: 800 / 1200;
+        margin: 0;
+        pointer-events: none;
+      }
+
+      /* Soft warm pool behind him so he sits in the scene, not on it */
+      body.local-insight-page .li-hero-geoff::before {
+        content: "";
+        position: absolute;
+        inset: 18% 6% 0;
+        background: radial-gradient(ellipse at 50% 65%, rgba(11, 22, 38, 0.30) 0%, rgba(11, 22, 38, 0.12) 45%, transparent 72%);
+        filter: blur(6px);
+      }
+
+      body.local-insight-page .li-hero-geoff__img {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: bottom center;
+        filter: drop-shadow(0 18px 40px rgba(5, 10, 20, 0.35)) saturate(0.92) contrast(1.02);
+        -webkit-mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
+        mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
+      }
+
+      body.local-insight-page .li-hero-geoff__caption {
+        position: absolute;
+        left: -4%;
+        bottom: clamp(40px, 7vh, 72px);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px 18px 12px 16px;
+        border-left: 1px solid rgba(201, 182, 146, 0.8);
+        background: rgba(5, 10, 20, 0.62);
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+      }
+
+      body.local-insight-page .li-hero-geoff__name {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-size: 1.15rem;
+        line-height: 1.1;
+        color: var(--cream);
+      }
+
+      body.local-insight-page .li-hero-geoff__role {
+        font-family: var(--font-sans);
+        font-size: 9.5px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(247, 245, 241, 0.7);
+      }
+
+      /* Carry the dark cover a little further so the text column stays crisp on the paler map */
+      body.local-insight-page .ip-hero--local-insight .ip-hero__overlay {
+        background:
+          linear-gradient(100deg, rgba(5, 10, 20, 0.88) 0%, rgba(5, 10, 20, 0.8) 26%, rgba(5, 10, 20, 0.56) 44%, rgba(5, 10, 20, 0.16) 60%, transparent 72%),
+          linear-gradient(to top, rgba(4, 8, 18, 0.52) 0%, rgba(4, 8, 18, 0.16) 20%, transparent 40%),
+          linear-gradient(to bottom, rgba(4, 8, 18, 0.22) 0%, transparent 12%);
+      }
+
+      /* Desktop already shows Geoff in full; skip the avatar */
+      body.local-insight-page .li-hero-signup__avatar {
+        display: none;
+      }
     }
 
     /* Links to the permanent monthly report pages (filled by scripts/build-market-reports.mjs) */
@@ -280,6 +363,61 @@
       max-width: 40ch;
       margin: 0 0 clamp(14px, 1.5vw, 18px);
       text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    body.local-insight-page .li-hero-signup__from {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 clamp(10px, 1.1vw, 14px);
+    }
+
+    body.local-insight-page .li-hero-signup__from .li-hero-signup__lede {
+      margin: 0;
+    }
+
+    body.local-insight-page .li-hero-signup__avatar {
+      flex: 0 0 auto;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(201, 182, 146, 0.75);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    }
+
+    /* What's inside each email: one quiet line, separated by fine gold rules */
+    body.local-insight-page .li-hero-signup__inside {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 0;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 clamp(16px, 1.7vw, 20px);
+      font-family: var(--font-sans);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      width: max-content;
+      max-width: calc(100vw - 2 * var(--section-pad-x, 24px));
+      color: rgba(232, 220, 196, 0.86);
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+    }
+
+    body.local-insight-page .li-hero-signup__inside li {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    body.local-insight-page .li-hero-signup__inside li + li::before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 1px;
+      margin: 0 9px;
+      background: rgba(201, 182, 146, 0.7);
     }
 
     /* Form and confirmation share one slot so swapping them barely moves the page */
@@ -440,7 +578,36 @@
       outline-offset: 2px;
     }
 
+    /* Below desktop: stack the three items with a leading rule each, and
+       deepen the left-hand shade, since the plain map is lighter than the
+       retired seasonal one and the text column runs further across it. */
+    @media (max-width: 1099px) {
+      body.local-insight-page .li-hero-signup__inside {
+        flex-direction: column;
+        gap: 7px;
+        width: auto;
+      }
+
+      body.local-insight-page .li-hero-signup__inside li::before {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 1px;
+        margin: 0 10px 0 0 !important;
+        background: rgba(201, 182, 146, 0.7);
+      }
+    }
+
+    @media (min-width: 681px) and (max-width: 1099px) {
+      body.local-insight-page .ip-hero--local-insight .ip-hero__overlay {
+        background:
+          linear-gradient(100deg, rgba(5, 10, 20, 0.90) 0%, rgba(5, 10, 20, 0.82) 40%, rgba(5, 10, 20, 0.6) 64%, rgba(5, 10, 20, 0.22) 84%, transparent 100%),
+          linear-gradient(to top, rgba(4, 8, 18, 0.52) 0%, rgba(4, 8, 18, 0.16) 20%, transparent 40%);
+      }
+    }
+
     @media (max-width: 520px) {
+
       body.local-insight-page .li-hero-signup__form {
         flex-direction: column;
       }
@@ -485,9 +652,9 @@
     <section class="ip-hero ip-hero--local-insight" aria-labelledby="li-hero-heading">
 
       <div class="ip-hero__bg" aria-hidden="true">
-        <!-- Seasonal hero (Thanksgiving 2026). To revert, point back to assets/halton-hamilton-map.webp here and in the preload above. -->
+        <!-- Standard architectural map (Thanksgiving variant retired Nov 2026: assets/halton-hamilton-map-thanksgiving.webp) -->
         <img
-          src="assets/halton-hamilton-map-thanksgiving.webp"
+          src="assets/halton-hamilton-map.webp"
           alt=""
           width="1672"
           height="941"
@@ -498,8 +665,25 @@
       </div>
       <div class="ip-hero__overlay" aria-hidden="true"></div>
 
+      <!-- Geoff, standing on the map he writes about (desktop only; existing studio portrait used on Home and About) -->
+      <figure class="li-hero-geoff">
+        <img
+          class="li-hero-geoff__img"
+          src="assets/A28U9908jj.webp"
+          alt="Geoff Smith"
+          width="800"
+          height="1200"
+          loading="eager"
+          decoding="async"
+        >
+        <figcaption class="li-hero-geoff__caption">
+          <span class="li-hero-geoff__name">Geoff Smith</span>
+          <span class="li-hero-geoff__role">Burlington &amp; Hamilton</span>
+        </figcaption>
+      </figure>
+
       <div class="ip-hero__inner">
-        <p class="ip-hero__eyebrow editorial-eyebrow editorial-eyebrow--light">LOCAL INTELLIGENCE&trade; &middot; SEPTEMBER 2026</p>
+        <p class="ip-hero__eyebrow editorial-eyebrow editorial-eyebrow--light">LOCAL INTELLIGENCE&trade; &middot; NOVEMBER 2026</p>
         <h1 class="ip-hero__heading editorial-heading" id="li-hero-heading">
           <span class="ip-hero__heading-line">See the market</span>
           <em>before everyone else.</em>
@@ -508,7 +692,16 @@
         <!-- Hero newsletter signup. Same Mailchimp audience, form and interest group as the
              signup at the foot of the page; handled by the shared signup script in js/main.js. -->
         <div class="li-hero-signup">
-          <p class="li-hero-signup__lede" id="li-hero-signup-lede">Get Geoff&rsquo;s monthly Burlington and Hamilton market insights delivered to your inbox.</p>
+          <div class="li-hero-signup__from">
+            <img class="li-hero-signup__avatar" src="assets/geoff-smith-avatar.webp" alt="" width="96" height="96" decoding="async">
+            <p class="li-hero-signup__lede" id="li-hero-signup-lede">Get Geoff&rsquo;s monthly Burlington and Hamilton market insights delivered to your inbox.</p>
+          </div>
+
+          <ul class="li-hero-signup__inside" aria-label="In each monthly email">
+            <li>Street-level pricing</li>
+            <li>Inventory and days on market</li>
+            <li>What it means for you</li>
+          </ul>
 
           <div class="li-hero-signup__slot">
             <form
