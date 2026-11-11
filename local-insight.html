@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
-  <script src="js/analytics.js?v=20261014b"></script>
+  <script src="js/analytics.js?v=20261111-hero-signup"></script>
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="stylesheet" href="css/styles.css?v=20260907-reviews" />
   <link rel="stylesheet" href="css/nav.css?v=20260907-social" />
@@ -261,6 +261,198 @@
         white-space: normal;
       }
     }
+
+    /* ── Hero newsletter signup ──
+       Sits between the headline and the report link. Reuses the hero's
+       inverse type colours and the site's outlined button; field styling
+       mirrors the footer-band signup (.li-signup__input) so both read as one. */
+    body.local-insight-page .li-hero-signup {
+      max-width: 500px;
+      margin: 0 0 clamp(22px, 2.4vw, 30px);
+    }
+
+    body.local-insight-page .li-hero-signup__lede {
+      font-family: var(--font-sans);
+      font-size: clamp(0.94rem, 1vw, 1.02rem);
+      font-weight: 400;
+      line-height: 1.6;
+      color: rgba(247, 245, 241, 0.84);
+      max-width: 40ch;
+      margin: 0 0 clamp(14px, 1.5vw, 18px);
+      text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Form and confirmation share one slot so swapping them barely moves the page */
+    body.local-insight-page .li-hero-signup__slot {
+      min-height: 50px;
+    }
+
+    body.local-insight-page .li-hero-signup__form {
+      display: flex;
+      align-items: stretch;
+      gap: 10px;
+    }
+
+    body.local-insight-page .li-hero-signup__form[hidden] {
+      display: none;
+    }
+
+    body.local-insight-page .li-hero-signup__label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    body.local-insight-page .li-hero-signup__input {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 50px;
+      box-sizing: border-box;
+      padding: 13px 16px;
+      font-family: var(--font-sans);
+      font-size: 16px; /* 16px stops iOS zooming on focus */
+      font-weight: 400;
+      color: var(--cream);
+      background: rgba(5, 10, 20, 0.38);
+      border: 1px solid rgba(247, 245, 241, 0.32);
+      border-radius: 0;
+      appearance: none;
+      -webkit-appearance: none;
+      transition: border-color 0.22s ease, background 0.22s ease;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+    }
+
+    body.local-insight-page .li-hero-signup__input::placeholder {
+      color: rgba(247, 245, 241, 0.52);
+      font-weight: 300;
+    }
+
+    body.local-insight-page .li-hero-signup__input:hover {
+      border-color: rgba(247, 245, 241, 0.48);
+    }
+
+    body.local-insight-page .li-hero-signup__input:focus {
+      outline: none;
+    }
+
+    body.local-insight-page .li-hero-signup__input:focus-visible {
+      border-color: rgba(247, 245, 241, 0.82);
+      background: rgba(5, 10, 20, 0.5);
+      outline: 1px solid rgba(247, 245, 241, 0.82);
+      outline-offset: 3px;
+    }
+
+    body.local-insight-page .li-hero-signup__input[aria-invalid="true"] {
+      border-color: #f2b8a8;
+    }
+
+    body.local-insight-page .li-hero-signup__submit {
+      flex: 0 0 auto;
+      min-height: 50px;
+      white-space: nowrap;
+      color: var(--cream);
+      border-color: rgba(247, 245, 241, 0.5);
+      background: rgba(5, 10, 20, 0.56);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+    }
+
+    body.local-insight-page .li-hero-signup__submit:hover,
+    body.local-insight-page .li-hero-signup__submit:focus-visible {
+      color: #fff;
+      border-color: rgba(247, 245, 241, 0.82);
+      background: rgba(5, 10, 20, 0.7);
+    }
+
+    body.local-insight-page .li-hero-signup__submit[disabled] {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    body.local-insight-page .li-hero-signup__success {
+      padding: 14px 18px;
+      border: 1px solid rgba(247, 245, 241, 0.32);
+      background: rgba(5, 10, 20, 0.42);
+      color: rgba(247, 245, 241, 0.86);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+    }
+
+    body.local-insight-page .li-hero-signup__success:focus {
+      outline: none;
+    }
+
+    body.local-insight-page .li-hero-signup__success p {
+      margin: 0;
+    }
+
+    body.local-insight-page .li-hero-signup__success-title {
+      font-family: var(--font-serif);
+      font-size: 1.22rem;
+      font-style: italic;
+      color: var(--cream);
+      margin-bottom: 4px !important;
+    }
+
+    body.local-insight-page .li-hero-signup__error {
+      margin: 10px 0 0;
+      font-family: var(--font-sans);
+      font-size: 0.86rem;
+      line-height: 1.5;
+      color: #f6c4b6;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    body.local-insight-page .li-hero-signup__error[hidden] {
+      display: none;
+    }
+
+    body.local-insight-page .li-hero-signup__consent {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: rgba(247, 245, 241, 0.7);
+      max-width: 46ch;
+      margin: 12px 0 0;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55), 0 1px 10px rgba(0, 0, 0, 0.45);
+    }
+
+    body.local-insight-page .li-hero-signup__consent a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    body.local-insight-page .li-hero-signup__consent a:hover {
+      color: var(--cream);
+    }
+
+    body.local-insight-page .li-hero-signup__consent a:focus-visible {
+      outline: 1px solid currentColor;
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 520px) {
+      body.local-insight-page .li-hero-signup__form {
+        flex-direction: column;
+      }
+
+      body.local-insight-page .li-hero-signup__submit {
+        width: 100%;
+      }
+
+      body.local-insight-page .li-hero-signup__slot {
+        min-height: 110px;
+      }
+    }
   </style>
 </head>
 <body class="interior-page local-insight-page">
@@ -312,6 +504,60 @@
           <span class="ip-hero__heading-line">See the market</span>
           <em>before everyone else.</em>
         </h1>
+
+        <!-- Hero newsletter signup. Same Mailchimp audience, form and interest group as the
+             signup at the foot of the page; handled by the shared signup script in js/main.js. -->
+        <div class="li-hero-signup">
+          <p class="li-hero-signup__lede" id="li-hero-signup-lede">Get Geoff&rsquo;s monthly Burlington and Hamilton market insights delivered to your inbox.</p>
+
+          <div class="li-hero-signup__slot">
+            <form
+              class="li-hero-signup__form"
+              id="li-hero-signup-form"
+              data-mc-signup
+              data-success="li-hero-signup-success"
+              data-error="li-hero-signup-error"
+              data-action="https://YourRealPro.us14.list-manage.com/subscribe/post?u=9d96d60cfc2b644eef2985b6f&amp;id=edaf826e86&amp;f_id=00b640e5f0"
+              method="post"
+              target="_blank"
+              novalidate
+            >
+              <label class="li-hero-signup__label" for="li-hero-signup-email">Email address</label>
+              <input
+                class="li-hero-signup__input"
+                type="email"
+                id="li-hero-signup-email"
+                name="EMAIL"
+                autocomplete="email"
+                inputmode="email"
+                spellcheck="false"
+                required
+                placeholder="Your email address"
+                aria-describedby="li-hero-signup-lede li-hero-signup-consent"
+              >
+              <!-- Honeypot: Mailchimp drops any signup where this is filled -->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_9d96d60cfc2b644eef2985b6f_edaf826e86" tabindex="-1" value="" autocomplete="off">
+              </div>
+              <!-- Interest group "Website Signup Source: Local Insight Website" (same as the footer-band signup) -->
+              <input type="hidden" name="group[48155][2]" value="1">
+              <button class="li-hero-signup__submit btn btn--outline btn--dark" type="submit">
+                Subscribe <span aria-hidden="true">→</span>
+              </button>
+            </form>
+
+            <div class="li-hero-signup__success" id="li-hero-signup-success" role="status" tabindex="-1" hidden>
+              <p class="li-hero-signup__success-title">Almost there.</p>
+              <p>Complete the quick step in the tab that just opened, then check your inbox for an email to confirm your subscription. Once confirmed, you&rsquo;ll receive Geoff&rsquo;s monthly market updates.</p>
+            </div>
+          </div>
+
+          <p class="li-hero-signup__error" id="li-hero-signup-error" role="alert" hidden></p>
+
+          <p class="li-hero-signup__consent" id="li-hero-signup-consent">
+            Monthly Burlington and Hamilton real estate market updates from Geoff Smith and the Smith&ndash;Dobrowsky Team, Coldwell Banker Burnhill Realty, Brokerage, 514 Guelph Line, Burlington, ON &middot; <a href="mailto:geoff@yourrealpro.com">geoff@yourrealpro.com</a>. Unsubscribe anytime.
+          </p>
+        </div>
 
         <div class="ip-hero__ctas">
           <a href="#community-guide" class="editorial-cta text-link text-link--light text-link--arrow">
@@ -945,6 +1191,9 @@
         <form
           class="li-signup__form"
           id="li-signup-form"
+          data-mc-signup
+          data-success="li-signup-success"
+          data-error="li-signup-error"
           data-action="https://YourRealPro.us14.list-manage.com/subscribe/post?u=9d96d60cfc2b644eef2985b6f&amp;id=edaf826e86&amp;f_id=00b640e5f0"
           method="post"
           target="_blank"
@@ -1056,7 +1305,7 @@
 
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=20261111-hero-signup"></script>
   <script src="data/market-snapshot.js?v=20261111"></script>
   <script src="js/community-map.js?v=20261014c"></script>
 

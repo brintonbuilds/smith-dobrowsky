@@ -91,50 +91,92 @@
   }
 })();
 
-/* ── Local Insight — Mailchimp signup ──
-   Submits natively to Mailchimp in a new tab (target="_blank"), where
-   Mailchimp's own reCAPTCHA runs, then swaps in a confirmation message.
+/* ── Local Insight — Mailchimp signups (hero + footer band) ──
+   Every form marked data-mc-signup submits natively to Mailchimp in a
+   new tab (target="_blank"), where Mailchimp's own reCAPTCHA and double
+   opt-in run, then swaps in an "almost there" message. Nothing here
+   claims the visitor is subscribed: Mailchimp confirms that by email.
    Light bot filters run first: the Mailchimp endpoint lives in
-   data-action (not in the HTML action), and submits that trip the
-   honeypot or arrive within seconds of page load are dropped. */
+   data-action (not in the HTML action), honeypot hits are dropped
+   silently, and near-instant submits are held back (not faked). */
 (function () {
-  const form      = document.getElementById('li-signup-form');
-  const successEl = document.getElementById('li-signup-success');
-  const errorEl   = document.getElementById('li-signup-error');
-  if (!form || !successEl) return;
+  const forms = document.querySelectorAll('form[data-mc-signup]');
+  if (!forms.length) return;
 
-  const MIN_FILL_MS = 3000;
+  const MIN_FILL_MS = 2000;
   const loadedAt    = Date.now();
-  const email       = form.querySelector('input[name="EMAIL"]');
-  const honeypot    = form.querySelector('input[name^="b_"]');
 
-  const showError = (msg) => {
-    if (!errorEl) return;
-    errorEl.textContent = msg;
-    errorEl.hidden = false;
-  };
+  forms.forEach((form) => {
+    const successEl = document.getElementById(form.dataset.success);
+    const errorEl   = document.getElementById(form.dataset.error);
+    const email     = form.querySelector('input[name="EMAIL"]');
+    const honeypot  = form.querySelector('input[name^="b_"]');
+    const submitBtn = form.querySelector('[type="submit"]');
+    if (!successEl || !email) return;
 
-  form.addEventListener('submit', (e) => {
-    if (errorEl) errorEl.hidden = true;
+    let submitted = false;
 
-    // Bots: fill the hidden field or submit near-instantly. Fail silently.
-    if ((honeypot && honeypot.value) || Date.now() - loadedAt < MIN_FILL_MS) {
-      e.preventDefault();
+    const clearError = () => {
+      email.removeAttribute('aria-invalid');
+      if (errorEl) { errorEl.hidden = true; errorEl.textContent = ''; }
+    };
+
+    const showError = (msg) => {
+      email.setAttribute('aria-invalid', 'true');
+      if (errorEl) {
+        errorEl.textContent = msg;
+        errorEl.hidden = false;
+        email.setAttribute('aria-errormessage', errorEl.id);
+      }
+      email.focus();
+    };
+
+    const showDone = (dropped) => {
+      submitted = true;
+      if (submitBtn) submitBtn.disabled = true;
+      if (dropped) successEl.dataset.dropped = 'true';
       form.hidden = true;
       successEl.hidden = false;
-      return;
-    }
+      if (successEl.hasAttribute('tabindex')) successEl.focus({ preventScroll: true });
+    };
 
-    if (!email || !email.value.trim() || !email.checkValidity()) {
-      e.preventDefault();
-      showError('Please enter a valid email address.');
-      if (email) email.focus();
-      return;
-    }
+    email.addEventListener('input', () => { if (email.hasAttribute('aria-invalid')) clearError(); });
 
-    form.action = form.dataset.action;
-    form.hidden = true;
-    successEl.hidden = false;
+    form.addEventListener('submit', (e) => {
+      // One submission per page view: blocks double clicks and Enter mashing.
+      if (submitted) { e.preventDefault(); return; }
+      clearError();
+
+      // Bots fill the hidden field. Drop silently; nothing is sent.
+      if (honeypot && honeypot.value) {
+        e.preventDefault();
+        showDone(true);
+        return;
+      }
+
+      email.value = email.value.trim();
+      if (!email.value) {
+        e.preventDefault();
+        showError('Please enter your email address.');
+        return;
+      }
+      if (!email.checkValidity()) {
+        e.preventDefault();
+        showError('Please enter a valid email address, like name@example.com.');
+        return;
+      }
+
+      // Scripted submits land within moments of page load. Hold them back
+      // without pretending they worked, so a fast human can simply retry.
+      if (Date.now() - loadedAt < MIN_FILL_MS) {
+        e.preventDefault();
+        showError('One moment, then press Subscribe again.');
+        return;
+      }
+
+      form.action = form.dataset.action;
+      showDone(false);
+    });
   });
 })();
 

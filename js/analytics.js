@@ -116,15 +116,20 @@
     }
   }, true);
 
-  /* Local Insight signup: count it only once the success message actually appears
-     (the page silently drops bot submissions and invalid emails before that). */
+  /* Local Insight signups: count one only once its "almost there" message appears
+     (invalid emails never get that far; honeypot drops are flagged data-dropped
+     and skipped). This is a hand-off to Mailchimp, not a confirmed subscriber. */
   function watchSignup() {
-    var ok = document.getElementById('li-signup-success');
-    if (!ok || !window.MutationObserver) return;
-    var sent = false;
-    new MutationObserver(function () {
-      if (!ok.hidden && !sent) { sent = true; send('sign_up', { method: 'local_insight_mailchimp' }); }
-    }).observe(ok, { attributes: true, attributeFilter: ['hidden'] });
+    if (!window.MutationObserver) return;
+    [['li-signup-success', 'local_insight_mailchimp'],
+     ['li-hero-signup-success', 'local_insight_hero_mailchimp']].forEach(function (pair) {
+      var ok = document.getElementById(pair[0]);
+      if (!ok) return;
+      var sent = false;
+      new MutationObserver(function () {
+        if (!ok.hidden && !sent && !ok.dataset.dropped) { sent = true; send('sign_up', { method: pair[1] }); }
+      }).observe(ok, { attributes: true, attributeFilter: ['hidden'] });
+    });
   }
 
   /* "View the full data" disclosure on Local Insight. */
