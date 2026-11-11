@@ -148,78 +148,176 @@
       letter-spacing: 0.15em;
     }
 
-    /* ── Geoff in the hero ──
-       Cut-out studio portrait standing on the cream escarpment side of the
-       map, fading into the hero floor. Desktop only; smaller screens get
-       the avatar beside the signup lede instead. */
-    body.local-insight-page .li-hero-geoff {
+    /* ── Letter preview in the hero ──
+       A cream "page" from Geoff's monthly letter, set on the map like a
+       printed briefing: real figures from this edition, his byline, and
+       the source line. Desktop only; smaller screens keep the avatar.
+       UPDATE MONTHLY with the report (figures, month and source line). */
+    body.local-insight-page .li-hero-letter {
       display: none;
     }
 
     @media (min-width: 1100px) {
-      body.local-insight-page .li-hero-geoff {
+      body.local-insight-page .li-hero-letter {
         display: block;
         position: absolute;
-        z-index: 1;
-        bottom: 0;
-        right: max(2vw, calc((100vw - 1280px) / 2 - 20px));
-        height: min(92%, 700px);
-        aspect-ratio: 800 / 1200;
-        margin: 0;
-        pointer-events: none;
-      }
-
-      /* Soft warm pool behind him so he sits in the scene, not on it */
-      body.local-insight-page .li-hero-geoff::before {
-        content: "";
-        position: absolute;
-        inset: 18% 6% 0;
-        background: radial-gradient(ellipse at 50% 65%, rgba(11, 22, 38, 0.30) 0%, rgba(11, 22, 38, 0.12) 45%, transparent 72%);
-        filter: blur(6px);
-      }
-
-      body.local-insight-page .li-hero-geoff__img {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: bottom center;
-        filter: drop-shadow(0 18px 40px rgba(5, 10, 20, 0.35)) saturate(0.92) contrast(1.02);
-        -webkit-mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
-        mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
-      }
-
-      body.local-insight-page .li-hero-geoff__caption {
-        position: absolute;
-        left: -4%;
-        bottom: clamp(40px, 7vh, 72px);
         z-index: 2;
+        right: max(40px, calc((100vw - 1280px) / 2 + 40px));
+        bottom: clamp(72px, 10vh, 116px);
+        width: clamp(340px, 27vw, 392px);
+        padding: 30px 30px 22px;
+        background: #f7f3eb;
+        color: #111d33;
+        border-top: 2px solid #b39a6b;
+        box-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.6) inset,
+          0 30px 60px -18px rgba(5, 10, 20, 0.55),
+          0 12px 24px -12px rgba(5, 10, 20, 0.4);
+      }
+
+      body.local-insight-page .li-hero-letter__mast {
         display: flex;
-        flex-direction: column;
-        gap: 4px;
-        padding: 12px 18px 12px 16px;
-        border-left: 1px solid rgba(201, 182, 146, 0.8);
-        background: rgba(5, 10, 20, 0.62);
-        -webkit-backdrop-filter: blur(6px);
-        backdrop-filter: blur(6px);
-      }
-
-      body.local-insight-page .li-hero-geoff__name {
-        font-family: var(--font-serif);
-        font-style: italic;
-        font-size: 1.15rem;
-        line-height: 1.1;
-        color: var(--cream);
-      }
-
-      body.local-insight-page .li-hero-geoff__role {
+        justify-content: space-between;
+        align-items: baseline;
+        padding-bottom: 12px;
+        margin: 0 0 18px;
+        border-bottom: 1px solid rgba(17, 29, 51, 0.14);
         font-family: var(--font-sans);
-        font-size: 9.5px;
+        font-size: 9px;
         font-weight: 600;
         letter-spacing: 0.2em;
         text-transform: uppercase;
-        color: rgba(247, 245, 241, 0.7);
+        color: rgba(17, 29, 51, 0.62);
+      }
+
+      body.local-insight-page .li-hero-letter__title {
+        font-family: var(--font-serif);
+        font-size: 1.62rem;
+        font-weight: 500;
+        line-height: 1.08;
+        letter-spacing: -0.015em;
+        margin: 0 0 20px;
+        color: #111d33;
+      }
+
+      body.local-insight-page .li-hero-letter__title em {
+        display: block;
+        font-weight: 400;
+        color: rgba(17, 29, 51, 0.55);
+      }
+
+      body.local-insight-page .li-hero-letter__stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        margin: 0 0 16px;
+        border-top: 1px solid rgba(17, 29, 51, 0.14);
+        border-bottom: 1px solid rgba(17, 29, 51, 0.14);
+      }
+
+      body.local-insight-page .li-hero-letter__stat {
+        padding: 14px 0 13px;
+      }
+
+      body.local-insight-page .li-hero-letter__stat + .li-hero-letter__stat {
+        padding-left: 18px;
+        border-left: 1px solid rgba(17, 29, 51, 0.14);
+      }
+
+      body.local-insight-page .li-hero-letter__stat dt {
+        font-family: var(--font-sans);
+        font-size: 8.5px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(17, 29, 51, 0.56);
+        margin: 0 0 7px;
+      }
+
+      body.local-insight-page .li-hero-letter__stat dd {
+        margin: 0;
+      }
+
+      body.local-insight-page .li-hero-letter__value {
+        display: block;
+        font-family: var(--font-serif);
+        font-size: 1.42rem;
+        line-height: 1.1;
+        color: #111d33;
+        font-variant-numeric: lining-nums;
+      }
+
+      body.local-insight-page .li-hero-letter__meta {
+        display: block;
+        margin-top: 5px;
+        font-family: var(--font-sans);
+        font-size: 11px;
+        line-height: 1.4;
+        color: rgba(17, 29, 51, 0.62);
+      }
+
+      body.local-insight-page .li-hero-letter__change {
+        font-weight: 600;
+        color: #111d33;
+      }
+
+      body.local-insight-page .li-hero-letter__note {
+        font-family: var(--font-sans);
+        font-size: 12.5px;
+        line-height: 1.55;
+        color: rgba(17, 29, 51, 0.76);
+        margin: 0 0 18px;
+      }
+
+      body.local-insight-page .li-hero-letter__byline {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 14px;
+      }
+
+      body.local-insight-page .li-hero-letter__byline img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid rgba(179, 154, 107, 0.8);
+      }
+
+      body.local-insight-page .li-hero-letter__name {
+        display: block;
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-size: 1.04rem;
+        line-height: 1.2;
+        color: #111d33;
+      }
+
+      body.local-insight-page .li-hero-letter__team {
+        display: block;
+        font-family: var(--font-sans);
+        font-size: 10.5px;
+        line-height: 1.4;
+        color: rgba(17, 29, 51, 0.6);
+      }
+
+      body.local-insight-page .li-hero-letter__source {
+        font-family: var(--font-sans);
+        font-size: 9.5px;
+        line-height: 1.5;
+        color: rgba(17, 29, 51, 0.5);
+        margin: 0;
+        padding-top: 12px;
+        border-top: 1px solid rgba(17, 29, 51, 0.1);
+      }
+
+      body.local-insight-page .li-hero-letter .vh {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
       }
 
       /* Carry the dark cover a little further so the text column stays crisp on the paler map */
@@ -230,7 +328,7 @@
           linear-gradient(to bottom, rgba(4, 8, 18, 0.22) 0%, transparent 12%);
       }
 
-      /* Desktop already shows Geoff in full; skip the avatar */
+      /* Desktop shows Geoff in the letter byline; skip the lede avatar */
       body.local-insight-page .li-hero-signup__avatar {
         display: none;
       }
@@ -578,10 +676,10 @@
       outline-offset: 2px;
     }
 
-    /* Below desktop: stack the three items with a leading rule each, and
+    /* Below wide desktop (where the letter card would sit beside it): stack the three items with a leading rule each, and
        deepen the left-hand shade, since the plain map is lighter than the
        retired seasonal one and the text column runs further across it. */
-    @media (max-width: 1099px) {
+    @media (max-width: 1279px) {
       body.local-insight-page .li-hero-signup__inside {
         flex-direction: column;
         gap: 7px;
@@ -665,22 +763,37 @@
       </div>
       <div class="ip-hero__overlay" aria-hidden="true"></div>
 
-      <!-- Geoff, standing on the map he writes about (desktop only; existing studio portrait used on Home and About) -->
-      <figure class="li-hero-geoff">
-        <img
-          class="li-hero-geoff__img"
-          src="assets/A28U9908jj.webp"
-          alt="Geoff Smith"
-          width="800"
-          height="1200"
-          loading="eager"
-          decoding="async"
-        >
-        <figcaption class="li-hero-geoff__caption">
-          <span class="li-hero-geoff__name">Geoff Smith</span>
-          <span class="li-hero-geoff__role">Burlington &amp; Hamilton</span>
-        </figcaption>
-      </figure>
+      <!-- Preview of Geoff's monthly letter (desktop). Figures are the November 2026
+           edition's, already published in the reports below. UPDATE MONTHLY. -->
+      <aside class="li-hero-letter" aria-label="Preview of Geoff&rsquo;s November 2026 market letter">
+        <p class="li-hero-letter__mast"><span>Local Intelligence&trade;</span><span>November 2026</span></p>
+        <p class="li-hero-letter__title">Burlington and Hamilton, <em>street by street.</em></p>
+        <dl class="li-hero-letter__stats">
+          <div class="li-hero-letter__stat">
+            <dt>Burlington detached</dt>
+            <dd>
+              <span class="li-hero-letter__value">$1,206,000</span>
+              <span class="li-hero-letter__meta">Median <span class="li-hero-letter__change"><span aria-hidden="true">&uarr;</span><span class="vh">up</span> 4.0%</span> &middot; 29 days</span>
+            </dd>
+          </div>
+          <div class="li-hero-letter__stat">
+            <dt>Hamilton detached</dt>
+            <dd>
+              <span class="li-hero-letter__value">$702,500</span>
+              <span class="li-hero-letter__meta">Median <span class="li-hero-letter__change"><span aria-hidden="true">&darr;</span><span class="vh">down</span> 5.0%</span> &middot; 37 days</span>
+            </dd>
+          </div>
+        </dl>
+        <p class="li-hero-letter__note">Every month: the numbers that moved and what they mean if you&rsquo;re buying or selling.</p>
+        <div class="li-hero-letter__byline">
+          <img src="assets/geoff-smith-avatar.webp" alt="" width="96" height="96" decoding="async">
+          <span>
+            <span class="li-hero-letter__name">Geoff Smith</span>
+            <span class="li-hero-letter__team">Smith&ndash;Dobrowsky Team &middot; Coldwell Banker Burnhill Realty, Brokerage</span>
+          </span>
+        </div>
+        <p class="li-hero-letter__source">October 2026 vs October 2025 &middot; ITSO data current November 2, 2026</p>
+      </aside>
 
       <div class="ip-hero__inner">
         <p class="ip-hero__eyebrow editorial-eyebrow editorial-eyebrow--light">LOCAL INTELLIGENCE&trade; &middot; NOVEMBER 2026</p>
