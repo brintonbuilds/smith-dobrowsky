@@ -55,7 +55,7 @@ body.sr-page .sr-eyebrow--light {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(100deg, rgba(5, 10, 20, 0.86) 0%, rgba(5, 10, 20, 0.7) 30%, rgba(5, 10, 20, 0.34) 56%, rgba(5, 10, 20, 0.14) 78%, rgba(5, 10, 20, 0.2) 100%),
+    linear-gradient(100deg, rgba(5, 10, 20, 0.9) 0%, rgba(5, 10, 20, 0.8) 32%, rgba(5, 10, 20, 0.46) 56%, rgba(5, 10, 20, 0.16) 78%, rgba(5, 10, 20, 0.2) 100%),
     linear-gradient(to top, rgba(4, 8, 18, 0.55) 0%, transparent 34%),
     linear-gradient(to bottom, rgba(4, 8, 18, 0.45) 0%, transparent 16%),
     linear-gradient(rgba(40, 30, 20, 0.18), rgba(40, 30, 20, 0.18));
@@ -66,16 +66,16 @@ body.sr-page .sr-eyebrow--light {
   z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
-  align-items: end;
+  align-items: center;
   gap: clamp(48px, 6vw, 104px);
   max-width: var(--sr-wrap);
   margin: 0 auto;
-  min-height: clamp(700px, 94svh, 920px);
-  padding: clamp(136px, 17vh, 184px) var(--section-pad-x) clamp(64px, 9vh, 104px);
+  min-height: clamp(640px, 90svh, 860px);
+  padding: clamp(116px, 14vh, 148px) var(--section-pad-x) clamp(44px, 7vh, 80px);
 }
 
 .sr-hero__intro {
-  padding-bottom: clamp(8px, 2vh, 28px);
+  padding-bottom: clamp(12px, 3vh, 36px); /* optical: sits a touch above the card's centre */
 }
 
 .sr-hero__eyebrow {
@@ -158,16 +158,16 @@ body.sr-page .sr-eyebrow--light {
 .sr-card__to {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   margin: 0;
-  padding: 20px clamp(24px, 2.4vw, 32px) 16px;
+  padding: 14px clamp(22px, 2.2vw, 28px) 12px;
   border-bottom: 1px solid var(--sr-hair);
 }
 
 .sr-card__to img {
   flex: 0 0 auto;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid rgba(179, 154, 107, 0.8);
@@ -211,7 +211,7 @@ body.sr-page .sr-eyebrow--light {
 }
 
 .sr-card__body {
-  padding: clamp(22px, 2.2vw, 28px) clamp(24px, 2.4vw, 32px) clamp(24px, 2.4vw, 30px);
+  padding: clamp(18px, 1.8vw, 22px) clamp(22px, 2.2vw, 28px) clamp(18px, 1.8vw, 22px);
 }
 
 .sr-card__body[hidden] {
@@ -219,9 +219,9 @@ body.sr-page .sr-eyebrow--light {
 }
 
 .sr-card__title {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   font-family: var(--font-serif);
-  font-size: clamp(1.55rem, 1.9vw, 1.85rem);
+  font-size: clamp(1.45rem, 1.75vw, 1.7rem);
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.015em;
@@ -229,20 +229,20 @@ body.sr-page .sr-eyebrow--light {
 }
 
 .sr-card__intro {
-  margin: 0 0 20px;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  margin: 0 0 16px;
+  font-size: 0.88rem;
+  line-height: 1.55;
   color: rgba(11, 22, 38, 0.7);
 }
 
 /* Fields */
 .sr-field {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
 }
 
 .sr-field__label {
   display: block;
-  margin: 0 0 7px;
+  margin: 0 0 6px;
   font-family: var(--font-sans);
   font-size: 10px;
   font-weight: 600;
@@ -254,7 +254,7 @@ body.sr-page .sr-eyebrow--light {
 .sr-field__input {
   display: block;
   width: 100%;
-  min-height: 50px;
+  min-height: 46px;
   padding: 0 14px;
   font-family: var(--font-sans);
   font-size: 16px; /* stops iOS zoom on focus */
@@ -305,7 +305,7 @@ body.sr-page .sr-eyebrow--light {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  margin: 4px 0 18px;
+  margin: 2px 0 14px;
 }
 
 body.sr-page .sr-optin__box {
@@ -328,8 +328,8 @@ body.sr-page .sr-optin__box {
 }
 
 .sr-optin__label {
-  font-size: 0.84rem;
-  line-height: 1.5;
+  font-size: 0.8rem;
+  line-height: 1.45;
   color: rgba(11, 22, 38, 0.78);
   cursor: pointer;
 }
@@ -353,7 +353,7 @@ body.sr-page .sr-optin__box {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  min-height: 54px;
+  min-height: 50px;
   padding: 0 24px;
   font-family: var(--font-sans);
   font-size: 11.5px;
@@ -412,15 +412,15 @@ body.sr-page .sr-optin__box {
 }
 
 .sr-form__note {
-  margin: 16px 0 0;
-  font-size: 0.84rem;
-  line-height: 1.55;
+  margin: 12px 0 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
   color: rgba(11, 22, 38, 0.72);
 }
 
 .sr-form__privacy {
   margin: 10px 0 0;
-  padding-top: 12px;
+  padding-top: 10px;
   border-top: 1px solid var(--sr-hair);
   font-size: 0.74rem;
   line-height: 1.55;
