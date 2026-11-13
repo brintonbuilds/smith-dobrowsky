@@ -51,6 +51,44 @@
       document.body.style.overflow = '';
     }
 
+    /* ── Desktop dropdowns (Sellers) ──
+       Hover and keyboard focus open them in CSS; the chevron button makes
+       them work on touch screens and for screen readers. */
+    document.querySelectorAll('.nav__item--menu').forEach(function (item) {
+      var btn = item.querySelector('.nav__sub-toggle');
+      if (!btn) return;
+
+      function setOpen(open) {
+        item.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (open) item.classList.remove('is-dismissed');
+      }
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        setOpen(!item.classList.contains('is-open'));
+      });
+
+      item.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        setOpen(false);
+        item.classList.add('is-dismissed');
+        btn.focus();
+      });
+
+      item.addEventListener('mouseleave', function () { item.classList.remove('is-dismissed'); });
+      item.addEventListener('focusout', function (e) {
+        if (!item.contains(e.relatedTarget)) {
+          setOpen(false);
+          item.classList.remove('is-dismissed');
+        }
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!item.contains(e.target)) setOpen(false);
+      });
+    });
+
     /* ── Mobile toggle ── */
     if (toggle && menu) {
       toggle.addEventListener('click', function (e) {

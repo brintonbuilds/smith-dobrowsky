@@ -180,7 +180,7 @@ function page({ c, file, title, description, image, imageAlt, imageSize, jsonld,
   <link rel="icon" href="favicon.ico" sizes="any" />
   ${c.css}
   <link rel="stylesheet" href="css/report.css?v=20261014b" />
-  <script src="js/nav.js" defer></script>
+  <script src="js/nav.js?v=20261113-dropdown" defer></script>
   <script type="application/ld+json">
 ${JSON.stringify(jsonld, null, 2)}
   </script>
