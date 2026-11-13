@@ -71,8 +71,9 @@
         </div>
 
         <!-- PRIMARY CONVERSION: personal home value review.
-             data-endpoint is intentionally EMPTY until Geoff approves a dedicated
-             form endpoint. While empty, nothing is sent and no success is shown. -->
+             Posts to Formspree form "Geoff Smith Seller Home Value Review" (maeonzen,
+             Geoff Smith team), which emails geoff@yourrealpro.com. If data-endpoint is
+             ever emptied, nothing is sent and no success is shown. -->
         <div class="sr-card" id="review" tabindex="-1">
           <div class="sr-card__to">
             <img src="/assets/geoff-smith-avatar.webp" alt="" width="96" height="96" decoding="async">
@@ -87,7 +88,7 @@
             <!-- [FLAG: Geoff] "personally review" — confirm he can commit to reviewing every request himself. -->
             <p class="sr-card__intro" id="sr-form-intro">Share your address and email. Geoff will personally review your request and follow up.</p>
 
-            <form class="sr-form" id="sr-review-form" data-endpoint="" novalidate aria-labelledby="sr-form-title" aria-describedby="sr-form-intro">
+            <form class="sr-form" id="sr-review-form" data-endpoint="https://formspree.io/f/maeonzen" novalidate aria-labelledby="sr-form-title" aria-describedby="sr-form-intro">
               <div class="sr-field">
                 <label class="sr-field__label" for="sr-address">Property address</label>
                 <input class="sr-field__input" id="sr-address" name="property_address" type="text" autocomplete="street-address" placeholder="Street address, city" required maxlength="200" aria-describedby="sr-address-error">
@@ -100,11 +101,11 @@
                 <p class="sr-field__error" id="sr-email-error" hidden></p>
               </div>
 
-              <!-- Separate, optional, unticked. Ticking it never subscribes anyone here:
-                   the visitor finishes the signup through Mailchimp's own double opt-in. -->
+              <!-- Separate, optional, unticked. When ticked, submitting also opens the
+                   Local Insight Mailchimp signup in a new tab (Mailchimp reCAPTCHA + double opt-in). -->
               <div class="sr-optin">
                 <input class="sr-optin__box" id="sr-newsletter" name="newsletter_opt_in" type="checkbox" value="yes">
-                <label class="sr-optin__label" for="sr-newsletter" id="sr-newsletter-text">Also send me Geoff&rsquo;s monthly Burlington and Hamilton market update. <span>Optional. Unsubscribe anytime.</span></label>
+                <label class="sr-optin__label" for="sr-newsletter" id="sr-newsletter-text">Also send me Geoff&rsquo;s monthly Burlington and Hamilton market update. <span>Optional. Mailchimp opens in a new tab to confirm. Unsubscribe anytime.</span></label>
               </div>
 
               <!-- Spam protection: honeypot (Formspree reads _gotcha) + minimum fill time in JS -->
@@ -155,8 +156,8 @@
             <p>If you&rsquo;d prefer to speak with him directly, you can call <a href="tel:9055120301">905.512.0301</a>.</p>
 
             <div class="sr-done__newsletter" data-sr-newsletter-finish hidden>
-              <p>You asked for Geoff&rsquo;s monthly market update. Mailchimp will confirm it by email.</p>
-              <button type="button" class="sr-done__newsletter-btn" data-sr-newsletter-btn>Confirm my subscription <span aria-hidden="true">&rarr;</span></button>
+              <p>Your market update signup opened in a new tab. Finish the quick step there, then confirm from your inbox.</p>
+              <button type="button" class="sr-done__newsletter-btn" data-sr-newsletter-btn>Didn&rsquo;t see it? Open it again <span aria-hidden="true">&rarr;</span></button>
             </div>
 
             <p class="sr-done__sign">
@@ -451,6 +452,6 @@
   </footer>
 
   <script src="/js/main.js?v=20261111-hero-signup"></script>
-  <script src="/js/seller-review.js?v=20261113" defer></script>
+  <script src="/js/seller-review.js?v=20261114" defer></script>
 </body>
 </html>

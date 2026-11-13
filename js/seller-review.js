@@ -170,34 +170,43 @@
     donePanel.focus({ preventScroll: true });
   }
 
-  /* Newsletter hand-off: same Mailchimp audience, form and interest group as
-     Local Insight. Opens Mailchimp in a new tab, where its reCAPTCHA and
-     double opt-in run. Nothing here claims the visitor is subscribed. */
+  /* Newsletter signup: same Mailchimp audience, form and interest group as
+     Local Insight. Only runs when the visitor ticked the box. It posts to
+     Mailchimp in a new tab, where Mailchimp's own reCAPTCHA and double
+     opt-in run, so nobody is subscribed without confirming by email. */
+  var newsletterSent = false;
+
+  function sendToMailchimp() {
+    var src = document.getElementById('sr-news-form');
+    if (!src || !src.dataset.action) return false;
+    var f = document.createElement('form');
+    f.method = 'post';
+    f.target = '_blank';
+    f.action = src.dataset.action;
+    f.style.display = 'none';
+    [['EMAIL', email.value], ['b_9d96d60cfc2b644eef2985b6f_edaf826e86', ''], ['group[48155][2]', '1']].forEach(function (pair) {
+      var i = document.createElement('input');
+      i.type = 'hidden'; i.name = pair[0]; i.value = pair[1];
+      f.appendChild(i);
+    });
+    document.body.appendChild(f);
+    f.submit();
+    f.remove();
+    newsletterSent = true;
+    return true;
+  }
+
+  /* Fallback if the browser blocked the new tab */
   var newsBtn = donePanel.querySelector('[data-sr-newsletter-btn]');
   if (newsBtn) {
     newsBtn.addEventListener('click', function () {
+      newsBtn.disabled = true;
       if (previewMode) {
-        newsBtn.disabled = true;
         newsBtn.textContent = 'Preview only: nothing was sent to Mailchimp.';
         return;
       }
-      var src = document.getElementById('sr-news-form');
-      if (!src || !src.dataset.action) return;
-      var f = document.createElement('form');
-      f.method = 'post';
-      f.target = '_blank';
-      f.action = src.dataset.action;
-      f.style.display = 'none';
-      [['EMAIL', email.value], ['b_9d96d60cfc2b644eef2985b6f_edaf826e86', ''], ['group[48155][2]', '1']].forEach(function (pair) {
-        var i = document.createElement('input');
-        i.type = 'hidden'; i.name = pair[0]; i.value = pair[1];
-        f.appendChild(i);
-      });
-      document.body.appendChild(f);
-      f.submit();
-      f.remove();
-      newsBtn.disabled = true;
-      newsBtn.textContent = 'Opened in a new tab. Please confirm from your inbox.';
+      sendToMailchimp();
+      newsBtn.textContent = 'Opened again in a new tab.';
     });
   }
 
@@ -228,7 +237,7 @@
     UTM_KEYS.forEach(function (k) { setField(k, attribution[k] || ''); });
     setField('first_touch_at', (first || attribution).at || '');
     setField('first_touch_page', (first || attribution).page || '');
-    setField('newsletter_consent', wantsNewsletter ? 'Yes: asked to receive the monthly update (to be confirmed through Mailchimp double opt-in)' : 'No');
+    setField('newsletter_consent', wantsNewsletter ? 'Yes: ticked the box; sent to Mailchimp signup (subscribed only after confirming by email)' : 'No');
     setField('newsletter_consent_text', wantsNewsletter ? optinText.textContent.replace(/\s+/g, ' ').trim() : '');
     setField('newsletter_consent_at', wantsNewsletter ? now.toISOString() : '');
     setField('review_notice', notice ? notice.textContent.replace(/\s+/g, ' ').trim() : '');
@@ -237,6 +246,11 @@
       showStatus('This form is not connected to Geoff&rsquo;s inbox yet, so nothing was sent. ' + FALLBACK);
       return;
     }
+
+    // Newsletter first, while this click still counts as the visitor's own
+    // action (browsers allow a new tab then, not after the network wait).
+    // Consent is separate from the review, so it goes even if the review fails.
+    if (wantsNewsletter && !newsletterSent) sendToMailchimp();
 
     setBusy(true);
     var data = new FormData(form);
