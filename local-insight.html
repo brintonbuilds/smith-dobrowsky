@@ -112,238 +112,555 @@
   </script>
   <!-- home.css is intentionally NOT loaded on this page -->
   <style>
+    /* ══════════════════════════════════════════════════════════
+       HERO — one headline, one sentence, one signup.
+       The three share a single left edge and a ~480px measure so
+       they read as one composition over the map.
+       ══════════════════════════════════════════════════════════ */
     body.local-insight-page .ip-hero--local-insight {
-      min-height: clamp(560px, 68svh, 780px);
+      min-height: clamp(580px, 72svh, 800px);
       align-items: flex-end;
     }
 
     body.local-insight-page .ip-hero--local-insight .ip-hero__inner {
-      padding-top: clamp(128px, 15vh, 168px);
-      padding-bottom: clamp(72px, 10vh, 116px);
+      padding-top: clamp(132px, 16vh, 176px);
+      padding-bottom: clamp(76px, 11vh, 124px);
     }
 
     body.local-insight-page .ip-hero--local-insight .ip-hero__eyebrow {
-      margin-bottom: clamp(12px, 1.35vw, 18px);
+      margin-bottom: clamp(16px, 1.6vw, 22px);
     }
 
     body.local-insight-page .ip-hero--local-insight .ip-hero__heading {
       max-width: 11em;
-      margin-bottom: clamp(18px, 2vw, 28px);
-      font-size: clamp(46px, 5.65vw, 86px);
-      line-height: 0.96;
-      letter-spacing: -0.038em;
+      margin-bottom: clamp(22px, 2.2vw, 30px);
+      font-size: clamp(48px, 5.6vw, 88px);
+      line-height: 0.98;
+      letter-spacing: -0.036em;
     }
 
     body.local-insight-page .ip-hero--local-insight .ip-hero__heading em {
-      margin-top: 0.02em;
-      letter-spacing: -0.032em;
+      margin-top: 0.03em;
+      letter-spacing: -0.03em;
     }
 
-    body.local-insight-page .ip-hero--local-insight .ip-hero__ctas {
-      margin-top: 0;
+    body.local-insight-page .li-hero-lede {
+      font-family: var(--font-sans);
+      font-size: clamp(1rem, 1.12vw, 1.12rem);
+      font-weight: 400;
+      line-height: 1.62;
+      color: rgba(247, 245, 241, 0.86);
+      max-width: 480px;
+      margin: 0 0 clamp(28px, 2.8vw, 38px);
+      text-wrap: pretty;
+      text-shadow: 0 1px 12px rgba(0, 0, 0, 0.32);
     }
 
-    body.local-insight-page .ip-hero--local-insight .ip-hero__ctas .text-link--light {
-      min-height: 34px;
-      letter-spacing: 0.15em;
-    }
-
-    /* ── Letter preview in the hero ──
-       A cream "page" from Geoff's monthly letter, set on the map like a
-       printed briefing: real figures from this edition, his byline, and
-       the source line. Desktop only; smaller screens keep the avatar.
-       UPDATE MONTHLY with the report (figures, month and source line). */
-    body.local-insight-page .li-hero-letter {
-      display: none;
-    }
-
+    /* Carry the dark cover a little further so the text column stays crisp on the paler map */
     @media (min-width: 1100px) {
-      body.local-insight-page .li-hero-letter {
-        display: block;
-        position: absolute;
-        z-index: 2;
-        right: max(40px, calc((100vw - 1280px) / 2 + 40px));
-        bottom: clamp(72px, 10vh, 116px);
-        width: clamp(340px, 27vw, 392px);
-        padding: 30px 30px 22px;
-        background: #f7f3eb;
-        color: #111d33;
-        border-top: 2px solid #b39a6b;
-        box-shadow:
-          0 1px 0 rgba(255, 255, 255, 0.6) inset,
-          0 30px 60px -18px rgba(5, 10, 20, 0.55),
-          0 12px 24px -12px rgba(5, 10, 20, 0.4);
-      }
-
-      body.local-insight-page .li-hero-letter__mast {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        padding-bottom: 12px;
-        margin: 0 0 18px;
-        border-bottom: 1px solid rgba(17, 29, 51, 0.14);
-        font-family: var(--font-sans);
-        font-size: 9px;
-        font-weight: 600;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: rgba(17, 29, 51, 0.62);
-      }
-
-      body.local-insight-page .li-hero-letter__title {
-        font-family: var(--font-serif);
-        font-size: 1.62rem;
-        font-weight: 500;
-        line-height: 1.08;
-        letter-spacing: -0.015em;
-        margin: 0 0 20px;
-        color: #111d33;
-      }
-
-      body.local-insight-page .li-hero-letter__title em {
-        display: block;
-        font-weight: 400;
-        color: rgba(17, 29, 51, 0.55);
-      }
-
-      body.local-insight-page .li-hero-letter__stats {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-        margin: 0 0 16px;
-        border-top: 1px solid rgba(17, 29, 51, 0.14);
-        border-bottom: 1px solid rgba(17, 29, 51, 0.14);
-      }
-
-      body.local-insight-page .li-hero-letter__stat {
-        padding: 14px 0 13px;
-      }
-
-      body.local-insight-page .li-hero-letter__stat + .li-hero-letter__stat {
-        padding-left: 18px;
-        border-left: 1px solid rgba(17, 29, 51, 0.14);
-      }
-
-      body.local-insight-page .li-hero-letter__stat dt {
-        font-family: var(--font-sans);
-        font-size: 8.5px;
-        font-weight: 600;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: rgba(17, 29, 51, 0.56);
-        margin: 0 0 7px;
-      }
-
-      body.local-insight-page .li-hero-letter__stat dd {
-        margin: 0;
-      }
-
-      body.local-insight-page .li-hero-letter__value {
-        display: block;
-        font-family: var(--font-serif);
-        font-size: 1.42rem;
-        line-height: 1.1;
-        color: #111d33;
-        font-variant-numeric: lining-nums;
-      }
-
-      body.local-insight-page .li-hero-letter__meta {
-        display: block;
-        margin-top: 5px;
-        font-family: var(--font-sans);
-        font-size: 11px;
-        line-height: 1.4;
-        color: rgba(17, 29, 51, 0.62);
-      }
-
-      body.local-insight-page .li-hero-letter__change {
-        font-weight: 600;
-        color: #111d33;
-      }
-
-      body.local-insight-page .li-hero-letter__note {
-        font-family: var(--font-sans);
-        font-size: 12.5px;
-        line-height: 1.55;
-        color: rgba(17, 29, 51, 0.76);
-        margin: 0 0 18px;
-      }
-
-      body.local-insight-page .li-hero-letter__byline {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin: 0 0 14px;
-      }
-
-      body.local-insight-page .li-hero-letter__byline img {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 1px solid rgba(179, 154, 107, 0.8);
-      }
-
-      body.local-insight-page .li-hero-letter__name {
-        display: block;
-        font-family: var(--font-serif);
-        font-style: italic;
-        font-size: 1.04rem;
-        line-height: 1.2;
-        color: #111d33;
-      }
-
-      /* RECO: registered title shown beside the registrant's name */
-      body.local-insight-page .li-hero-letter__reg {
-        margin-left: 6px;
-        font-family: var(--font-sans);
-        font-style: normal;
-        font-size: 8.5px;
-        font-weight: 600;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        vertical-align: 0.15em;
-        color: rgba(17, 29, 51, 0.6);
-      }
-
-      body.local-insight-page .li-hero-letter__team {
-        display: block;
-        font-family: var(--font-sans);
-        font-size: 10.5px;
-        line-height: 1.4;
-        color: rgba(17, 29, 51, 0.6);
-      }
-
-      body.local-insight-page .li-hero-letter__source {
-        font-family: var(--font-sans);
-        font-size: 9.5px;
-        line-height: 1.5;
-        color: rgba(17, 29, 51, 0.5);
-        margin: 0;
-        padding-top: 12px;
-        border-top: 1px solid rgba(17, 29, 51, 0.1);
-      }
-
-      body.local-insight-page .li-hero-letter .vh {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-      }
-
-      /* Carry the dark cover a little further so the text column stays crisp on the paler map */
       body.local-insight-page .ip-hero--local-insight .ip-hero__overlay {
         background:
           linear-gradient(100deg, rgba(5, 10, 20, 0.88) 0%, rgba(5, 10, 20, 0.8) 26%, rgba(5, 10, 20, 0.56) 44%, rgba(5, 10, 20, 0.16) 60%, transparent 72%),
           linear-gradient(to top, rgba(4, 8, 18, 0.52) 0%, rgba(4, 8, 18, 0.16) 20%, transparent 40%),
           linear-gradient(to bottom, rgba(4, 8, 18, 0.22) 0%, transparent 12%);
       }
+    }
 
-      /* Desktop shows Geoff in the letter byline; skip the lede avatar */
-      body.local-insight-page .li-hero-signup__avatar {
-        display: none;
+    @media (min-width: 681px) and (max-width: 1099px) {
+      body.local-insight-page .ip-hero--local-insight .ip-hero__overlay {
+        background:
+          linear-gradient(100deg, rgba(5, 10, 20, 0.90) 0%, rgba(5, 10, 20, 0.82) 40%, rgba(5, 10, 20, 0.6) 64%, rgba(5, 10, 20, 0.22) 84%, transparent 100%),
+          linear-gradient(to top, rgba(4, 8, 18, 0.52) 0%, rgba(4, 8, 18, 0.16) 20%, transparent 40%);
+      }
+    }
+
+    @media (max-width: 960px) {
+      body.local-insight-page .ip-hero--local-insight {
+        min-height: clamp(560px, 70svh, 720px);
+      }
+
+      body.local-insight-page .ip-hero--local-insight .ip-hero__inner {
+        padding-bottom: clamp(60px, 8vh, 88px);
+      }
+
+      body.local-insight-page .ip-hero--local-insight .ip-hero__heading {
+        max-width: 10.4em;
+        font-size: clamp(44px, 7.6vw, 70px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body.local-insight-page .ip-hero--local-insight {
+        min-height: 0;
+      }
+
+      body.local-insight-page .ip-hero--local-insight .ip-hero__inner {
+        padding-top: clamp(112px, 15vh, 132px);
+        padding-bottom: clamp(48px, 7vh, 64px);
+      }
+
+      body.local-insight-page .ip-hero--local-insight .ip-hero__eyebrow {
+        margin-bottom: 14px;
+      }
+
+      body.local-insight-page .ip-hero--local-insight .ip-hero__heading {
+        max-width: 100%;
+        margin-bottom: 18px;
+        font-size: clamp(36px, 10.6vw, 54px);
+        line-height: 1.02;
+      }
+
+      body.local-insight-page .ip-hero--local-insight .ip-hero__heading-line,
+      body.local-insight-page .ip-hero--local-insight .ip-hero__heading em {
+        white-space: normal;
+      }
+
+      body.local-insight-page .li-hero-lede {
+        font-size: 1rem;
+        margin-bottom: 26px;
+      }
+    }
+
+    /* ── Hero newsletter signup ──
+       Field and button sit inside one hairline frame so they read as a
+       single control: a quiet glass field and a solid cream action. */
+    body.local-insight-page .li-hero-signup {
+      max-width: 480px;
+    }
+
+    /* Form and confirmation share one slot so swapping them barely moves the page */
+    body.local-insight-page .li-hero-signup__slot {
+      min-height: 60px;
+    }
+
+    body.local-insight-page .li-hero-signup__form {
+      display: flex;
+      align-items: stretch;
+      gap: 5px;
+      padding: 5px;
+      background: rgba(5, 10, 20, 0.44);
+      border: 1px solid rgba(247, 245, 241, 0.34);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      transition: border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    body.local-insight-page .li-hero-signup__form[hidden] {
+      display: none;
+    }
+
+    body.local-insight-page .li-hero-signup__form:hover {
+      border-color: rgba(247, 245, 241, 0.52);
+    }
+
+    body.local-insight-page .li-hero-signup__form:focus-within {
+      border-color: rgba(247, 245, 241, 0.86);
+      background: rgba(5, 10, 20, 0.56);
+      box-shadow: 0 0 0 1px rgba(247, 245, 241, 0.86);
+    }
+
+    body.local-insight-page .li-hero-signup__form:has(.li-hero-signup__input[aria-invalid="true"]) {
+      border-color: #f2b8a8;
+      box-shadow: 0 0 0 1px #f2b8a8;
+    }
+
+    body.local-insight-page .li-hero-signup__label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    body.local-insight-page .li-hero-signup__input {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 48px;
+      box-sizing: border-box;
+      padding: 0 14px;
+      font-family: var(--font-sans);
+      font-size: 16px; /* 16px stops iOS zooming on focus */
+      font-weight: 400;
+      color: var(--cream);
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    body.local-insight-page .li-hero-signup__input::placeholder {
+      color: rgba(247, 245, 241, 0.56);
+      font-weight: 300;
+    }
+
+    /* The frame carries the focus ring (see :focus-within above) */
+    body.local-insight-page .li-hero-signup__input:focus,
+    body.local-insight-page .li-hero-signup__input:focus-visible {
+      outline: none;
+      border: 0;
+    }
+
+    body.local-insight-page .li-hero-signup__submit {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px 0 24px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #0b1626;
+      background: var(--cream);
+      border: 0;
+      border-radius: 0;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    body.local-insight-page .li-hero-signup__submit span {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: 0;
+      transition: transform 0.2s ease;
+    }
+
+    body.local-insight-page .li-hero-signup__submit:hover {
+      background: #fff;
+    }
+
+    body.local-insight-page .li-hero-signup__submit:hover span {
+      transform: translateX(3px);
+    }
+
+    body.local-insight-page .li-hero-signup__submit:focus-visible {
+      background: #fff;
+      outline: 2px solid #0b1626;
+      outline-offset: -5px;
+    }
+
+    body.local-insight-page .li-hero-signup__submit[disabled] {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    body.local-insight-page .li-hero-signup__success {
+      padding: 14px 18px;
+      border: 1px solid rgba(247, 245, 241, 0.34);
+      background: rgba(5, 10, 20, 0.5);
+      color: rgba(247, 245, 241, 0.88);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+    }
+
+    body.local-insight-page .li-hero-signup__success:focus {
+      outline: none;
+    }
+
+    body.local-insight-page .li-hero-signup__success p {
+      margin: 0;
+    }
+
+    body.local-insight-page .li-hero-signup__success-title {
+      font-family: var(--font-serif);
+      font-size: 1.22rem;
+      font-style: italic;
+      color: var(--cream);
+      margin-bottom: 4px !important;
+    }
+
+    body.local-insight-page .li-hero-signup__error {
+      margin: 10px 0 0;
+      font-family: var(--font-sans);
+      font-size: 0.86rem;
+      line-height: 1.5;
+      color: #f6c4b6;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    body.local-insight-page .li-hero-signup__error[hidden] {
+      display: none;
+    }
+
+    /* CASL identification: who is sending, the brokerage, a mailing address,
+       contact, and unsubscribe. Understated but held at a readable size. */
+    body.local-insight-page .li-hero-signup__consent {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(247, 245, 241, 0.72);
+      margin: 16px 0 0;
+      text-wrap: pretty;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 1px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    body.local-insight-page .li-hero-signup__consent a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: rgba(247, 245, 241, 0.4);
+      text-underline-offset: 2px;
+    }
+
+    body.local-insight-page .li-hero-signup__consent a:hover {
+      color: var(--cream);
+      text-decoration-color: currentColor;
+    }
+
+    body.local-insight-page .li-hero-signup__consent a:focus-visible {
+      outline: 1px solid currentColor;
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 420px) {
+      body.local-insight-page .li-hero-signup__input {
+        padding: 0 10px 0 12px;
+      }
+
+      body.local-insight-page .li-hero-signup__submit {
+        gap: 8px;
+        padding: 0 16px 0 18px;
+        letter-spacing: 0.14em;
+      }
+    }
+
+    /* Very narrow phones: let the button take its own full-width row inside the frame */
+    @media (max-width: 359px) {
+      body.local-insight-page .li-hero-signup__form {
+        flex-direction: column;
+      }
+
+      body.local-insight-page .li-hero-signup__slot {
+        min-height: 112px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       OPENING — statement + report link beside a preview page of
+       Geoff's monthly letter. UPDATE MONTHLY with the report
+       (figures, month and source line in .li-letter).
+       ══════════════════════════════════════════════════════════ */
+    body.local-insight-page .li-opening__cta {
+      margin: clamp(26px, 2.8vw, 34px) 0 0;
+    }
+
+    body.local-insight-page .li-opening__cta .text-link {
+      min-height: 34px;
+    }
+
+    body.local-insight-page .li-letter {
+      max-width: 400px;
+      margin: clamp(48px, 7vw, 64px) auto 0;
+      padding: 30px 30px 22px;
+      text-align: left;
+      background: #fff;
+      color: #111d33;
+      border: 1px solid rgba(17, 29, 51, 0.08);
+      border-top: 2px solid #b39a6b;
+      box-shadow:
+        0 28px 56px -30px rgba(11, 22, 38, 0.32),
+        0 2px 8px rgba(11, 22, 38, 0.05);
+    }
+
+    @media (min-width: 960px) {
+      body.local-insight-page .li-opening__inner--split {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(340px, 400px);
+        align-items: center;
+        gap: clamp(56px, 7vw, 112px);
+        max-width: 1120px;
+        text-align: left;
+      }
+
+      body.local-insight-page .li-opening__inner--split .li-opening__body {
+        margin: 0;
+      }
+
+      body.local-insight-page .li-letter {
+        margin: 0;
+      }
+    }
+
+    body.local-insight-page .li-letter__mast {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding-bottom: 12px;
+      margin: 0 0 18px;
+      border-bottom: 1px solid rgba(17, 29, 51, 0.14);
+      font-family: var(--font-sans);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(17, 29, 51, 0.62);
+    }
+
+    body.local-insight-page .li-letter__title {
+      font-family: var(--font-serif);
+      font-size: 1.62rem;
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+      margin: 0 0 20px;
+      color: #111d33;
+    }
+
+    body.local-insight-page .li-letter__title em {
+      display: block;
+      font-weight: 400;
+      color: rgba(17, 29, 51, 0.55);
+    }
+
+    body.local-insight-page .li-letter__stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin: 0 0 16px;
+      border-top: 1px solid rgba(17, 29, 51, 0.14);
+      border-bottom: 1px solid rgba(17, 29, 51, 0.14);
+    }
+
+    body.local-insight-page .li-letter__stat {
+      padding: 14px 0 13px;
+    }
+
+    body.local-insight-page .li-letter__stat + .li-letter__stat {
+      padding-left: 18px;
+      border-left: 1px solid rgba(17, 29, 51, 0.14);
+    }
+
+    body.local-insight-page .li-letter__stat dt {
+      font-family: var(--font-sans);
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(17, 29, 51, 0.56);
+      margin: 0 0 7px;
+    }
+
+    body.local-insight-page .li-letter__stat dd {
+      margin: 0;
+    }
+
+    body.local-insight-page .li-letter__value {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1.42rem;
+      line-height: 1.1;
+      color: #111d33;
+      font-variant-numeric: lining-nums;
+    }
+
+    body.local-insight-page .li-letter__meta {
+      display: block;
+      margin-top: 5px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      line-height: 1.4;
+      color: rgba(17, 29, 51, 0.62);
+    }
+
+    body.local-insight-page .li-letter__change {
+      font-weight: 600;
+      color: #111d33;
+    }
+
+    body.local-insight-page .li-letter__note {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: rgba(17, 29, 51, 0.76);
+      margin: 0 0 18px;
+    }
+
+    body.local-insight-page .li-letter__byline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 14px;
+    }
+
+    body.local-insight-page .li-letter__byline img {
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(179, 154, 107, 0.8);
+    }
+
+    body.local-insight-page .li-letter__name {
+      display: block;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.04rem;
+      line-height: 1.2;
+      color: #111d33;
+    }
+
+    /* RECO: registered title shown beside the registrant's name */
+    body.local-insight-page .li-letter__reg {
+      margin-left: 6px;
+      font-family: var(--font-sans);
+      font-style: normal;
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      vertical-align: 0.15em;
+      color: rgba(17, 29, 51, 0.6);
+    }
+
+    body.local-insight-page .li-letter__team {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 10.5px;
+      line-height: 1.4;
+      color: rgba(17, 29, 51, 0.6);
+    }
+
+    body.local-insight-page .li-letter__source {
+      font-family: var(--font-sans);
+      font-size: 9.5px;
+      line-height: 1.5;
+      color: rgba(17, 29, 51, 0.5);
+      margin: 0;
+      padding-top: 12px;
+      border-top: 1px solid rgba(17, 29, 51, 0.1);
+    }
+
+    body.local-insight-page .li-letter .vh {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 420px) {
+      body.local-insight-page .li-letter {
+        padding: 24px 22px 20px;
+      }
+
+      body.local-insight-page .li-letter__value {
+        font-size: 1.28rem;
+      }
+
+      body.local-insight-page .li-letter__stat + .li-letter__stat {
+        padding-left: 14px;
       }
     }
 
@@ -406,331 +723,6 @@
         border-top: none;
       }
     }
-
-    @media (max-width: 960px) {
-      body.local-insight-page .ip-hero--local-insight {
-        min-height: clamp(540px, 66svh, 700px);
-      }
-
-      body.local-insight-page .ip-hero--local-insight .ip-hero__inner {
-        padding-bottom: clamp(58px, 8vh, 86px);
-      }
-
-      body.local-insight-page .ip-hero--local-insight .ip-hero__heading {
-        max-width: 10.4em;
-        font-size: clamp(42px, 7.4vw, 68px);
-      }
-    }
-
-    @media (max-width: 600px) {
-      body.local-insight-page .ip-hero--local-insight {
-        min-height: clamp(520px, 64svh, 640px);
-      }
-
-      body.local-insight-page .ip-hero--local-insight .ip-hero__inner {
-        padding-top: clamp(112px, 15vh, 132px);
-        padding-bottom: clamp(48px, 7vh, 68px);
-      }
-
-      body.local-insight-page .ip-hero--local-insight .ip-hero__eyebrow {
-        margin-bottom: 12px;
-      }
-
-      body.local-insight-page .ip-hero--local-insight .ip-hero__heading {
-        max-width: 100%;
-        margin-bottom: 18px;
-        font-size: clamp(38px, 11vw, 52px);
-        line-height: 0.98;
-      }
-
-      body.local-insight-page .ip-hero--local-insight .ip-hero__heading-line,
-      body.local-insight-page .ip-hero--local-insight .ip-hero__heading em {
-        white-space: normal;
-      }
-
-      body.local-insight-page .ip-hero--local-insight .ip-hero__ctas .text-link--light {
-        align-items: flex-start;
-        line-height: 1.35;
-        max-width: min(100%, 24rem);
-        white-space: normal;
-      }
-    }
-
-    /* ── Hero newsletter signup ──
-       Sits between the headline and the report link. Reuses the hero's
-       inverse type colours and the site's outlined button; field styling
-       mirrors the footer-band signup (.li-signup__input) so both read as one. */
-    body.local-insight-page .li-hero-signup {
-      max-width: 500px;
-      margin: 0 0 clamp(22px, 2.4vw, 30px);
-    }
-
-    body.local-insight-page .li-hero-signup__lede {
-      font-family: var(--font-sans);
-      font-size: clamp(0.94rem, 1vw, 1.02rem);
-      font-weight: 400;
-      line-height: 1.6;
-      color: rgba(247, 245, 241, 0.84);
-      max-width: 40ch;
-      margin: 0 0 clamp(14px, 1.5vw, 18px);
-      text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    body.local-insight-page .li-hero-signup__from {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin: 0 0 clamp(10px, 1.1vw, 14px);
-    }
-
-    body.local-insight-page .li-hero-signup__from .li-hero-signup__lede {
-      margin: 0;
-    }
-
-    body.local-insight-page .li-hero-signup__avatar {
-      flex: 0 0 auto;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid rgba(201, 182, 146, 0.75);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-    }
-
-    /* What's inside each email: one quiet line, separated by fine gold rules */
-    body.local-insight-page .li-hero-signup__inside {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px 0;
-      list-style: none;
-      padding: 0;
-      margin: 0 0 clamp(16px, 1.7vw, 20px);
-      font-family: var(--font-sans);
-      font-size: 9.5px;
-      font-weight: 600;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      width: max-content;
-      max-width: calc(100vw - 2 * var(--section-pad-x, 24px));
-      color: rgba(232, 220, 196, 0.86);
-      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
-    }
-
-    body.local-insight-page .li-hero-signup__inside li {
-      display: inline-flex;
-      align-items: center;
-    }
-
-    body.local-insight-page .li-hero-signup__inside li + li::before {
-      content: "";
-      display: inline-block;
-      width: 10px;
-      height: 1px;
-      margin: 0 9px;
-      background: rgba(201, 182, 146, 0.7);
-    }
-
-    /* Form and confirmation share one slot so swapping them barely moves the page */
-    body.local-insight-page .li-hero-signup__slot {
-      min-height: 50px;
-    }
-
-    body.local-insight-page .li-hero-signup__form {
-      display: flex;
-      align-items: stretch;
-      gap: 10px;
-    }
-
-    body.local-insight-page .li-hero-signup__form[hidden] {
-      display: none;
-    }
-
-    body.local-insight-page .li-hero-signup__label {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-    }
-
-    body.local-insight-page .li-hero-signup__input {
-      flex: 1 1 auto;
-      min-width: 0;
-      min-height: 50px;
-      box-sizing: border-box;
-      padding: 13px 16px;
-      font-family: var(--font-sans);
-      font-size: 16px; /* 16px stops iOS zooming on focus */
-      font-weight: 400;
-      color: var(--cream);
-      background: rgba(5, 10, 20, 0.38);
-      border: 1px solid rgba(247, 245, 241, 0.32);
-      border-radius: 0;
-      appearance: none;
-      -webkit-appearance: none;
-      transition: border-color 0.22s ease, background 0.22s ease;
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-    }
-
-    body.local-insight-page .li-hero-signup__input::placeholder {
-      color: rgba(247, 245, 241, 0.52);
-      font-weight: 300;
-    }
-
-    body.local-insight-page .li-hero-signup__input:hover {
-      border-color: rgba(247, 245, 241, 0.48);
-    }
-
-    body.local-insight-page .li-hero-signup__input:focus {
-      outline: none;
-    }
-
-    body.local-insight-page .li-hero-signup__input:focus-visible {
-      border-color: rgba(247, 245, 241, 0.82);
-      background: rgba(5, 10, 20, 0.5);
-      outline: 1px solid rgba(247, 245, 241, 0.82);
-      outline-offset: 3px;
-    }
-
-    body.local-insight-page .li-hero-signup__input[aria-invalid="true"] {
-      border-color: #f2b8a8;
-    }
-
-    body.local-insight-page .li-hero-signup__submit {
-      flex: 0 0 auto;
-      min-height: 50px;
-      white-space: nowrap;
-      color: var(--cream);
-      border-color: rgba(247, 245, 241, 0.5);
-      background: rgba(5, 10, 20, 0.56);
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-    }
-
-    body.local-insight-page .li-hero-signup__submit:hover,
-    body.local-insight-page .li-hero-signup__submit:focus-visible {
-      color: #fff;
-      border-color: rgba(247, 245, 241, 0.82);
-      background: rgba(5, 10, 20, 0.7);
-    }
-
-    body.local-insight-page .li-hero-signup__submit[disabled] {
-      opacity: 0.6;
-      cursor: default;
-    }
-
-    body.local-insight-page .li-hero-signup__success {
-      padding: 14px 18px;
-      border: 1px solid rgba(247, 245, 241, 0.32);
-      background: rgba(5, 10, 20, 0.42);
-      color: rgba(247, 245, 241, 0.86);
-      font-family: var(--font-sans);
-      font-size: 0.92rem;
-      line-height: 1.6;
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-    }
-
-    body.local-insight-page .li-hero-signup__success:focus {
-      outline: none;
-    }
-
-    body.local-insight-page .li-hero-signup__success p {
-      margin: 0;
-    }
-
-    body.local-insight-page .li-hero-signup__success-title {
-      font-family: var(--font-serif);
-      font-size: 1.22rem;
-      font-style: italic;
-      color: var(--cream);
-      margin-bottom: 4px !important;
-    }
-
-    body.local-insight-page .li-hero-signup__error {
-      margin: 10px 0 0;
-      font-family: var(--font-sans);
-      font-size: 0.86rem;
-      line-height: 1.5;
-      color: #f6c4b6;
-      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
-    }
-
-    body.local-insight-page .li-hero-signup__error[hidden] {
-      display: none;
-    }
-
-    body.local-insight-page .li-hero-signup__consent {
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 400;
-      line-height: 1.6;
-      color: rgba(247, 245, 241, 0.7);
-      max-width: 46ch;
-      margin: 12px 0 0;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55), 0 1px 10px rgba(0, 0, 0, 0.45);
-    }
-
-    body.local-insight-page .li-hero-signup__consent a {
-      color: inherit;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    body.local-insight-page .li-hero-signup__consent a:hover {
-      color: var(--cream);
-    }
-
-    body.local-insight-page .li-hero-signup__consent a:focus-visible {
-      outline: 1px solid currentColor;
-      outline-offset: 2px;
-    }
-
-    /* Below wide desktop (where the letter card would sit beside it): stack the three items with a leading rule each, and
-       deepen the left-hand shade, since the plain map is lighter than the
-       retired seasonal one and the text column runs further across it. */
-    @media (max-width: 1279px) {
-      body.local-insight-page .li-hero-signup__inside {
-        flex-direction: column;
-        gap: 7px;
-        width: auto;
-      }
-
-      body.local-insight-page .li-hero-signup__inside li::before {
-        content: "";
-        display: inline-block;
-        width: 10px;
-        height: 1px;
-        margin: 0 10px 0 0 !important;
-        background: rgba(201, 182, 146, 0.7);
-      }
-    }
-
-    @media (min-width: 681px) and (max-width: 1099px) {
-      body.local-insight-page .ip-hero--local-insight .ip-hero__overlay {
-        background:
-          linear-gradient(100deg, rgba(5, 10, 20, 0.90) 0%, rgba(5, 10, 20, 0.82) 40%, rgba(5, 10, 20, 0.6) 64%, rgba(5, 10, 20, 0.22) 84%, transparent 100%),
-          linear-gradient(to top, rgba(4, 8, 18, 0.52) 0%, rgba(4, 8, 18, 0.16) 20%, transparent 40%);
-      }
-    }
-
-    @media (max-width: 520px) {
-
-      body.local-insight-page .li-hero-signup__form {
-        flex-direction: column;
-      }
-
-      body.local-insight-page .li-hero-signup__submit {
-        width: 100%;
-      }
-
-      body.local-insight-page .li-hero-signup__slot {
-        min-height: 110px;
-      }
-    }
   </style>
 </head>
 <body class="interior-page local-insight-page">
@@ -758,7 +750,7 @@
   <main>
 
     <!-- ══════════════════════════════════════
-         HERO
+         HERO — one headline, one sentence, one signup
     ══════════════════════════════════════ -->
     <section class="ip-hero ip-hero--local-insight" aria-labelledby="li-hero-heading">
 
@@ -776,59 +768,18 @@
       </div>
       <div class="ip-hero__overlay" aria-hidden="true"></div>
 
-      <!-- Preview of Geoff's monthly letter (desktop). Figures are the November 2026
-           edition's, already published in the reports below. UPDATE MONTHLY. -->
-      <aside class="li-hero-letter" aria-label="Preview of Geoff&rsquo;s November 2026 market letter">
-        <p class="li-hero-letter__mast"><span>Local Intelligence&trade;</span><span>November 2026</span></p>
-        <p class="li-hero-letter__title">Burlington and Hamilton, <em>street by street.</em></p>
-        <dl class="li-hero-letter__stats">
-          <div class="li-hero-letter__stat">
-            <dt>Burlington detached</dt>
-            <dd>
-              <span class="li-hero-letter__value">$1,206,000</span>
-              <span class="li-hero-letter__meta">Median <span class="li-hero-letter__change"><span aria-hidden="true">&uarr;</span><span class="vh">up</span> 4.0%</span> &middot; 29 days</span>
-            </dd>
-          </div>
-          <div class="li-hero-letter__stat">
-            <dt>Hamilton detached</dt>
-            <dd>
-              <span class="li-hero-letter__value">$702,500</span>
-              <span class="li-hero-letter__meta">Median <span class="li-hero-letter__change"><span aria-hidden="true">&darr;</span><span class="vh">down</span> 5.0%</span> &middot; 37 days</span>
-            </dd>
-          </div>
-        </dl>
-        <p class="li-hero-letter__note">Every month: the numbers that moved and what they mean if you&rsquo;re buying or selling.</p>
-        <div class="li-hero-letter__byline">
-          <img src="assets/geoff-smith-avatar.webp" alt="" width="96" height="96" decoding="async">
-          <span>
-            <span class="li-hero-letter__name">Geoff Smith <span class="li-hero-letter__reg">Sales Representative</span></span>
-            <span class="li-hero-letter__team">Smith&ndash;Dobrowsky Team &middot; Coldwell Banker Burnhill Realty, Brokerage</span>
-          </span>
-        </div>
-        <p class="li-hero-letter__source">October 2026 vs October 2025 &middot; ITSO data current November 2, 2026</p>
-      </aside>
-
       <div class="ip-hero__inner">
         <p class="ip-hero__eyebrow editorial-eyebrow editorial-eyebrow--light">LOCAL INTELLIGENCE&trade; &middot; NOVEMBER 2026</p>
         <h1 class="ip-hero__heading editorial-heading" id="li-hero-heading">
-          <span class="ip-hero__heading-line">See the market</span>
-          <em>before everyone else.</em>
+          <span class="ip-hero__heading-line">Know your market.</span>
+          <em>Street by street.</em>
         </h1>
+
+        <p class="li-hero-lede" id="li-hero-signup-lede">Get a clearer picture of what&rsquo;s happening in Burlington and Hamilton, with Geoff&rsquo;s monthly local market update.</p>
 
         <!-- Hero newsletter signup. Same Mailchimp audience, form and interest group as the
              signup at the foot of the page; handled by the shared signup script in js/main.js. -->
         <div class="li-hero-signup">
-          <div class="li-hero-signup__from">
-            <img class="li-hero-signup__avatar" src="assets/geoff-smith-avatar.webp" alt="" width="96" height="96" decoding="async">
-            <p class="li-hero-signup__lede" id="li-hero-signup-lede">Get Geoff&rsquo;s monthly Burlington and Hamilton market insights delivered to your inbox.</p>
-          </div>
-
-          <ul class="li-hero-signup__inside" aria-label="In each monthly email">
-            <li>Street-level pricing</li>
-            <li>Inventory and days on market</li>
-            <li>What it means for you</li>
-          </ul>
-
           <div class="li-hero-signup__slot">
             <form
               class="li-hero-signup__form"
@@ -860,7 +811,7 @@
               </div>
               <!-- Interest group "Website Signup Source: Local Insight Website" (same as the footer-band signup) -->
               <input type="hidden" name="group[48155][2]" value="1">
-              <button class="li-hero-signup__submit btn btn--outline btn--dark" type="submit">
+              <button class="li-hero-signup__submit" type="submit">
                 Subscribe <span aria-hidden="true">→</span>
               </button>
             </form>
@@ -877,12 +828,6 @@
             Monthly Burlington and Hamilton real estate market updates from Geoff Smith, Sales Representative, and the Smith&ndash;Dobrowsky Team, Coldwell Banker Burnhill Realty, Brokerage, 514 Guelph Line, Burlington, ON &middot; <a href="mailto:geoff@yourrealpro.com">geoff@yourrealpro.com</a>. Unsubscribe anytime.
           </p>
         </div>
-
-        <div class="ip-hero__ctas">
-          <a href="#community-guide" class="editorial-cta text-link text-link--light text-link--arrow">
-            Explore the November 2026 report <span aria-hidden="true">→</span>
-          </a>
-        </div>
       </div>
 
     </section>
@@ -890,18 +835,58 @@
 
     <!-- ══════════════════════════════════════
          EDITORIAL INTRODUCTION
+         Opening statement, the link into this month's report, and a
+         preview page of Geoff's monthly letter beside it.
     ══════════════════════════════════════ -->
     <section class="li-opening" aria-labelledby="li-opening-heading">
-      <div class="li-opening__inner">
-        <h2 class="li-opening__heading editorial-heading" id="li-opening-heading">
-          The market is local.<br><em>Street by street.</em>
-        </h2>
-        <p class="li-opening__body">
-          Markets are usually described in averages. But the difference between two streets can matter more than the difference between two cities. This November 2026 edition explains what the latest numbers mean for buyers and sellers across Burlington and Hamilton.
-        </p>
+      <div class="li-opening__inner li-opening__inner--split">
+        <div class="li-opening__text">
+          <h2 class="li-opening__heading editorial-heading" id="li-opening-heading">
+            The numbers tell a story.<br><em>The details tell the rest.</em>
+          </h2>
+          <p class="li-opening__body">
+            Markets are usually described in averages: one median price, one monthly change. But an average blends very different homes, neighbourhoods and situations into a single figure. This November 2026 edition looks past the headline numbers to explain what they mean for buyers and sellers across Burlington and Hamilton.
+          </p>
+          <p class="li-opening__cta">
+            <a href="#community-guide" class="editorial-cta text-link text-link--dark text-link--arrow">
+              Explore the November 2026 report <span aria-hidden="true">→</span>
+            </a>
+          </p>
+        </div>
+
+        <!-- Preview of Geoff's monthly letter. Figures are the November 2026
+             edition's, already published in the reports below. UPDATE MONTHLY. -->
+        <aside class="li-letter" aria-label="Preview of Geoff&rsquo;s November 2026 market letter">
+          <p class="li-letter__mast"><span>Local Intelligence&trade;</span><span>November 2026</span></p>
+          <p class="li-letter__title">Burlington and Hamilton, <em>this month.</em></p>
+          <dl class="li-letter__stats">
+            <div class="li-letter__stat">
+              <dt>Burlington detached</dt>
+              <dd>
+                <span class="li-letter__value">$1,206,000</span>
+                <span class="li-letter__meta">Median <span class="li-letter__change"><span aria-hidden="true">&uarr;</span><span class="vh">up</span> 4.0%</span> &middot; 29 days</span>
+              </dd>
+            </div>
+            <div class="li-letter__stat">
+              <dt>Hamilton detached</dt>
+              <dd>
+                <span class="li-letter__value">$702,500</span>
+                <span class="li-letter__meta">Median <span class="li-letter__change"><span aria-hidden="true">&darr;</span><span class="vh">down</span> 5.0%</span> &middot; 37 days</span>
+              </dd>
+            </div>
+          </dl>
+          <p class="li-letter__note">Every month: the numbers that moved and what they mean if you&rsquo;re buying or selling.</p>
+          <div class="li-letter__byline">
+            <img src="assets/geoff-smith-avatar.webp" alt="" width="96" height="96" loading="lazy" decoding="async">
+            <span>
+              <span class="li-letter__name">Geoff Smith <span class="li-letter__reg">Sales Representative</span></span>
+              <span class="li-letter__team">Smith&ndash;Dobrowsky Team &middot; Coldwell Banker Burnhill Realty, Brokerage</span>
+            </span>
+          </div>
+          <p class="li-letter__source">October 2026 vs October 2025 &middot; ITSO data current November 2, 2026</p>
+        </aside>
       </div>
     </section>
-
 
     <!-- ══════════════════════════════════════
          COMMUNITY GUIDE — TABBED INTERFACE
