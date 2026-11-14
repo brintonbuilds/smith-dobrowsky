@@ -29,17 +29,24 @@
   <link rel="stylesheet" href="/css/styles.css?v=20260907-reviews" />
   <link rel="stylesheet" href="/css/nav.css?v=20260907-social" />
   <link rel="stylesheet" href="/css/pages.css?v=20261005-signup" />
-  <link rel="stylesheet" href="/css/seller-review.css?v=20261113b" />
+  <link rel="stylesheet" href="/css/seller-review.css?v=20261113c" />
   <link rel="preload" as="image" href="/assets/burlington-hamilton-neighbourhood-feel.webp" type="image/webp" fetchpriority="high" />
 </head>
 <body class="interior-page sr-page">
 
-  <!-- Campaign header: logo, brokerage and tap-to-call only. No site menu, so the
-       page keeps one job. The full site stays one tap away through the logo and footer. -->
+  <!-- Campaign header: logo, a clear way back to the site, brokerage and tap-to-call.
+       No site menu, so the page keeps one job. The back link returns visitors to the
+       page they came from on this site (js/seller-review.js), otherwise the homepage. -->
   <header class="sr-top">
-    <a href="/index.html" class="sr-top__logo" aria-label="The Smith Dobrowsky Team — Home">
-      <img src="/assets/logo-transparent-header.png" alt="The Smith Dobrowsky Team" width="212" height="42">
-    </a>
+    <div class="sr-top__home">
+      <a href="/index.html" class="sr-top__logo" aria-label="The Smith Dobrowsky Team — Home">
+        <img src="/assets/logo-transparent-header.png" alt="The Smith Dobrowsky Team" width="212" height="42">
+      </a>
+      <a href="/index.html" class="sr-top__back" data-sr-back aria-label="Back to the website">
+        <span class="sr-top__back-arrow" aria-hidden="true">&larr;</span>
+        <span class="sr-top__back-text">Back to website</span>
+      </a>
+    </div>
     <p class="sr-top__brokerage">Coldwell Banker Burnhill Realty, Brokerage</p>
     <a href="tel:9055120301" class="sr-top__call" aria-label="Call or text Geoff Smith at 905-512-0301">
       <span class="sr-top__call-label">Call or text Geoff</span>
@@ -452,6 +459,6 @@
   </footer>
 
   <script src="/js/main.js?v=20261111-hero-signup"></script>
-  <script src="/js/seller-review.js?v=20261114" defer></script>
+  <script src="/js/seller-review.js?v=20261113b" defer></script>
 </body>
 </html>

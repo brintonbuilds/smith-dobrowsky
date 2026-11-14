@@ -556,9 +556,55 @@ body.sr-page .sr-optin__box {
   border-bottom: 1px solid rgba(247, 245, 241, 0.12);
 }
 
-.sr-top__logo {
+.sr-top__home {
   justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+.sr-top__logo {
   display: inline-flex;
+  flex: 0 0 auto;
+}
+
+/* A clear way back to the main site (the page has no site menu) */
+.sr-top__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(247, 245, 241, 0.2);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  color: rgba(247, 245, 241, 0.78);
+  transition: color 0.2s ease;
+}
+
+.sr-top__back-arrow {
+  font-size: 14px;
+  letter-spacing: 0;
+  transition: transform 0.2s ease;
+}
+
+.sr-top__back:hover {
+  color: var(--cream);
+}
+
+.sr-top__back:hover .sr-top__back-arrow {
+  transform: translateX(-3px);
+}
+
+.sr-top__back:focus-visible {
+  outline: 1px solid var(--cream);
+  outline-offset: 4px;
 }
 
 .sr-top__logo img {
@@ -1539,7 +1585,30 @@ body.sr-page .sr-optin__box {
   }
 
   .sr-top__logo img {
-    height: 34px;
+    height: 30px;
+  }
+
+  .sr-top__home {
+    gap: 10px;
+  }
+
+  /* Phones: an arrow button before the logo, same job, less width */
+  .sr-top__back {
+    order: -1;
+    justify-content: center;
+    width: 38px;
+    min-height: 38px;
+    padding: 0;
+    border: 1px solid rgba(247, 245, 241, 0.28);
+  }
+
+  .sr-top__back-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
   }
 
   .sr-top__call-label {

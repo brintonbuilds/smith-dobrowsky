@@ -11,6 +11,19 @@
 (function () {
   'use strict';
 
+  /* "Back to website": return to the page the visitor came from on this
+     site (e.g. Sellers, via the menu); otherwise the homepage. */
+  (function () {
+    var back = document.querySelector('[data-sr-back]');
+    if (!back || !document.referrer) return;
+    try {
+      var ref = new URL(document.referrer);
+      if (ref.origin === location.origin && ref.pathname !== location.pathname) {
+        back.href = ref.pathname + ref.search + ref.hash;
+      }
+    } catch (e) { /* keep the homepage link */ }
+  }());
+
   var form = document.getElementById('sr-review-form');
   if (!form) return;
 
