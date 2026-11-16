@@ -1386,7 +1386,7 @@ body {
 }
 
 /* ===== Brinton Builds credit: monochrome at rest, B mark turns red on hover/focus ===== */
-.bb-credit-row { display: flex; padding-block: 28px 32px; }
+.bb-credit-row { display: flex; justify-content: center; padding-block: 28px 32px; }
 .bb-credit {
   --bb-ink: #ffffff;   /* wordmark colour on dark footers */
   --bb-red: #e23d26;   /* brand red, shown on hover */
