@@ -1384,3 +1384,33 @@ body {
   height: 10px;
   color: var(--gold, #9a9080);
 }
+
+/* ===== Brinton Builds credit: monochrome at rest, B mark turns red on hover/focus ===== */
+.bb-credit-row { display: flex; justify-content: center; padding-block: 28px 32px; }
+.bb-credit {
+  --bb-ink: #ffffff;   /* wordmark colour on dark footers */
+  --bb-red: #e23d26;   /* brand red, shown on hover */
+  display: inline-block;
+  width: 112px;
+  line-height: 0;
+  opacity: .5;
+  border-radius: 2px;
+  transition: opacity .3s ease;
+}
+.bb-credit--on-light { --bb-ink: #1a1a1a; }
+.bb-credit svg { display: block; width: 100%; height: auto; }
+.bb-credit__word { fill: var(--bb-ink); }
+.bb-credit__mark { fill: var(--bb-ink); transition: fill .3s ease; }
+.bb-credit:hover,
+.bb-credit:focus-visible { opacity: 1; }
+.bb-credit:hover .bb-credit__mark,
+.bb-credit:focus-visible .bb-credit__mark { fill: var(--bb-red); }
+.bb-credit:focus-visible { outline: 2px solid var(--bb-ink); outline-offset: 6px; }
+@media (prefers-reduced-motion: reduce) {
+  .bb-credit, .bb-credit__mark { transition: none; }
+}
+/* Your Real Pro: match the footer's compact gutters */
+.footer > .bb-credit-row { padding: 6px clamp(24px, 5vw, 72px) 24px; }
+@media (max-width: 768px) {
+  .footer > .bb-credit-row { padding-inline: clamp(20px, 5vw, 40px); }
+}
