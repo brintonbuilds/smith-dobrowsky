@@ -142,6 +142,48 @@
       letter-spacing: 0.15em;
     }
 
+    /* Primary action: the personal home value review */
+    body.sellers-page .sellers-hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 50px;
+      padding: 0 26px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      color: #0b1626;
+      background: var(--cream);
+      transition: background 0.2s ease;
+    }
+
+    body.sellers-page .sellers-hero-btn span {
+      font-size: 13px;
+      letter-spacing: 0;
+      transition: transform 0.2s ease;
+    }
+
+    body.sellers-page .sellers-hero-btn:hover {
+      background: #fff;
+    }
+
+    body.sellers-page .sellers-hero-btn:hover span {
+      transform: translateX(3px);
+    }
+
+    body.sellers-page .sellers-hero-btn:focus-visible {
+      outline: 1px solid var(--cream);
+      outline-offset: 4px;
+    }
+
+    body.sellers-page .ip-questions__cta {
+      margin-top: clamp(14px, 1.4vw, 20px);
+    }
+
     @media (max-width: 960px) {
       body.sellers-page .ip-hero--sellers {
         min-height: clamp(540px, 66svh, 700px);
@@ -234,6 +276,9 @@
           <em>not just a sign.</em>
         </h1>
         <div class="ip-hero__ctas">
+          <a href="sellers/home-value/" class="sellers-hero-btn">
+            Get a Home Value Review <span aria-hidden="true">→</span>
+          </a>
           <a href="contact.html" class="editorial-cta text-link text-link--light text-link--arrow">
             Talk With the Team <span aria-hidden="true">→</span>
           </a>
@@ -265,6 +310,9 @@
             <div class="ip-questions__accent" aria-hidden="true"></div>
             <h3 class="ip-questions__question">What is my home <em>actually worth?</em></h3>
             <p class="ip-questions__body">Comparables tell part of the story. Condition, presentation, and timing tell the rest.</p>
+            <a href="sellers/home-value/" class="ip-questions__cta editorial-cta text-link text-link--dark text-link--arrow">
+              Ask Geoff about your home <span aria-hidden="true">→</span>
+            </a>
           </div>
 
           <div class="ip-questions__item reveal reveal-delay-2">
