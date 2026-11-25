@@ -1414,3 +1414,21 @@ body {
 @media (max-width: 768px) {
   .footer > .bb-credit-row { padding-inline: clamp(20px, 5vw, 40px); }
 }
+
+/* ── Even heading line breaks (Nov 2026) ───────────────────────────────────
+   When a heading has to wrap, split it into balanced lines instead of
+   stranding the last word ("More than / listings."). Each <br>-separated
+   sentence and each block <em> balances on its own. */
+main h1,
+main h2,
+main h3,
+.editorial-heading,
+.editorial-heading em {
+  text-wrap: balance;
+}
+
+/* One sentence per line inside a heading (pair with a block <em>) */
+.heading-line {
+  display: block;
+  text-wrap: balance;
+}

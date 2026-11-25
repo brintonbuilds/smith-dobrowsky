@@ -14155,7 +14155,7 @@ body.home-page .cm-insight__link {
       --section-pad-y-mobile: clamp(44px, 10vw, 64px);
 
       --type-display: clamp(3.3rem, 4vw, 4.75rem);
-      --type-section-heading: clamp(3rem, 3.65vw, 4.3rem);
+      --type-section-heading: clamp(3rem, 3.65vw, 3.6rem); /* capped Nov 2026: wide screens broke headings unevenly */
       --type-pathway-heading: clamp(2rem, 3vw, 3.4rem);
       --type-card-heading: clamp(1.08rem, 1.45vw, 1.55rem);
       --type-small-heading: clamp(0.82rem, 0.9vw, 0.96rem);
