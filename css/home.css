@@ -16250,13 +16250,16 @@ body.home-page .hero__cta-row {
 
 body.home-page .hero__cta-row .hero__cta-btn {
   justify-content: center !important;
-  padding-left: 22px !important;
-  padding-right: 22px !important;
-  letter-spacing: 0.12em !important;
+  gap: 10px !important;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+  font-size: 12px !important;
+  letter-spacing: 0.11em !important;
   white-space: nowrap !important;
 }
 
-@container hero-ctas (max-width: 579px) {
+/* Side by side on desktop; stack only when the column is narrower than the pair */
+@container hero-ctas (max-width: 521px) {
   body.home-page .hero__cta-row {
     grid-template-columns: 1fr !important;
   }
