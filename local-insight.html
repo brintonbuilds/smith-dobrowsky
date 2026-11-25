@@ -485,9 +485,27 @@
         margin: 0;
       }
 
+      /* The text column stops at ~600px while the site heading size keeps
+         growing with the screen; cap it so each sentence holds one line. */
+      body.local-insight-page .li-opening__inner--split .li-opening__heading {
+        font-size: clamp(2.4rem, 3.4vw, 3.3rem);
+        line-height: 1.06;
+      }
+
       body.local-insight-page .li-letter {
         margin: 0;
       }
+    }
+
+    /* One sentence per line; if a line must wrap, split it evenly (no lone word) */
+    body.local-insight-page .li-opening__heading .li-opening__line,
+    body.local-insight-page .li-opening__heading em {
+      display: block;
+      text-wrap: balance;
+    }
+
+    body.local-insight-page .li-opening__heading em {
+      margin-top: 0.08em;
     }
 
     body.local-insight-page .li-letter__mast {
@@ -842,7 +860,8 @@
       <div class="li-opening__inner li-opening__inner--split">
         <div class="li-opening__text">
           <h2 class="li-opening__heading editorial-heading" id="li-opening-heading">
-            The numbers tell a story.<br><em>The details tell the rest.</em>
+            <span class="li-opening__line">The numbers tell a story.</span>
+            <em>The details tell the rest.</em>
           </h2>
           <p class="li-opening__body">
             Markets are usually described in averages: one median price, one monthly change. But an average blends very different homes, neighbourhoods and situations into a single figure. This November 2026 edition looks past the headline numbers to explain what they mean for buyers and sellers across Burlington and Hamilton.
