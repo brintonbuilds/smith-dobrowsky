@@ -148,7 +148,7 @@ body.sr-page .sr-eyebrow--light {
   box-shadow:
     0 40px 80px -36px rgba(0, 0, 0, 0.6),
     0 2px 10px rgba(0, 0, 0, 0.12);
-  scroll-margin-top: 24px;
+  scroll-margin-top: 104px; /* clears the fixed site menu */
 }
 
 .sr-card:focus {
