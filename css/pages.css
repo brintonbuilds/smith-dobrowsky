@@ -6067,7 +6067,8 @@
    Below 901px .bp-inner is display:block and the panel is already full
    bleed, so this only applies to the two-column layout. */
 @media (min-width: 901px) {
-  .about-process .bp-media {
+  /* All process sections (Buyers, Sellers, About) since Nov 2026 */
+  .bp-section .bp-media {
     --bp-left-bleed: max(0px, (100vw - 1440px) / 2);
     margin-left: calc(-1 * var(--bp-left-bleed));
     width: calc(100% + var(--bp-left-bleed));
