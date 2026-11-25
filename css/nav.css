@@ -969,9 +969,14 @@
   margin: 0 !important;
 }
 
-/* The chevron adds a little width; keep the 1101-1340px bar clear of the logo */
+/* Two dropdown chevrons add width; keep the 1101-1340px bar clear of the logo */
 @media (min-width: 1101px) and (max-width: 1340px) {
   .nav__links {
-    gap: 16px !important;
+    gap: 14px !important;
+  }
+
+  .nav--inverse .nav__link,
+  .nav.nav--scrolled .nav__link {
+    letter-spacing: 0.2em !important;
   }
 }

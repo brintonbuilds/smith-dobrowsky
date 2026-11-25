@@ -16390,3 +16390,51 @@ body.home-page .sf-section .sf-ctas a.sf-cta.sf-cta--quiet:focus-visible {
 body.home-page .sf-section .sf-ctas a.sf-cta:not(.sf-cta--quiet) {
   color: rgba(15, 18, 20, 0.86) !important;
 }
+
+/* ── Buyer wish list CTA (Nov 2026): mirrors the seller pair above ────────── */
+body.home-page .bf-ctas {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 14px clamp(24px, 2.6vw, 36px) !important;
+}
+
+body.home-page .bf-section .bf-ctas a.bf-cta.bf-cta--quiet {
+  opacity: 0.72 !important;
+}
+
+body.home-page .bf-section .bf-ctas a.bf-cta.bf-cta--quiet:hover,
+body.home-page .bf-section .bf-ctas a.bf-cta.bf-cta--quiet:focus-visible {
+  opacity: 1 !important;
+}
+
+/* Tablet/mobile: .bf-text becomes display:contents and its children are
+   re-ordered one by one, so the pair takes the slot the single link had. */
+@media (max-width: 900px) {
+  body.home-page .bf-ctas {
+    order: 3 !important;
+    justify-self: start !important;
+    padding: 0 clamp(32px, 7vw, 48px) clamp(34px, 6vw, 48px) !important;
+  }
+
+  body.home-page .bf-ctas .bf-cta {
+    order: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.home-page .bf-ctas .bf-cta::after {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 7px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  body.home-page .bf-ctas {
+    padding: 0 32px 34px !important;
+  }
+
+  body.home-page .bf-ctas .bf-cta {
+    padding: 0 !important;
+  }
+}

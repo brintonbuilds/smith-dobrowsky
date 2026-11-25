@@ -29,8 +29,8 @@
   <script src="js/analytics.js?v=20261014b"></script>
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="stylesheet" href="css/styles.css?v=20261116-credit" />
-  <link rel="stylesheet" href="css/nav.css?v=20261113-dropdown" />
-  <link rel="stylesheet" href="css/home.css?v=20261116-home-value-d" />
+  <link rel="stylesheet" href="css/nav.css?v=20261126-buyers" />
+  <link rel="stylesheet" href="css/home.css?v=20261126-wish-list" />
   <link rel="stylesheet" href="css/map-cards.css?v=20261014b" />
   <link rel="preload" as="image" href="assets/burlington-hamilton-region-established-roots.webp" type="image/webp" fetchpriority="high" />
   <script src="js/nav.js?v=20261113-dropdown" defer></script>
@@ -170,7 +170,7 @@
     </a>
     <ul class="nav__links" role="list">
       <li><a href="listings.html" class="nav__link">Listings</a></li>
-      <li><a href="buyers.html" class="nav__link">Buyers</a></li>
+      <li class="nav__item--menu"><a href="buyers.html" class="nav__link">Buyers</a><button class="nav__sub-toggle" type="button" aria-expanded="false" aria-controls="nav-buyers-menu" aria-label="Show Buyers pages"><svg viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button><div class="nav__submenu" id="nav-buyers-menu"><ul class="nav__submenu-panel" role="list"><li><a href="buyers.html">Buying a Home</a></li><li><a href="buyers/home-wish-list/">Home Wish List</a></li></ul></div></li>
       <li class="nav__item--menu"><a href="sellers.html" class="nav__link">Sellers</a><button class="nav__sub-toggle" type="button" aria-expanded="false" aria-controls="nav-sellers-menu" aria-label="Show Sellers pages"><svg viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button><div class="nav__submenu" id="nav-sellers-menu"><ul class="nav__submenu-panel" role="list"><li><a href="sellers.html">Selling Your Home</a></li><li><a href="sellers/home-value/">Home Value Review</a></li></ul></div></li>
       <li><a href="local-insight.html" class="nav__link">Local Insight</a></li>
       <li><a href="about.html" class="nav__link">About</a></li>
@@ -190,7 +190,7 @@
   </nav>
   <div class="nav__mobile-menu" id="nav-mobile-menu" aria-label="Navigation menu" aria-hidden="true">
     <a href="listings.html">Listings</a>
-    <a href="buyers.html">Buyers</a>
+    <a href="buyers.html">Buyers</a><a href="buyers/home-wish-list/" class="nav__mobile-sub">Home Wish List</a>
     <a href="sellers.html">Sellers</a><a href="sellers/home-value/" class="nav__mobile-sub">Home Value Review</a>
     <a href="local-insight.html">Local Insight</a>
     <a href="about.html">About</a>
@@ -551,7 +551,10 @@
       <div class="bf-text">
         <p class="bf-eyebrow editorial-eyebrow editorial-eyebrow--dark">For Buyers</p>
         <h2 class="bf-heading editorial-heading">Find the right street<br><em>before the right house.</em></h2>
-        <a class="bf-cta editorial-cta text-link text-link--arrow text-link--dark" href="buyers.html">Explore Buying <span aria-hidden="true">→</span></a>
+        <div class="bf-ctas">
+          <a class="bf-cta editorial-cta text-link text-link--arrow text-link--dark" href="buyers/home-wish-list/">Build Your Home Wish List <span aria-hidden="true">→</span></a>
+          <a class="bf-cta bf-cta--quiet editorial-cta text-link text-link--arrow text-link--dark" href="buyers.html">Explore Buying <span aria-hidden="true">→</span></a>
+        </div>
       </div>
       <a class="bf-image" href="buyers.html" aria-label="Explore buying with The Smith Dobrowsky Team">
         <img src="assets/buyers-smith-dobrowsky-optimized.webp" alt="" width="1800" height="764" loading="lazy" decoding="async">
